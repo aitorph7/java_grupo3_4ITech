@@ -1,22 +1,28 @@
 Repositorio para el proyecto del curso "Desarrollo web con Java" del grupo3 aka "Escuadrón Suicida"💪🏻.
 
-En principio partimos con la creación de una aplicación web "Simulación web T3chFest",
-pero estamos pendientes de decidir la temática del evento:
-- Evento tecnológico
-- Evento de ciencia/ divulgación científica (tipo TEDTalks)
-- Evento de Gastronomía (tipo Madrid Fusion)
-- Evento de mascotas con súperpoderes capaces de desarrollar código🐶🐱🐹‼️
-- lo que se nos ocurra...
-
-...y también el nombre del evento!
+Vamos a crear una aplicación web para un evento de Programación tipo "T3chFest" o "CodeMotion":
+...debemos decidir (no urge) el nombre del evento, y podemos usar este README para aportar nuestras ideas.
 
 webs para inspirarnos:🤔
 https://t3chfest.es/2024/programa
-https://www.madridfusion.net/es/programa
-https://www.ted.com/tedx/events?autocomplete_filter=Spain&year=2024
-https://www.globalpetexpo.org/show-info/schedule-at-a-glance
+https://conferences.codemotion.com/madrid2024/?
 https://www.trgcon.com/#what
 ...
+
+## NOVEDADES LUNES 12 DE FEBRERO 2024 ##
+En la clase de hoy Alan ha repasado con cada grupo las clases que sería necesario crear para el desarrollo del proyecto.
+En nuestro caso hemos modificado el número original de clases/entidades al siguiente:
+
+C1. User y UserRole (esta última sigue siendo un enum)
+C2. Keynote y DifficultyLevel (<- es una enum)
+C3. Track
+C4. Ticket
+C5. TicketOrderBuy (como una entidad intermedia entre 'User' y 'Ticket')
+C6. Comment (para que los usuarios valoren las keynotes)
+
+
+
+
 
 ## A. PASOS PARA CLONAR ESTE REPO EN VUESTRO ORDENADOR CON GIT BASH o TERMINAL: ##
 
