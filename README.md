@@ -21,10 +21,9 @@ C5. TicketOrderBuy (como una entidad intermedia entre 'User' y 'Ticket')
 C6. Comment (para que los usuarios valoren las keynotes)
 
 
-* Tras arreglo en clase de la versión 17 a 21 de Java, se ha pasado a main las anteriores 
+* Tras arreglo en clase de la versión 17 a 21 de Java, se ha pasado a main del proyecto grupal las anteriores 
 entidades propuestas por Alan, y el archivo pom.xml se ha conseguido colocar en su sitio
-aunque con previos problemas en el main de src del proyecto por cambio por mi parte de versión
-intellij ultimate a la Comunity.
+aunque con previos problemas en el main de arranque de la aplicación (into src) del proyecto por cambio por mi parte de versión intellij ultimate de forma temporal a la Comunity permanente.
 
 
 
