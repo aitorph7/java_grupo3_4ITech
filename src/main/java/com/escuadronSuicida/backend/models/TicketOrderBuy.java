@@ -13,7 +13,7 @@ import java.time.LocalDateTime;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Table (name ="TicketOrderBuy")
+@Table (name ="ticketOrderBuy")
 
 public class TicketOrderBuy {
 
@@ -31,7 +31,10 @@ public class TicketOrderBuy {
 
     private String paymentMethod;
 
-    private Long realizarCompra;
+    private String channel; // canal de compra: ONLINE, OFFLINE
+
+    private String qrUrl; // Código QR
+
 
 
     // Getters y setter

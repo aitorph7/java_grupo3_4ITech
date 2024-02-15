@@ -7,7 +7,6 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 
 @Entity
 @Getter
@@ -16,7 +15,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 
 
-@Table (name ="Ticket")
+@Table (name ="tickets")
 
 
 public class Ticket {
@@ -35,12 +34,4 @@ public class Ticket {
     private Integer maxNum; // numero entradas tickets disponibles para vender
 
 
-    public void sellTicket() {
-        if (maxNum > 0) {
-            maxNum = 300;
-            System.out.println("Ticket comprado correctamente.");
-        } else {
-            System.out.println("No hay tickets disponibles para comprar.");
-        }
-    }
 }
