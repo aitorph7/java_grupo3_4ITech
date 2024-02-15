@@ -1,10 +1,17 @@
 package com.escuadronSuicida.backend.services;
 
-import com.escuadronSuicida.backend.models.Ticket;
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
+import com.escuadronSuicida.backend.models.TicketOrderBuy;
 
-@Repository
-public interface TicketService extends JpaRepository<Ticket, Long> {
+public interface TicketService {
 
-}
+    void crearOrdenCompra(TicketOrderBuy order);
+
+
+    TicketOrderBuy obtenerOrdenCompraPorId(Long orderId);
+
+    boolean verificarDisponibilidadTickets(TicketOrderBuy order);
+
+
+
+    }
+
