@@ -10,18 +10,14 @@ import lombok.*;
 @ToString
 
 @Entity
-@Table(name = "tickets")
-public class Ticket {
-
+@Table(name = "addresses")
+public class Address {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
-    private String title;
-
-    private Double price;
-
-    private Integer maxNum; // numero entradas tickets disponibles para vender
-
+    private String street;
+    private Long number;
+    private String city;
+    private Long postalCode;
 
 }
