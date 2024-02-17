@@ -8,5 +8,6 @@ public class Comment {
     private String opinion;
 
     private User user;
+
     private Keynote keynote;
 }
