@@ -26,4 +26,6 @@ public class TicketOrderBuy {
 
     // Many To One
     private Ticket ticket;
+
+
 }
