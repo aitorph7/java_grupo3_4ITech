@@ -27,29 +27,5 @@ public class TicketOrderBuy {
     // Many To One
     private Ticket ticket;
 
-    // entidad intermedia entre User y Ticket, refleja la compra de un ticket
-    public static class TicketOrderBuy {
 
-        private Long id;
-
-        private LocalDateTime date;
-
-        private Double discount;
-
-        private Double totalPrice;
-
-        private Integer quantity; // comparar este dato a Ticket maxNum
-
-        private String paymentMethod;
-
-        private String channel; // canal de compra: ONLINE, OFFLINE
-
-        private String qrUrl; // Código QR
-
-        // Many To One
-        private com.escuadronSuicida.backend.models.User user;
-
-        // Many To One
-        private Ticket.Ticket ticket;
-    }
 }
