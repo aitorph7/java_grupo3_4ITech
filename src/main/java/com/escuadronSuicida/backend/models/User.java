@@ -1,8 +1,20 @@
 package com.escuadronSuicida.backend.models;
 
 
-public class User {
+import jakarta.persistence.*;
+import lombok.*;
 
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
+@ToString
+
+@Entity
+@Table(name = "users")
+public class User {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String firstName;
@@ -11,6 +23,9 @@ public class User {
     private String email;
     private String password;
     private String phone;
+    @OneToOne
+    @JoinColumn(name = "address_id")
+    private Address address;
 
     // Opción 1: Esto puede ser una entidad Role y aquí una asociación oneToMany
     // private List<String> roles = new ArrayList<>();
