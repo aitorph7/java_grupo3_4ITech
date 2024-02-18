@@ -44,7 +44,7 @@ public class TicketOrderBuy {
     //    @OneToOne ...yo pongo @ManyToOne
 
     // Many To One
-    @ManyToOne
+    // @ManyToOne
     private Ticket ticket;
 
 
