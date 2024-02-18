@@ -28,9 +28,9 @@ public class Track {
     private LocalDateTime endDate; // fecha y hora de fin
 
 
-    @OneToMany
-    @JoinColumn(name = "track_id")
-    @ToString.Exclude
+    // @OneToMany
+    // @JoinColumn(name = "track_id")
+    // @ToString.Exclude
     private Track track;
 
 }
