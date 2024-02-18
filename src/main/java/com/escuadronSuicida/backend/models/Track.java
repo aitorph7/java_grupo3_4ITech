@@ -2,10 +2,7 @@ package com.escuadronSuicida.backend.models;
 
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.time.LocalDateTime;
 
@@ -13,6 +10,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @Getter
 @Setter
+@ToString
 
 @Entity
 @Table( name = "tracks")
@@ -22,15 +20,17 @@ public class Track {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(unique = true)
+    @Column(unique = true, length =50 )
     private String name;
 
     private LocalDateTime startDate; // fecha y hora de inicio
 
     private LocalDateTime endDate; // fecha y hora de fin
 
-    @ManyToOne
+
+    @OneToMany
     @JoinColumn(name = "track_id")
+    @ToString.Exclude
     private Track track;
 
 }

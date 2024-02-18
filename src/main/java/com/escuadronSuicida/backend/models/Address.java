@@ -3,11 +3,11 @@ package com.escuadronSuicida.backend.models;
 import jakarta.persistence.*;
 import lombok.*;
 
-@AllArgsConstructor
-@NoArgsConstructor
-@Getter
-@Setter
-@ToString
+//@AllArgsConstructor
+//@NoArgsConstructor
+//@Getter
+//@Setter
+//@ToString
 
 @Entity
 @Table(name = "addresses")
