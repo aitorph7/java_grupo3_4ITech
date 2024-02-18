@@ -34,11 +34,11 @@ public class Keynote {  // Charla
     private Integer durationInMin;
 
     // Asociaciones:
-    @ManyToOne
-    @JoinColumn(name = "speaker_id")
+    // @ManyToOne
+    // @JoinColumn(name = "speaker_id")
     private User speaker; // Many to One
-    @ManyToOne
-    @JoinColumn(name = "track_id")
+    // @ManyToOne
+    // @JoinColumn(name = "track_id")
     private Track track; // Many To One
 
     private List<User> attendees = new ArrayList<>(); // Many To Many
