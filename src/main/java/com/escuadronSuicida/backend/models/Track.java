@@ -31,7 +31,7 @@ public class Track {
     // @OneToMany
     // @JoinColumn(name = "track_id")
     // @ToString.Exclude
-    //private Track track;
+    //private Track track;  ojo!! aquí era un fallo Alan..asociacion en la misma clase NO TIENE SENTIDO
 
 }
 
