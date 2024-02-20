@@ -24,9 +24,7 @@ public class User {
 //    @JsonIgnore
     private String password;
     private String phone;
-    @OneToOne
-    @JoinColumn(name = "address_id")
-    private Address address;
+    private String address;
 
     // Opción 1: Esto puede ser una entidad Role y aquí una asociación oneToMany
     // private List<String> roles = new ArrayList<>();
