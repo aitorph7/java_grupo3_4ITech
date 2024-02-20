@@ -30,21 +30,7 @@ public class TicketOrderBuy {
 
     private String paymentMethod;
 
-    private String channel; // canal de compra: ONLINE, OFFLINE
-
-    private String qrUrl; // Código QR
-
-    // Many To One un usuario puede comprar varios tickets (Decisión grupal)
-    @ManyToOne
-    @JoinColumn(name = "user_id")
-    private User user;
-
-
-    // //One to ONE  cada usuario compra su ticket ( Esto falta definirlo como grupo)
-    //    @OneToOne ...yo pongo @ManyToOne
-
-    // Many To One
-    @ManyToOne
+    @OneToOne
     private Ticket ticket;
 
 
