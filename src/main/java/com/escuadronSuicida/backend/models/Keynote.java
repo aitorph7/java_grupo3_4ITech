@@ -26,21 +26,24 @@ public class Keynote {  // Charla
     private String description; // description or descriptionLong
     private String webinarUrl; // video youtube, zoom,
     private Integer numRoom; // numero de sala
-    private Integer maxNumPersons; // aforo maximo permitido
+    private Integer maxNumPersons; // aforo maximo - permitido un contador*
     private DifficultyLevel level;
     // Opción 1:
     // private Duration duration;
     // Opción 2:
     private Integer durationInMin;
 
-    // Asociaciones:
+    // Asociaciones: un solo speaker en cada charla
     @ManyToOne
     // @JoinColumn(name = "speaker_id")
     private User speaker; // Many to One
+
     @ManyToOne
-    // @JoinColumn(name = "track_id")
+    // @JoinColumn(name = "track_id") varias charlas en simultaneo
     private Track track; // Many To One
 
+
+    //se refiere a cuantas charlas puedes ir ( no quiere decir en simultaneo)
     @ManyToMany
     private List<User> attendees = new ArrayList<>(); // Many To Many
 }

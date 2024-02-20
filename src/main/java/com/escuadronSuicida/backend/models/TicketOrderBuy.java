@@ -30,8 +30,12 @@ public class TicketOrderBuy {
 
     private String paymentMethod;
 
-    @OneToOne
+
+    // Many To One // no puede comprar mas capar en frontend
+    @ManyToOne
+    private User user;
+
+    // Many To One varias compras de mismo ticket  many to one permite
+    @ManyToOne
     private Ticket ticket;
-
-
 }
