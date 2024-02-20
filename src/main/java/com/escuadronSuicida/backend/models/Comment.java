@@ -19,11 +19,11 @@ public class Comment {
     private Double rating;
     private String opinion;
 
-    // @ManyToOne
+     @ManyToOne
     // @JoinColumn(name ="user_id")
     private User user;
 
-   // @ManyToOne
+    @ManyToOne
    // @JoinColumn(name = "keynote_id")
    // @ToString.Exclude
     private Keynote keynote;
