@@ -32,7 +32,6 @@ public class Keynote {  // Charla
     // private Duration duration;
     // Opción 2:
     private Integer durationInMin;
-
     // Asociaciones: un solo speaker en cada charla
     @ManyToOne
     // @JoinColumn(name = "speaker_id")

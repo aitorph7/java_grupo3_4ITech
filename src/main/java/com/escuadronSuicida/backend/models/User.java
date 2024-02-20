@@ -29,6 +29,7 @@ public class User {
     // Opción 1: Esto puede ser una entidad Role y aquí una asociación oneToMany
     // private List<String> roles = new ArrayList<>();
 
+
     // Opción 2: una enum
     // @ElementCollection(fetch = FetchType.EAGER)
      @Enumerated(EnumType.STRING)

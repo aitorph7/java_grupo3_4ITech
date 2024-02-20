@@ -23,5 +23,4 @@ public class Ticket {
 
     private Integer maxNum; // numero entradas tickets disponibles para vender
 
-
 }
