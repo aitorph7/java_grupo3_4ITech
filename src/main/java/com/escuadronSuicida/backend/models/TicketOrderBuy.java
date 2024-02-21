@@ -30,6 +30,9 @@ public class TicketOrderBuy {
 
     private String paymentMethod;
 
+    private String channel; // canal de compra: ONLINE, OFFLINE
+
+    private String qrUrl; // Código QR
 
     // Many To One // no puede comprar mas capar en frontend
     @ManyToOne
