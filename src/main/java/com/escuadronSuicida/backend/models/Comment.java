@@ -19,7 +19,6 @@ public class Comment {
     private Double rating;
     private String opinion;
 
-
     //un usuario muchos comentarios (bloquear muchos comentarios en una misma charla)
      @ManyToOne
     // @JoinColumn(name ="user_id")

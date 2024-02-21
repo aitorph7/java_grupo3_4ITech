@@ -32,6 +32,7 @@ public class User {
 
     // Opción 2: una enum
     // @ElementCollection(fetch = FetchType.EAGER)
+
      @Enumerated(EnumType.STRING)
     private UserRole role;
 

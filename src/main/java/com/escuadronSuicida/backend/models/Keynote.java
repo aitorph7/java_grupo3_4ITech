@@ -32,6 +32,8 @@ public class Keynote {  // Charla
     // private Duration duration;
     // Opción 2:
     private Integer durationInMin;
+
+
     // Asociaciones: un solo speaker en cada charla
     @ManyToOne
     // @JoinColumn(name = "speaker_id")
@@ -40,7 +42,6 @@ public class Keynote {  // Charla
     @ManyToOne
     // @JoinColumn(name = "track_id") varias charlas en simultaneo
     private Track track; // Many To One
-
 
     //se refiere a cuantas charlas puedes ir ( no quiere decir en simultaneo)
     @ManyToMany
