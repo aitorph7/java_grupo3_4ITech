@@ -1,4 +1,5 @@
-Repositorio para el proyecto del curso "Desarrollo web con Java" del grupo3 aka "Escuadrón Suicida"💪🏻.
+Repositorio para el proyecto del curso "Desarrollo web con Java" del grupo3 aka "Escuadrón Suicida"💪🏻.Se propone cambiar el nombre del proyecto a si acepta el grupo 3: 
+<< @4iTech >>
 
 Vamos a crear una aplicación web para un evento de Programación tipo "T3chFest" o "CodeMotion":
 ...debemos decidir (no urge) el nombre del evento, y podemos usar este README para aportar nuestras ideas.
