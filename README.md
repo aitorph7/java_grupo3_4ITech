@@ -1,14 +1,22 @@
-Repositorio para el proyecto del curso "Desarrollo web con Java" del grupo3 aka "Escuadrón Suicida"💪🏻.Se propone cambiar el nombre del proyecto a si acepta el grupo 3: 
-<< @4iTech >>
-
+## Repositorio para el proyecto del curso "Desarrollo web con Java" del grupo3 aka "Escuadrón Suicida"💪🏻💥🔫 ##
 Vamos a crear una aplicación web para un evento de Programación tipo "T3chFest" o "CodeMotion":
-...debemos decidir (no urge) el nombre del evento, y podemos usar este README para aportar nuestras ideas.
+podemos usar este README para aportar nuestras ideas.
 
 webs para inspirarnos:🤔
 https://t3chfest.es/2024/programa
 https://conferences.codemotion.com/madrid2024/?
 https://www.trgcon.com/#what
 ...
+
+## NOVEDADES MIERCOLES 21 DE FEBRERO 2024 ##
+Ya tenemos nombre para el evento y para el proyecto‼️
+<< @4iTech >>
+Incluso tenemos diferentes diseños de logotipo (todos muy molones) entre los que elegir😍
+
+En la clase de ayer (Martes 20 de Febrero) decidimos crear una nueva entidad 'Room' para representar en ella a las diferentes salas donde van a desarrollarse las charlas; Estas salas tendrán entre sus atributos la disponibilidad o no de enchufes (hasPlugs) para que los asistentes asistan a los talleres con sus propios ordenadores; puede ser que la charla/taller consista en ir escribiendo código a la par que el speaker/speakers.
+👨🏻‍💻👩🏻‍💻👩🏼‍💻👩🏽‍💻👨🏼‍💻
+
+También iniciamos nuestro espacio de trabajo en Trello.com 📋 para ir creando tareas, asignarlas a los diferentes mmiembros del escuadrón, crear reuniones de mentorización, reflejar en ellas un resumen de los puntos abordados y tareas acordadas con los mentores/as... y disponer de una herramienta visual📊 que refleje el estado actual de los diferentes desarrollos (si están pendientes de asignar, si están en proceso, si están finalizados...)
 
 ## NOVEDADES LUNES 12 DE FEBRERO 2024 ##
 En la clase de hoy Alan ha repasado con cada grupo las clases que sería necesario crear para el desarrollo del proyecto.
@@ -21,14 +29,7 @@ C4. Ticket
 C5. TicketOrderBuy (como una entidad intermedia entre 'User' y 'Ticket')
 C6. Comment (para que los usuarios valoren las keynotes)
 
-
-* Tras arreglo en clase de la versión 17 a 21 de Java, se ha pasado a main del proyecto grupal las anteriores 
-entidades propuestas por Alan, y el archivo pom.xml se ha conseguido colocar en su sitio
-aunque con previos problemas en el main de arranque de la aplicación (into src) del proyecto por cambio por mi parte de versión intellij ultimate de forma temporal a la Comunity permanente.
-
-
-
-
+🔺 Tras arreglo en clase de la versión 17 a 21 de Java, se ha pasado a main del proyecto grupal las anteriores entidades propuestas por Alan, y el archivo pom.xml se ha conseguido colocar en su sitio aunque con previos problemas en el main de arranque de la aplicación (into src) del proyecto por cambio por mi parte de versión intellij ultimate de forma temporal a la Comunity permanente.
 
 ## A. PASOS PARA CLONAR ESTE REPO EN VUESTRO ORDENADOR CON GIT BASH o TERMINAL: ##
 
