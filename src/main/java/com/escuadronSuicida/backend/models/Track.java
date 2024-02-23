@@ -20,7 +20,7 @@ public class Track {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(unique = true, length =50 )
+    @Column(unique = true, length =100 )
     private String name;
 
     private LocalDateTime startDate; // fecha y hora de inicio

@@ -27,6 +27,8 @@ public class Keynote {  // Charla
     private String webinarUrl; // video youtube, zoom,
     private Integer numRoom; // numero de sala
     private Integer maxNumPersons; // aforo maximo - permitido un contador*
+
+    @Enumerated(EnumType.STRING)
     private DifficultyLevel level;
     // Opción 1:
     // private Duration duration;
