@@ -1,6 +1,5 @@
 package com.escuadronSuicida.backend.models;
 
 public enum DifficultyLevel {
-    BASICO, MEDIO, AVANZADO, EXPERTO
+    JUNIOR, SEMI_SENIOR, SENIOR
 }
-
