@@ -1,8 +1,8 @@
 package com.escuadronSuicida.backend;
 
-import com.escuadronSuicida.backend.models.Comment;
-import com.escuadronSuicida.backend.models.User;
-import com.escuadronSuicida.backend.models.UserRole;
+import com.escuadronSuicida.backend.model.Comment;
+import com.escuadronSuicida.backend.model.User;
+import com.escuadronSuicida.backend.model.UserRole;
 import com.escuadronSuicida.backend.repository.CommentRepository;
 import com.escuadronSuicida.backend.repository.UserRepository;
 import org.springframework.boot.SpringApplication;

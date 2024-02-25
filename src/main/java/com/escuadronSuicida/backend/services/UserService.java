@@ -1,14 +1,7 @@
 package com.escuadronSuicida.backend.services;
 
-import com.escuadronSuicida.backend.models.User;
 //import com.escuadronSuicida.backend.repository.UserRepository;
-import lombok.AllArgsConstructor;
-import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-import java.util.Optional;
 
 /**
  * Javadoc

@@ -1,6 +1,6 @@
 package com.escuadronSuicida.backend.controller;
 
-import com.escuadronSuicida.backend.models.User;
+import com.escuadronSuicida.backend.model.User;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import org.springframework.http.ResponseEntity;

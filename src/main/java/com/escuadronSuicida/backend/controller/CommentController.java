@@ -1,6 +1,6 @@
 package com.escuadronSuicida.backend.controller;
 
-import com.escuadronSuicida.backend.models.Comment;
+import com.escuadronSuicida.backend.model.Comment;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import org.springframework.web.bind.annotation.RestController;
