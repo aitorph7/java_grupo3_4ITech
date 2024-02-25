@@ -7,7 +7,6 @@ import java.util.List;
 
 @Service
 public interface TicketOrderBuyService {
-
     List<TicketOrderBuy> findTicketOrderBuy();
 
     TicketOrderBuy findById(Long id);

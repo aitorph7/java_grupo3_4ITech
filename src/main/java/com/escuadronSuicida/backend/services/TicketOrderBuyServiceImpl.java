@@ -14,7 +14,6 @@ public class TicketOrderBuyServiceImpl implements TicketOrderBuyService{
         this.ticketOrderBuyRepository =ticketOrderBuyRepository;
     }
 
-
     @Override
     public List<TicketOrderBuy> findTicketOrderBuy() {
         return null;
@@ -24,5 +23,6 @@ public class TicketOrderBuyServiceImpl implements TicketOrderBuyService{
     public TicketOrderBuy findById(Long id) {
         return null;
     }
+
 
 }

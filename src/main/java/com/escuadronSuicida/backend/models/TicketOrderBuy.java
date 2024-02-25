@@ -34,7 +34,6 @@ public class TicketOrderBuy {
 
     private String qrUrl; // Código QR
 
-
     // Many To One // no puede comprar mas capar en frontend
     @ManyToOne
     private User user;

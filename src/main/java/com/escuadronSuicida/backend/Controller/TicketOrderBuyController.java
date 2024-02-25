@@ -17,7 +17,6 @@ public class TicketOrderBuyController {
 
     private TicketOrderBuyService ticketOrderBuyService;
 
-
     @GetMapping
     public ResponseEntity<List<TicketOrderBuy>> findAll(){
         List<TicketOrderBuy> ticketOrderBuys = ticketOrderBuyService.findTicketOrderBuy();
@@ -29,6 +28,7 @@ public class TicketOrderBuyController {
         TicketOrderBuy ticketOrderBuy = ticketOrderBuyService.findById(id);
         return ResponseEntity.ok(ticketOrderBuy);
     }
+
 
     private TicketOrderBuyRepository repo;
 
@@ -42,6 +42,7 @@ public class TicketOrderBuyController {
         }
 
     }
+
 
     @PutMapping("ticket/{id}")
     public TicketOrderBuy update(@RequestBody TicketOrderBuy ticketOrderBuy, @PathVariable Long id){
