@@ -23,5 +23,7 @@ public class Ticket {
 
     private Integer maxNum; // numero entradas tickets disponibles para vender
 
-
+    public void setId(Long id) {
+        this.id = id;
+    }
 }

@@ -9,15 +9,14 @@ import lombok.*;
 @Getter
 @Setter
 @ToString
-
 @Entity
+
 @Table(name = "users")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String firstName;
     private String lastName;
 
     private String email;
@@ -35,6 +34,8 @@ public class User {
 
     @Enumerated(EnumType.STRING)
     private UserRole role;
+
+
 
     // Opción 3: una clase
     // private UserRole role;

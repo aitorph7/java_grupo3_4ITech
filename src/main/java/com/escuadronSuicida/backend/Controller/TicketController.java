@@ -1,22 +1,60 @@
 package com.escuadronSuicida.backend.Controller;
 
+import com.escuadronSuicida.backend.models.Ticket;
 import com.escuadronSuicida.backend.repository.TicketRepository;
+import com.escuadronSuicida.backend.services.TicketService;
+import lombok.AllArgsConstructor;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 
 @RestController
-@RequestMapping("ticket")
-public class TicketController {
-    private final TicketRepository ticketRepository;
+@RequestMapping("tickets")
+@AllArgsConstructor
 
-    @Autowired
-    public TicketController(TicketRepository ticketRepository) {
-        this.ticketRepository = ticketRepository;
+
+public class TicketController {
+    private TicketService ticketService;
+
+
+    @GetMapping
+    public ResponseEntity<List<Ticket>> findAll(){
+        List<Ticket> tickets = ticketService.findTicket();
+        return ResponseEntity.ok(tickets);
     }
 
-    // Aquí puedes agregar tus métodos relacionados con el controlador
+    @GetMapping("{id}")
+    public ResponseEntity<Ticket> findById(@PathVariable Long id){
+        Ticket ticket = ticketService.findById(id);
+        return ResponseEntity.ok(ticket);
+    }
+
+    private TicketRepository repo;
+
+    @PostMapping("/tickets")
+    public ResponseEntity<Ticket> create(@RequestBody Ticket ticket) {
+
+        try {
+            return ResponseEntity.ok(repo.save(ticket));
+        }catch (Exception e) {
+            return ResponseEntity.status(409).build();
+        }
+
+    }
+
+
+    @PutMapping("ticket/{id}")
+    public Ticket update(@RequestBody Ticket ticket,@PathVariable Long id){
+        return repo.save(ticket);
+    }
+
+
+    @DeleteMapping("ticket/{id}")
+    public void delete(@PathVariable Long id) {
+        repo.deleteById(id);
+    }
 
 }
