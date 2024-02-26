@@ -1,4 +1,4 @@
-package com.escuadronSuicida.backend.model;
+package com.escuadronSuicida.backend.models;
 
 import jakarta.persistence.*;
 import lombok.*;
