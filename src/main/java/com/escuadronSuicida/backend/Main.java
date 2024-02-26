@@ -1,11 +1,7 @@
 package com.escuadronSuicida.backend;
 
-import com.escuadronSuicida.backend.models.Ticket;
-import com.escuadronSuicida.backend.models.TicketOrderBuy;
-import com.escuadronSuicida.backend.models.Track;
-import com.escuadronSuicida.backend.repository.TicketOrderBuyRepository;
-import com.escuadronSuicida.backend.repository.TicketRepository;
-import com.escuadronSuicida.backend.repository.TrackRepository;
+import com.escuadronSuicida.backend.models.*;
+import com.escuadronSuicida.backend.repository.*;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -23,17 +19,7 @@ public class Main {
 		TicketRepository ticketRepo = context.getBean(TicketRepository.class);
 		TicketOrderBuyRepository ticketOrderBuyRepo = context.getBean(TicketOrderBuyRepository.class);
 
-	/*	Ticket ticket1 = new Ticket(null, "Ticket1", 50.0, 10);
-		Ticket ticket2 = new Ticket(null, "Ticket1", 50.0, 10);
-		Ticket ticket3 = new Ticket(null, "Ticket1", 50.0, 10);
-		ticketRepo.saveAll(List.of(Ticket1, Ticket2, Ticket3));
-
-		TicketOrderBuy ticketOrderBuy1 = new TicketOrderBuy(null, LocalDateTime.now(), 20.0, 50.0,10,"Tarjeta credito","ONLINE","CodigoqrUrl");
-		TicketOrderBuy ticketOrderBuy2 = new TicketOrderBuy(null, LocalDateTime.now(), 20.0, 50.0,10,"Tarjeta debito ","OFFLINE","CodigoqrUrl");
-		TicketOrderBuy ticketOrderBuy3 = new TicketOrderBuy(null, LocalDateTime.now(), 20.0, 50.0,10,"Tarjeta credito","ONLINE","CodigoqrUrl");
-		ticketOrderBuyRepo.saveAll(List.of(TicketOrderBuy1, TicketOrderBuy2, TicketOrderBuy3));*/
-
-	/*	TrackRepository trackRepository = context.getBean(TrackRepository.class);
+		TrackRepository trackRepository = context.getBean(TrackRepository.class);
 
 		Track tr1 = new Track(1L,"Track 1", LocalDateTime.of(2024,5,29,9,0), LocalDateTime.of(2024,5,29,10,0));
 		Track tr2 = new Track(2L,"Track 2", LocalDateTime.of(2024,5,29,10,0), LocalDateTime.of(2024,5,29,11,0));
@@ -55,8 +41,79 @@ public class Main {
 		Track tr17 = new Track(17L, "Track 8", LocalDateTime.of(2024,5,30,16,30), LocalDateTime.of(2024,5,30,17,30));
 		Track tr18 = new Track(18L, "Track 9", LocalDateTime.of(2024,5,30,17,30), LocalDateTime.of(2024,5,30,18,0));
 
-		trackRepository.saveAll(List.of(tr1, tr2, tr3, tr4, tr5, tr6, tr7, tr8, tr9, tr10, tr11, tr12, tr13,tr14,tr15,tr16,tr17,tr18));*/
+		trackRepository.saveAll(List.of(tr1, tr2, tr3, tr4, tr5, tr6, tr7, tr8, tr9, tr10, tr11, tr12, tr13,tr14,tr15,tr16,tr17,tr18));
 
+
+		UserRepository userRepository = context.getBean(UserRepository.class);
+
+		User user1 = new User(1L,
+				"Pablo",
+				"González",
+				"pablo@gmail.com",
+				"657478901",
+				"pablou1",
+				"pablou1",
+				"callePablo, 2, 28046, Madrid, Madrid",
+				UserRole.ATTENDEE);
+		User user2 = new User(2L,
+				"Oscar",
+				"Catalan",
+				"oscar@yahoo.es",
+				"663501200",
+				"oscaru2",
+				"oscaru2",
+				"calleOscar, 46, 28011, Madrid, Madrid",
+				UserRole.ATTENDEE);
+		User user3 = new User(3L,
+				"Trevor",
+				"McIntosh",
+				"trevor@apple.com",
+				"+1 415-555-1234",
+				"trevor@apple.com",
+				"trevoru3",
+				"1234 TrevorSt, San Francisco, CA 94123, USA",
+				UserRole.SPEAKER);
+		User user4 = new User(4L,
+				"Eutimio",
+				"Developer",
+				"eutimio@certidevs.com",
+				"619567144",
+				"eutimmiou4",
+				"eutimmiou4",
+				"calleEutimio, 23, 28004, Madrid, Madrid",
+				UserRole.ADMIN);
+		User user5 = new User(5L,
+				"Leocadia",
+				"Sigüenza",
+				"leocadia@hotmail.com",
+				"661541094",
+				"leocadiau5",
+				"leocadiu5",
+				"calleLeocadia, 10, 02001, Albacete, Albacete",
+				UserRole.ATTENDEE);
+		userRepository.saveAll(List.of(user1, user2, user3, user4, user5));
+
+		CommentRepository commentRepository = context.getBean(CommentRepository.class);
+
+		Comment c1 = new Comment(1L,
+				3.0,
+				"Fascinante, revelando el increíble potencial creativo " +
+						"de las máquinas en la producción de contenido único y original.",
+				user1, null);
+		Comment c2 = new Comment(2L,
+				4.0,
+				"me dejó asombrado, destacando cómo la tecnología puede generar " +
+						"ideas innovadoras y abrir nuevas posibilidades en el ámbito " +
+						"creativo.",
+				user2, null);
+		Comment c3 = new Comment(3L,
+				4.0,
+				"fue esclarecedora, mostrando cómo estas avanzadas tecnologías " +
+						"están transformando la forma en que concebimos y creamos contenido " +
+						"de manera revolucionaria.",
+				user5, null);
+
+		commentRepository.saveAll(List.of(c1, c2, c3));
 
 	}
 }
