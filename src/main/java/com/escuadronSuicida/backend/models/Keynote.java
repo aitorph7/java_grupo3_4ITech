@@ -34,7 +34,7 @@ public class Keynote {
 
     @ManyToOne // Varias keynotes pueden tener un mismo Speaker.
     @JoinColumn(name = "speaker_id")
-    private UserRole SPEAKER;
+    private User speaker;
 
     @ManyToOne
     // @JoinColumn(name = "track_id") varias charlas en simultaneo

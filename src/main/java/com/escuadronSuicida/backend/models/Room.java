@@ -17,7 +17,7 @@ public class Room {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
-    private Double capacity;
+    private Integer capacity;
     private Boolean hasSockets;
 
     // @OneToMany con Keynotes

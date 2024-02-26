@@ -39,13 +39,4 @@ public class User {
 
     @Enumerated(EnumType.STRING)
     private UserRole userRole;
-
-    //    Un solo presentador puede encargarse de varias keynotes.
-    //    @OneToMany(mappedBy = "SPEAKER")
-    //    private List<Keynote> keynotes; <-- comentado xq de momento este
-    //      código causa problemas con las instancias de la clase User.
-
-    @OneToMany(mappedBy = "opinion", cascade = CascadeType.ALL)
-    @ToString.Exclude
-    private List<Comment> comments;
 }

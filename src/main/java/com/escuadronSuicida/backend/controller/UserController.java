@@ -4,9 +4,7 @@ import com.escuadronSuicida.backend.models.User;
 import com.escuadronSuicida.backend.repository.UserRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
@@ -28,5 +26,26 @@ public class UserController {
             return ResponseEntity.ok(userOptional.get());
         else
             return ResponseEntity.notFound().build();
+    }
+    @PostMapping("users")
+    public ResponseEntity<User> create(@RequestBody User user) {
+        return ResponseEntity.ok(userRepository.save(user));
+    }
+    @PutMapping("users/{id}")
+    public ResponseEntity<User> update(@PathVariable Long id, @RequestBody User user){
+        if (!userRepository.existsById(id)) return ResponseEntity.notFound().build();
+        Optional<User> userOptional = userRepository.findById(id);
+        if (userOptional.isPresent()){
+            User userfromDB = userOptional.get();
+            userfromDB.setAddress(user.getAddress());
+            userRepository.save(userfromDB);
+            return ResponseEntity.ok(userfromDB);
+        } else
+            return ResponseEntity.notFound().build();
+    }
+    @DeleteMapping("user/{id}")
+    public ResponseEntity<Void> deleteById(@PathVariable Long id){
+        userRepository.deleteById(id);
+        return ResponseEntity.noContent().build();
     }
 }
