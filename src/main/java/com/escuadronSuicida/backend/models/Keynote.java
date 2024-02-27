@@ -47,5 +47,6 @@ public class Keynote {  // Charla
 
     //se refiere a cuantas charlas puedes ir ( no quiere decir en simultaneo)
     @ManyToMany
+    @ToString.Exclude
     private List<User> attendees = new ArrayList<>(); // Many To Many
 }

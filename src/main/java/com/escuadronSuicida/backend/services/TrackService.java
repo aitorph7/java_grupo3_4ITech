@@ -7,9 +7,11 @@ import java.util.List;
 @Service
 public interface TrackService {
 
-    List<Track> findTrack();
+    List<Track> findAll();
 
-    Track findByID(Long id);
+    Track findById(Long id);
+
+
 
 
 }

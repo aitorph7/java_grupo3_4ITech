@@ -40,5 +40,6 @@ public class User {
     private UserRole userRole;
 
     @OneToMany(mappedBy = "opinion", cascade = CascadeType.ALL)
+    @ToString.Exclude
     private List<Comment> comments;
 }
