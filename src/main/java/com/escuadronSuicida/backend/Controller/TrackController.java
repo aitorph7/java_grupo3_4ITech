@@ -43,6 +43,8 @@ public class TrackController {
         if(trackOpt.isEmpty()){
             return ResponseEntity.notFound().build();
         }  // permitir solo actualizar estos atributos y no todos
+
+        trackOpt.get().setName(track.getName());
         trackOpt.get().setStartDate(track.getStartDate());
         trackOpt.get().setEndDate(track.getEndDate());
         return ResponseEntity.ok(trackRepository.save(trackOpt.get()));

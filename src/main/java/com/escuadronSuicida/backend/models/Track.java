@@ -5,6 +5,8 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -32,6 +34,8 @@ public class Track {
     // @ToString.Exclude
     //private Track track;  ojo!! aquí era un fallo Alan..asociacion en la misma clase NO TIENE SENTIDO
 
+    //@OneToMany(mappedBy = "track") //, cascade = CascadeType.ALL)
+    //List<Keynote> keynoteList = new ArrayList<>();  en un futuro ??
 
 }
 
