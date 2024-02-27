@@ -1,7 +1,9 @@
 package com.escuadronSuicida.backend;
 
+import com.escuadronSuicida.backend.models.Room;
 import com.escuadronSuicida.backend.models.User;
 import com.escuadronSuicida.backend.models.UserRole;
+import com.escuadronSuicida.backend.repository.RoomRepository;
 import com.escuadronSuicida.backend.repository.UserRepository;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -17,6 +19,7 @@ public class Main {
 		ApplicationContext context = SpringApplication.run(Main.class, args);
 
 		UserRepository userRepository = context.getBean(UserRepository.class);
+		RoomRepository roomRepository = context.getBean(RoomRepository.class);
 
 		User user1 = new User(null,
 				"Pablo",
@@ -68,26 +71,14 @@ public class Main {
 				"calleLeocadia, 10, 02001, Albacete, Albacete",
 				UserRole.ATTENDEE
 		);
-//		userRepository.saveAll(List.of(user1, user2, user3, user4, user5));
-//
-//		Comment c1 = new Comment(null,
-//				3.0,
-//				"Fascinante, revelando el increíble potencial creativo " +
-//						"de las máquinas en la producción de contenido único y original.",
-//				user1);
-//		Comment c2 = new Comment(null,
-//				4.0,
-//				"me dejó asombrado, destacando cómo la tecnología puede generar " +
-//						"ideas innovadoras y abrir nuevas posibilidades en el ámbito " +
-//						"creativo.",
-//				user2);
-//		Comment c3 = new Comment(null,
-//				4.0,
-//				"fue esclarecedora, mostrando cómo estas avanzadas tecnologías " +
-//						"están transformando la forma en que concebimos y creamos contenido " +
-//						"de manera revolucionaria.",
-//				user5);
-//		commentRepository.saveAll(List.of(c1, c2, c3));
+		userRepository.saveAll(List.of(user1, user2, user3, user4, user5));
+
+		Room room1 = new Room(null, "Innovation Tech Hall", 500, Boolean.FALSE, null);
+		Room room2 = new Room(null, "ByteSphere Convergence Hall", 350, Boolean.FALSE, null);
+		Room room3 = new Room(null, "Quantum Nexus Summit Arena", 200, Boolean.TRUE, null);
+		Room room4 = new Room(null, "NanoVerse Discovery Pavilion", 400, Boolean.FALSE, null);
+		Room room5 = new Room(null, "TechHorizon Visionarium", 350, Boolean.FALSE, null);
+		roomRepository.saveAll(List.of(room1, room2, room3, room4, room5));
 	}
 
 

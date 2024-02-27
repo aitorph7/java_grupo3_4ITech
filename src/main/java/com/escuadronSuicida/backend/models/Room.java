@@ -21,7 +21,7 @@ public class Room {
     private Boolean hasSockets;
 
     // @OneToMany con Keynotes
-    @OneToMany(mappedBy = "room")
-    @ToString.Exclude
+    @OneToMany
+    @ToString.Exclude // para evitar errores con el fetching LAZY de objetos.
     private List<Keynote> keynotes;
 }

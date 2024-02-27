@@ -37,13 +37,13 @@ public class UserController {
         Optional<User> userOptional = userRepository.findById(id);
         if (userOptional.isPresent()){
             User userfromDB = userOptional.get();
-            userfromDB.setAddress(user.getAddress());
+            userfromDB.setAddress(user.getAddress()); // una vez creado el User en BD, solo permito que pueda modificar su dirección.
             userRepository.save(userfromDB);
             return ResponseEntity.ok(userfromDB);
         } else
             return ResponseEntity.notFound().build();
     }
-    @DeleteMapping("user/{id}")
+    @DeleteMapping("users/{id}")
     public ResponseEntity<Void> deleteById(@PathVariable Long id){
         userRepository.deleteById(id);
         return ResponseEntity.noContent().build();

@@ -3,7 +3,6 @@ package com.escuadronSuicida.backend.models;
 import jakarta.persistence.*;
 import lombok.*;
 
-import javax.sound.midi.Track;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -38,7 +37,7 @@ public class Keynote {
 
     @ManyToOne
     // @JoinColumn(name = "track_id") varias charlas en simultaneo
-    private Track track; // Many To One
+    private Track tracks; // Many To One
 
     //se refiere a cuantas charlas puedes ir ( no quiere decir en simultaneo)
     @ManyToMany

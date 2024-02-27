@@ -1,19 +1,19 @@
 package com.escuadronSuicida.backend.services;
 
-import com.escuadronSuicida.backend.models.User;
+import com.escuadronSuicida.backend.models.Room;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-public class UserServiceImpl implements UserService {
+public class RoomServiceImpl implements RoomService {
     @Override
-    public List<User> findUser() {
+    public List<Room> findRoom() {
         return null;
     }
 
     @Override
-    public User findById(Long id) {
+    public Room findById(Long id) {
         return null;
     }
 }
