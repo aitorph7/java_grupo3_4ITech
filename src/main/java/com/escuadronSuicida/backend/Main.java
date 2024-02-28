@@ -16,8 +16,6 @@ public class Main {
 	public static void main(String[] args) {
 		ApplicationContext context = SpringApplication.run(Main.class, args);
 
-		TicketRepository ticketRepo = context.getBean(TicketRepository.class);
-		TicketOrderBuyRepository ticketOrderBuyRepo = context.getBean(TicketOrderBuyRepository.class);
 
 		TrackRepository trackRepository = context.getBean(TrackRepository.class);
 
@@ -54,7 +52,7 @@ public class Main {
 				"pablou1",
 				"pablou1",
 				"callePablo, 2, 28046, Madrid, Madrid",
-				UserRole.ATTENDEE);
+				UserRole.ATTENDEE, null);
 		User user2 = new User(2L,
 				"Oscar",
 				"Catalan",
@@ -63,7 +61,7 @@ public class Main {
 				"oscaru2",
 				"oscaru2",
 				"calleOscar, 46, 28011, Madrid, Madrid",
-				UserRole.ATTENDEE);
+				UserRole.ATTENDEE, null);
 		User user3 = new User(3L,
 				"Trevor",
 				"McIntosh",
@@ -72,7 +70,7 @@ public class Main {
 				"trevor@apple.com",
 				"trevoru3",
 				"1234 TrevorSt, San Francisco, CA 94123, USA",
-				UserRole.SPEAKER);
+				UserRole.SPEAKER, null);
 		User user4 = new User(4L,
 				"Eutimio",
 				"Developer",
@@ -81,7 +79,7 @@ public class Main {
 				"eutimmiou4",
 				"eutimmiou4",
 				"calleEutimio, 23, 28004, Madrid, Madrid",
-				UserRole.ADMIN);
+				UserRole.ADMIN, null);
 		User user5 = new User(5L,
 				"Leocadia",
 				"Sigüenza",
@@ -90,7 +88,7 @@ public class Main {
 				"leocadiau5",
 				"leocadiu5",
 				"calleLeocadia, 10, 02001, Albacete, Albacete",
-				UserRole.ATTENDEE);
+				UserRole.ATTENDEE, null);
 		userRepository.saveAll(List.of(user1, user2, user3, user4, user5));
 
 		CommentRepository commentRepository = context.getBean(CommentRepository.class);
@@ -115,5 +113,19 @@ public class Main {
 
 		commentRepository.saveAll(List.of(c1, c2, c3));
 
+		TicketRepository ticketRepo = context.getBean(TicketRepository.class);
+		TicketOrderBuyRepository ticketOrderBuyRepo = context.getBean(TicketOrderBuyRepository.class);
+
+		Ticket ticket1 = new Ticket(null, "Ticket1", 50.0, 10);
+		Ticket ticket2 = new Ticket(null, "Ticket1", 50.0, 10);
+		Ticket ticket3 = new Ticket(null, "Ticket1", 50.0, 10);
+		ticketRepo.saveAll(List.of(ticket1, ticket2, ticket3));
+
+		TicketOrderBuy ticketOrderBuy1 = new TicketOrderBuy(null, LocalDateTime.now(), 20.0, 50.0,10,"Tarjeta credito","ONLINE","CodigoqrUrl", null, null);
+		TicketOrderBuy ticketOrderBuy2 = new TicketOrderBuy(null, LocalDateTime.now(), 20.0, 50.0,10,"Tarjeta debito ","OFFLINE","CodigoqrUrl", null, null);
+		TicketOrderBuy ticketOrderBuy3 = new TicketOrderBuy(null, LocalDateTime.now(), 20.0, 50.0,10,"Tarjeta credito","ONLINE","CodigoqrUrl", null, null);
+		ticketOrderBuyRepo.saveAll(List.of(ticketOrderBuy1, ticketOrderBuy2, ticketOrderBuy3));
 	}
+
+
 }
