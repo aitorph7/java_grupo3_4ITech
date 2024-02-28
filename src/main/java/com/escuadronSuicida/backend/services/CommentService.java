@@ -7,9 +7,15 @@ import java.util.List;
 @Service
 public interface CommentService {
 
-    List<Comment> findComment();
+    List<Comment> findComments();
 
-    Comment findByID(Long id);
+    Comment findById(Long id);
+
+    Comment createComment(Comment comment);
+
+    Comment updateComment(Long id, Comment comment);
+
+    boolean deleteComment(Long id);
 
 
 

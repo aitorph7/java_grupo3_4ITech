@@ -1,5 +1,6 @@
 package com.escuadronSuicida.backend.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -17,7 +18,7 @@ public class Comment {
     private Long id;
     @Column(name = "valoracion")
     private Double rating;
-    @Column(name="reseña",length = 1500)
+    @Column(name="reseña",length = 2000)
     private String opinion;
 
     //un usuario muchos comentarios (bloquear muchos comentarios en una misma charla)
@@ -29,6 +30,7 @@ public class Comment {
      //una charla multiples comentarios
     @ManyToOne
     @JoinColumn(name = "keynote_id")
-   // @ToString.Exclude
+//    @ToString.Exclude   // ??
+//    @JsonIgnoreProperties  // ??
     private Keynote keynote;
 }

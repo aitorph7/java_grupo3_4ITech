@@ -42,7 +42,7 @@ public class TrackServiceImpl implements TrackService{
             trackOptional.get().setName(track.getName());
             trackOptional.get().setStartDate(track.getStartDate());
             trackOptional.get().setEndDate(track.getEndDate());
-            // esto es actualizar solo esos atributos como sea neceario, aunque en este caso son todos.
+            // esto es actualizar solo esos atributos como sea necesario, aunque en este caso son todos.
             return trackRepository.save(trackOptional.get());
         } else {
         return null;
