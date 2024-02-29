@@ -1,11 +1,10 @@
 package com.escuadronSuicida.backend;
 
-import com.escuadronSuicida.backend.models.Ticket;
-import com.escuadronSuicida.backend.models.TicketOrderBuy;
-import com.escuadronSuicida.backend.models.Track;
+import com.escuadronSuicida.backend.models.*;
 import com.escuadronSuicida.backend.repository.TicketOrderBuyRepository;
 import com.escuadronSuicida.backend.repository.TicketRepository;
 import com.escuadronSuicida.backend.repository.TrackRepository;
+import com.escuadronSuicida.backend.repository.UserRepository;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -114,6 +113,9 @@ public class Main {
 		TicketOrderBuy ticketOrderBuy2 = new TicketOrderBuy(null, LocalDateTime.now(), 20.0, 50.0,10,"Tarjeta debito ","OFFLINE","CodigoqrUrl");
 		TicketOrderBuy ticketOrderBuy3 = new TicketOrderBuy(null, LocalDateTime.now(), 20.0, 50.0,10,"Tarjeta credito","ONLINE","CodigoqrUrl");
 		ticketOrderBuyRepository.saveAll(List.of(ticketOrderBuy1, ticketOrderBuy2, ticketOrderBuy3));
+
+	//	Keynote keynote1 = new Keynote(1L, "Inteligencia Artificial", "Desarrollo e implicaciones de la IA en nuestra sociedad", "Desripcion detallada de la IA", "www.youtube.com", 22, 300,"bajo", 60);
+
 
 	}
 }
