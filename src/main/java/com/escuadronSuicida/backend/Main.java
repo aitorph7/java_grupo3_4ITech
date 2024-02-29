@@ -117,8 +117,8 @@ public class Main {
 		TicketOrderBuyRepository ticketOrderBuyRepo = context.getBean(TicketOrderBuyRepository.class);
 
 		Ticket ticket1 = new Ticket(null, "Ticket1", 50.0, 10);
-		Ticket ticket2 = new Ticket(null, "Ticket1", 50.0, 10);
-		Ticket ticket3 = new Ticket(null, "Ticket1", 50.0, 10);
+		Ticket ticket2 = new Ticket(null, "Ticket2", 50.0, 10);
+		Ticket ticket3 = new Ticket(null, "Ticket3", 50.0, 10);
 		ticketRepo.saveAll(List.of(ticket1, ticket2, ticket3));
 
 		TicketOrderBuy ticketOrderBuy1 = new TicketOrderBuy(null, LocalDateTime.now(), 20.0, 50.0,10,"Tarjeta credito","ONLINE","CodigoqrUrl", null, null);

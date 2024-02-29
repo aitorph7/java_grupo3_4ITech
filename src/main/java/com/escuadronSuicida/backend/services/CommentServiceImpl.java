@@ -37,10 +37,11 @@ public class CommentServiceImpl implements CommentService{
     public Comment updateComment(Long id, Comment comment) {
         Optional<Comment> commentOptional = commentRepository.findById(id);
         if (commentOptional.isPresent()){
+            commentOptional.get().setOpinion(comment.getOpinion());
             commentOptional.get().setRating(comment.getRating());
             commentOptional.get().setUser(comment.getUser());
             commentOptional.get().setKeynote(comment.getKeynote());
-            //esto es actualizar los atributos que se consideren necesarios
+            //esto es actualizar los atributos que se consideren necesarios, se pueden omitir, estan todos.
             return commentRepository.save(commentOptional.get());
         } else {
             return null;
