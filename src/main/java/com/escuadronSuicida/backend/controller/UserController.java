@@ -2,7 +2,6 @@ package com.escuadronSuicida.backend.controller;
 
 import com.escuadronSuicida.backend.models.User;
 import com.escuadronSuicida.backend.repository.UserRepository;
-import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -10,10 +9,13 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@AllArgsConstructor
 public class UserController {
     List<User> users;
     private final UserRepository userRepository;
+
+    public UserController(UserRepository userRepository) {
+        this.userRepository = userRepository;
+    }
 
     @GetMapping("users")
     public List<User> findAll(){
@@ -37,7 +39,8 @@ public class UserController {
         Optional<User> userOptional = userRepository.findById(id);
         if (userOptional.isPresent()){
             User userfromDB = userOptional.get();
-            userfromDB.setAddress(user.getAddress()); // una vez creado el User en BD, solo permito que pueda modificar su dirección.
+            userfromDB.setAddress(user.getAddress());
+            userfromDB.setPhone(user.getPhone()); // una vez creado el User en BD, permito que pueda modificar su dirección y teléfono.
             userRepository.save(userfromDB);
             return ResponseEntity.ok(userfromDB);
         } else
