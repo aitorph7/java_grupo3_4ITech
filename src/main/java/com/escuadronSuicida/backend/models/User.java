@@ -39,6 +39,6 @@ public class User {
     @Enumerated(EnumType.STRING)
     private UserRole userRole;
 
-    @OneToMany(mappedBy = "opinion", cascade = CascadeType.ALL)
+    //@OneToMany(mappedBy = "opinion", cascade = CascadeType.ALL)
     private List<Comment> comments;
 }

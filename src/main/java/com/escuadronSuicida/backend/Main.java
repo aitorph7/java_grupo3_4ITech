@@ -3,7 +3,7 @@ package com.escuadronSuicida.backend;
 import java.time.LocalDateTime;
 import java.util.List;
 
-import org.springframework.boot.SpringApplication;
+import org.springfr amework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 
@@ -33,6 +33,7 @@ public class Main {
 		TicketRepository ticketRepo = context.getBean(TicketRepository.class);
 		TicketOrderBuyRepository ticketOrderBuyRepository = context.getBean(TicketOrderBuyRepository.class);
 		KeynoteRepository keynoteRepository = context.getBean(KeynoteRepository.class);
+		CommentRepository commentRepository = context.getBean(CommentRepository.class);
 
 		User user1 = new User(null,
 				"Pablo",
@@ -138,6 +139,27 @@ public class Main {
 		Keynote keynote4 = new Keynote(4L, "Salud Digital", "Desarrollo e implicaciones de la salud por el uso de las tecnologías de abuso en nuestra sociedad", "Descripcion detallada de la IA lorem ipsum......", "www.youtube.com", 5, 150,DifficultyLevel.SENIOR,50,null,null);
 
 		keynoteRepository.saveAll(List.of(keynote1,keynote2,keynote3,keynote4));
+
+		
+		Comment c1 = new Comment(1L,
+		3.0,
+		"Fascinante, revelando el increíble potencial creativo " +
+				"de las máquinas en la producción de contenido único y original.",
+		user1, null);
+		Comment c2 = new Comment(2L,
+		4.0,
+		"me dejó asombrado, destacando cómo la tecnología puede generar " +
+				"ideas innovadoras y abrir nuevas posibilidades en el ámbito " +
+				"creativo.",
+		user2, null);
+		Comment c3 = new Comment(3L,
+		4.0,
+		"fue esclarecedora, mostrando cómo estas avanzadas tecnologías " +
+				"están transformando la forma en que concebimos y creamos contenido " +
+				"de manera revolucionaria.",
+		user5, null);
+		
+		commentRepository.saveAll(List.of(c1, c2, c3));
 
 
 	}
