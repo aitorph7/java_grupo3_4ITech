@@ -1,6 +1,7 @@
 package com.escuadronSuicida.backend;
 
 import com.escuadronSuicida.backend.models.*;
+import com.escuadronSuicida.backend.repository.KeynoteRepository;
 import com.escuadronSuicida.backend.repository.TicketOrderBuyRepository;
 import com.escuadronSuicida.backend.repository.TicketRepository;
 import com.escuadronSuicida.backend.repository.TrackRepository;
@@ -24,6 +25,7 @@ public class Main {
 		TrackRepository trackRepository = context.getBean(TrackRepository.class);
 		TicketRepository ticketRepo = context.getBean(TicketRepository.class);
 		TicketOrderBuyRepository ticketOrderBuyRepository = context.getBean(TicketOrderBuyRepository.class);
+		KeynoteRepository keynoteRepository = context.getBean(KeynoteRepository.class);
 
 		User user1 = new User(null,
 				"Pablo",
@@ -114,7 +116,8 @@ public class Main {
 		TicketOrderBuy ticketOrderBuy3 = new TicketOrderBuy(null, LocalDateTime.now(), 20.0, 50.0,10,"Tarjeta credito","ONLINE","CodigoqrUrl");
 		ticketOrderBuyRepository.saveAll(List.of(ticketOrderBuy1, ticketOrderBuy2, ticketOrderBuy3));
 
-	//	Keynote keynote1 = new Keynote(1L, "Inteligencia Artificial", "Desarrollo e implicaciones de la IA en nuestra sociedad", "Desripcion detallada de la IA", "www.youtube.com", 22, 300,"bajo", 60);
+		Keynote keynote1 = new Keynote(1L, "Inteligencia Artificial", "Desarrollo e implicaciones de la IA en nuestra sociedad", "Desripcion detallada de la IA", "www.youtube.com", 22, 300,"bajo", 60);
+		keynoteRepository.saveAll(List.of(keynote1));
 
 
 	}
