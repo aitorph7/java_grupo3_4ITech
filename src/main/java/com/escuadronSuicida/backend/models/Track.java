@@ -23,7 +23,7 @@ public class Track {
     @Column(nullable = false, length =100 )
     private String name;
 
-    private LocalDateTime startDate; // fecha y hora de inicio
+    private LocalDateTime startDate; // fecha y hora de inicio, ojo devuelve un string
 
     private LocalDateTime endDate; // fecha y hora de fin
 

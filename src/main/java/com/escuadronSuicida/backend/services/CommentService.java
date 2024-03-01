@@ -7,9 +7,9 @@ import java.util.List;
 @Service
 public interface CommentService {
 
-    List<Comment> findComment();
+   
 
-    Comment findByID(Long id);
+   
 
 
 
