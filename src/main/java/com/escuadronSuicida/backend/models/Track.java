@@ -35,7 +35,7 @@ public class Track {
     //private Track track;  ojo!! aquí era un fallo Alan..asociacion en la misma clase NO TIENE SENTIDO
 
     //@OneToMany(mappedBy = "track") //, cascade = CascadeType.ALL)
-    //List<Keynote> keynoteList = new ArrayList<>();  en un futuro ??
+    //List<Keynote> keynoteList = new ArrayList<>();  en un futuro a mayores  ??
 
 }
 

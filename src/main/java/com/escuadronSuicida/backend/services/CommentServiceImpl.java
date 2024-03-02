@@ -35,8 +35,11 @@ public class CommentServiceImpl implements CommentService{
 
     @Override
     public Comment updateComment(Long id, Comment comment) {
+
         Optional<Comment> commentOptional = commentRepository.findById(id);
+
         if (commentOptional.isPresent()){
+
             commentOptional.get().setOpinion(comment.getOpinion());
             commentOptional.get().setRating(comment.getRating());
             commentOptional.get().setUser(comment.getUser());

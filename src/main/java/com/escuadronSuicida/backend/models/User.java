@@ -39,7 +39,18 @@ public class User {
     @Enumerated(EnumType.STRING)
     private UserRole userRole;
 
+
+/*
+    A mayores en un futuro bidireccional:
+
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    @ToString.Exclude
+    private List<TicketOrderBuy> ticketOrderBuys;
+
     @OneToMany(mappedBy = "opinion", cascade = CascadeType.ALL)
     @ToString.Exclude
     private List<Comment> comments;
+
+ */
 }

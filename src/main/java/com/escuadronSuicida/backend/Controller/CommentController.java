@@ -37,7 +37,7 @@ public class CommentController {
     public ResponseEntity<Comment> createComment(@RequestBody Comment comment) {
         Comment createdComment = commentService.createComment(comment);
         return  ResponseEntity.status(HttpStatus.CREATED).body(createdComment);
-        // return ResponseEntity.ok(commentRepository.save(comment); seria lo mismo pero sin usar CommentService
+        // return ResponseEntity.ok(commentRepository.save(comment); seria lo mismo pero sin llamar a CommentService
 
     }
     @PutMapping("comments/{id}")
