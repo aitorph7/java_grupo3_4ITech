@@ -40,5 +40,5 @@ public class User {
     private UserRole userRole;
 
     //@OneToMany(mappedBy = "opinion", cascade = CascadeType.ALL)
-    private List<Comment> comments;
+    //private List<Comment> comments;
 }
