@@ -1,30 +1,20 @@
 package com.escuadronSuicida.backend;
 
-import java.time.LocalDateTime;
-import java.util.List;
-
-import org.springfr amework.boot.SpringApplication;
+import com.escuadronSuicida.backend.models.*;
+import com.escuadronSuicida.backend.repository.*;
+import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 
-import com.escuadronSuicida.backend.models.DifficultyLevel;
-import com.escuadronSuicida.backend.models.Keynote;
-import com.escuadronSuicida.backend.models.Ticket;
-import com.escuadronSuicida.backend.models.TicketOrderBuy;
-import com.escuadronSuicida.backend.models.Track;
-import com.escuadronSuicida.backend.models.User;
-import com.escuadronSuicida.backend.models.UserRole;
-import com.escuadronSuicida.backend.repository.KeynoteRepository;
-import com.escuadronSuicida.backend.repository.TicketOrderBuyRepository;
-import com.escuadronSuicida.backend.repository.TicketRepository;
-import com.escuadronSuicida.backend.repository.TrackRepository;
-import com.escuadronSuicida.backend.repository.UserRepository;
+import java.time.LocalDateTime;
+import java.util.List;
 
 @SpringBootApplication
 public class Main {
 
 
 	public static void main(String[] args) {
+		
 		ApplicationContext context = SpringApplication.run(Main.class, args);
 
 		UserRepository userRepository = context.getBean(UserRepository.class);
@@ -43,8 +33,7 @@ public class Main {
 				"pablou1",
 				"pablou1",
 				"callePablo, 2, 28046, Madrid, Madrid",
-				UserRole.ATTENDEE,
-				null
+				UserRole.ATTENDEE
 		);
 		User user2 = new User(null,
 				"Oscar",
@@ -54,8 +43,8 @@ public class Main {
 				"oscaru2",
 				"oscaru2",
 				"calleOscar, 46, 28011, Madrid, Madrid",
-				UserRole.ATTENDEE,
-				null
+				UserRole.ATTENDEE
+
 		);
 		User user3 = new User(null,
 				"Trevor",
@@ -65,8 +54,7 @@ public class Main {
 				"trevor@apple.com",
 				"trevoru3",
 				"1234 TrevorSt, San Francisco, CA 94123, USA",
-				UserRole.SPEAKER,
-				null
+				UserRole.SPEAKER
 		);
 		User user4 = new User(null,
 				"Eutimio",
@@ -76,8 +64,8 @@ public class Main {
 				"eutimmiou4",
 				"eutimmiou4",
 				"calleEutimio, 23, 28004, Madrid, Madrid",
-				UserRole.ADMIN,
-				null
+				UserRole.ADMIN
+
 		);
 		User user5 = new User(null,
 				"Leocadia",
@@ -87,8 +75,7 @@ public class Main {
 				"leocadiau5",
 				"leocadiu5",
 				"calleLeocadia, 10, 02001, Albacete, Albacete",
-				UserRole.ATTENDEE,
-				null
+				UserRole.ATTENDEE
 		);
 		userRepository.saveAll(List.of(user1, user2, user3, user4, user5));
 
@@ -97,7 +84,7 @@ public class Main {
 		Room room3 = new Room(null, "Quantum Nexus Summit Arena", 200, true, null);
 		Room room4 = new Room(null, "NanoVerse Discovery Pavilion", 400, false, null);
 		Room room5 = new Room(null, "TechHorizon Visionarium", 350,false, null);
-		
+
 		roomRepository.saveAll(List.of(room1, room2, room3, room4, room5));
 
 		Track tr1 = new Track(1L,"Track 1", LocalDateTime.of(2024,5,29,9,0), LocalDateTime.of(2024,5,29,10,0));
@@ -118,49 +105,69 @@ public class Main {
 		Track tr16 = new Track(16L, "Track 16", LocalDateTime.of(2024,5,30,15,30), LocalDateTime.of(2024,5,30,16,30));
 		Track tr17 = new Track(17L, "Track 17", LocalDateTime.of(2024,5,30,16,30), LocalDateTime.of(2024,5,30,17,30));
 		Track tr18 = new Track(18L, "Track 18", LocalDateTime.of(2024,5,30,17,30), LocalDateTime.of(2024,5,30,18,0));
-		
+
 		trackRepository.saveAll(List.of(tr1, tr2, tr3, tr4, tr5, tr6, tr7, tr8, tr9, tr10, tr11, tr12, tr13,tr14,tr15,tr16,tr17,tr18));
 
 		Ticket ticket1 = new Ticket(null, "Ticket1", 50.0, 10);
 		Ticket ticket2 = new Ticket(null, "Ticket2", 50.0, 10);
 		Ticket ticket3 = new Ticket(null, "Ticket3", 50.0, 10);
-		
+
 		ticketRepo.saveAll(List.of(ticket1, ticket2, ticket3));
 
 		TicketOrderBuy ticketOrderBuy1 = new TicketOrderBuy(null, LocalDateTime.now(), 20.0, 50.0,10,"Tarjeta credito","ONLINE","CodigoqrUrl 1", null, null);
 		TicketOrderBuy ticketOrderBuy2 = new TicketOrderBuy(null, LocalDateTime.now(), 20.0, 50.0,10,"Tarjeta debito ","OFFLINE","CodigoqrUrl 2", null, null);
 		TicketOrderBuy ticketOrderBuy3 = new TicketOrderBuy(null, LocalDateTime.now(), 20.0, 50.0,10,"Tarjeta credito","ONLINE","CodigoqrUrl 3", null, null);
-		
+
 		ticketOrderBuyRepository.saveAll(List.of(ticketOrderBuy1, ticketOrderBuy2, ticketOrderBuy3));
 
-		Keynote keynote1 = new Keynote(1L, "Inteligencia Artificial", "Desarrollo e implicaciones de la IA en nuestra sociedad", "Descripcion detallada de la IA lorem ipsum......", "www.youtube.com", 22, 300,DifficultyLevel.JUNIOR,45,null,null);
-		Keynote keynote2 = new Keynote(2L, "La Era Digital JAVA", "Desarrollo de código Java Global", "Descripcion detallada de programación en JAVA......", "www.youtube.com", 17, 200,DifficultyLevel.SENIOR,60,null,null);
-		Keynote keynote3 = new Keynote(3L, "El Mejor Frontend con Angular ", "Desarrollo e implicaciones de la IA en nuestra sociedad", "Descripcion detallada Angular funcional lorem ipsum......", "www.youtube.com", 22, 300,DifficultyLevel.SEMI_SENIOR,45,null,null);
-		Keynote keynote4 = new Keynote(4L, "Salud Digital", "Desarrollo e implicaciones de la salud por el uso de las tecnologías de abuso en nuestra sociedad", "Descripcion detallada de la IA lorem ipsum......", "www.youtube.com", 5, 150,DifficultyLevel.SENIOR,50,null,null);
+		Keynote keynote1 = new Keynote(1L, "Inteligencia Artificial",
+				"Desarrollo e implicaciones de la IA en nuestra sociedad",
+				"Descripcion detallada de la IA lorem ipsum......", "www.youtube.com",
+				3, 300,DifficultyLevel.JUNIOR,45,null,tr3,null);
+		Keynote keynote2 = new Keynote(2L, "La Era Digital JAVA",
+				"Desarrollo de código Java Global",
+				"Descripcion detallada de programación en JAVA......", "www.youtube.com",
+				2, 200,DifficultyLevel.SENIOR,60,null,tr10,null);
+		Keynote keynote3 = new Keynote(3L, "El Mejor Frontend con Angular ",
+				"Desarrollo e implicaciones de la IA en nuestra sociedad",
+				"Descripcion detallada Angular funcional lorem ipsum......", "www.youtube.com",
+				1, 300,DifficultyLevel.SEMI_SENIOR,45,null,tr12,null);
+		Keynote keynote4 = new Keynote(4L, "Salud Digital",
+				"Desarrollo e implicaciones de la salud por el uso de las tecnologías de abuso en nuestra sociedad",
+				"Descripcion detallada de la IA lorem ipsum......", "www.youtube.com",
+				5, 150,DifficultyLevel.SENIOR,50,user3,tr18,null);
 
 		keynoteRepository.saveAll(List.of(keynote1,keynote2,keynote3,keynote4));
 
-		
+
 		Comment c1 = new Comment(1L,
-		3.0,
-		"Fascinante, revelando el increíble potencial creativo " +
-				"de las máquinas en la producción de contenido único y original.",
-		user1, null);
+				3.0,
+				"Fascinante, revelando el increíble potencial creativo " +
+						"de las máquinas en la producción de contenido único y original.",
+				user1, keynote4);
 		Comment c2 = new Comment(2L,
-		4.0,
-		"me dejó asombrado, destacando cómo la tecnología puede generar " +
-				"ideas innovadoras y abrir nuevas posibilidades en el ámbito " +
-				"creativo.",
-		user2, null);
+				4.0,
+				"me dejó asombrado, destacando cómo la tecnología puede generar " +
+						"ideas innovadoras y abrir nuevas posibilidades en el ámbito " +
+						"creativo.",
+				user2, keynote1);
 		Comment c3 = new Comment(3L,
-		4.0,
-		"fue esclarecedora, mostrando cómo estas avanzadas tecnologías " +
-				"están transformando la forma en que concebimos y creamos contenido " +
-				"de manera revolucionaria.",
-		user5, null);
-		
-		commentRepository.saveAll(List.of(c1, c2, c3));
+				5.0,
+				"fue esclarecedora, mostrando cómo estas avanzadas tecnologías " +
+						"están transformando la forma en que concebimos y creamos contenido " +
+						"de manera revolucionaria.",
+				user5, keynote2);
+		Comment c4 = new Comment(4L,
+				1.0,
+				"fue un poco desastre la ponencia no esclarecedora de estas avanzadas tecnologías que " +
+						"están transformando la manera en que concebimos y creamos contenido " +
+						"de manera revolucionaria.",
+				user4, keynote3);
 
 
+
+		commentRepository.saveAll(List.of(c1, c2, c3, c4));
+	
 	}
+
 }
