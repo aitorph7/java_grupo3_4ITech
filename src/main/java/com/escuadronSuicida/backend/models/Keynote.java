@@ -11,13 +11,10 @@ import java.util.List;
 @Getter
 @Setter
 @ToString
-
-@Entity
+@Entity /* Esta clase es una entidad y debe ser mapeada a una
+tabla en la BD. */
 @Table(name = "keynotes")
-
-public class Keynote {  // Charla
-
-    // atributos básicos
+public class Keynote {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -25,27 +22,25 @@ public class Keynote {  // Charla
     private String summary;  // sumary or descriptionShort
     private String description; // description or descriptionLong
     private String webinarUrl; // video youtube, zoom,
-    private Integer numRoom; // numero de sala
-    private Integer maxNumPersons; // aforo maximo - permitido un contador*
+    @OneToOne
+    @JoinColumn(name = "room_id")
+    private Room room; // numero de sala
+    private Long maxNumPersons; // aforo maximo - permitido un contador*
 
     @Enumerated(EnumType.STRING)
     private DifficultyLevel level;
-    // Opción 1:
-    // private Duration duration;
-    // Opción 2:
     private Integer durationInMin;
 
-
-    // Asociaciones: un solo speaker en cada charla
-    @ManyToOne
-    // @JoinColumn(name = "speaker_id")
-    private User speaker; // Many to One
+    @ManyToOne // Varias keynotes pueden tener un mismo Speaker.
+    @JoinColumn(name = "speaker_id")
+    private User speaker;
 
     @ManyToOne
     // @JoinColumn(name = "track_id") varias charlas en simultaneo
-    private Track track; // Many To One
+    private Track tracks; // Many To One
 
     //se refiere a cuantas charlas puedes ir ( no quiere decir en simultaneo)
     @ManyToMany
+    @ToString.Exclude
     private List<User> attendees = new ArrayList<>(); // Many To Many
 }
