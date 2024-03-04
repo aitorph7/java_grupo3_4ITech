@@ -7,9 +7,14 @@ import java.util.List;
 @Service
 public interface TrackService {
 
-   
 
-   
+    List<Track> findTracks();
 
+    Track findById(Long id);
 
+    Track createTrack(Track track);
+
+    boolean updateTrack(Long id, Track track);
+
+    boolean deleteTrack(Long id);
 }
