@@ -1,4 +1,4 @@
 package com.escuadronSuicida.backend.Controller;
 
-public class KeynoteController {
+public class RoomController {
 }
