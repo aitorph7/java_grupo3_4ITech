@@ -30,7 +30,6 @@ public class Comment {
      //una charla multiples comentarios
     @ManyToOne
     @JoinColumn(name = "keynote_id")
-//    @ToString.Exclude   // ??
-//    @JsonIgnoreProperties  // ??
+    @ToString.Exclude
     private Keynote keynote;
 }

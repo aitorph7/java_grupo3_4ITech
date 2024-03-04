@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class TrackServiceImpl implements TrackService{
+public class TrackServiceImpl implements TrackService {
 
     private TrackRepository trackRepository;
 
@@ -47,23 +47,23 @@ public class TrackServiceImpl implements TrackService{
     }
 
 
-    }
-
     @Override
-    public Track updateTrack(Long id, Track track) {
+    public boolean updateTrack(Long id, Track track) {
         Optional<Track> trackOptional = trackRepository.findById(id);
         if (trackOptional.isPresent()) {
-            trackOptional.get().setName(track.getName());
-            trackOptional.get().setStartDate(track.getStartDate());
-            trackOptional.get().setEndDate(track.getEndDate());
+            Track trackFromDatabase = trackOptional.get();
+            trackFromDatabase.setName(track.getName());
+            trackFromDatabase.setStartDate(track.getStartDate());
+            trackFromDatabase.setEndDate(track.getEndDate());
+            trackRepository.save(trackFromDatabase);
+
+            return true;
             // esto es actualizar solo esos atributos como sea necesario, aunque en este caso son todos.
-            return trackRepository.save(trackOptional.get());
         } else {
-        return null;
+            return false;
         }
-
-
     }
+
 
     @Override
     public boolean deleteTrack(Long id) {
@@ -75,6 +75,7 @@ public class TrackServiceImpl implements TrackService{
         } else {
             return false;
         }
+
 
     }
 }
