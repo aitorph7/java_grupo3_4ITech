@@ -14,7 +14,7 @@ public interface TrackService {
 
     Track createTrack(Track track);
 
-    boolean updateTrack(Long id, Track track);
+    Track updateTrack(Long id, Track track);
 
     boolean deleteTrack(Long id);
 }

@@ -48,19 +48,18 @@ public class TrackServiceImpl implements TrackService {
 
 
     @Override
-    public boolean updateTrack(Long id, Track track) {
+    public Track updateTrack(Long id, Track track) {
         Optional<Track> trackOptional = trackRepository.findById(id);
         if (trackOptional.isPresent()) {
             Track trackFromDatabase = trackOptional.get();
             trackFromDatabase.setName(track.getName());
             trackFromDatabase.setStartDate(track.getStartDate());
             trackFromDatabase.setEndDate(track.getEndDate());
-            trackRepository.save(trackFromDatabase);
+            return trackRepository.save(trackFromDatabase);
 
-            return true;
             // esto es actualizar solo esos atributos como sea necesario, aunque en este caso son todos.
         } else {
-            return false;
+            return null;
         }
     }
 
