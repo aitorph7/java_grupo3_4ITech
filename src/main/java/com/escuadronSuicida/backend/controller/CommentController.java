@@ -1,4 +1,4 @@
-package com.escuadronSuicida.backend.Controller;
+package com.escuadronSuicida.backend.controller;
 
 import com.escuadronSuicida.backend.models.Comment;
 import com.escuadronSuicida.backend.services.CommentService;
