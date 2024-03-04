@@ -7,9 +7,7 @@ import java.util.List;
 @Service
 public interface KeynoteService {
 
-    List<Keynote> findKeynote();
 
-    Keynote findById(Long id);
 
 
 }
