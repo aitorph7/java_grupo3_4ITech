@@ -2,6 +2,9 @@ package com.escuadronSuicida.backend.services;
 
 import com.escuadronSuicida.backend.models.Comment;
 import com.escuadronSuicida.backend.repository.CommentRepository;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -29,8 +32,17 @@ public class CommentServiceImpl implements CommentService{
 
     @Override
     public Comment createComment(Comment comment) {
+        Logger logger = LoggerFactory.getLogger(Comment.class);
+        try {
+            return commentRepository.save(comment);
+        } catch (Exception e) {
+            // Registrar el error
+            logger.error("Hubo un error al crear el comment", e);
 
-        return commentRepository.save(comment);
+            // Lanzar una nueva excepción
+            throw new RuntimeException("Hubo un error al crear el comment: " + e.getMessage(), e);
+        }
+
     }
 
     @Override
