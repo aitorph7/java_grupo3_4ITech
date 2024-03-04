@@ -80,7 +80,7 @@ public class Main {
 		userRepository.saveAll(List.of(user1, user2, user3, user4, user5));
 
 		Room room1 = new Room(null, "Innovation Tech Hall", 500, false, null);
-		Room room2 = new Room(null, "ByteSphere Convergence Hall", 350, false, null);
+		Room room2 = new Room(null, "ByteSphere Convergence Hall", 350, false,null );
 		Room room3 = new Room(null, "Quantum Nexus Summit Arena", 200, true, null);
 		Room room4 = new Room(null, "NanoVerse Discovery Pavilion", 400, false, null);
 		Room room5 = new Room(null, "TechHorizon Visionarium", 350,false, null);
