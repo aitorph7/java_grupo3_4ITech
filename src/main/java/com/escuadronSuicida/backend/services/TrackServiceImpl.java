@@ -2,6 +2,9 @@ package com.escuadronSuicida.backend.services;
 
 import com.escuadronSuicida.backend.models.Track;
 import com.escuadronSuicida.backend.repository.TrackRepository;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -31,7 +34,18 @@ public class TrackServiceImpl implements TrackService{
 
     @Override
     public Track createTrack(Track track) {
-        return trackRepository.save(track);
+        Logger logger = LoggerFactory.getLogger(Track.class);
+        try {
+            return trackRepository.save(track);
+        } catch (Exception e) {
+            // Registrar el error
+            logger.error("Hubo un error al crear el track", e);
+
+            // Lanzar una nueva excepción
+            throw new RuntimeException("Hubo un error al crear el track: " + e.getMessage(), e);
+        }
+    }
+
 
     }
 
