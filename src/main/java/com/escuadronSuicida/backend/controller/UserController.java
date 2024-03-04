@@ -1,4 +1,4 @@
-package com.escuadronSuicida.backend.controller;
+package com.escuadronSuicida.backend.Controller;
 
 import com.escuadronSuicida.backend.models.User;
 import com.escuadronSuicida.backend.repository.UserRepository;
