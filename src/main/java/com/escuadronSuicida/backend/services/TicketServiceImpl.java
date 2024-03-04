@@ -25,6 +25,6 @@ public class TicketServiceImpl implements TicketService{
 
     @Override
     public Ticket findById(Long id) {
-        return null;
+        return ticketRepository.findById(id).orElse(null);
     }
 }
