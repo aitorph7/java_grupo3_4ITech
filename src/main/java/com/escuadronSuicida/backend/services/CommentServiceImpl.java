@@ -13,7 +13,7 @@ import java.util.Optional;
 @Service
 public class CommentServiceImpl implements CommentService{
 
-    private CommentRepository commentRepository;
+    private final CommentRepository commentRepository;
 
     public CommentServiceImpl(CommentRepository commentRepository) {
 

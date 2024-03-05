@@ -13,7 +13,7 @@ import java.util.Optional;
 @Service
 public class TrackServiceImpl implements TrackService {
 
-    private TrackRepository trackRepository;
+    private final TrackRepository trackRepository;
 
     public TrackServiceImpl(TrackRepository trackRepository) {
         this.trackRepository = trackRepository;
