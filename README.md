@@ -8,7 +8,12 @@
  https://www.trgcon.com/#what
  ...
 
- ## NOVEDADES MIERCOLES 21 DE FEBRERO 2024 ##
+## TESTEAR EL BACKEND CON OpenAPI ##
+Para poder testear el correcto funcionamiento de los controladores de cada entidad:
+Abrir MySQL Workbench, iniciar el archivo Main del backend, comprobar que se crean las tablas en BD y abrir la siguiente url en el navegador web:
+http://localhost:8080/swagger-ui/index.html
+
+## NOVEDADES MIÉRCOLES 21 DE FEBRERO 2024 ##
  Ya tenemos nombre para el evento y para el proyecto‼️
  << @4iTech >>
  Incluso tenemos diferentes diseños de logotipo (todos muy molones) entre los que elegir😍
