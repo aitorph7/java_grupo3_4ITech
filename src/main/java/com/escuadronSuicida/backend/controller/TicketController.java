@@ -14,6 +14,7 @@ import java.util.List;
 @RestController
 @RequestMapping("tickets")
 @AllArgsConstructor
+@CrossOrigin("*")
 
 
 public class TicketController {

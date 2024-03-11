@@ -11,6 +11,7 @@ import java.util.List;
 @RestController
 @RequestMapping("ticketOrderBuys")
 @AllArgsConstructor
+@CrossOrigin("*")
 
 
 public class TicketOrderBuyController {
