@@ -122,19 +122,19 @@ public class Main {
 
 		Keynote keynote1 = new Keynote(1L, "Inteligencia Artificial",
 				"Desarrollo e implicaciones de la IA en nuestra sociedad",
-				"Descripcion detallada de la IA lorem ipsum......", "www.youtube.com",
+				"Descripcion detallada de la IA lorem ipsum......", "/assets/keynotes/AI.jpeg",
 				null, 300L,DifficultyLevel.JUNIOR,45,null,tr3,null);
 		Keynote keynote2 = new Keynote(2L, "La Era Digital JAVA",
 				"Desarrollo de código Java Global",
-				"Descripcion detallada de programación en JAVA......", "www.youtube.com",
+				"Descripcion detallada de programación en JAVA......", "/assets/keynotes/Angular.jpeg",
 				null, 200L,DifficultyLevel.SENIOR,60,null,tr10,null);
 		Keynote keynote3 = new Keynote(3L, "El Mejor Frontend con Angular ",
 				"Desarrollo e implicaciones de la IA en nuestra sociedad",
-				"Descripcion detallada Angular funcional lorem ipsum......", "www.youtube.com",
+				"Descripcion detallada Angular funcional lorem ipsum......", "/assets/keynotes/Java.jpeg",
 				null, 300L,DifficultyLevel.SEMI_SENIOR,45,null,tr12,null);
 		Keynote keynote4 = new Keynote(4L, "Salud Digital",
 				"Desarrollo e implicaciones de la salud por el uso de las tecnologías de abuso en nuestra sociedad",
-				"Descripcion detallada de la IA lorem ipsum......", "www.youtube.com",
+				"Descripcion detallada de la IA lorem ipsum......", "/assets/keynotes/salud-digital.jpeg",
 				null, 150L,DifficultyLevel.SENIOR,50,user3,tr18,null);
 
 		keynoteRepository.saveAll(List.of(keynote1,keynote2,keynote3,keynote4));
