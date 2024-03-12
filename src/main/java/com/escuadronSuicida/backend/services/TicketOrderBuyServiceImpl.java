@@ -1,5 +1,6 @@
 package com.escuadronSuicida.backend.services;
 
+import com.escuadronSuicida.backend.models.Keynote;
 import com.escuadronSuicida.backend.models.TicketOrderBuy;
 import com.escuadronSuicida.backend.repository.TicketOrderBuyRepository;
 import org.springframework.stereotype.Service;
@@ -17,13 +18,13 @@ public class TicketOrderBuyServiceImpl implements TicketOrderBuyService{
 
     @Override
     public List<TicketOrderBuy> findTicketOrderBuy() {
-        return null;
+        return ticketOrderBuyRepository.findAll();
+
     }
 
     @Override
     public TicketOrderBuy findById(Long id) {
-        return null;
+        return ticketOrderBuyRepository.findById(id).get();
     }
-
 
 }

@@ -21,6 +21,7 @@ public class TicketOrderBuyController {
     @GetMapping
     public ResponseEntity<List<TicketOrderBuy>> findAll(){
         List<TicketOrderBuy> ticketOrderBuys = ticketOrderBuyService.findTicketOrderBuy();
+        System.out.println(ticketOrderBuys);
         return ResponseEntity.ok(ticketOrderBuys);
     }
 

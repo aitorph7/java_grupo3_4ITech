@@ -2,6 +2,7 @@ package com.escuadronSuicida.backend.services;
 
 
 import com.escuadronSuicida.backend.models.Ticket;
+import com.escuadronSuicida.backend.models.TicketOrderBuy;
 import com.escuadronSuicida.backend.repository.TicketRepository;
 import org.springframework.stereotype.Service;
 
@@ -20,11 +21,12 @@ public class TicketServiceImpl implements TicketService{
 
     @Override
     public List<Ticket> findTicket() {
-        return null;
+        return ticketRepository.findAll();
+
     }
 
     @Override
     public Ticket findById(Long id) {
-        return ticketRepository.findById(id).orElse(null);
+        return ticketRepository.findById(id).get();
     }
 }
