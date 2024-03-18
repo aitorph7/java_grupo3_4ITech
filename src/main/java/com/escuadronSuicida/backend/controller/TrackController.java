@@ -20,6 +20,7 @@ public class TrackController {
 
     @GetMapping("tracks")
    public ResponseEntity<List<Track>> findAll() {
+        System.out.println("invocando findAll de tracks");
         List<Track> tracks = trackService.findTracks();
         return ResponseEntity.ok(tracks);
     }
