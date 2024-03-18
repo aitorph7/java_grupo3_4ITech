@@ -28,7 +28,7 @@ public class Keynote {
     private Long maxNumPersons; // aforo maximo - permitido un contador*
 
     @Enumerated(EnumType.STRING)
-    private DifficultyLevel level;
+    private DifficultyLevel difficultyLevel;
     private Integer durationInMin;
 
     @ManyToOne // Varias keynotes pueden tener un mismo Speaker.

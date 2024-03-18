@@ -31,7 +31,7 @@ public class KeynoteController {
 
     private KeynoteRepository repo;
 
-    @PostMapping("/keynotes")
+    @PostMapping
     public ResponseEntity<Keynote> create(@RequestBody Keynote keynote) {
 
         try {
@@ -43,14 +43,28 @@ public class KeynoteController {
     }
 
 
-    @PutMapping("keynote/{id}")
+    @PutMapping("{id}")
     public Keynote update(@RequestBody Keynote keynote,@PathVariable Long id){
+        System.out.println(keynote);
         return repo.save(keynote);
     }
 
 
-    @DeleteMapping("keynote/{id}")
+    @DeleteMapping("{id}")
     public void delete(@PathVariable Long id) {
+        // TODO
+
+        // Desasociar keynote de comentarios
+        // commentRepository.findByKeynoteId()
+        // for
+        // setKeynote null
+        // save comments
+
+
+        // borrar
+        // commentRepository.findByKeynoteId()
+        // for
+        // delete de cada comment
         repo.deleteById(id);
     }
 }

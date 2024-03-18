@@ -124,20 +124,20 @@ public class Main {
 				"Desarrollo e implicaciones de la IA en nuestra sociedad",
 				"La inteligencia artificial (IA) ha experimentado un desarrollo exponencial en las últimas décadas. Los avances en algoritmos, hardware y la disponibilidad de grandes cantidades de datos han impulsado su crecimiento.",
 				"/assets/keynotes/AI.jpeg",
-				null, 300L,DifficultyLevel.JUNIOR,45,null,tr3,null);
+				room1, 300L,DifficultyLevel.JUNIOR,45,null,tr3,null);
 		Keynote keynote2 = new Keynote(2L, "La Era Digital JAVA",
 				"Desarrollo de código Java Global",
-				"Java es un lenguaje de programación de propósito general, creado por Sun Microsystems en 1995. Su desarrollo se basó en la idea de crear un lenguaje orientado a objetos, robusto, seguro, portable y de alto rendimiento.", "/assets/keynotes/Angular.jpeg",
-				null, 200L,DifficultyLevel.SENIOR,60,null,tr10,null);
+				"Java es un lenguaje de programación de propósito general, creado por Sun Microsystems en 1995. Su desarrollo se basó en la idea de crear un lenguaje orientado a objetos, robusto, seguro, portable y de alto rendimiento.", "/assets/keynotes/Java.jpeg",
+				room2, 200L,DifficultyLevel.SENIOR,60,null,tr10,null);
 		Keynote keynote3 = new Keynote(3L, "El Mejor Frontend con Angular ",
 				"Desarrollo e implicaciones de la IA en nuestra sociedad",
 				"Angular es un framework de desarrollo web de código abierto, basado en TypeScript, creado y mantenido por Google. Se utiliza para crear aplicaciones web de una sola página (SPA) dinámicas e interactivas.",
-				"/assets/keynotes/Java.jpeg",
-				null, 300L,DifficultyLevel.SEMI_SENIOR,45,null,tr12,null);
+				"/assets/keynotes/Angular.jpeg",
+				room4, 300L,DifficultyLevel.SEMI_SENIOR,45,null,tr12,null);
 		Keynote keynote4 = new Keynote(4L, "Salud Digital",
 				"Desarrollo e implicaciones de la salud por el uso de las tecnologías de abuso en nuestra sociedad",
 				"El desarrollo de las tecnologías de abuso ha ido en aumento en los últimos años. Estas tecnologías incluyen el uso de internet, las redes sociales, los videojuegos y los teléfonos móviles de forma excesiva o compulsiva.", "/assets/keynotes/salud-digital.jpeg",
-				null, 150L,DifficultyLevel.SENIOR,50,user3,tr18,null);
+				room3, 150L,DifficultyLevel.SENIOR,50,user3,tr18,null);
 
 		keynoteRepository.saveAll(List.of(keynote1,keynote2,keynote3,keynote4));
 

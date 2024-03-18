@@ -34,7 +34,7 @@ public class TicketOrderBuyController {
 
     private TicketOrderBuyRepository repo;
 
-    @PostMapping("/ticketsOrderBuys")
+    @PostMapping
     public ResponseEntity<TicketOrderBuy> create(@RequestBody TicketOrderBuy ticketOrderBuy) {
 
         try {
@@ -46,13 +46,13 @@ public class TicketOrderBuyController {
     }
 
 
-    @PutMapping("ticket/{id}")
+    @PutMapping("{id}")
     public TicketOrderBuy update(@RequestBody TicketOrderBuy ticketOrderBuy, @PathVariable Long id){
         return repo.save(ticketOrderBuy);
     }
 
 
-    @DeleteMapping("ticket/{id}")
+    @DeleteMapping("{id}")
     public void delete(@PathVariable Long id) {
         repo.deleteById(id);
     }
