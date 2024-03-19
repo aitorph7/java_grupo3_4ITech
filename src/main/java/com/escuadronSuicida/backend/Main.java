@@ -6,6 +6,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -114,9 +115,9 @@ public class Main {
 
 		ticketRepo.saveAll(List.of(ticket1, ticket2, ticket3));
 
-		TicketOrderBuy ticketOrderBuy1 = new TicketOrderBuy(null, LocalDateTime.now(), 20.0, 50.0,10,"Tarjeta credito","ONLINE","CodigoqrUrl 1", null, null);
-		TicketOrderBuy ticketOrderBuy2 = new TicketOrderBuy(null, LocalDateTime.now(), 20.0, 50.0,10,"Tarjeta debito ","OFFLINE","CodigoqrUrl 2", null, null);
-		TicketOrderBuy ticketOrderBuy3 = new TicketOrderBuy(null, LocalDateTime.now(), 20.0, 50.0,10,"Tarjeta credito","ONLINE","CodigoqrUrl 3", null, null);
+		TicketOrderBuy ticketOrderBuy1 = new TicketOrderBuy(null, LocalDate.now(), 20.0, 50.0,10,"Tarjeta credito","ONLINE","CodigoqrUrl 1", null, null);
+		TicketOrderBuy ticketOrderBuy2 = new TicketOrderBuy(null, LocalDate.now(), 20.0, 50.0,10,"Tarjeta debito ","OFFLINE","CodigoqrUrl 2", null, null);
+		TicketOrderBuy ticketOrderBuy3 = new TicketOrderBuy(null, LocalDate.now(), 20.0, 50.0,10,"Tarjeta credito","ONLINE","CodigoqrUrl 3", null, null);
 
 		ticketOrderBuyRepository.saveAll(List.of(ticketOrderBuy1, ticketOrderBuy2, ticketOrderBuy3));
 

@@ -36,7 +36,7 @@ public class TicketOrderBuyController {
 
     @PostMapping
     public ResponseEntity<TicketOrderBuy> create(@RequestBody TicketOrderBuy ticketOrderBuy) {
-
+        System.out.println(ticketOrderBuy);
         try {
             return ResponseEntity.ok(repo.save(ticketOrderBuy));
         }catch (Exception e) {
