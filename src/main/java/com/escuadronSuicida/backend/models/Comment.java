@@ -17,7 +17,7 @@ public class Comment {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column(name = "valoracion")
-    private Double rating;
+    private Integer rating;
     @Column(name="reseña",length = 2000)
     private String opinion;
 

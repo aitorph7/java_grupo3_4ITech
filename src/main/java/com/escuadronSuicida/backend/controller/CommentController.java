@@ -29,7 +29,7 @@ public class CommentController {
         if (comment!=null) {
             return ResponseEntity.ok(comment);
             } else {
-                return ResponseEntity.notFound().build();
+            return ResponseEntity.notFound().build();
 
         }
     }
@@ -41,7 +41,7 @@ public class CommentController {
 
     }
     @PutMapping("comments/{id}")
-    public ResponseEntity<Comment> updateTrack(@PathVariable Long id, @RequestBody Comment comment) {
+    public ResponseEntity<Comment> updateComment(@PathVariable Long id, @RequestBody Comment comment) {
         Comment updatedComment = commentService.updateComment(id,comment);
         if (updatedComment != null) {
             return ResponseEntity.ok(updatedComment);
