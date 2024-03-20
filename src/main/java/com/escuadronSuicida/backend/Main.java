@@ -143,24 +143,24 @@ public class Main {
 
 
 		Comment c1 = new Comment(1L,
-				3.0,
+				3,
 				"Fascinante, revelando el increíble potencial creativo " +
 						"de las máquinas en la producción de contenido único y original.",
 				user1, keynote4);
 		Comment c2 = new Comment(2L,
-				4.0,
+				4,
 				"me dejó asombrado, destacando cómo la tecnología puede generar " +
 						"ideas innovadoras y abrir nuevas posibilidades en el ámbito " +
 						"creativo.",
 				user2, keynote1);
 		Comment c3 = new Comment(3L,
-				5.0,
+				5,
 				"fue esclarecedora, mostrando cómo estas avanzadas tecnologías " +
 						"están transformando la forma en que concebimos y creamos contenido " +
 						"de manera revolucionaria.",
 				user5, keynote2);
 		Comment c4 = new Comment(4L,
-				1.0,
+				1,
 				"fue un poco desastre la ponencia no esclarecedora de estas avanzadas tecnologías que " +
 						"están transformando la manera en que concebimos y creamos contenido " +
 						"de manera revolucionaria.",
