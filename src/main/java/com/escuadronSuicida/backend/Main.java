@@ -122,7 +122,37 @@ public class Main {
 
 		Keynote keynote1 = new Keynote(1L, "Inteligencia Artificial",
 				"Desarrollo e implicaciones de la IA en nuestra sociedad",
-				"La inteligencia artificial (IA) ha experimentado un desarrollo exponencial en las últimas décadas. Los avances en algoritmos, hardware y la disponibilidad de grandes cantidades de datos han impulsado su crecimiento.",
+				"La inteligencia artificial (IA) ha experimentado un desarrollo exponencial en las últimas décadas. Los avances en algoritmos, hardware y la disponibilidad de grandes cantidades de datos han impulsado su crecimiento. En este evento, exploraremos las últimas tendencias en IA y su impacto en diferentes sectores. Expertos de la industria compartirán sus conocimientos sobre las aplicaciones prácticas de la IA en áreas como la medicina, las finanzas, el transporte, la educación y mucho más.\n" +
+						"\n" +
+						"También tendremos la oportunidad de participar en debates y mesas redondas para discutir los desafíos y oportunidades que presenta la IA. Aprenderemos cómo podemos aprovechar el poder de la IA para crear un futuro mejor para todos.\n" +
+						"\n" +
+						"Este evento es ideal para:\n" +
+						"\n" +
+						"Profesionales que buscan conocer las últimas tendencias en IA\n" +
+						"Emprendedores que buscan explorar nuevas oportunidades de negocio\n" +
+						"Estudiantes que quieren aprender sobre el futuro de la tecnología\n" +
+						"Cualquier persona interesada en el impacto de la IA en la sociedad\n" +
+						"No pierdas la oportunidad de ser parte de esta conversación crucial sobre el futuro de la inteligencia artificial.\n" +
+						"\n" +
+						"¡Reserva tu lugar hoy mismo!\n" +
+						"\n" +
+						"Aquí hay algunos temas específicos que podrían abordarse en el evento:\n" +
+						"\n" +
+						"El impacto de la IA en el mercado laboral: ¿Cómo afectará la IA a los trabajos existentes? ¿Qué nuevas oportunidades se crearán?\n" +
+						"Los desafíos éticos de la IA: ¿Cómo podemos asegurarnos de que la IA se use de forma responsable y ética?\n" +
+						"El futuro de la IA: ¿Cuáles son las aplicaciones más prometedoras de la IA en los próximos años?\n" +
+						"Además de las ponencias y mesas redondas, el evento podría incluir:\n" +
+						"\n" +
+						"Demostraciones de tecnología: Presentaciones de las últimas tecnologías de IA en acción.\n" +
+						"Talleres prácticos: Oportunidades para aprender a usar herramientas de IA.\n" +
+						"Networking: Oportunidades para conectar con otros profesionales interesados en la IA.\n" +
+						"Al participar en este evento, los asistentes podrán:\n" +
+						"\n" +
+						"Obtener una comprensión completa del panorama actual de la IA.\n" +
+						"Aprender sobre las aplicaciones prácticas de la IA en diferentes sectores.\n" +
+						"Conocer a expertos en IA y establecer contactos con otros profesionales.\n" +
+						"Reflexionar sobre los desafíos y oportunidades que presenta la IA para el futuro.\n" +
+						"Este evento es una oportunidad única para aprender sobre la IA y su impacto en el mundo.",
 				"/assets/keynotes/AI.jpeg",
 				room1, 300L,DifficultyLevel.JUNIOR,45,null,tr3,null);
 		Keynote keynote2 = new Keynote(2L, "La Era Digital JAVA",
