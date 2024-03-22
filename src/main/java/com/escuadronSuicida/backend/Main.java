@@ -157,16 +157,16 @@ public class Main {
 				room1, 300L,DifficultyLevel.JUNIOR,45,null,tr3,null);
 		Keynote keynote2 = new Keynote(2L, "La Era Digital JAVA",
 				"Desarrollo de código Java Global",
-				"Java es un lenguaje de programación de propósito general, creado por Sun Microsystems en 1995. Su desarrollo se basó en la idea de crear un lenguaje orientado a objetos, robusto, seguro, portable y de alto rendimiento.", "/assets/keynotes/Java.jpeg",
+				"Java es un lenguaje de programación de propósito general, creado por Sun Microsystems en 1995. Su desarrollo se basó en la idea de crear un lenguaje orientado a objetos, robusto, seguro, portable y de alto rendimiento.\n La era digital Java marca un período en el que la tecnología Java se ha convertido en una fuerza omnipresente, impulsando una amplia gama de aplicaciones y sistemas que transforman la forma en que vivimos, trabajamos y jugamos. Desde el desarrollo web a gran escala hasta la creación de aplicaciones móviles omnipresentes, Java se ha convertido en el lenguaje de programación de elección para construir soluciones digitales robustas y escalables.", "/assets/keynotes/Java.jpeg",
 				room2, 200L,DifficultyLevel.SENIOR,60,null,tr10,null);
 		Keynote keynote3 = new Keynote(3L, "El Mejor Frontend con Angular ",
-				"Desarrollo e implicaciones de la IA en nuestra sociedad",
-				"Angular es un framework de desarrollo web de código abierto, basado en TypeScript, creado y mantenido por Google. Se utiliza para crear aplicaciones web de una sola página (SPA) dinámicas e interactivas.",
+				"Ventajas de Angular como framework para desarrollar interfaces de usuario (frontends) de alta calidad.",
+				"Angular es un framework de desarrollo web de código abierto, basado en TypeScript, creado y mantenido por Google. Se utiliza para crear aplicaciones web de una sola página (SPA) dinámicas e interactivas. El mejor frontend con Angular no es solo una frase, es una realidad tangible para aquellos que buscan crear interfaces de usuario web que sean atractivas, interactivas, eficientes y escalables. En resumen, si buscas crear interfaces de usuario web excepcionales que sean atractivas, interactivas, eficientes, escalables y respaldadas por una comunidad vibrante, Angular es la mejor opción para tu proyecto. ",
 				"/assets/keynotes/Angular.jpeg",
 				room4, 300L,DifficultyLevel.SEMI_SENIOR,45,null,tr12,null);
 		Keynote keynote4 = new Keynote(4L, "Salud Digital",
 				"Desarrollo e implicaciones de la salud por el uso de las tecnologías de abuso en nuestra sociedad",
-				"El desarrollo de las tecnologías de abuso ha ido en aumento en los últimos años. Estas tecnologías incluyen el uso de internet, las redes sociales, los videojuegos y los teléfonos móviles de forma excesiva o compulsiva.", "/assets/keynotes/salud-digital.jpeg",
+				"El desarrollo de las tecnologías de abuso ha ido en aumento en los últimos años. Estas tecnologías incluyen el uso de internet, las redes sociales, los videojuegos y los teléfonos móviles de forma excesiva o compulsiva. La Salud Digital es un campo en constante evolución que utiliza las tecnologías de la información y la comunicación (TIC) para mejorar la salud y el bienestar de las personas. Su objetivo es transformar la atención médica tradicional, haciéndola más accesible, eficiente, personalizada y preventiva.", "/assets/keynotes/salud-digital.jpeg",
 				room3, 150L,DifficultyLevel.SENIOR,50,user3,tr18,null);
 
 		keynoteRepository.saveAll(List.of(keynote1,keynote2,keynote3,keynote4));
