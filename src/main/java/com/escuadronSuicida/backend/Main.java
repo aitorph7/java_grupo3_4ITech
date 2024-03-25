@@ -159,7 +159,7 @@ public class Main {
 				"Desarrollo de código Java Global",
 				"Java es un lenguaje de programación de propósito general, creado por Sun Microsystems en 1995. Su desarrollo se basó en la idea de crear un lenguaje orientado a objetos, robusto, seguro, portable y de alto rendimiento.\n La era digital Java marca un período en el que la tecnología Java se ha convertido en una fuerza omnipresente, impulsando una amplia gama de aplicaciones y sistemas que transforman la forma en que vivimos, trabajamos y jugamos. Desde el desarrollo web a gran escala hasta la creación de aplicaciones móviles omnipresentes, Java se ha convertido en el lenguaje de programación de elección para construir soluciones digitales robustas y escalables.", "/assets/keynotes/Java.jpeg",
 				room2, 200L,DifficultyLevel.SENIOR,60,null,tr10,null);
-		Keynote keynote3 = new Keynote(3L, "El Mejor Frontend con Angular ",
+		Keynote keynote3 = new Keynote(3L, "El Mejor Front con Angular ",
 				"Ventajas de Angular como framework para desarrollar interfaces de usuario (frontends) de alta calidad.",
 				"Angular es un framework de desarrollo web de código abierto, basado en TypeScript, creado y mantenido por Google. Se utiliza para crear aplicaciones web de una sola página (SPA) dinámicas e interactivas. El mejor frontend con Angular no es solo una frase, es una realidad tangible para aquellos que buscan crear interfaces de usuario web que sean atractivas, interactivas, eficientes y escalables. En resumen, si buscas crear interfaces de usuario web excepcionales que sean atractivas, interactivas, eficientes, escalables y respaldadas por una comunidad vibrante, Angular es la mejor opción para tu proyecto. ",
 				"/assets/keynotes/Angular.jpeg",
