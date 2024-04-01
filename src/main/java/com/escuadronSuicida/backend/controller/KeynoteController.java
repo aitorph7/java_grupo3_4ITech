@@ -19,6 +19,7 @@ public class KeynoteController {
 
     @GetMapping
     public ResponseEntity<List<Keynote>> findAll(){
+        // keynoteService.findAllPublishedTrue();
         List<Keynote> keynote = keynoteService.findKeynote();
         return ResponseEntity.ok(keynote);
     }

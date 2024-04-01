@@ -2,6 +2,7 @@ package com.escuadronSuicida.backend.models;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.mapping.ToOne;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,7 +26,7 @@ public class Keynote {
     private String description; // description or descriptionLong
 
     private String webinarUrl; // video youtube, zoom,
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "room_id")
     private Room room; // numero de sala
     private Long maxNumPersons; // aforo maximo - permitido un contador*
