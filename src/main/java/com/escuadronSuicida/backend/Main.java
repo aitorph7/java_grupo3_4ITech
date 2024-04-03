@@ -122,51 +122,21 @@ public class Main {
 
 		Keynote keynote1 = new Keynote(1L, "Inteligencia Artificial",
 				"Desarrollo e implicaciones de la IA en nuestra sociedad",
-				"La inteligencia artificial (IA) ha experimentado un desarrollo exponencial en las últimas décadas. Los avances en algoritmos, hardware y la disponibilidad de grandes cantidades de datos han impulsado su crecimiento. En este evento, exploraremos las últimas tendencias en IA y su impacto en diferentes sectores. Expertos de la industria compartirán sus conocimientos sobre las aplicaciones prácticas de la IA en áreas como la medicina, las finanzas, el transporte, la educación y mucho más.\n" +
-						"\n" +
-						"También tendremos la oportunidad de participar en debates y mesas redondas para discutir los desafíos y oportunidades que presenta la IA. Aprenderemos cómo podemos aprovechar el poder de la IA para crear un futuro mejor para todos.\n" +
-						"\n" +
-						"Este evento es ideal para:\n" +
-						"\n" +
-						"Profesionales que buscan conocer las últimas tendencias en IA\n" +
-						"Emprendedores que buscan explorar nuevas oportunidades de negocio\n" +
-						"Estudiantes que quieren aprender sobre el futuro de la tecnología\n" +
-						"Cualquier persona interesada en el impacto de la IA en la sociedad\n" +
-						"No pierdas la oportunidad de ser parte de esta conversación crucial sobre el futuro de la inteligencia artificial.\n" +
-						"\n" +
-						"¡Reserva tu lugar hoy mismo!\n" +
-						"\n" +
-						"Aquí hay algunos temas específicos que podrían abordarse en el evento:\n" +
-						"\n" +
-						"El impacto de la IA en el mercado laboral: ¿Cómo afectará la IA a los trabajos existentes? ¿Qué nuevas oportunidades se crearán?\n" +
-						"Los desafíos éticos de la IA: ¿Cómo podemos asegurarnos de que la IA se use de forma responsable y ética?\n" +
-						"El futuro de la IA: ¿Cuáles son las aplicaciones más prometedoras de la IA en los próximos años?\n" +
-						"Además de las ponencias y mesas redondas, el evento podría incluir:\n" +
-						"\n" +
-						"Demostraciones de tecnología: Presentaciones de las últimas tecnologías de IA en acción.\n" +
-						"Talleres prácticos: Oportunidades para aprender a usar herramientas de IA.\n" +
-						"Networking: Oportunidades para conectar con otros profesionales interesados en la IA.\n" +
-						"Al participar en este evento, los asistentes podrán:\n" +
-						"\n" +
-						"Obtener una comprensión completa del panorama actual de la IA.\n" +
-						"Aprender sobre las aplicaciones prácticas de la IA en diferentes sectores.\n" +
-						"Conocer a expertos en IA y establecer contactos con otros profesionales.\n" +
-						"Reflexionar sobre los desafíos y oportunidades que presenta la IA para el futuro.\n" +
-						"Este evento es una oportunidad única para aprender sobre la IA y su impacto en el mundo.",
+				"La inteligencia artificial (IA) ha experimentado un desarrollo exponencial en las últimas décadas. Los avances en algoritmos, hardware y la disponibilidad de grandes cantidades de datos han impulsado su crecimiento.",
 				"/assets/keynotes/AI.jpeg",
 				room1, 300L,DifficultyLevel.JUNIOR,45,null,tr3,null);
 		Keynote keynote2 = new Keynote(2L, "La Era Digital JAVA",
 				"Desarrollo de código Java Global",
-				"Java es un lenguaje de programación de propósito general, creado por Sun Microsystems en 1995. Su desarrollo se basó en la idea de crear un lenguaje orientado a objetos, robusto, seguro, portable y de alto rendimiento.\n La era digital Java marca un período en el que la tecnología Java se ha convertido en una fuerza omnipresente, impulsando una amplia gama de aplicaciones y sistemas que transforman la forma en que vivimos, trabajamos y jugamos. Desde el desarrollo web a gran escala hasta la creación de aplicaciones móviles omnipresentes, Java se ha convertido en el lenguaje de programación de elección para construir soluciones digitales robustas y escalables.", "/assets/keynotes/Java.jpeg",
+				"Java es un lenguaje de programación de propósito general, creado por Sun Microsystems en 1995. Su desarrollo se basó en la idea de crear un lenguaje orientado a objetos, robusto, seguro, portable y de alto rendimiento.", "/assets/keynotes/Java.jpeg",
 				room2, 200L,DifficultyLevel.SENIOR,60,null,tr10,null);
-		Keynote keynote3 = new Keynote(3L, "El Mejor Front con Angular ",
-				"Ventajas de Angular como framework para desarrollar interfaces de usuario (frontends) de alta calidad.",
-				"Angular es un framework de desarrollo web de código abierto, basado en TypeScript, creado y mantenido por Google. Se utiliza para crear aplicaciones web de una sola página (SPA) dinámicas e interactivas. El mejor frontend con Angular no es solo una frase, es una realidad tangible para aquellos que buscan crear interfaces de usuario web que sean atractivas, interactivas, eficientes y escalables. En resumen, si buscas crear interfaces de usuario web excepcionales que sean atractivas, interactivas, eficientes, escalables y respaldadas por una comunidad vibrante, Angular es la mejor opción para tu proyecto. ",
+		Keynote keynote3 = new Keynote(3L, "El Mejor Frontend con Angular ",
+				"Desarrollo e implicaciones de la IA en nuestra sociedad",
+				"Angular es un framework de desarrollo web de código abierto, basado en TypeScript, creado y mantenido por Google. Se utiliza para crear aplicaciones web de una sola página (SPA) dinámicas e interactivas.",
 				"/assets/keynotes/Angular.jpeg",
 				room4, 300L,DifficultyLevel.SEMI_SENIOR,45,null,tr12,null);
 		Keynote keynote4 = new Keynote(4L, "Salud Digital",
 				"Desarrollo e implicaciones de la salud por el uso de las tecnologías de abuso en nuestra sociedad",
-				"El desarrollo de las tecnologías de abuso ha ido en aumento en los últimos años. Estas tecnologías incluyen el uso de internet, las redes sociales, los videojuegos y los teléfonos móviles de forma excesiva o compulsiva. La Salud Digital es un campo en constante evolución que utiliza las tecnologías de la información y la comunicación (TIC) para mejorar la salud y el bienestar de las personas. Su objetivo es transformar la atención médica tradicional, haciéndola más accesible, eficiente, personalizada y preventiva.", "/assets/keynotes/salud-digital.jpeg",
+				"El desarrollo de las tecnologías de abuso ha ido en aumento en los últimos años. Estas tecnologías incluyen el uso de internet, las redes sociales, los videojuegos y los teléfonos móviles de forma excesiva o compulsiva.", "/assets/keynotes/salud-digital.jpeg",
 				room3, 150L,DifficultyLevel.SENIOR,50,user3,tr18,null);
 
 		keynoteRepository.saveAll(List.of(keynote1,keynote2,keynote3,keynote4));
@@ -176,25 +146,25 @@ public class Main {
 				3,
 				"Fascinante, revelando el increíble potencial creativo " +
 						"de las máquinas en la producción de contenido único y original.",
-				user1, keynote4);
+				LocalDateTime.now(),user1, keynote4);
 		Comment c2 = new Comment(2L,
 				4,
 				"me dejó asombrado, destacando cómo la tecnología puede generar " +
 						"ideas innovadoras y abrir nuevas posibilidades en el ámbito " +
 						"creativo.",
-				user2, keynote1);
+				LocalDateTime.now(),user2, keynote1);
 		Comment c3 = new Comment(3L,
 				5,
 				"fue esclarecedora, mostrando cómo estas avanzadas tecnologías " +
 						"están transformando la forma en que concebimos y creamos contenido " +
 						"de manera revolucionaria.",
-				user5, keynote2);
+				LocalDateTime.now(),user5, keynote2);
 		Comment c4 = new Comment(4L,
 				1,
 				"fue un poco desastre la ponencia no esclarecedora de estas avanzadas tecnologías que " +
 						"están transformando la manera en que concebimos y creamos contenido " +
 						"de manera revolucionaria.",
-				user4, keynote3);
+				LocalDateTime.now(),user4, keynote3);
 
 
 
