@@ -20,7 +20,7 @@ public class Comment {
     private Long id;
     @Column(name = "valoracion")
     private Integer rating;
-    @Column(name="reseña",length = 1500)
+    @Column(name="reseña",length = 1000)
     private String opinion;
 
     private LocalDateTime dateTime;
