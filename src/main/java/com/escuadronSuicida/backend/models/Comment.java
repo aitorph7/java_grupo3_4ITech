@@ -4,6 +4,8 @@ package com.escuadronSuicida.backend.models;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.time.LocalDateTime;
+
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
@@ -18,8 +20,10 @@ public class Comment {
     private Long id;
     @Column(name = "valoracion")
     private Integer rating;
-    @Column(name="reseña",length = 2000)
+    @Column(name="reseña",length = 1500)
     private String opinion;
+
+    private LocalDateTime dateTime;
 
     //un usuario muchos comentarios (bloquear muchos comentarios en una misma charla)
     @ManyToOne
