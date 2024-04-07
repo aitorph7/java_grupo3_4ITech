@@ -41,7 +41,8 @@ public class UserController {
         if (userOptional.isPresent()){
             User userfromDB = userOptional.get();
             userfromDB.setAddress(user.getAddress());
-            userfromDB.setPhone(user.getPhone()); // una vez creado el User en BD, permito que pueda modificar su dirección y teléfono.
+            userfromDB.setPhone(user.getPhone()); // una vez creado el User en BD, permito que solo pueda modificar
+            // su dirección y teléfono.
             userRepository.save(userfromDB);
             return ResponseEntity.ok(userfromDB);
         } else
