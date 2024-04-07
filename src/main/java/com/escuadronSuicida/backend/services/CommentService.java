@@ -8,7 +8,7 @@ import java.util.List;
 public interface CommentService {
 
 
-    List<Comment> findComments();
+    List<Comment> findCommentsOrderByDateTimeDesc();
 
     Comment findById(Long id);
 

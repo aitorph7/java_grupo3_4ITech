@@ -146,13 +146,13 @@ public class Main {
 				3,
 				"Fascinante, revelando el increíble potencial creativo " +
 						"de las máquinas en la producción de contenido único y original.",
-				LocalDateTime.now(),user1, keynote4);
+				LocalDateTime.of(2024, 4,2, 10,15),user1, keynote4);
 		Comment c2 = new Comment(2L,
 				4,
 				"me dejó asombrado, destacando cómo la tecnología puede generar " +
 						"ideas innovadoras y abrir nuevas posibilidades en el ámbito " +
 						"creativo.",
-				LocalDateTime.now(),user2, keynote1);
+				LocalDateTime.of(2024, 4,6, 12,35),user2, keynote1);
 		Comment c3 = new Comment(3L,
 				5,
 				"fue esclarecedora, mostrando cómo estas avanzadas tecnologías " +
@@ -164,7 +164,7 @@ public class Main {
 				"fue un poco desastre la ponencia no esclarecedora de estas avanzadas tecnologías que " +
 						"están transformando la manera en que concebimos y creamos contenido " +
 						"de manera revolucionaria.",
-				LocalDateTime.now(),user4, keynote3);
+				LocalDateTime.of(2024, 4,15, 21,15),user4, keynote3);
 
 
 

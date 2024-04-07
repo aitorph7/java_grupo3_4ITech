@@ -1,6 +1,7 @@
 package com.escuadronSuicida.backend.controller;
 
 import com.escuadronSuicida.backend.models.Comment;
+import com.escuadronSuicida.backend.repository.CommentRepository;
 import com.escuadronSuicida.backend.services.CommentService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -11,15 +12,16 @@ import java.util.List;
 @RestController
 public class CommentController {
     private final CommentService commentService;
+    private CommentRepository commentRepository;
 
     public CommentController(CommentService commentService) {
         this.commentService = commentService;
     }
 
     @GetMapping("comments")
-    public ResponseEntity <List<Comment>> findAll() {
+    public ResponseEntity <List<Comment>> findAllByOrderByDateTimeDesc() {
 
-        List<Comment> comments = commentService.findComments();
+        List<Comment> comments = commentService.findCommentsOrderByDateTimeDesc();
         return ResponseEntity.ok(comments);
     }
 

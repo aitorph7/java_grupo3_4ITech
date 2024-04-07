@@ -21,8 +21,8 @@ public class CommentServiceImpl implements CommentService{
     }
 
     @Override
-    public List<Comment> findComments() {
-        return commentRepository.findAll();
+    public List<Comment> findCommentsOrderByDateTimeDesc() {
+        return commentRepository.findAllByOrderByDateTimeDesc();
     }
 
     @Override
