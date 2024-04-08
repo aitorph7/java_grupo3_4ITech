@@ -11,6 +11,7 @@ import java.util.List;
 @Setter
 @ToString
 @Entity
+@Builder
 @Table(name = "rooms")
 public class Room {
     @Id

@@ -7,6 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 @SpringBootApplication
@@ -84,12 +85,18 @@ public class Main {
 		Room room3 = new Room(null, "Quantum Nexus Summit Arena", 200, true, null);
 		Room room4 = new Room(null, "NanoVerse Discovery Pavilion", 400, false, null);
 		Room room5 = new Room(null, "TechHorizon Visionarium", 350,false, null);
+        Room room6 = Room.builder()
+                .name("Little Room")
+                .capacity(100)
+                .hasSockets(true)
+                .keynotes(null)
+                .build();
 
-		roomRepository.saveAll(List.of(room1, room2, room3, room4, room5));
+		roomRepository.saveAll(List.of(room1, room2, room3, room4, room5, room6));
 
-		Track tr1 = new Track(1L,"Track 1", LocalDateTime.of(2024,5,29,9,0), LocalDateTime.of(2024,5,29,10,0));
-		Track tr2 = new Track(2L,"Track 2", LocalDateTime.of(2024,5,29,10,0), LocalDateTime.of(2024,5,29,11,0));
-		Track tr3 = new Track(3L,"Track 3", LocalDateTime.of(2024,5,29,11,0), LocalDateTime.of(2024,5,29,11,30));
+		Track tr1 = new Track(1L,"Track 1",LocalDateTime.of(2024,5,29,9,0), LocalDateTime.of(2024,5,29,10,0));
+        Track tr2 = new Track(2L,"Track2", LocalDateTime.of(2024,5,29,10,0), LocalDateTime.of(2024,5,29,11,0));
+		Track tr3 = new Track(3L,"Track 3",LocalDateTime.of(2024,5,29,11,0), LocalDateTime.of(2024,5,29,11,30));
 		Track tr4 = new Track(4L,"Track 4", LocalDateTime.of(2024,5,29,11,30), LocalDateTime.of(2024,5,29,12,30));
 		Track tr5 = new Track(5L,"Track 5", LocalDateTime.of(2024,5,29,12,30), LocalDateTime.of(2024,5,29,13,30));
 		Track tr6 = new Track(6L,"Track 6", LocalDateTime.of(2024,5,29,13,30), LocalDateTime.of(2024,5,29,15,30));
@@ -124,22 +131,36 @@ public class Main {
 				"Desarrollo e implicaciones de la IA en nuestra sociedad",
 				"La inteligencia artificial (IA) ha experimentado un desarrollo exponencial en las últimas décadas. Los avances en algoritmos, hardware y la disponibilidad de grandes cantidades de datos han impulsado su crecimiento.",
 				"/assets/keynotes/AI.jpeg",
-				room1, 300L,DifficultyLevel.JUNIOR,45,null,tr3,null);
+				room1, 300L,DifficultyLevel.JUNIOR,45,null,tr4,null);
 		Keynote keynote2 = new Keynote(2L, "La Era Digital JAVA",
 				"Desarrollo de código Java Global",
 				"Java es un lenguaje de programación de propósito general, creado por Sun Microsystems en 1995. Su desarrollo se basó en la idea de crear un lenguaje orientado a objetos, robusto, seguro, portable y de alto rendimiento.", "/assets/keynotes/Java.jpeg",
-				room2, 200L,DifficultyLevel.SENIOR,60,null,tr10,null);
+				room2, 200L,DifficultyLevel.SENIOR,60,null,tr11,null);
 		Keynote keynote3 = new Keynote(3L, "El Mejor Frontend con Angular ",
 				"Desarrollo e implicaciones de la IA en nuestra sociedad",
 				"Angular es un framework de desarrollo web de código abierto, basado en TypeScript, creado y mantenido por Google. Se utiliza para crear aplicaciones web de una sola página (SPA) dinámicas e interactivas.",
 				"/assets/keynotes/Angular.jpeg",
-				room4, 300L,DifficultyLevel.SEMI_SENIOR,45,null,tr12,null);
+				room4, 300L,DifficultyLevel.SEMI_SENIOR,45,null,tr17,null);
 		Keynote keynote4 = new Keynote(4L, "Salud Digital",
 				"Desarrollo e implicaciones de la salud por el uso de las tecnologías de abuso en nuestra sociedad",
 				"El desarrollo de las tecnologías de abuso ha ido en aumento en los últimos años. Estas tecnologías incluyen el uso de internet, las redes sociales, los videojuegos y los teléfonos móviles de forma excesiva o compulsiva.", "/assets/keynotes/salud-digital.jpeg",
-				room3, 150L,DifficultyLevel.SENIOR,50,user3,tr18,null);
+				room3, 150L,DifficultyLevel.SENIOR,50,user3,tr14,null);
+        Keynote keynote5 = Keynote.builder()
+                .title("No hay Frontend sin Backend ")
+                .summary("Explicaciones didácticas y prácticas sobre el papél que juega cada uno de los desarrollos en la creación de páginas web ")
+                .description("Increible, el diseño en frontend y el control en backend que nos permite crear cualquier tipo de página web de forma dinámica y resolver cualquier problema real de un servicio a ofrecer a cualquier usuario del planeta de forma sencilla y generar bases de datos de información interesante en todos los aspectos. No se puede concebir un frontend sin un backend robusto y bien desarrollado con código limpio y funcional...")
+                .webinarUrl("/assets/keynotes/no-frontend-sin-backend.jpeg")
+                .room(room1)
+                .durationInMin(55)
+                .difficultyLevel(DifficultyLevel.JUNIOR)
+                .speaker(user3)
+                .tracks(tr7)
+                .maxNumPersons(150L)
+                .attendees(List.of(user1,user2, user5))
+                .build();
 
-		keynoteRepository.saveAll(List.of(keynote1,keynote2,keynote3,keynote4));
+
+		keynoteRepository.saveAll(List.of(keynote1,keynote2,keynote3,keynote4,keynote5));
 
 
 		Comment c1 = new Comment(1L,
@@ -164,7 +185,7 @@ public class Main {
 				"fue un poco desastre la ponencia no esclarecedora de estas avanzadas tecnologías que " +
 						"están transformando la manera en que concebimos y creamos contenido " +
 						"de manera revolucionaria.",
-				LocalDateTime.of(2024, 4,15, 21,15),user4, keynote3);
+				LocalDateTime.of(2024, 4,2, 21,15),user4, keynote3);
 
 
 

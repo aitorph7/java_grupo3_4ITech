@@ -11,6 +11,7 @@ import java.util.List;
 @NoArgsConstructor
 @Getter
 @Setter
+@Builder
 @ToString
 @Entity /* Esta clase es una entidad y debe ser mapeada a una
 tabla en la BD. */
