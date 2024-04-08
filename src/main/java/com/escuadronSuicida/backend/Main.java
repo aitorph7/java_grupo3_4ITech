@@ -26,7 +26,7 @@ public class Main {
 		KeynoteRepository keynoteRepository = context.getBean(KeynoteRepository.class);
 		CommentRepository commentRepository = context.getBean(CommentRepository.class);
 
-		User user1 = new User(null,
+		User user6 = new User(null,
 				"Pablo",
 				"González",
 				"pablo@gmail.com",
@@ -78,7 +78,12 @@ public class Main {
 				"calleLeocadia, 10, 02001, Albacete, Albacete",
 				UserRole.USER
 		);
-		userRepository.saveAll(List.of(user1, user2, user3, user4, user5));
+		User user1 = new User(null, "Javier", "Developer", "jabaroosss@gmail.com",
+				"661541099", "JavierBRO", "admin4321",
+				"calle Cercana a Ppio, 33, 28008, Madrid, Madrid",
+				UserRole.ADMIN
+		);
+		userRepository.saveAll(List.of(user1, user2, user3, user4, user5, user6));
 
 		Room room1 = new Room(null, "Innovation Tech Hall", 500, false, null);
 		Room room2 = new Room(null, "ByteSphere Convergence Hall", 350, false,null );

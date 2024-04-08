@@ -8,4 +8,5 @@ public enum UserRole {
      */
     USER,
     ADMIN
+    //SPEAKER a futuros en siguientes iteraciones
 }
