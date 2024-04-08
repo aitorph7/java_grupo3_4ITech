@@ -13,7 +13,7 @@ public class KeyGeneratorTest {
 
         SecureRandom random = new SecureRandom();
 
-        // 32 bytes equivale a 256 bits, tamaño suficiente para el algoritmo HMAC-SHA-256
+        // 32 bytes equivale a 256 bits; tamaño suficiente para el algoritmo HMAC-SHA-256
         byte[] key = new byte[32];
         random.nextBytes(key);
 
