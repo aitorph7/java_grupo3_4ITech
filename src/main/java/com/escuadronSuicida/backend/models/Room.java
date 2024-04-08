@@ -20,6 +20,7 @@ public class Room {
     private String name;
     private Integer capacity;
     private Boolean hasSockets;
+    private String photoUrl;
 
     // @OneToMany con Keynotes
     @OneToMany
