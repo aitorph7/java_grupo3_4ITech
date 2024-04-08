@@ -84,7 +84,7 @@ public class Main {
 		);
 		userRepository.saveAll(List.of(user1, user2, user3, user4, user5, user6));
 
-		Room room1 = new Room(null, "Innovation Tech Hall", 500, false, "https://placehold.co/600x400.png", null);
+		Room room1 = new Room(null, "Innovation Tech Hall", 500, false, "foto.png", null);
 		Room room2 = new Room(null, "ByteSphere Convergence Hall", 350, false, "https://placehold.co/600x400.png",null );
 		Room room3 = new Room(null, "Quantum Nexus Summit Arena", 200, true, "https://placehold.co/600x400.png", null);
 		Room room4 = new Room(null, "NanoVerse Discovery Pavilion", 400, false, "https://placehold.co/600x400.png", null);
