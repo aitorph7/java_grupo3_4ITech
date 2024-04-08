@@ -149,22 +149,22 @@ public class Main {
 				"Desarrollo e implicaciones de la salud por el uso de las tecnologías de abuso en nuestra sociedad",
 				"El desarrollo de las tecnologías de abuso ha ido en aumento en los últimos años. Estas tecnologías incluyen el uso de internet, las redes sociales, los videojuegos y los teléfonos móviles de forma excesiva o compulsiva.", "/assets/keynotes/salud-digital.jpeg",
 				room3, 150L,DifficultyLevel.SENIOR,50,user3,tr14,null);
-        Keynote keynote5 = Keynote.builder()
-                .title("No hay Frontend sin Backend ")
-                .summary("Explicaciones didácticas y prácticas sobre el papél que juega cada uno de los desarrollos en la creación de páginas web ")
-                .description("Increible, el diseño en frontend y el control en backend que nos permite crear cualquier tipo de página web de forma dinámica y resolver cualquier problema real de un servicio a ofrecer a cualquier usuario del planeta de forma sencilla y generar bases de datos de información interesante en todos los aspectos. No se puede concebir un frontend sin un backend robusto y bien desarrollado con código limpio y funcional...")
-                .webinarUrl("/assets/keynotes/no-frontend-sin-backend.jpeg")
-                .room(room1)
-                .durationInMin(55)
-                .difficultyLevel(DifficultyLevel.JUNIOR)
-                .speaker(user3)
-                .track(tr7)
-                .maxNumPersons(150L)
-                .attendees(List.of(user1,user2, user5))
-                .build();
+//        Keynote keynote5 = Keynote.builder()
+//                .title("No hay Frontend sin Backend ")
+//                .summary("Explicaciones didácticas y prácticas sobre el papél que juega cada uno de los desarrollos en la creación de páginas web ")
+//                .description("Increible, el diseño en frontend y el control en backend que nos permite crear cualquier tipo de página web de forma dinámica y resolver cualquier problema real de un servicio a ofrecer a cualquier usuario del planeta de forma sencilla y generar bases de datos de información interesante en todos los aspectos. No se puede concebir un frontend sin un backend robusto y bien desarrollado con código limpio y funcional...")
+//                .webinarUrl("/assets/keynotes/no-frontend-sin-backend.jpeg")
+//                .room(room1)
+//                .durationInMin(55)
+//                .difficultyLevel(DifficultyLevel.JUNIOR)
+//                .speaker(user3)
+//                .track(tr7)
+//                .maxNumPersons(150L)
+//                .attendees(List.of(user1,user2, user5))
+//                .build();
 
 
-		keynoteRepository.saveAll(List.of(keynote1,keynote2,keynote3,keynote4,keynote5));
+		keynoteRepository.saveAll(List.of(keynote1,keynote2,keynote3,keynote4));
 
 
 		Comment c1 = new Comment(1L,
