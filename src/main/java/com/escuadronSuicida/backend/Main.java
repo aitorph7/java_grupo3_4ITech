@@ -7,7 +7,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 
 import java.time.LocalDateTime;
-import java.util.ArrayList;
 import java.util.List;
 
 @SpringBootApplication
@@ -159,7 +158,7 @@ public class Main {
                 .durationInMin(55)
                 .difficultyLevel(DifficultyLevel.JUNIOR)
                 .speaker(user3)
-                .tracks(tr7)
+                .track(tr7)
                 .maxNumPersons(150L)
                 .attendees(List.of(user1,user2, user5))
                 .build();

@@ -2,7 +2,6 @@ package com.escuadronSuicida.backend.models;
 
 import jakarta.persistence.*;
 import lombok.*;
-import org.hibernate.mapping.ToOne;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -42,7 +41,7 @@ public class Keynote {
 
     @ManyToOne
     // @JoinColumn(name = "track_id") varias charlas en simultaneo
-    private Track tracks; // Many To One
+    private Track track; // Many To One
 
     //se refiere a cuantas charlas puedes ir ( no quiere decir en simultaneo)
     @ManyToMany
