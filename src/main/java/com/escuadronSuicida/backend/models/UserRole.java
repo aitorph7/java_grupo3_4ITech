@@ -6,5 +6,6 @@ public enum UserRole {
      de la aplicación, asistente al festival o presentador
      de alguna charla/keynote.
      */
-    ADMIN, ATTENDEE, SPEAKER
+    USER,
+    ADMIN
 }

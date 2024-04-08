@@ -33,7 +33,7 @@ public class Main {
 				"pablou1",
 				"pablou1",
 				"callePablo, 2, 28046, Madrid, Madrid",
-				UserRole.ATTENDEE
+				UserRole.USER
 		);
 		User user2 = new User(null,
 				"Oscar",
@@ -43,7 +43,7 @@ public class Main {
 				"oscaru2",
 				"oscaru2",
 				"calleOscar, 46, 28011, Madrid, Madrid",
-				UserRole.ATTENDEE
+				UserRole.USER
 
 		);
 		User user3 = new User(null,
@@ -54,7 +54,7 @@ public class Main {
 				"trevor@apple.com",
 				"trevoru3",
 				"1234 TrevorSt, San Francisco, CA 94123, USA",
-				UserRole.SPEAKER
+				UserRole.USER
 		);
 		User user4 = new User(null,
 				"Eutimio",
@@ -75,7 +75,7 @@ public class Main {
 				"leocadiau5",
 				"leocadiu5",
 				"calleLeocadia, 10, 02001, Albacete, Albacete",
-				UserRole.ATTENDEE
+				UserRole.USER
 		);
 		userRepository.saveAll(List.of(user1, user2, user3, user4, user5));
 
