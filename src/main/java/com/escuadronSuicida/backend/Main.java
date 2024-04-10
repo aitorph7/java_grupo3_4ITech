@@ -82,7 +82,12 @@ public class Main {
 				"calle Cercana a Ppio, 33, 28008, Madrid, Madrid",
 				UserRole.ADMIN
 		);
-		userRepository.saveAll(List.of(user1, user2, user3, user4, user5, user6));
+		User user7 = new User(null, "Angel", "Martinez", "angel@gmail.com",
+				"666777888", "angelo", "admin1234",
+				"Avda. del Escuadrón Suicida",
+				UserRole.ADMIN
+		);
+		userRepository.saveAll(List.of(user1, user2, user3, user4, user5, user6, user7));
 
 		Room room1 = new Room(null, "Innovation Tech Hall", 500, false, "foto.png", null);
 		Room room2 = new Room(null, "ByteSphere Convergence Hall", 350, false, "https://placehold.co/600x400.png",null );
