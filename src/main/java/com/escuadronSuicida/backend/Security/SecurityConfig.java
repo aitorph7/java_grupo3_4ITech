@@ -30,15 +30,15 @@ public class SecurityConfig {
 //                ).addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class)
 //                .build();
 
-        // Para lase versiones anteriores a Spring 6.1
+        // Para las versiones anteriores a Spring 6.1
         // Sin estados, sin sesiones Http, ya que usamos tokens JWT
         // La autenticación JWT es sin estado y no depende de sesiones o cookies
         http.csrf().disable().sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
 
         // Proteger rutas
         http.authorizeHttpRequests()
-                .requestMatchers("/users/login").permitAll()
-                .requestMatchers("/uers/register").permitAll()
+                .requestMatchers("users/login").permitAll()
+                .requestMatchers("users/register").permitAll()
                 // lo que no sea login o register es obligatorio estar autenticado
                 .anyRequest()
                 .authenticated();
