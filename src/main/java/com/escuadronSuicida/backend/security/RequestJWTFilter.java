@@ -1,4 +1,4 @@
-package com.escuadronSuicida.backend.Security;
+package com.escuadronSuicida.backend.security;
 
 import com.escuadronSuicida.backend.models.User;
 import com.escuadronSuicida.backend.repository.UserRepository;
@@ -68,8 +68,8 @@ public class RequestJWTFilter extends OncePerRequestFilter {
             log.warn("Usuario con id {} no encontrado", userId);
             response.sendError(HttpServletResponse.SC_UNAUTHORIZED);
         }
-        // 4. Crear objeto autenticación con datos del usuario y guardarlo en el contexto de seguridad de Spring Security
-        // OBLIATORIO: tener el starter Spring Security en el pom.xml
+        // 4. Crear objeto autenticación con datos del usuario y guardarlo en el contexto de seguridad de Spring security
+        // OBLIATORIO: tener el starter Spring security en el pom.xml
         User user = userOptional.get();
         log.info("Role del usuario {}", user.getUserRole().toString());
         SimpleGrantedAuthority role = new SimpleGrantedAuthority(user.getUserRole().name()); // o también podemos pasar de enum a String con el método toString además del método name()
