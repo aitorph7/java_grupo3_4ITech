@@ -6,6 +6,7 @@ import com.escuadronSuicida.backend.services.KeynoteService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.awt.print.Book;
 import java.util.List;
@@ -50,8 +51,25 @@ public class KeynoteController {
         }catch (Exception e) {
             return ResponseEntity.status(409).build();
         }
-
     }
+
+    // Extra OPCIONAL: además del CRUD permitimos subir archivos
+    // Guardar el archivo y obtener la ruta al archivo y guardar la ruta en photoUrl
+    // Nuevo controlador para servir los archivos
+//    @PostMapping
+//    public Keynote create(
+//            @RequestParam(value = "photo", required = false) MultipartFile file,
+//            Keynote keynote){
+//
+//        if(file != null && !file.isEmpty()) {
+//            String fileName = fileService.store(file);
+//            keynote.setPhotoUrl(fileName);
+//        } else {
+//            keynote.setPhotoUrl("avatar.png");
+//        }
+//
+//        return this.repo.save(keynote);
+//    }
 
 
     @PutMapping("{id}")
