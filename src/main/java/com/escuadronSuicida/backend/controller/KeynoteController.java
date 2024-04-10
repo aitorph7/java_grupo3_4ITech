@@ -7,6 +7,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.awt.print.Book;
 import java.util.List;
 
 @RestController
@@ -30,7 +31,16 @@ public class KeynoteController {
         return ResponseEntity.ok(keynote);
     }
 
+
+
     private KeynoteRepository repo;
+
+    // obtener keynotes filtrando por track
+    @GetMapping("/filter-by-track/{id}")
+    public List<Keynote> findAllByTrackId (@PathVariable Long id) {
+        return this.repo.findAllByTrack_Id(id);
+    }
+
 
     @PostMapping
     public ResponseEntity<Keynote> create(@RequestBody Keynote keynote) {
