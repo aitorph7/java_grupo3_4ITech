@@ -25,6 +25,7 @@ public class Keynote {
     @Column(length = 2500) // ampliar la longitud de 255 a 2500
     private String description; // description or descriptionLong
 
+    private String photoUrl;
     private String webinarUrl; // video youtube, zoom,
     @ManyToOne
     @JoinColumn(name = "room_id")
