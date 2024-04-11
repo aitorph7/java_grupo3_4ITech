@@ -59,19 +59,19 @@ public class KeynoteController {
     // Extra OPCIONAL: además del CRUD permitimos subir archivos
     // Guardar el archivo y obtener la ruta al archivo y guardar la ruta en photoUrl
     // Nuevo controlador para servir los archivos
-    @PostMapping
-    public Keynote create(
-            @RequestParam(value = "photo", required = false) MultipartFile file, Keynote keynote){
-
-        if(file != null && !file.isEmpty()) {
-            String fileName = fileService.store(file);
-            keynote.setPhotoUrl(fileName);
-        } else {
-            keynote.setPhotoUrl("avatar.png");
-        }
-
-        return this.repo.save(keynote);
-    }
+//    @PostMapping
+//    public Keynote create(
+//            @RequestParam(value = "photo", required = false) MultipartFile file, Keynote keynote){
+//
+//        if(file != null && !file.isEmpty()) {
+//            String fileName = fileService.store(file);
+//            keynote.setPhotoUrl(fileName);
+//        } else {
+//            keynote.setPhotoUrl("avatar.png");
+//        }
+//
+//        return this.repo.save(keynote);
+//    }
 
 
     @PutMapping("{id}")
