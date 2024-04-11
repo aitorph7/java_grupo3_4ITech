@@ -2,8 +2,10 @@ package com.escuadronSuicida.backend.controller;
 
 import com.escuadronSuicida.backend.models.Keynote;
 import com.escuadronSuicida.backend.repository.KeynoteRepository;
+import com.escuadronSuicida.backend.services.FileService;
 import com.escuadronSuicida.backend.services.KeynoteService;
 import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -15,9 +17,10 @@ import java.util.List;
 @RequestMapping("keynotes")
 @AllArgsConstructor
 @CrossOrigin("*")
-
+@Slf4j
 public class KeynoteController {
     private KeynoteService keynoteService;
+    private FileService fileService;
 
     @GetMapping
     public ResponseEntity<List<Keynote>> findAll(){
@@ -56,20 +59,19 @@ public class KeynoteController {
     // Extra OPCIONAL: además del CRUD permitimos subir archivos
     // Guardar el archivo y obtener la ruta al archivo y guardar la ruta en photoUrl
     // Nuevo controlador para servir los archivos
-//    @PostMapping
-//    public Keynote create(
-//            @RequestParam(value = "photo", required = false) MultipartFile file,
-//            Keynote keynote){
-//
-//        if(file != null && !file.isEmpty()) {
-//            String fileName = fileService.store(file);
-//            keynote.setPhotoUrl(fileName);
-//        } else {
-//            keynote.setPhotoUrl("avatar.png");
-//        }
-//
-//        return this.repo.save(keynote);
-//    }
+    @PostMapping
+    public Keynote create(
+            @RequestParam(value = "photo", required = false) MultipartFile file, Keynote keynote){
+
+        if(file != null && !file.isEmpty()) {
+            String fileName = fileService.store(file);
+            keynote.setPhotoUrl(fileName);
+        } else {
+            keynote.setPhotoUrl("avatar.png");
+        }
+
+        return this.repo.save(keynote);
+    }
 
 
     @PutMapping("{id}")
