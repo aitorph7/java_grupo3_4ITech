@@ -3,6 +3,7 @@ package com.escuadronSuicida.backend.models;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Getter
@@ -20,7 +21,9 @@ public class TicketOrderBuy {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private LocalDateTime date;
+    private LocalDate startDate;
+
+    private LocalDate finishDate;
 
     private Double discount;
 
