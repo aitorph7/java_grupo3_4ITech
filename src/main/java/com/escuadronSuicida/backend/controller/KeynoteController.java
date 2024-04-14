@@ -59,7 +59,7 @@ public class KeynoteController {
     // Extra OPCIONAL: además del CRUD permitimos subir archivos
     // Guardar el archivo y obtener la ruta al archivo y guardar la ruta en photoUrl
     // Nuevo controlador para servir los archivos
-//    @PostMapping
+   @PostMapping
 //    public Keynote create(
 //            @RequestParam(value = "photo", required = false) MultipartFile file, Keynote keynote){
 //
