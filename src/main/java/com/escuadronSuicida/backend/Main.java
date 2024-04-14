@@ -139,7 +139,7 @@ public class Main {
 
 		Keynote keynote1 = new Keynote(1L, "Inteligencia Artificial",
 				"Desarrollo e implicaciones de la IA en nuestra sociedad",
-				"La inteligencia artificial (IA) ha experimentado un desarrollo exponencial en las últimas décadas. Los avances en algoritmos, hardware y la disponibilidad de grandes cantidades de datos han impulsado su crecimiento.","AI.jpeg",
+				"La inteligencia artificial (IA) ha experimentado un desarrollo exponencial en las últimas décadas. Los avances en algoritmos, hardware y la disponibilidad de grandes cantidades de datos han impulsado su crecimiento.","/assets/keynotes/AI.jpeg",
 				null,
 				room1, 300L,DifficultyLevel.JUNIOR,45,user4,tr4,null);
 		Keynote keynote2 = new Keynote(2L, "La Era Digital JAVA",
