@@ -21,10 +21,10 @@ import java.util.concurrent.TimeUnit;
 
 @CrossOrigin("*")
 @RestController
-@AllArgsConstructor
+
 @Slf4j
 public class UserController {
-    List<User> users;
+
     private final UserRepository userRepository;
     private final FileService fileService;
 

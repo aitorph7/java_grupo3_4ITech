@@ -26,6 +26,19 @@ public class Main {
 		KeynoteRepository keynoteRepository = context.getBean(KeynoteRepository.class);
 		CommentRepository commentRepository = context.getBean(CommentRepository.class);
 
+		//KeynoteRepository.deleteAll();
+
+		ticketRepo.deleteAll();
+		ticketOrderBuyRepository.deleteAll();
+		commentRepository.deleteAll();
+		trackRepository.deleteAll();
+		//RoomRepository.deleteAll();
+		userRepository.deleteAll();
+
+
+
+
+
 		User user6 = new User(null,
 				"Pablo",
 				"González",
