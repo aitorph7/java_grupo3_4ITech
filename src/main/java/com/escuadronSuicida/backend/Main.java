@@ -34,7 +34,7 @@ public class Main {
 				"pablou1",
 				"pablou1",
 				"callePablo, 2, 28046, Madrid, Madrid",
-				UserRole.USER
+				UserRole.USER, null
 		);
 		User user2 = new User(null,
 				"Oscar",
@@ -44,7 +44,7 @@ public class Main {
 				"oscaru2",
 				"oscaru2",
 				"calleOscar, 46, 28011, Madrid, Madrid",
-				UserRole.USER
+				UserRole.USER, null
 
 		);
 		User user3 = new User(null,
@@ -55,7 +55,7 @@ public class Main {
 				"trevor@apple.com",
 				"trevoru3",
 				"1234 TrevorSt, San Francisco, CA 94123, USA",
-				UserRole.USER
+				UserRole.USER, null
 		);
 		User user4 = new User(null,
 				"Eutimio",
@@ -65,7 +65,7 @@ public class Main {
 				"eutimmiou4",
 				"eutimmiou4",
 				"calleEutimio, 23, 28004, Madrid, Madrid",
-				UserRole.ADMIN
+				UserRole.ADMIN, null
 
 		);
 		User user5 = new User(null,
@@ -76,17 +76,17 @@ public class Main {
 				"leocadiau5",
 				"leocadiu5",
 				"calleLeocadia, 10, 02001, Albacete, Albacete",
-				UserRole.USER
+				UserRole.USER, null
 		);
 		User user1 = new User(null, "Javier", "Developer", "jabaroosss@gmail.com",
 				"661541099", "JavierBRO", "admin4321",
 				"calle Cercana a Ppio, 33, 28008, Madrid, Madrid",
-				UserRole.ADMIN
+				UserRole.ADMIN,null
 		);
 		User user7 = new User(null, "Angel", "Martinez", "angel@gmail.com",
 				"666777888", "angelo", "admin1234",
 				"Avda. del Escuadrón Suicida",
-				UserRole.ADMIN
+				UserRole.ADMIN, null
 		);
 		userRepository.saveAll(List.of(user1, user2, user3, user4, user5, user6, user7));
 
