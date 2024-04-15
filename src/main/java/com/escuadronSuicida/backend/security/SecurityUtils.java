@@ -9,9 +9,12 @@ public class SecurityUtils {
 
     /**
      * Devuelve el usuario autenticado extraído de Spring Security
+     * Se utiliza así:
+     *      *
+     *      * User user = SecurityUtils.getCurrentUser().orElseThrow();
      * @return
      */
-    public Optional<User> getCurrentUser() {
+    public static Optional<User> getCurrentUser() {
 
 
         Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();

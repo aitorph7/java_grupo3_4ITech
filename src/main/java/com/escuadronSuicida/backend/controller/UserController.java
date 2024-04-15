@@ -6,25 +6,32 @@ import com.escuadronSuicida.backend.dto.Token;
 import com.escuadronSuicida.backend.models.User;
 import com.escuadronSuicida.backend.models.UserRole;
 import com.escuadronSuicida.backend.repository.UserRepository;
+import com.escuadronSuicida.backend.services.FileService;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.security.Keys;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
+import com.escuadronSuicida.backend.security.SecurityUtils;
 
 import java.util.*;
 import java.util.concurrent.TimeUnit;
 
 @CrossOrigin("*")
 @RestController
+
 @Slf4j
 public class UserController {
-    List<User> users;
-    private final UserRepository userRepository;
 
-    public UserController(UserRepository userRepository) {
+    private final UserRepository userRepository;
+    private final FileService fileService;
+
+
+    public UserController(UserRepository userRepository, FileService fileService) {
         this.userRepository = userRepository;
+        this.fileService = fileService;
     }
 
     @GetMapping("users")
@@ -74,8 +81,11 @@ public class UserController {
 
         // Crear el objeto User
         // TODO cifrar la contraseña con BCrypt
-        User user = new User(null, null, null, register.email(), null, null, register.password(), null, UserRole.USER);
-
+        User user = User.builder()
+                .email(register.email())
+                .password(register.password())
+                .userRole(UserRole.USER)
+                .build();
         // Guardar el objeto user
         this.userRepository.save(user);
     }
@@ -123,4 +133,44 @@ public class UserController {
 
         return new Token(token);
     }
+    // Get account
+    @GetMapping("users/account")
+    public User getCurrentUser() {
+        return SecurityUtils.getCurrentUser().orElseThrow();
+    }
+
+    // Put account
+    @PutMapping("users/account")
+    public User update(@RequestBody User user) {
+        // Si está autenticado, y el usuario autenticado es ADMIN o es el mismo usuario que la variable user
+        // entonces actualizar, en caso contrario no actualizamos
+        SecurityUtils.getCurrentUser().ifPresent(currentUser -> {
+            if (currentUser.getUserRole() == UserRole.ADMIN || Objects.equals(currentUser.getId(), user.getId())) {
+                this.userRepository.save(user);
+            } else {
+                throw new RuntimeException("No puede actualizar"); // Reemplazar por Excepción personalizada
+            }
+        });
+
+        return user;
+    }
+
+    // subir avatar
+    @PostMapping("users/account/avatar")
+    public User uploadAvatar(
+            @RequestParam(value = "photo") MultipartFile file
+    ) {
+
+        User user = SecurityUtils.getCurrentUser().orElseThrow();
+
+        if (file != null && !file.isEmpty()) {
+            String fileName = fileService.store(file);
+            user.setPhotoUrl(fileName);
+            this.userRepository.save(user);
+        }
+
+        return user;
+    }
+
+
 }
