@@ -141,20 +141,20 @@ public class Main {
 				"Desarrollo e implicaciones de la IA en nuestra sociedad",
 				"La inteligencia artificial (IA) ha experimentado un desarrollo exponencial en las últimas décadas. Los avances en algoritmos, hardware y la disponibilidad de grandes cantidades de datos han impulsado su crecimiento.","/assets/keynotes/AI.jpeg",
 				null,
-				room1, 300L,DifficultyLevel.JUNIOR,45,user4,tr4,null);
+				room1, 300L,DifficultyLevel.JUNIOR,45,user4,tr1,null);
 		Keynote keynote2 = new Keynote(2L, "La Era Digital JAVA",
 				"Desarrollo de código Java Global",
 				"Java es un lenguaje de programación de propósito general, creado por Sun Microsystems en 1995. Su desarrollo se basó en la idea de crear un lenguaje orientado a objetos, robusto, seguro, portable y de alto rendimiento.","/assets/keynotes/Java.jpeg", null,
-				room2, 200L,DifficultyLevel.SENIOR,60,user1,tr11,null);
+				room2, 200L,DifficultyLevel.SENIOR,60,user1,tr2,null);
 		Keynote keynote3 = new Keynote(3L, "El Mejor Frontend con Angular ",
 				"Desarrollo e implicaciones de la IA en nuestra sociedad",
 				"Angular es un framework de desarrollo web de código abierto, basado en TypeScript, creado y mantenido por Google. Se utiliza para crear aplicaciones web de una sola página (SPA) dinámicas e interactivas.","/assets/keynotes/Angular.jpeg",
 				null,
-				room4, 300L,DifficultyLevel.SEMI_SENIOR,45,user5,tr17,null);
+				room4, 300L,DifficultyLevel.SEMI_SENIOR,45,user5,tr2,null);
 		Keynote keynote4 = new Keynote(4L, "Salud Digital",
 				"Desarrollo e implicaciones de la salud por el uso de las tecnologías de abuso en nuestra sociedad",
 				"El desarrollo de las tecnologías de abuso ha ido en aumento en los últimos años. Estas tecnologías incluyen el uso de internet, las redes sociales, los videojuegos y los teléfonos móviles de forma excesiva o compulsiva.","/assets/keynotes/salud-digital.jpeg", null,
-				room3, 150L,DifficultyLevel.SENIOR,50,user3,tr14,null);
+				room3, 150L,DifficultyLevel.SENIOR,50,user3,tr3,null);
 //        Keynote keynote5 = Keynote.builder()
 //                .title("No hay Frontend sin Backend ")
 //                .summary("Explicaciones didácticas y prácticas sobre el papél que juega cada uno de los desarrollos en la creación de páginas web ")
