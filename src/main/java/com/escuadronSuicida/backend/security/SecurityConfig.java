@@ -3,6 +3,7 @@ package com.escuadronSuicida.backend.security;
 import lombok.AllArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.web.SecurityFilterChain;
@@ -39,8 +40,30 @@ public class SecurityConfig {
         http.authorizeHttpRequests()
                 .requestMatchers("users/login").permitAll()
                 .requestMatchers("users/register").permitAll()
+                .requestMatchers("home").permitAll() // Permitimos ver la página home a cualquier usuario no logado
                 // lo que no sea login o register es obligatorio estar autenticado
-                // .requestMatchers(HttpMethod.POST,"keynotes").hasAnyAuthority("ADMIN") // solo el ADMIN puede crear keynotes
+                .requestMatchers(HttpMethod.POST, "keynotes").hasAnyAuthority("ADMIN") // solo el ADMIN puede crear keynotes
+                .requestMatchers(HttpMethod.PUT, "keynotes").hasAnyAuthority("ADMIN") // solo el ADMIN actualizar ver keynotes
+                .requestMatchers(HttpMethod.DELETE, "keynotes").hasAnyAuthority("ADMIN") // solo el ADMIN puede borrar keynotes
+                // .requestMatchers(HttpMethod.POST,"").hasAnyAuthority("ADMIN")
+                // .requestMatchers(HttpMethod.POST, "admin/**").hasAnyAuthority("ADMIN")
+                .requestMatchers(HttpMethod.POST, "tickets").hasAnyAuthority("USER") // USER y ADMIN pueden crear tickets
+                .requestMatchers(HttpMethod.PUT, "tickets").hasAnyAuthority("ADMIN") // solo el ADMIN actualizar ver tickets
+                .requestMatchers(HttpMethod.DELETE, "tickets").hasAnyAuthority("ADMIN") // solo el ADMIN puede borrar tickets
+                .requestMatchers(HttpMethod.POST, "comments").hasAnyAuthority("USER") // USER y ADMIN pueden crear tickets
+                .requestMatchers(HttpMethod.PUT, "comments").hasAnyAuthority("USER")
+                .requestMatchers(HttpMethod.DELETE, "comments").hasAnyAuthority("ADMIN")
+                .requestMatchers(HttpMethod.POST, "tracks").hasAnyAuthority("ADMIN")
+                .requestMatchers(HttpMethod.PUT, "tracks").hasAnyAuthority("ADMIN")
+                .requestMatchers(HttpMethod.DELETE, "tracks").hasAnyAuthority("ADMIN")
+                .requestMatchers(HttpMethod.POST, "users").hasAnyAuthority("USER","ADMIN")
+                .requestMatchers(HttpMethod.PUT, "users").hasAnyAuthority("USER", "ADMIN")
+                .requestMatchers(HttpMethod.DELETE, "users").hasAnyAuthority("ADMIN")
+                .requestMatchers(HttpMethod.POST, "rooms").hasAnyAuthority("ADMIN")
+                .requestMatchers(HttpMethod.PUT, "rooms").hasAnyAuthority("ADMIN")
+                .requestMatchers(HttpMethod.DELETE, "rooms").hasAnyAuthority("ADMIN")
+                .requestMatchers(HttpMethod.POST, "ticketOrderBuy").hasAnyAuthority("ADMIN", "USER")
+                .requestMatchers(HttpMethod.PUT, "ticketOrderBuy").hasAnyAuthority("ADMIN", "USER")
                 .anyRequest()
                 .authenticated();
 
