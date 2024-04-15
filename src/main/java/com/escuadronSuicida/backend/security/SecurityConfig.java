@@ -40,11 +40,11 @@ public class SecurityConfig {
         http.authorizeHttpRequests()
                 .requestMatchers("users/login").permitAll()
                 .requestMatchers("users/register").permitAll()
-<<<<<<< HEAD
-                .requestMatchers("/**").permitAll()
-=======
-                .requestMatchers("home").permitAll() // Permitimos ver la página home a cualquier usuario no logado
->>>>>>> 6e7a662723e2085c99b5a32901582d4a4efb6eba
+
+//                .requestMatchers("/**").permitAll()
+//=======
+//                .requestMatchers("home").permitAll() // Permitimos ver la página home a cualquier usuario no logado
+
                 // lo que no sea login o register es obligatorio estar autenticado
                 .requestMatchers(HttpMethod.POST, "keynotes").hasAnyAuthority("ADMIN") // solo el ADMIN puede crear keynotes
                 .requestMatchers(HttpMethod.PUT, "keynotes").hasAnyAuthority("ADMIN") // solo el ADMIN actualizar ver keynotes
