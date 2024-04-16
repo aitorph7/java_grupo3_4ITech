@@ -27,3 +27,4 @@ public class Room {
     @ToString.Exclude // para evitar errores con el fetching LAZY de objetos.
     private List<Keynote> keynotes;
 }
+// {"id":2,"name":"ByteSphere Convergence Hall","capacity":350,"hasSockets":false,"photoUrl":"https://placehold.co/600x400.png","keynotes":[]}

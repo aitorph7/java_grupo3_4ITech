@@ -12,5 +12,7 @@ public interface CommentRepository extends JpaRepository<Comment, Long> {
     List<Comment> findAllByOrderByDateTimeDesc();
     List<Comment> findByIdOrderByDateTimeDesc(Long id);
 
+    List<Comment> findByKeynote_Id(Long keynoteId);
+
 
 }

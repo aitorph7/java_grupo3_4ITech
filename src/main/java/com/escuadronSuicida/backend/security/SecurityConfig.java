@@ -40,7 +40,7 @@ public class SecurityConfig {
         http.authorizeHttpRequests()
                 .requestMatchers("users/login").permitAll()
                 .requestMatchers("users/register").permitAll()
-
+                .requestMatchers("files/**").permitAll()
 //                .requestMatchers("/**").permitAll()
 //=======
 //                .requestMatchers("home").permitAll() // Permitimos ver la página home a cualquier usuario no logado

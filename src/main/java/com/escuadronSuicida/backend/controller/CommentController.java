@@ -25,6 +25,11 @@ public class CommentController {
         return ResponseEntity.ok(comments);
     }
 
+    @GetMapping("comments/filter-by-keynote/{id}")
+    public List<Comment> findAllByKeynoteId(@PathVariable Long id) {
+       return commentService.findByKeynote_Id(id);
+    }
+
     @GetMapping("comments/{id}")
     public ResponseEntity <Comment> findById(@PathVariable Long id) {
         Comment comment = commentService.findById(id);

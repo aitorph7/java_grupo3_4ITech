@@ -75,7 +75,9 @@ public class KeynoteController {
 
 
     @PutMapping("{id}")
-    public Keynote update(@RequestBody Keynote keynote,@PathVariable Long id){
+    public Keynote update(@RequestParam(value = "photo", required = false) MultipartFile file,
+                          Keynote keynote,
+                          @PathVariable Long id){
         System.out.println(keynote);
         return repo.save(keynote);
     }
