@@ -54,8 +54,8 @@ public class SecurityConfig {
                 .requestMatchers(HttpMethod.POST, "tickets").hasAnyAuthority("USER") // USER y ADMIN pueden crear tickets
                 .requestMatchers(HttpMethod.PUT, "tickets").hasAnyAuthority("ADMIN") // solo el ADMIN actualizar ver tickets
                 .requestMatchers(HttpMethod.DELETE, "tickets").hasAnyAuthority("ADMIN") // solo el ADMIN puede borrar tickets
-                .requestMatchers(HttpMethod.POST, "comments").hasAnyAuthority("USER") // USER y ADMIN pueden crear tickets
-                .requestMatchers(HttpMethod.PUT, "comments").hasAnyAuthority("USER")
+                .requestMatchers(HttpMethod.POST, "comments").permitAll()
+                .requestMatchers(HttpMethod.PUT, "comments").permitAll()
                 .requestMatchers(HttpMethod.DELETE, "comments").hasAnyAuthority("ADMIN")
                 .requestMatchers(HttpMethod.POST, "tracks").hasAnyAuthority("ADMIN")
                 .requestMatchers(HttpMethod.PUT, "tracks").hasAnyAuthority("ADMIN")

@@ -78,7 +78,15 @@ public class KeynoteController {
     public Keynote update(@RequestParam(value = "photo", required = false) MultipartFile file,
                           Keynote keynote,
                           @PathVariable Long id){
-        System.out.println(keynote);
+
+        if(file != null && !file.isEmpty()) {
+            String fileName = fileService.store(file);
+            keynote.setPhotoUrl(fileName);
+        } else {
+            keynote.setPhotoUrl("avatar.png");
+        }
+
+
         return repo.save(keynote);
     }
 
