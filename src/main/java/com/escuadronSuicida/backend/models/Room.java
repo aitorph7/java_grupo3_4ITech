@@ -19,6 +19,7 @@ public class Room {
     private Long id;
     private String name;
     private Integer capacity;
+    @Column(columnDefinition = "boolean")
     private Boolean hasSockets;
     private String photoUrl;
 

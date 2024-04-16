@@ -39,6 +39,7 @@ public class SecurityConfig {
         http.authorizeHttpRequests()
                 .requestMatchers("users/login").permitAll()
                 .requestMatchers("users/register").permitAll()
+                .requestMatchers("files/**").permitAll()
                 // lo que no sea login o register es obligatorio estar autenticado
                 // .requestMatchers(HttpMethod.POST,"keynotes").hasAnyAuthority("ADMIN") // solo el ADMIN puede crear keynotes
                 .anyRequest()
