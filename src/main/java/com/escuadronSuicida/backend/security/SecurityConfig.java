@@ -66,8 +66,9 @@ public class SecurityConfig {
                 .requestMatchers(HttpMethod.POST, "rooms").hasAnyAuthority("ADMIN")
                 .requestMatchers(HttpMethod.PUT, "rooms").hasAnyAuthority("ADMIN")
                 .requestMatchers(HttpMethod.DELETE, "rooms").hasAnyAuthority("ADMIN")
-                .requestMatchers(HttpMethod.POST, "ticketOrderBuy").hasAnyAuthority("ADMIN", "USER")
-                .requestMatchers(HttpMethod.PUT, "ticketOrderBuy").hasAnyAuthority("ADMIN", "USER")
+                .requestMatchers(HttpMethod.POST, "ticketOrderBuy").hasAnyAuthority("USER")
+                .requestMatchers(HttpMethod.PUT, "ticketOrderBuy").hasAnyAuthority("USER")
+                .requestMatchers(HttpMethod.DELETE, "ticketOrderBuy").hasAnyAuthority("USER")
                 .anyRequest()
                 .authenticated();
 
