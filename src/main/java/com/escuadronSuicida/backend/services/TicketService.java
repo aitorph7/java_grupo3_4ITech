@@ -13,6 +13,10 @@ public interface TicketService {
     Ticket findById(Long id);
 
 
+    Ticket createTicket(Ticket ticket);
 
+    Ticket updateTicket(Long id, Ticket ticket);
+
+    boolean deleteTicket(Long id);
 }
 
