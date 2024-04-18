@@ -60,7 +60,7 @@ public class CommentServiceImpl implements CommentService{
             commentOptional.get().setRating(comment.getRating());
             commentOptional.get().setOpinion(comment.getOpinion());
             commentOptional.get().setDateTime(comment.getDateTime());
-            commentOptional.get().setUser(comment.getUser());
+            //commentOptional.get().setUser(comment.getUser());
             commentOptional.get().setKeynote(comment.getKeynote());
             //esto es actualizar los atributos que se consideren necesarios, se pueden omitir, estan todos.
             return commentRepository.save(commentOptional.get());
