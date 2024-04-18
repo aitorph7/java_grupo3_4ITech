@@ -6,6 +6,8 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.http.SessionCreationPolicy;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
@@ -14,6 +16,12 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 public class SecurityConfig {
 
     private final RequestJWTFilter jwtFilter;
+
+    @Bean
+    public PasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
+    }
+
 
     // Personalizer el objeto HttpSecurity de Spring Scurity para utilizar nuestro filto JWT y proteger controladores
 
@@ -35,16 +43,15 @@ public class SecurityConfig {
         // Sin estados, sin sesiones Http, ya que usamos tokens JWT
         // La autenticación JWT es sin estado y no depende de sesiones o cookies
         http.csrf().disable().sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
-
-        // Proteger rutas
+        // Proteger rutas: IMPORTANTE, no colocar una / delante de la ruta
+        // ❌ /users/login
+        // ✅ users/login
         http.authorizeHttpRequests()
                 .requestMatchers("users/login").permitAll()
                 .requestMatchers("users/register").permitAll()
                 .requestMatchers("files/**").permitAll()
 //                .requestMatchers("/**").permitAll()
-//=======
 //                .requestMatchers("home").permitAll() // Permitimos ver la página home a cualquier usuario no logado
-
                 // lo que no sea login o register es obligatorio estar autenticado
                 .requestMatchers(HttpMethod.POST, "keynotes").hasAnyAuthority("ADMIN") // solo el ADMIN puede crear keynotes
                 .requestMatchers(HttpMethod.PUT, "keynotes").hasAnyAuthority("ADMIN") // solo el ADMIN actualizar ver keynotes

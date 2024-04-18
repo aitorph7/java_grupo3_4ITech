@@ -5,6 +5,7 @@ import com.escuadronSuicida.backend.repository.*;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -38,17 +39,21 @@ public class Main {
 
 
 
+		PasswordEncoder passwordEncoder = context.getBean(PasswordEncoder.class);
 
-		User user6 = new User(null,
-				"Pablo",
-				"González",
-				"pablo@gmail.com",
-				"657478901",
-				"pablou1",
-				"pablou1",
-				"callePablo, 2, 28046, Madrid, Madrid",
-				UserRole.USER, null
-		);
+
+		User user1 = User.builder()
+				.firstName("Pablo")
+				.lastName("González")
+				.userName("pablouser1")
+				.email("pablo@gmail.com")
+				.password(passwordEncoder.encode("pablou1"))
+				.phone("657478901")
+				.address("callePablo, 2, 28046, Madrid, Madrid")
+				.photoUrl(null)
+				.userRole(UserRole.ADMIN)
+				.build();
+
 		User user2 = new User(null,
 				"Oscar",
 				"Catalan",
@@ -91,8 +96,8 @@ public class Main {
 				"calleLeocadia, 10, 02001, Albacete, Albacete",
 				UserRole.USER, null
 		);
-		User user1 = new User(null, "Javier", "Developer", "jabaroosss@gmail.com",
-				"661541099", "JavierBRO", "admin4321",
+		User user6 = new User(null, "Javier", "Developer", "jabaroosss@gmail.com",
+				"661541099", "JavierBRO", passwordEncoder.encode("admin1234"),
 				"calle Cercana a Ppio, 33, 28008, Madrid, Madrid",
 				UserRole.ADMIN,null
 		);

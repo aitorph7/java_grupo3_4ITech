@@ -2,6 +2,7 @@ package com.escuadronSuicida.backend.controller;
 
 import com.escuadronSuicida.backend.models.TicketOrderBuy;
 import com.escuadronSuicida.backend.repository.TicketOrderBuyRepository;
+import com.escuadronSuicida.backend.security.SecurityUtils;
 import com.escuadronSuicida.backend.services.TicketOrderBuyService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -35,13 +36,10 @@ public class TicketOrderBuyController {
     private TicketOrderBuyRepository repo;
 
     @PostMapping
-    public ResponseEntity<TicketOrderBuy> create(@RequestBody TicketOrderBuy ticketOrderBuy) {
+    public TicketOrderBuy create(@RequestBody TicketOrderBuy ticketOrderBuy) {
 
-        try {
-            return ResponseEntity.ok(repo.save(ticketOrderBuy));
-        }catch (Exception e) {
-            return ResponseEntity.status(409).build();
-        }
+        SecurityUtils.getCurrentUser().ifPresent(user -> ticketOrderBuy.setUser(user));
+        return this.repo.save(ticketOrderBuy);
 
     }
 

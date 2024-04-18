@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.*;
 @Slf4j
 @RestControllerAdvice
 public class FileController {
+
     private final FileService fileService;
 
     // http://localhost:8080/files/author-f6946523-59fb-4775-a6f9-d081b24a2618.webp

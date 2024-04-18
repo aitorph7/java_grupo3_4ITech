@@ -2,6 +2,7 @@ package com.escuadronSuicida.backend.security;
 
 import com.escuadronSuicida.backend.models.User;
 import com.escuadronSuicida.backend.repository.UserRepository;
+import io.jsonwebtoken.JwtException;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.security.Keys;
 import jakarta.servlet.FilterChain;
@@ -23,11 +24,16 @@ import java.util.Base64;
 import java.util.List;
 import java.util.Optional;
 
-// 1. Interceptar las peticiones HTTP entrantes
-// 2. extraer el token JWC de las cabeceras
-// 3. verificar que el token es correcto
-// 4. extraer el usuario del token
+/*
+Clase para:
 
+1. interceptar las peticiones HTTP entrantes
+2. extraer el token JWT de las cabeceras
+3. verificar que el token es correcto (está firmado por nosotros)
+4. extraer el usuario del token
+
+Esto permite saber qué usuario es el que está lanzando peticiones al backend, saber qué usuario está navegando
+ */
 @Component
 @AllArgsConstructor
 @Slf4j
@@ -35,48 +41,46 @@ public class RequestJWTFilter extends OncePerRequestFilter {
 
 
     private final UserRepository userRepository;
+
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
-        log.info("Hola ejecutando filtro para JWT");
-        // Extraer de la cabecera Authorization de la request.
-
+        // 1. Extraer de la cabecera Authorization de la request, que es extraer el token
         String bearerToken = request.getHeader("Authorization");
-        String token = "";
-        if (StringUtils.hasLength(bearerToken) && bearerToken.startsWith("Bearer")) {
-            token = bearerToken.substring("Bearer ".length());
-        } else {
+        if (!StringUtils.hasLength(bearerToken) || !bearerToken.startsWith("Bearer")) {
             filterChain.doFilter(request, response);
             return;
         }
-        log.info("Extraido token JWT {}", token);
+        String token = bearerToken.substring("Bearer ".length());
 
-        // Verificar el token JWT
-        byte[] key = Base64.getDecoder().decode("FZD5maIaX04mYCwsgckoBh1NJp6T3t62h2MVyEtdo3w=");
-        String userId = Jwts.parser()
-                .verifyWith(Keys.hmacShaKeyFor(key))
-                .build()
-                .parseSignedClaims(token)
-                .getPayload()
-                .getSubject();
-
-        log.info("Id de usuario {} ", userId);
-
-        // 3. Obetener el usuario de base de datos cuyo id hemos extraído del token JWT
-        Optional<User> userOptional = this.userRepository.findById(Long.valueOf(userId));
+        // 2. Verificar el token JWT
+        Optional<User> userOptional = validateTokenAndExtractUser(token);
         if (userOptional.isEmpty()) {
-            // no hay usuario, devolver error Unauthorized 401
-            log.warn("Usuario con id {} no encontrado", userId);
             response.sendError(HttpServletResponse.SC_UNAUTHORIZED);
+            return;
         }
-        // 4. Crear objeto autenticación con datos del usuario y guardarlo en el contexto de seguridad de Spring security
-        // OBLIATORIO: tener el starter Spring security en el pom.xml
+
+        // 3. Cargar usuario en contexto de seguridad Spring
         User user = userOptional.get();
-        log.info("Role del usuario {}", user.getUserRole().toString());
-        SimpleGrantedAuthority role = new SimpleGrantedAuthority(user.getUserRole().name()); // o también podemos pasar de enum a String con el método toString además del método name()
+        SimpleGrantedAuthority role = new SimpleGrantedAuthority(user.getUserRole().toString());
         Authentication auth = new UsernamePasswordAuthenticationToken(user, null, List.of(role));
         SecurityContextHolder.getContext().setAuthentication(auth);
-
-        // Dejar pasar a la petición para que continúe
         filterChain.doFilter(request, response);
+    }
+
+
+    private Optional<User> validateTokenAndExtractUser(String token) {
+        byte[] key = Base64.getDecoder().decode("FZD5maIaX04mYCwsgckoBh1NJp6T3t62h2MVyEtdo3w=");
+        try {
+            String userId = Jwts.parser()
+                    .verifyWith(Keys.hmacShaKeyFor(key))
+                    .build()
+                    .parseSignedClaims(token)
+                    .getPayload()
+                    .getSubject();
+            return this.userRepository.findById(Long.valueOf(userId));
+        } catch (JwtException e) {
+            log.error("Error en la validación del token JWT");
+            return Optional.empty();
+        }
     }
 }

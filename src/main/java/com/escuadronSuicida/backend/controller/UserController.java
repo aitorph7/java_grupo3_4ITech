@@ -12,6 +12,7 @@ import io.jsonwebtoken.security.Keys;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import com.escuadronSuicida.backend.security.SecurityUtils;
@@ -21,18 +22,15 @@ import java.util.concurrent.TimeUnit;
 
 @CrossOrigin("*")
 @RestController
-
+@AllArgsConstructor
 @Slf4j
 public class UserController {
 
     private final UserRepository userRepository;
     private final FileService fileService;
+    private final PasswordEncoder passwordEncoder;
 
 
-    public UserController(UserRepository userRepository, FileService fileService) {
-        this.userRepository = userRepository;
-        this.fileService = fileService;
-    }
 
     @GetMapping("users")
     public List<User> findAll(){
@@ -80,10 +78,10 @@ public class UserController {
         }
 
         // Crear el objeto User
-        // TODO cifrar la contraseña con BCrypt
+        // TODO cifrar la contraseña con BCrypt. hecho linea 88
         User user = User.builder()
                 .email(register.email())
-                .password(register.password())
+                .password(passwordEncoder.encode(register.password()))
                 .userRole(UserRole.USER)
                 .build();
         // Guardar el objeto user
@@ -97,13 +95,15 @@ public class UserController {
         if (!this.userRepository.existsByEmail(login.email())) {
             throw new NoSuchElementException("User not found");
       }
-
-//        // Recuperar usuario
+       // Recuperar usuario
         User user = this.userRepository.findByEmail(login.email()).orElseThrow();
 
         // Comparar contraseñas
-        // TODO cuando la contraseña esté cifrada cambiar el proceso de comparación
-        if (!user.getPassword().equals(login.password())){
+        // TODO cuando la contraseña esté cifrada cambiar el proceso de comparación..
+        //if (!passwordEncoder.matches(login.password(), user.getPassword())) // el if directo
+        boolean correctPassword = passwordEncoder.matches(login.password(), user.getPassword());
+        boolean incorrectPassword = !correctPassword;
+        if (incorrectPassword){
             throw new RuntimeException("Credenciales incorrectas");
         }
 

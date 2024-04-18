@@ -21,6 +21,9 @@ import java.util.List;
 public class KeynoteController {
     private KeynoteService keynoteService;
     private FileService fileService;
+    private KeynoteRepository repo;
+
+
 
     @GetMapping
     public ResponseEntity<List<Keynote>> findAll(){
@@ -35,9 +38,6 @@ public class KeynoteController {
         return ResponseEntity.ok(keynote);
     }
 
-
-
-    private KeynoteRepository repo;
 
     // obtener keynotes filtrando por track
     @GetMapping("/filter-by-track/{id}")
@@ -75,9 +75,12 @@ public class KeynoteController {
 
 
     @PutMapping("{id}")
-    public Keynote update(@RequestParam(value = "photo", required = false) MultipartFile file,
+    public ResponseEntity<Keynote> update(@RequestParam(value = "photo", required = false) MultipartFile file,
                           Keynote keynote,
                           @PathVariable Long id){
+
+        if(!this.repo.existsById(id))
+            return ResponseEntity.notFound().build();
 
         if(file != null && !file.isEmpty()) {
             String fileName = fileService.store(file);
@@ -86,10 +89,8 @@ public class KeynoteController {
             keynote.setPhotoUrl("avatar.png");
         }
 
-
-        return repo.save(keynote);
+        return ResponseEntity.ok(this.repo.save(keynote));
     }
-
 
     @DeleteMapping("{id}")
     public void delete(@PathVariable Long id) {
