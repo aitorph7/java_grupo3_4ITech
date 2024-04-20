@@ -7,5 +7,5 @@ import java.util.List;
 
 public interface TicketOrderBuyRepository extends JpaRepository<TicketOrderBuy, Long> {
 
-    List<TicketOrderBuy> findByTicketOrderBuy_IdOrderByIdDesc(Long id);
+    //List<TicketOrderBuy> findByTicketOrderBuy_IdOrderByIdDesc(Long id);
 }
