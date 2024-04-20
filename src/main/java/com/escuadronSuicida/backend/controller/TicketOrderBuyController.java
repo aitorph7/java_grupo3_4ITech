@@ -32,6 +32,11 @@ public class TicketOrderBuyController {
         return ResponseEntity.ok(ticketOrderBuy);
     }
 
+    @GetMapping("ticketOrderBuys/filter-by-ticketOrderBuy/{id}")
+    public List<TicketOrderBuy> findAllByTicketOrderBuyId(@PathVariable Long id) {
+        return this.repo.findByTicketOrderBuy_IdOrderByIdDesc(id);
+    }
+
 
     private TicketOrderBuyRepository repo;
 
