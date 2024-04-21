@@ -14,9 +14,7 @@ import java.util.List;
 @SpringBootApplication
 public class Main {
 
-
 	public static void main(String[] args) {
-
 		ApplicationContext context = SpringApplication.run(Main.class, args);
 
 		UserRepository userRepository = context.getBean(UserRepository.class);
@@ -27,100 +25,106 @@ public class Main {
 		KeynoteRepository keynoteRepository = context.getBean(KeynoteRepository.class);
 		CommentRepository commentRepository = context.getBean(CommentRepository.class);
 
-		//KeynoteRepository.deleteAll();
-
-		ticketRepo.deleteAll();
 		ticketOrderBuyRepository.deleteAll();
+		ticketRepo.deleteAll();
 		commentRepository.deleteAll();
+		keynoteRepository.deleteAll();
 		trackRepository.deleteAll();
-		//RoomRepository.deleteAll();
+		roomRepository.deleteAll();
 		userRepository.deleteAll();
 
-
-
-
 		PasswordEncoder passwordEncoder = context.getBean(PasswordEncoder.class);
-
-
-		User user1 = User.builder()
+		User u1 = User.builder()
 				.firstName("Pablo")
 				.lastName("González")
 				.userName("pablouser1")
 				.email("pablo@gmail.com")
-				.password(passwordEncoder.encode("pablou1"))
+				.password(passwordEncoder.encode("pablo1234"))
 				.phone("657478901")
 				.address("callePablo, 2, 28046, Madrid, Madrid")
+				.photoUrl(null)
+				.userRole(UserRole.USER)
+				.build();
+
+		User u2 = User.builder()
+				.firstName("Oscar")
+				.lastName("Catalán")
+				.userName("oscaru2")
+				.email("oscar@gmail.com")
+				.password(passwordEncoder.encode("oscar1234"))
+				.phone("663501200")
+				.address("calleOscar, 46, 28011, Madrid, Madrid")
+				.photoUrl(null)
+				.userRole(UserRole.USER)
+				.build();
+
+		User u3 = User.builder()
+				.firstName("Trevor")
+				.lastName("Irish")
+				.userName("trevoru3")
+				.email("trevor@gmail.com")
+				.password(passwordEncoder.encode("trevor1234"))
+				.phone("+1 415-555-1234")
+				.address("1234 TrevorSt, San Francisco, CA 94123, USA")
+				.photoUrl(null)
+				.userRole(UserRole.USER)
+				.build();
+
+		User u4 = User.builder()
+				.firstName("Eutimio")
+				.lastName("Developer")
+				.userName("eutimiou4")
+				.email("eutimio@gmail.com")
+				.password(passwordEncoder.encode("eutimio1234"))
+				.phone("619567144")
+				.address("calleEutimio, 23, 28004, Madrid, Madrid")
 				.photoUrl(null)
 				.userRole(UserRole.ADMIN)
 				.build();
 
-		User user2 = new User(null,
-				"Oscar",
-				"Catalan",
-				"oscar@yahoo.es",
-				"663501200",
-				"oscaru2",
-				"oscaru2",
-				"calleOscar, 46, 28011, Madrid, Madrid",
-				UserRole.USER, null
+		User u5 = User.builder()
+				.firstName("Leocadia")
+				.lastName("Sigüenza")
+				.userName("leocadiau5")
+				.email("leocadia@gmail.com")
+				.password(passwordEncoder.encode("leocadia1234"))
+				.phone("661541094")
+				.address("calleLeocadia, 10, 02001, Albacete, Albacete")
+				.photoUrl(null)
+				.userRole(UserRole.USER)
+				.build();
 
-		);
-		User user3 = new User(null,
-				"Trevor",
-				"McIntosh",
-				"trevor@apple.com",
-				"+1 415-555-1234",
-				"trevor@apple.com",
-				"trevoru3",
-				"1234 TrevorSt, San Francisco, CA 94123, USA",
-				UserRole.USER, null
-		);
-		User user4 = new User(null,
-				"Eutimio",
-				"Developer",
-				"eutimio@certidevs.com",
-				"619567144",
-				"eutimmiou4",
-				"eutimmiou4",
-				"calleEutimio, 23, 28004, Madrid, Madrid",
-				UserRole.ADMIN, null
+		User u6 = User.builder()
+				.firstName("Javier")
+				.lastName("Developer")
+				.userName("JavierBRO")
+				.email("jabaroosss@gmail.com")
+				.password(passwordEncoder.encode("javi1234"))
+				.phone("661541099")
+				.address("calle Cercana a Ppio, 33, 28008, Madrid, Madrid")
+				.photoUrl(null)
+				.userRole(UserRole.ADMIN)
+				.build();
 
-		);
-		User user5 = new User(null,
-				"Leocadia",
-				"Sigüenza",
-				"leocadia@hotmail.com",
-				"661541094",
-				"leocadiau5",
-				"leocadiu5",
-				"calleLeocadia, 10, 02001, Albacete, Albacete",
-				UserRole.USER, null
-		);
-		User user6 = new User(null, "Javier", "Developer", "jabaroosss@gmail.com",
-				"661541099", "JavierBRO", passwordEncoder.encode("admin1234"),
-				"calle Cercana a Ppio, 33, 28008, Madrid, Madrid",
-				UserRole.ADMIN,null
-		);
-		User user7 = new User(null, "Angel", "Martinez", "angel@gmail.com",
-				"666777888", "angelo", "admin1234",
-				"Avda. del Escuadrón Suicida",
-				UserRole.ADMIN, null
-		);
-		userRepository.saveAll(List.of(user1, user2, user3, user4, user5, user6, user7));
+		User u7 = User.builder()
+				.firstName("Angel")
+				.lastName("Martinez")
+				.userName("angelo")
+				.email("angel@gmail.com")
+				.password(passwordEncoder.encode("admin1234"))
+				.phone("666777888")
+				.address("Avda. del Escuadrón Suicida")
+				.photoUrl(null)
+				.userRole(UserRole.ADMIN)
+				.build();
+		userRepository.saveAll(List.of(u1, u2, u3, u4, u5, u6, u7));
 
 		Room room1 = new Room(null, "Innovation Tech Hall", 500, false, "room.01.jpg", null);
 		Room room2 = new Room(null, "ByteSphere Convergence Hall", 350, false, "room.02.jpg",null );
 		Room room3 = new Room(null, "Quantum Nexus Summit Arena", 200, true, "room.03.jpg", null);
 		Room room4 = new Room(null, "NanoVerse Discovery Pavilion", 400, false, "room.04.jpg", null);
 		Room room5 = new Room(null, "TechHorizon Visionarium", 350,false, "room.05.jpg", null);
-        Room room6 = Room.builder()
-                .name("Little Room")
-                .capacity(100)
-                .hasSockets(true)
-                .keynotes(null)
-                .build();
-
-		roomRepository.saveAll(List.of(room1, room2, room3, room4, room5, room6));
+		roomRepository.saveAll(List.of(room1, room2, room3, room4, room5));
 
 		Track tr1 = new Track(1L,"Día 1: Bienvenida al evento ",LocalDateTime.of(2024,5,29,9,0), LocalDateTime.of(2024,5,29,10,0));
         Track tr2 = new Track(2L,"Día 1: 10h", LocalDateTime.of(2024,5,29,10,0), LocalDateTime.of(2024,5,29,11,0));
@@ -149,9 +153,9 @@ public class Main {
 
 		ticketRepo.saveAll(List.of(ticket1, ticket2, ticket3));
 
-		TicketOrderBuy ticketOrderBuy1 = new TicketOrderBuy(null,LocalDate.of(2024,5,28), LocalDate.of(2024,5,29), 20.0, 50.0,10,"Tarjeta credito","ONLINE","Codigo 4itech1", null, null);
-		TicketOrderBuy ticketOrderBuy2 = new TicketOrderBuy(null, LocalDate.of(2024,5,28), LocalDate.of(2024,5,29), 20.0, 50.0,10,"Tarjeta debito ","OFFLINE","Codigo 4itech2", null, null);
-		TicketOrderBuy ticketOrderBuy3 = new TicketOrderBuy(null, LocalDate.of(2024,5,28), LocalDate.of(2024,5,29), 20.0, 50.0,10,"Tarjeta credito","ONLINE","Codigo 4itech3", null, null);
+		TicketOrderBuy ticketOrderBuy1 = new TicketOrderBuy(null,LocalDate.of(2024,5,28), LocalDate.of(2024,5,29), 20.0, 50.0,10,"Tarjeta crédito","ONLINE","Código 4itech1", null, null);
+		TicketOrderBuy ticketOrderBuy2 = new TicketOrderBuy(null, LocalDate.of(2024,5,28), LocalDate.of(2024,5,29), 20.0, 50.0,10,"Tarjeta débito ","OFFLINE","Código 4itech2", null, null);
+		TicketOrderBuy ticketOrderBuy3 = new TicketOrderBuy(null, LocalDate.of(2024,5,28), LocalDate.of(2024,5,29), 20.0, 50.0,10,"Tarjeta crédito","ONLINE","Código 4itech3", null, null);
 
 		ticketOrderBuyRepository.saveAll(List.of(ticketOrderBuy1, ticketOrderBuy2, ticketOrderBuy3));
 
@@ -159,23 +163,23 @@ public class Main {
 				"Desarrollo e implicaciones de la IA en nuestra sociedad",
 				"La inteligencia artificial (IA) ha experimentado un desarrollo exponencial en las últimas décadas. Los avances en algoritmos, hardware y la disponibilidad de grandes cantidades de datos han impulsado su crecimiento.","AI.jpeg",
 				null,
-				room1, 300L,DifficultyLevel.JUNIOR,45,user4,tr1,null);
+				room1, 300L,DifficultyLevel.JUNIOR,45,u4,tr1,null);
 		Keynote keynote2 = new Keynote(2L, "La Era Digital JAVA",
 				"Desarrollo de código Java Global",
 				"Java es un lenguaje de programación de propósito general, creado por Sun Microsystems en 1995. Su desarrollo se basó en la idea de crear un lenguaje orientado a objetos, robusto, seguro, portable y de alto rendimiento.","Java.jpeg", null,
-				room2, 200L,DifficultyLevel.SENIOR,60,user1,tr2,null);
+				room2, 200L,DifficultyLevel.SENIOR,60,u1,tr2,null);
 		Keynote keynote3 = new Keynote(3L, "El Mejor Frontend con Angular ",
 				"Desarrollo e implicaciones de la IA en nuestra sociedad",
 				"Angular es un framework de desarrollo web de código abierto, basado en TypeScript, creado y mantenido por Google. Se utiliza para crear aplicaciones web de una sola página (SPA) dinámicas e interactivas.","Angular.jpeg",
 				null,
-				room4, 300L,DifficultyLevel.SEMI_SENIOR,45,user5,tr2,null);
+				room4, 300L,DifficultyLevel.SEMI_SENIOR,45,u5,tr2,null);
 		Keynote keynote4 = new Keynote(4L, "Salud Digital",
 				"Desarrollo e implicaciones de la salud por el uso de las tecnologías de abuso en nuestra sociedad",
 				"El desarrollo de las tecnologías de abuso ha ido en aumento en los últimos años. Estas tecnologías incluyen el uso de internet, las redes sociales, los videojuegos y los teléfonos móviles de forma excesiva o compulsiva.","salud-digital.jpeg", null,
-				room3, 150L,DifficultyLevel.SENIOR,50,user3,tr3,null);
+				room3, 150L,DifficultyLevel.SENIOR,50,u3,tr3,null);
 //        Keynote keynote5 = Keynote.builder()
-//                .title("No hay Frontend sin Backend ")
-//                .summary("Explicaciones didácticas y prácticas sobre el papél que juega cada uno de los desarrollos en la creación de páginas web ")
+//                .title("No hay Frontend sin Backend")
+//                .summary("Explicaciones didácticas y prácticas sobre el papel que juega cada uno de los desarrollos en la creación de páginas web.")
 //                .description("Increible, el diseño en frontend y el control en backend que nos permite crear cualquier tipo de página web de forma dinámica y resolver cualquier problema real de un servicio a ofrecer a cualquier usuario del planeta de forma sencilla y generar bases de datos de información interesante en todos los aspectos. No se puede concebir un frontend sin un backend robusto y bien desarrollado con código limpio y funcional...")
 // 					.photoUrl("")
 //                .webinarUrl("/assets/keynotes/no-frontend-sin-backend.jpeg")
@@ -187,39 +191,33 @@ public class Main {
 //                .maxNumPersons(150L)
 //                .attendees(List.of(user1,user2, user5))
 //                .build();
-
-
 		keynoteRepository.saveAll(List.of(keynote1,keynote2,keynote3,keynote4));
-
 
 		Comment c1 = new Comment(1L,
 				3,
 				"Fascinante, revelando el increíble potencial creativo " +
 						"de las máquinas en la producción de contenido único y original.",
-				LocalDateTime.of(2024, 4,2, 10,15),user1, keynote4);
+				LocalDateTime.of(2024, 4,2, 10,15),u1, keynote4);
 		Comment c2 = new Comment(2L,
 				4,
-				"me dejó asombrado, destacando cómo la tecnología puede generar " +
+				"Me dejó asombrado, destacando cómo la tecnología puede generar " +
 						"ideas innovadoras y abrir nuevas posibilidades en el ámbito " +
 						"creativo.",
-				LocalDateTime.of(2024, 4,6, 12,35),user2, keynote1);
+				LocalDateTime.of(2024, 4,6, 12,35),u2, keynote1);
 		Comment c3 = new Comment(3L,
 				5,
-				"fue esclarecedora, mostrando cómo estas avanzadas tecnologías " +
+				"Fue esclarecedora, mostrando cómo estas avanzadas tecnologías " +
 						"están transformando la forma en que concebimos y creamos contenido " +
 						"de manera revolucionaria.",
-				LocalDateTime.now(),user5, keynote2);
+				LocalDateTime.now(),u5, keynote2);
 		Comment c4 = new Comment(4L,
 				1,
-				"fue un poco desastre la ponencia no esclarecedora de estas avanzadas tecnologías que " +
+				"Fue un poco desastre la ponencia no esclarecedora de estas avanzadas tecnologías que " +
 						"están transformando la manera en que concebimos y creamos contenido " +
 						"de manera revolucionaria.",
-				LocalDateTime.of(2024, 4,2, 21,15),user4, keynote3);
-
-
+				LocalDateTime.of(2024, 4,2, 21,15),u4, keynote3);
 
 		commentRepository.saveAll(List.of(c1, c2, c3, c4));
 
 	}
-
 }

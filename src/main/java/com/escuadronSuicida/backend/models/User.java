@@ -11,10 +11,7 @@ import java.util.List;
 @Setter
 @Builder
 @ToString
-@Entity /* Esta clase es una entidad y debe ser mapeada a una tabla
-en la BD.
-*/
-@Table(name = "users") // desde JPA tb, aunque opcional; la añado para verla.
+@Entity(name = "users") // Esta clase es una entidad y debe ser mapeada a una tabla en la BD.
 public class User {
     @Id // Especifica la clave primaria de esta entidad.
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -31,17 +28,13 @@ public class User {
 
     @JsonIgnore // no muestra el dato sensible 'password' en las respuestas JSON.
     private String password;
-
     private String address; /* No creo otra entidad Address, solo relleno este
     atributo con la dirección completa con formato:
-    calle/número/código postal/ciudad/provincia.
-    */
+    calle/número/código postal/ciudad/provincia.*/
 
     @Enumerated(EnumType.STRING)
     private UserRole userRole;
-
     private String photoUrl;
-
 
 /*
     A mayores en un futuro bidireccional:
