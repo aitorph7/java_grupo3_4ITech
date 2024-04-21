@@ -51,6 +51,8 @@ public class KeynoteServiceImpl implements KeynoteService {
             keynoteFromDatabase.setSummary(keynote.getSummary());
             keynoteFromDatabase.setDescription(keynote.getDescription());
             keynoteFromDatabase.setWebinarUrl(keynote.getWebinarUrl());
+            keynoteFromDatabase.setTrack(keynote.getTrack());
+            keynoteFromDatabase.setRoom(keynote.getRoom());
  /*           keynoteFromDatabase.setStartDate(keynote.getStartDate());
             trackFromDatabase.setEndDate(keynote.getEndDate()); */
             return keynoteRepository.save(keynoteFromDatabase);

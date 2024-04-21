@@ -1,7 +1,6 @@
 package com.escuadronSuicida.backend.services;
 
 import com.escuadronSuicida.backend.models.Comment;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 
@@ -9,6 +8,7 @@ public interface CommentService {
 
 
     List<Comment> findCommentsOrderByDateTimeDesc();
+
     List<Comment> findByKeynote_Id(Long keynoteId);
 
     Comment findById(Long id);

@@ -1,7 +1,11 @@
 package com.escuadronSuicida.backend.controller;
 
+import com.escuadronSuicida.backend.exception.ConflictDeleteException;
 import com.escuadronSuicida.backend.models.Keynote;
+import com.escuadronSuicida.backend.repository.CommentRepository;
 import com.escuadronSuicida.backend.repository.KeynoteRepository;
+import com.escuadronSuicida.backend.repository.RoomRepository;
+import com.escuadronSuicida.backend.repository.TrackRepository;
 import com.escuadronSuicida.backend.services.FileService;
 import com.escuadronSuicida.backend.services.KeynoteService;
 import lombok.AllArgsConstructor;
@@ -22,18 +26,20 @@ public class KeynoteController {
     private KeynoteService keynoteService;
     private FileService fileService;
     private KeynoteRepository repo;
-
+    private CommentRepository commentRepository;
+    private RoomRepository roomRepository;
+    private TrackRepository trackRepository;
 
 
     @GetMapping
-    public ResponseEntity<List<Keynote>> findAll(){
+    public ResponseEntity<List<Keynote>> findAll() {
         // keynoteService.findAllPublishedTrue();
         List<Keynote> keynote = keynoteService.findKeynote();
         return ResponseEntity.ok(keynote);
     }
 
     @GetMapping("{id}")
-    public ResponseEntity<Keynote> findById(@PathVariable Long id){
+    public ResponseEntity<Keynote> findById(@PathVariable Long id) {
         Keynote keynote = keynoteService.findById(id);
         return ResponseEntity.ok(keynote);
     }
@@ -41,7 +47,7 @@ public class KeynoteController {
 
     // obtener keynotes filtrando por track
     @GetMapping("/filter-by-track/{id}")
-    public List<Keynote> findAllByTrackId (@PathVariable Long id) {
+    public List<Keynote> findAllByTrackId(@PathVariable Long id) {
         return this.repo.findAllByTrack_Id(id);
     }
 
@@ -59,11 +65,11 @@ public class KeynoteController {
     // Extra OPCIONAL: además del CRUD permitimos subir archivos
     // Guardar el archivo y obtener la ruta al archivo y guardar la ruta en photoUrl
     // Nuevo controlador para servir los archivos
-   @PostMapping()
+    @PostMapping()
     public Keynote create(
-            @RequestParam(value = "photo", required = false) MultipartFile file, Keynote keynote){
+            @RequestParam(value = "photo", required = false) MultipartFile file, Keynote keynote) {
 
-        if(file != null && !file.isEmpty()) {
+        if (file != null && !file.isEmpty()) {
             String fileName = fileService.store(file);
             keynote.setPhotoUrl(fileName);
         } else {
@@ -76,13 +82,13 @@ public class KeynoteController {
 
     @PutMapping("{id}")
     public ResponseEntity<Keynote> update(@RequestParam(value = "photo", required = false) MultipartFile file,
-                          Keynote keynote,
-                          @PathVariable Long id){
+                                          Keynote keynote,
+                                          @PathVariable Long id) {
 
-        if(!this.repo.existsById(id))
+        if (!this.repo.existsById(id))
             return ResponseEntity.notFound().build();
 
-        if(file != null && !file.isEmpty()) {
+        if (file != null && !file.isEmpty()) {
             String fileName = fileService.store(file);
             keynote.setPhotoUrl(fileName);
         } else {
@@ -93,8 +99,16 @@ public class KeynoteController {
     }
 
     @DeleteMapping("{id}")
-    public void delete(@PathVariable Long id) {
+    public void deleteById(@PathVariable Long id) {
         // TODO
+        try {
+            this.commentRepository.deleteByKeynoteId(id);
+            this.repo.deleteById(id);
+        } catch (Exception e) {
+            log.error("Error borrando Keynote", e);
+            throw new ConflictDeleteException("No es posible borrar la charla.");
+        }
+
 
         // Desasociar keynote de comentarios
         // commentRepository.findByKeynoteId()
@@ -107,6 +121,8 @@ public class KeynoteController {
         // commentRepository.findByKeynoteId()
         // for
         // delete de cada comment
-        repo.deleteById(id);
+        // repo.deleteById(id);
+
     }
 }
+

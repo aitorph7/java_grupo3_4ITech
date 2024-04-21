@@ -3,6 +3,7 @@ package com.escuadronSuicida.backend.services;
 import com.escuadronSuicida.backend.models.Comment;
 import com.escuadronSuicida.backend.repository.CommentRepository;
 
+import com.escuadronSuicida.backend.security.SecurityUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
@@ -13,7 +14,7 @@ import java.util.Optional;
 @Service
 public class CommentServiceImpl implements CommentService{
 
-    private CommentRepository commentRepository;
+    private final CommentRepository commentRepository;
 
     public CommentServiceImpl(CommentRepository commentRepository) {
 
@@ -39,6 +40,7 @@ public class CommentServiceImpl implements CommentService{
     public Comment createComment(Comment comment) {
         Logger logger = LoggerFactory.getLogger(Comment.class);
         try {
+            SecurityUtils.getCurrentUser().ifPresent(user -> comment.setUser(user));
             return commentRepository.save(comment);
         } catch (Exception e) {
             // Registrar el error
@@ -63,6 +65,8 @@ public class CommentServiceImpl implements CommentService{
             //commentOptional.get().setUser(comment.getUser());
             commentOptional.get().setKeynote(comment.getKeynote());
             //esto es actualizar los atributos que se consideren necesarios, se pueden omitir, estan todos.
+
+            SecurityUtils.getCurrentUser().ifPresent(user -> comment.setUser(user));
             return commentRepository.save(commentOptional.get());
         } else {
             return null;

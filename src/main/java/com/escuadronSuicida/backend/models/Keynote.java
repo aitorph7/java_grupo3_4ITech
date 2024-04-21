@@ -30,6 +30,7 @@ public class Keynote {
     @ManyToOne
     @JoinColumn(name = "room_id")
     private Room room; // numero de sala
+
     private Long maxNumPersons; // aforo maximo - permitido un contador*
 
     @Enumerated(EnumType.STRING)

@@ -3,7 +3,7 @@ package com.escuadronSuicida.backend.repository;
 import com.escuadronSuicida.backend.models.Keynote;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import java.awt.print.Book;
+
 import java.util.List;
 
 public interface KeynoteRepository extends JpaRepository<Keynote, Long> {
