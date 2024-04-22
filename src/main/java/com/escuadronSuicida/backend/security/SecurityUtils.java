@@ -17,7 +17,6 @@ public class SecurityUtils {
      * *
      * * User user = SecurityUtils.getCurrentUser().orElseThrow();
      *
-     * @return
      */
     public static Optional<User> getCurrentUser() {
 
@@ -29,14 +28,14 @@ public class SecurityUtils {
         } else {
             return Optional.empty();
         }
-
     }
-        public static boolean isAdminCurrentUser() {
-            if (getCurrentUser().isEmpty()) {
-                return false;
-            }
-            User user = getCurrentUser().get();
-            return user.getUserRole().equals(UserRole.ADMIN);
+
+    public static boolean isAdminCurrentUser() {
+        if (getCurrentUser().isEmpty()) {
+            return false;
         }
+        User user = getCurrentUser().get();
+        return user.getUserRole().equals(UserRole.ADMIN);
+    }
 
 }

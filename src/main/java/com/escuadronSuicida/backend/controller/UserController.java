@@ -55,18 +55,29 @@ public class UserController {
     }
 
     @PutMapping("users/{id}")
-    public ResponseEntity<User> update(@PathVariable Long id, @RequestBody User user){
-        if (!userRepository.existsById(id)) return ResponseEntity.notFound().build();
+    public User update(@PathVariable Long id, @RequestBody User user){
+        User user1 = SecurityUtils.getCurrentUser().orElseThrow();
         Optional<User> userOptional = userRepository.findById(id);
         if (userOptional.isPresent()){
-            User userfromDB = userOptional.get();
-            userfromDB.setAddress(user.getAddress());
-            userfromDB.setPhone(user.getPhone()); // una vez creado el User en BD, permito que solo pueda modificar
-            // su dirección y teléfono.
-            userRepository.save(userfromDB);
-            return ResponseEntity.ok(userfromDB);
+            User userFromDB = userOptional.get();
+            userFromDB.setFirstName(user.getFirstName());
+            userFromDB.setLastName(user.getLastName());
+            userFromDB.setEmail(user.getEmail());
+            userFromDB.setPhone(user.getPhone());
+            userFromDB.setUserName(user.getUserName());
+            userFromDB.setPassword(user.getPassword());
+            userFromDB.setAddress(user.getAddress());
+            userFromDB.setUserRole(user.getUserRole());
+            userFromDB.setPhotoUrl(user.getPhotoUrl());
+            if (user1.getId().equals(userFromDB.getId())) {
+                userFromDB.setPassword(user.getPassword());
+            } else
+                throw new UnauthorizedException("Password no modificable.");
+
+            userRepository.save(userFromDB);
+            return this.userRepository.save(user);
         } else
-            return ResponseEntity.notFound().build();
+            throw new NoSuchElementException("Usuario/a no existente en Base de Datos.");
     }
 
     @DeleteMapping("users/{id}")
