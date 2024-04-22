@@ -48,6 +48,7 @@ public class CommentController {
 
     @PostMapping("comments")
     public ResponseEntity<Comment> createComment(@RequestBody Comment comment) {
+        SecurityUtils.getCurrentUser().ifPresent(user -> comment.setUser(user));
         Comment createdComment = commentService.createComment(comment);
         return ResponseEntity.status(HttpStatus.CREATED).body(createdComment);
         // return ResponseEntity.ok(commentRepository.save(comment); seria lo mismo pero sin llamar a CommentService

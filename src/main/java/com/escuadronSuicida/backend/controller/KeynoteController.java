@@ -91,8 +91,6 @@ public class KeynoteController {
         if (file != null && !file.isEmpty()) {
             String fileName = fileService.store(file);
             keynote.setPhotoUrl(fileName);
-        } else {
-            keynote.setPhotoUrl("avatar.png");
         }
 
         return ResponseEntity.ok(this.repo.save(keynote));
