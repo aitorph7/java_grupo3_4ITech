@@ -16,7 +16,7 @@ import java.util.List;
 @RestController
 public class CommentController {
     private final CommentService commentService;
-    private CommentRepository commentRepository;
+    private final CommentRepository commentRepository;
 
     public CommentController(CommentService commentService, CommentRepository commentRepository) {
         this.commentService = commentService;
@@ -87,7 +87,7 @@ public class CommentController {
         )
             this.commentRepository.deleteById(id);
         else
-            throw new UnauthorizedException("No puede borrar el comentario");
+            throw new UnauthorizedException("No puede borrar el comentario"); 
     }
 }
 
