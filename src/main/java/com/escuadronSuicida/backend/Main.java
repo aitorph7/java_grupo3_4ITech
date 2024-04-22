@@ -161,6 +161,7 @@ public class Main {
 
 		Keynote keynote1 = new Keynote(1L, "Inteligencia Artificial",
 				"Desarrollo e implicaciones de la IA en nuestra sociedad",
+<<<<<<< Updated upstream
 				"La inteligencia artificial (IA) ha experimentado un desarrollo exponencial en las últimas décadas. Los avances en algoritmos, hardware y la disponibilidad de grandes cantidades de datos han impulsado su crecimiento.","AI.jpeg",
 				null,
 				room1, 300L,DifficultyLevel.JUNIOR,45,u4,tr1,null);
@@ -182,14 +183,56 @@ public class Main {
 //                .summary("Explicaciones didácticas y prácticas sobre el papel que juega cada uno de los desarrollos en la creación de páginas web.")
 //                .description("Increible, el diseño en frontend y el control en backend que nos permite crear cualquier tipo de página web de forma dinámica y resolver cualquier problema real de un servicio a ofrecer a cualquier usuario del planeta de forma sencilla y generar bases de datos de información interesante en todos los aspectos. No se puede concebir un frontend sin un backend robusto y bien desarrollado con código limpio y funcional...")
 // 				  .photoUrl("no-frontend-sin-backend.jpeg")
+=======
+				"La Inteligencia Artificial (IA) está revolucionando el mundo, dotando a las máquinas de la capacidad de pensar, aprender y actuar de forma autónoma. Desde el reconocimiento facial que desbloquea nuestros teléfonos hasta los vehículos autónomos que recorren las calles, la IA está presente en diversos aspectos de nuestra vida diaria. Su impacto se extiende a campos como la medicina, donde permite el análisis de imágenes médicas para el diagnóstico temprano de enfermedades, o la educación, donde personaliza el aprendizaje para cada estudiante. La IA tiene el potencial de resolver algunos de los desafíos más apremiantes de la humanidad, desde la lucha contra el cambio climático hasta la búsqueda de nuevos tratamientos médicos. Sin embargo, también surgen preocupaciones éticas y sociales en torno a su desarrollo y uso responsable, como el sesgo algorítmico y la pérdida de empleos.","AI_2.png",
+				"https://www.youtube.com/watch?v=MgWtYXcUg9Y",
+				room1, 300L,DifficultyLevel.JUNIOR,45,user4,tr1,null);
+		Keynote keynote2 = new Keynote(2L, "Realidad Virtual",
+				"Realidad Virtual (VR) y Realidad Aumentada (AR), casos de uso",
+				"La Realidad Virtual (VR) nos transporta a mundos virtuales vívidos y simulados, donde podemos interactuar con objetos y entornos como si estuviéramos realmente allí. Con gafas VR y sensores, podemos explorar paisajes fantásticos, participar en juegos en 3D o incluso asistir a conciertos virtuales. La VR tiene un gran potencial en el entrenamiento, donde permite simulaciones realistas para pilotos o cirujanos, o en la terapia, donde ayuda a pacientes con fobias o trastornos de estrés postraumático. Sin embargo, la VR también puede generar mareos u otros efectos secundarios en algunos usuarios, y es importante considerar estos aspectos al utilizarla.","realidad_virtual.png", null,
+				room2, 200L,DifficultyLevel.SENIOR,60,user1,tr2,null);
+		Keynote keynote3 = new Keynote(3L, "Experiencia de Usuario (UX)",
+				"Desarrollo e implicaciones de una mejora de experiencia de usuario",
+				"La Experiencia de Usuario (UX) se centra en crear interfaces y experiencias de usuario intuitivas, atractivas y fáciles de usar. Es un campo fundamental en el desarrollo de productos digitales y servicios, ya que busca comprender las necesidades, expectativas y comportamientos de los usuarios para crear soluciones que sean útiles, agradables y satisfagan sus expectativas. La UX implica un proceso de investigación, diseño, iteración y evaluación que involucra a diversos profesionales, como diseñadores UX, investigadores de usabilidad, y desarrolladores.\n" +
+						"\n" +
+						"Un buen diseño UX tiene un impacto positivo en la satisfacción del usuario, la lealtad a la marca y el éxito del producto. Un producto con una UX deficiente puede generar frustración, confusión y abandono por parte de los usuarios, mientras que un buen diseño UX puede aumentar la productividad, el disfrute y la adopción del producto. La UX se aplica en una amplia gama de áreas, desde aplicaciones móviles y sitios web hasta software empresarial y sistemas de información. En un mundo cada vez más digital, la UX es esencial para crear productos y servicios que sean relevantes, usables y que brinden una experiencia positiva a los usuarios.","UX.png",
+				null,
+				room4, 300L,DifficultyLevel.SEMI_SENIOR,45,user5,tr2,null);
+		Keynote keynote4 = new Keynote(4L, "Ciberseguridad",
+				"Ciberseguridad, protegiendo el mundo digital contra accesos no autorizados, ataques y fraudes",
+				"En la era digital, la Ciberseguridad es fundamental para proteger nuestros sistemas informáticos, datos y privacidad. Con el aumento de ataques cibernéticos sofisticados, es crucial contar con medidas de seguridad adecuadas para prevenir el acceso no autorizado, el robo de datos o el fraude. La Ciberseguridad abarca una amplia gama de prácticas, desde el uso de contraseñas seguras y la instalación de antivirus hasta la realización de copias de seguridad y la formación del personal en materia de seguridad. Las empresas y organizaciones deben invertir en Ciberseguridad para proteger su información vital y la de sus clientes.","cibersecurity_2.png", null,
+				room3, 150L,DifficultyLevel.SENIOR,50,user3,tr3,null);
+		Keynote keynote5 = new Keynote(5L, "Cloud Computing",
+				"Cloud Computing: desarrollo y avances en la computación en la nube",
+				"El Cloud Computing ha transformado la forma en que almacenamos, accedemos y procesamos la información. En lugar de depender de servidores físicos en nuestras instalaciones, podemos acceder a recursos informáticos (servidores, almacenamiento, bases de datos) a través de Internet. Esto ofrece múltiples ventajas: escalabilidad (podemos aumentar o disminuir los recursos según nuestras necesidades), flexibilidad (podemos acceder a nuestros datos desde cualquier lugar), y colaboración (podemos trabajar en proyectos en equipo de forma remota). El Cloud Computing es utilizado por empresas de todos los tamaños, desde startups hasta grandes corporaciones, y ha impulsado la innovación en diversos sectores.","cloud_computing.png", null,
+				room3, 150L,DifficultyLevel.SENIOR,50,user7,tr4,null);
+
+		Keynote keynote6 = new Keynote(6L, "Blockchain",
+				"Blockchain: Transparencia y seguridad en las transacciones",
+				"La tecnología Blockchain ha introducido un nuevo paradigma en la forma en que realizamos transacciones. Se trata de un registro distribuido que almacena información de forma segura, transparente e inmutable. Cada transacción se registra en bloques que se vinculan entre sí, creando una cadena de bloques. Esto permite la trazabilidad y verificación de las transacciones, sin necesidad de intermediarios. Blockchain es la base de las criptomonedas como Bitcoin, pero también tiene aplicaciones en diversos sectores, como la gestión de la cadena de suministro, los registros médicos electrónicos o el voto electrónico. Su potencial para mejorar la transparencia, la eficiencia y la seguridad en las transacciones es enorme.","blockchain.png", null,
+				room3, 150L,DifficultyLevel.SENIOR,50,user2,tr5,null);
+		Keynote keynote7 = new Keynote(7L, "Big Data",
+				"Big Data: Descifrando el poder de los datos",
+				"El Big Data se refiere al análisis de grandes conjuntos de datos para extraer información valiosa. Con el auge de sensores, dispositivos conectados y redes sociales, la cantidad de datos generados diariamente es colosal. El Big Data permite a las empresas analizar patrones, tendencias y comportamientos de sus clientes, tomar decisiones más informadas, optimizar sus operaciones y desarrollar nuevos productos y servicios. El análisis de Big Data también se utiliza en áreas como la investigación científica, la medicina personalizada y la gestión de riesgos financieros. Sin embargo, la gestión y el análisis de Big Data presentan desafíos técnicos y éticos, como la privacidad de los datos y la protección de la información personal.","big_data_3.png", null,
+				room3, 150L,DifficultyLevel.SENIOR,50,user3,tr6,null);
+		Keynote keynote8 = new Keynote(8L, "Internet de las cosas (IoT)",
+				"IoT: Un mundo conectado",
+				"El Internet de las Cosas (IoT) conecta objetos físicos a Internet, permitiendo su monitoreo y control remoto. Desde electrodomésticos inteligentes que se controlan con la voz hasta sensores que recopilan datos sobre el medio ambiente, el IoT está transformando nuestro entorno. La información recopilada por los dispositivos IoT puede utilizarse para mejorar la eficiencia energética, optimizar la gestión de recursos, o incluso salvar vidas en el ámbito de la salud. Sin embargo, la seguridad y la privacidad","IoT.png", null,
+				room3, 150L,DifficultyLevel.SENIOR,50,user5,tr5,null);
+//        Keynote keynote5 = Keynote.builder()
+//                .title("Ciberseguridad")
+//                .summary("Ciberseguridad, protegiendo el mundo digital contra accesos no autorizados, ataques y fraudes")
+//                .description("En la era digital, la Ciberseguridad es fundamental para proteger nuestros sistemas informáticos, datos y privacidad. Con el aumento de ataques cibernéticos sofisticados, es crucial contar con medidas de seguridad adecuadas para prevenir el acceso no autorizado, el robo de datos o el fraude. La Ciberseguridad abarca una amplia gama de prácticas, desde el uso de contraseñas seguras y la instalación de antivirus hasta la realización de copias de seguridad y la formación del personal en materia de seguridad. Las empresas y organizaciones deben invertir en Ciberseguridad para proteger su información vital y la de sus clientes.")
+//				.photoUrl("cibersecurity_2.png")
+>>>>>>> Stashed changes
 //                .webinarUrl(null)
 //                .room(room1)
-//                .durationInMin(55)
+//				.maxNumPersons(300L)
 //                .difficultyLevel(DifficultyLevel.JUNIOR)
+//				.durationInMin(90)
 //                .speaker(user3)
 //                .track(tr7)
-//                .maxNumPersons(150L)
-//                .attendees(List.of(user1,user2, user5))
+//                .attendees(null)
 //                .build();
 		keynoteRepository.saveAll(List.of(keynote1,keynote2,keynote3,keynote4));
 
