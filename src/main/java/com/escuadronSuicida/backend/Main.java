@@ -181,7 +181,7 @@ public class Main {
 				room3, 150L,DifficultyLevel.SENIOR,50,u3,tr3,null);
 		Keynote keynote5 = new Keynote(5L, "Cloud Computing",
 				"Cloud Computing: desarrollo y avances en la computación en la nube",
-				"El Cloud Computing ha transformado la forma en que almacenamos, accedemos y procesamos la información. En lugar de depender de servidores físicos en nuestras instalaciones, podemos acceder a recursos informáticos (servidores, almacenamiento, bases de datos) a través de Internet. Esto ofrece múltiples ventajas: escalabilidad (podemos aumentar o disminuir los recursos según nuestras necesidades), flexibilidad (podemos acceder a nuestros datos desde cualquier lugar), y colaboración (podemos trabajar en proyectos en equipo de forma remota). El Cloud Computing es utilizado por empresas de todos los tamaños, desde startups hasta grandes corporaciones, y ha impulsado la innovación en diversos sectores.","cloud_computing.png", null,
+				"El Cloud Computing ha transformado la forma en que almacenamos, accedemos y procesamos la información. En lugar de depender de servidores físicos en nuestras instalaciones, podemos acceder a recursos informáticos (servidores, almacenamiento, bases de datos) a través de Internet. Esto ofrece múltiples ventajas: escalabilidad (podemos aumentar o disminuir los recursos según nuestras necesidades), flexibilidad (podemos acceder a nuestros datos desde cualquier lugar), y colaboración (podemos trabajar en proyectos en equipo de forma remota). El Cloud Computing es utilizado por empresas de todos los tamaños, desde startups hasta grandes corporaciones, y ha impulsado la innovación en diversos sectores.","cloud_computing3.png", null,
 				room3, 150L,DifficultyLevel.SENIOR,50,u7,tr4,null);
 
 		Keynote keynote6 = new Keynote(6L, "Blockchain",
@@ -190,7 +190,7 @@ public class Main {
 				room3, 150L,DifficultyLevel.SENIOR,50,u2,tr5,null);
 		Keynote keynote7 = new Keynote(7L, "Big Data",
 				"Big Data: Descifrando el poder de los datos",
-				"El Big Data se refiere al análisis de grandes conjuntos de datos para extraer información valiosa. Con el auge de sensores, dispositivos conectados y redes sociales, la cantidad de datos generados diariamente es colosal. El Big Data permite a las empresas analizar patrones, tendencias y comportamientos de sus clientes, tomar decisiones más informadas, optimizar sus operaciones y desarrollar nuevos productos y servicios. El análisis de Big Data también se utiliza en áreas como la investigación científica, la medicina personalizada y la gestión de riesgos financieros. Sin embargo, la gestión y el análisis de Big Data presentan desafíos técnicos y éticos, como la privacidad de los datos y la protección de la información personal.","big_data_3.png", null,
+				"El Big Data se refiere al análisis de grandes conjuntos de datos para extraer información valiosa. Con el auge de sensores, dispositivos conectados y redes sociales, la cantidad de datos generados diariamente es colosal. El Big Data permite a las empresas analizar patrones, tendencias y comportamientos de sus clientes, tomar decisiones más informadas, optimizar sus operaciones y desarrollar nuevos productos y servicios. El análisis de Big Data también se utiliza en áreas como la investigación científica, la medicina personalizada y la gestión de riesgos financieros. Sin embargo, la gestión y el análisis de Big Data presentan desafíos técnicos y éticos, como la privacidad de los datos y la protección de la información personal.","big_data_2.png", null,
 				room3, 150L,DifficultyLevel.SENIOR,50,u3,tr6,null);
 		Keynote keynote8 = new Keynote(8L, "Internet de las cosas (IoT)",
 				"IoT: Un mundo conectado",
@@ -210,7 +210,7 @@ public class Main {
 //                .track(tr7)
 //                .attendees(null)
 //                .build();
-		keynoteRepository.saveAll(List.of(keynote1,keynote2,keynote3,keynote4));
+		keynoteRepository.saveAll(List.of(keynote1,keynote2,keynote3,keynote4, keynote5, keynote6, keynote7, keynote8));
 
 		Comment c1 = new Comment(1L,
 				3,
