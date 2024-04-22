@@ -57,27 +57,26 @@ public class UserController {
     @PutMapping("users/{id}")
     public User update(@PathVariable Long id, @RequestBody User user){
         User user1 = SecurityUtils.getCurrentUser().orElseThrow();
-        Optional<User> userOptional = userRepository.findById(id);
-        if (userOptional.isPresent()){
-            User userFromDB = userOptional.get();
-            userFromDB.setFirstName(user.getFirstName());
-            userFromDB.setLastName(user.getLastName());
-            userFromDB.setEmail(user.getEmail());
-            userFromDB.setPhone(user.getPhone());
-            userFromDB.setUserName(user.getUserName());
-            userFromDB.setPassword(user.getPassword());
-            userFromDB.setAddress(user.getAddress());
-            userFromDB.setUserRole(user.getUserRole());
-            userFromDB.setPhotoUrl(user.getPhotoUrl());
-            if (user1.getId().equals(userFromDB.getId())) {
+        if (user1.getId().equals(user.getId()) || user1.getUserRole().){
+            Optional<User> userOptional = userRepository.findById(id);
+            if (userOptional.isPresent()){
+                User userFromDB = userOptional.get();
+                userFromDB.setFirstName(user.getFirstName());
+                userFromDB.setLastName(user.getLastName());
+                userFromDB.setEmail(user.getEmail());
+                userFromDB.setPhone(user.getPhone());
+                userFromDB.setUserName(user.getUserName());
                 userFromDB.setPassword(user.getPassword());
+                userFromDB.setAddress(user.getAddress());
+                userFromDB.setUserRole(user.getUserRole());
+                userFromDB.setPhotoUrl(user.getPhotoUrl());
+                userFromDB.setPassword(user.getPassword());
+                userRepository.save(userFromDB);
+                return this.userRepository.save(user);
             } else
-                throw new UnauthorizedException("Password no modificable.");
-
-            userRepository.save(userFromDB);
-            return this.userRepository.save(user);
+                throw new NoSuchElementException("Usuario/a no existente en Base de Datos.");
         } else
-            throw new NoSuchElementException("Usuario/a no existente en Base de Datos.");
+            throw new UnauthorizedException("Usuario/a no modificable.");
     }
 
     @DeleteMapping("users/{id}")
