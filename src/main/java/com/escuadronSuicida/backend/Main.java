@@ -147,11 +147,11 @@ public class Main {
 
 		trackRepository.saveAll(List.of(tr1, tr2, tr3, tr4, tr5, tr6, tr7, tr8, tr9, tr10, tr11, tr12, tr13,tr14,tr15,tr16,tr17,tr18));
 
-		Ticket ticket1 = new Ticket(null, "Ticket1", 50.0, 10);
-		Ticket ticket2 = new Ticket(null, "Ticket2", 50.0, 10);
-		Ticket ticket3 = new Ticket(null, "Ticket3", 50.0, 10);
+		Ticket ticket1 = new Ticket(null, "Ticket1", 50.0, 15);
+		Ticket ticket2 = new Ticket(null, "Ticket2", 100.0, 15);
 
-		ticketRepo.saveAll(List.of(ticket1, ticket2, ticket3));
+
+		ticketRepo.saveAll(List.of(ticket1, ticket2));
 
 		TicketOrderBuy ticketOrderBuy1 = new TicketOrderBuy(null,LocalDate.of(2024,5,28), LocalDate.of(2024,5,29), 20.0, 50.0,10,"Tarjeta crédito","ONLINE","Código 4itech1", null, null);
 		TicketOrderBuy ticketOrderBuy2 = new TicketOrderBuy(null, LocalDate.of(2024,5,28), LocalDate.of(2024,5,29), 20.0, 50.0,10,"Tarjeta débito ","OFFLINE","Código 4itech2", null, null);
