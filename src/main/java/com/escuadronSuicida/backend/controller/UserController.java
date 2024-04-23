@@ -4,6 +4,7 @@ import com.escuadronSuicida.backend.dto.Login;
 import com.escuadronSuicida.backend.dto.Register;
 import com.escuadronSuicida.backend.dto.Token;
 import com.escuadronSuicida.backend.exception.UnauthorizedException;
+import com.escuadronSuicida.backend.models.Keynote;
 import com.escuadronSuicida.backend.models.User;
 import com.escuadronSuicida.backend.models.UserRole;
 import com.escuadronSuicida.backend.repository.UserRepository;
@@ -54,6 +55,20 @@ public class UserController {
         return ResponseEntity.ok(userRepository.save(user));
     }
 
+    // permito subir archivos para que el user tenga imagen/avatar
+    @PostMapping()
+    public User create(
+            @RequestParam(value = "photo", required = false) MultipartFile file, User user) {
+
+        if (file != null && !file.isEmpty()) {
+            String fileName = fileService.store(file);
+            user.setPhotoUrl(fileName);
+        } else {
+            user.setPhotoUrl("avatar.png");
+        }
+        return this.userRepository.save(user);
+    }
+
     @PutMapping("users/{id}")
     public User update(@PathVariable Long id, @RequestBody User user){
         User currentUser = SecurityUtils.getCurrentUser().orElseThrow();
@@ -83,6 +98,22 @@ public class UserController {
         } else {
             throw new UnauthorizedException("No tiene permiso para modificar este usuario/a.");
         }
+    }
+
+    // Permito actualizar archivo del user (imagen/avatar)
+    @PutMapping("{id}")
+    public ResponseEntity<User> update(@RequestParam(value = "photo", required = false) MultipartFile file,
+                                          User user,
+                                          @PathVariable Long id) {
+        if (!this.userRepository.existsById(id))
+            return ResponseEntity.notFound().build();
+        if (file != null && !file.isEmpty()) {
+            String fileName = fileService.store(file);
+            user.setPhotoUrl(fileName);
+        } else {
+            user.setPhotoUrl("avatar.png");
+        }
+        return ResponseEntity.ok(this.userRepository.save(user));
     }
 
     @DeleteMapping("users/{id}")
@@ -185,7 +216,7 @@ public class UserController {
         return user;
     }
 
-    // subir avatar
+    // subir avatar al perfil del usuario
     @PostMapping("users/account/avatar")
     public User uploadAvatar(
             @RequestParam(value = "photo") MultipartFile file
