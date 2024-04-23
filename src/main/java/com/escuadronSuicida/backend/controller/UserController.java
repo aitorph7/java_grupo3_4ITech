@@ -60,9 +60,15 @@ public class UserController {
         Optional<User> userOptional = userRepository.findById(id);
         if (userOptional.isPresent()){
             User userfromDB = userOptional.get();
+            userfromDB.setFirstName(user.getFirstName());
+            userfromDB.setLastName(user.getLastName());
+            userfromDB.setPassword(user.getPassword());
+            userfromDB.setPhotoUrl(user.getPhotoUrl());
+            userfromDB.setPhone(user.getPhone());
+            userfromDB.setUserName(user.getUserName());
             userfromDB.setAddress(user.getAddress());
-            userfromDB.setPhone(user.getPhone()); // una vez creado el User en BD, permito que solo pueda modificar
-            // su dirección y teléfono.
+// una vez creado el User en BD, permito que solo pueda modificar
+            // su dirección , teléfono...etc
             userRepository.save(userfromDB);
             return ResponseEntity.ok(userfromDB);
         } else

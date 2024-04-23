@@ -66,7 +66,7 @@ public class SecurityConfig {
                 .requestMatchers(HttpMethod.DELETE, "tickets").hasAnyAuthority("ADMIN") // solo el ADMIN puede borrar tickets
                 .requestMatchers(HttpMethod.POST, "comments").permitAll()
                 .requestMatchers(HttpMethod.PUT, "comments").permitAll()
-                .requestMatchers(HttpMethod.DELETE, "comments").hasAnyAuthority("ADMIN")
+                .requestMatchers(HttpMethod.DELETE, "comments").hasAnyAuthority("ADMIN", "USER")
                 .requestMatchers(HttpMethod.POST, "tracks").hasAnyAuthority("ADMIN")
                 .requestMatchers(HttpMethod.PUT, "tracks").hasAnyAuthority("ADMIN")
                 .requestMatchers(HttpMethod.DELETE, "tracks").hasAnyAuthority("ADMIN")
