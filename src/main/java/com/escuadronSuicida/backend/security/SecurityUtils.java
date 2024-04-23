@@ -21,10 +21,10 @@ public class SecurityUtils {
     public static Optional<User> getCurrentUser() {
 
 
-        Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal(); //devuelve un Object.
 
         if (principal instanceof User user) {
-            return Optional.of(user);
+            return Optional.of(user); //convierto el Object -> User.
         } else {
             return Optional.empty();
         }

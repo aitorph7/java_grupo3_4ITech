@@ -56,8 +56,9 @@ public class UserController {
 
     @PutMapping("users/{id}")
     public User update(@PathVariable Long id, @RequestBody User user){
-        User user1 = SecurityUtils.getCurrentUser().orElseThrow();
-        if (user1.getId().equals(user.getId()) || user1.getUserRole().){
+        User currentUser = SecurityUtils.getCurrentUser().orElseThrow();
+        // Verificar si el usuario actual tiene permiso para modificar los datos
+        if (currentUser.getId().equals(id) || SecurityUtils.isAdminCurrentUser()){
             Optional<User> userOptional = userRepository.findById(id);
             if (userOptional.isPresent()){
                 User userFromDB = userOptional.get();
@@ -70,13 +71,18 @@ public class UserController {
                 userFromDB.setAddress(user.getAddress());
                 userFromDB.setUserRole(user.getUserRole());
                 userFromDB.setPhotoUrl(user.getPhotoUrl());
-                userFromDB.setPassword(user.getPassword());
-                userRepository.save(userFromDB);
-                return this.userRepository.save(user);
-            } else
-                throw new NoSuchElementException("Usuario/a no existente en Base de Datos.");
-        } else
-            throw new UnauthorizedException("Usuario/a no modificable.");
+                // Si se proporciona una nueva contraseña, actualizarla
+                if (user.getPassword() != null && !user.getPassword().isEmpty()){
+                    userFromDB.setPassword(user.getPassword());
+                } //TODO que solo el propio usuario pueda modificar su password.
+                // guardar los cambios en BD
+                return userRepository.save(userFromDB);
+            } else {
+                throw new NoSuchElementException("Usuario/a no encontrado en Base de Datos.");
+            }
+        } else {
+            throw new UnauthorizedException("No tiene permiso para modificar este usuario/a.");
+        }
     }
 
     @DeleteMapping("users/{id}")
