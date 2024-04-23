@@ -161,7 +161,14 @@ public class Main {
 
 		Keynote keynote1 = new Keynote(1L, "Inteligencia Artificial",
 				"Desarrollo e implicaciones de la IA en nuestra sociedad",
-				"La Inteligencia Artificial (IA) está revolucionando el mundo, dotando a las máquinas de la capacidad de pensar, aprender y actuar de forma autónoma. Desde el reconocimiento facial que desbloquea nuestros teléfonos hasta los vehículos autónomos que recorren las calles, la IA está presente en diversos aspectos de nuestra vida diaria. Su impacto se extiende a campos como la medicina, donde permite el análisis de imágenes médicas para el diagnóstico temprano de enfermedades, o la educación, donde personaliza el aprendizaje para cada estudiante. La IA tiene el potencial de resolver algunos de los desafíos más apremiantes de la humanidad, desde la lucha contra el cambio climático hasta la búsqueda de nuevos tratamientos médicos. Sin embargo, también surgen preocupaciones éticas y sociales en torno a su desarrollo y uso responsable, como el sesgo algorítmico y la pérdida de empleos.","AI_2.png",
+				"""
+      asd
+      
+      sad
+      asd
+      a
+      asd
+						""","AI_2.png",
 				"https://www.youtube.com/watch?v=MgWtYXcUg9Y",
 				room1, 300L,DifficultyLevel.JUNIOR,45,u4,tr1,null);
 		Keynote keynote2 = new Keynote(2L, "Realidad Virtual",

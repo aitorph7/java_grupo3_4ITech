@@ -2,10 +2,8 @@ package com.escuadronSuicida.backend.controller;
 
 import com.escuadronSuicida.backend.exception.ConflictDeleteException;
 import com.escuadronSuicida.backend.models.Keynote;
-import com.escuadronSuicida.backend.repository.CommentRepository;
-import com.escuadronSuicida.backend.repository.KeynoteRepository;
-import com.escuadronSuicida.backend.repository.RoomRepository;
-import com.escuadronSuicida.backend.repository.TrackRepository;
+import com.escuadronSuicida.backend.models.KeynoteProjection;
+import com.escuadronSuicida.backend.repository.*;
 import com.escuadronSuicida.backend.services.FileService;
 import com.escuadronSuicida.backend.services.KeynoteService;
 import lombok.AllArgsConstructor;
@@ -36,6 +34,13 @@ public class KeynoteController {
         // keynoteService.findAllPublishedTrue();
         List<Keynote> keynote = keynoteService.findKeynote();
         return ResponseEntity.ok(keynote);
+    }
+
+    @GetMapping("projections/home")
+
+    public ResponseEntity<List<KeynoteProjection>> findAllProjection() {
+
+        return ResponseEntity.ok(repo.findAllProjection());
     }
 
     @GetMapping("{id}")
