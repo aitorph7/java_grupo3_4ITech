@@ -4,6 +4,7 @@ import com.escuadronSuicida.backend.dto.Login;
 import com.escuadronSuicida.backend.dto.Register;
 import com.escuadronSuicida.backend.dto.Token;
 import com.escuadronSuicida.backend.exception.UnauthorizedException;
+import com.escuadronSuicida.backend.models.Keynote;
 import com.escuadronSuicida.backend.models.User;
 import com.escuadronSuicida.backend.models.UserRole;
 import com.escuadronSuicida.backend.repository.UserRepository;
@@ -54,25 +55,65 @@ public class UserController {
         return ResponseEntity.ok(userRepository.save(user));
     }
 
+    // permito subir archivos para que el user tenga imagen/avatar
+    @PostMapping()
+    public User create(
+            @RequestParam(value = "photo", required = false) MultipartFile file, User user) {
+
+        if (file != null && !file.isEmpty()) {
+            String fileName = fileService.store(file);
+            user.setPhotoUrl(fileName);
+        } else {
+            user.setPhotoUrl("avatar.png");
+        }
+        return this.userRepository.save(user);
+    }
+
     @PutMapping("users/{id}")
-    public ResponseEntity<User> update(@PathVariable Long id, @RequestBody User user){
-        if (!userRepository.existsById(id)) return ResponseEntity.notFound().build();
-        Optional<User> userOptional = userRepository.findById(id);
-        if (userOptional.isPresent()){
-            User userfromDB = userOptional.get();
-            userfromDB.setFirstName(user.getFirstName());
-            userfromDB.setLastName(user.getLastName());
-            userfromDB.setPassword(user.getPassword());
-            userfromDB.setPhotoUrl(user.getPhotoUrl());
-            userfromDB.setPhone(user.getPhone());
-            userfromDB.setUserName(user.getUserName());
-            userfromDB.setAddress(user.getAddress());
-// una vez creado el User en BD, permito que solo pueda modificar
-            // su dirección , teléfono...etc
-            userRepository.save(userfromDB);
-            return ResponseEntity.ok(userfromDB);
-        } else
+    public User update(@PathVariable Long id, @RequestBody User user){
+        User currentUser = SecurityUtils.getCurrentUser().orElseThrow();
+        // Verificar si el usuario actual tiene permiso para modificar los datos
+        if (currentUser.getId().equals(id) || SecurityUtils.isAdminCurrentUser()){
+            Optional<User> userOptional = userRepository.findById(id);
+            if (userOptional.isPresent()){
+                User userFromDB = userOptional.get();
+                userFromDB.setFirstName(user.getFirstName());
+                userFromDB.setLastName(user.getLastName());
+                userFromDB.setEmail(user.getEmail());
+                userFromDB.setPhone(user.getPhone());
+                userFromDB.setUserName(user.getUserName());
+                userFromDB.setPassword(user.getPassword());
+                userFromDB.setAddress(user.getAddress());
+                userFromDB.setUserRole(user.getUserRole());
+                userFromDB.setPhotoUrl(user.getPhotoUrl());
+                // Si se proporciona una nueva contraseña, actualizarla
+                if (user.getPassword() != null && !user.getPassword().isEmpty()){
+                    userFromDB.setPassword(user.getPassword());
+                } //TODO que solo el propio usuario pueda modificar su password.
+                // guardar los cambios en BD
+                return userRepository.save(userFromDB);
+            } else {
+                throw new NoSuchElementException("Usuario/a no encontrado en Base de Datos.");
+            }
+        } else {
+            throw new UnauthorizedException("No tiene permiso para modificar este usuario/a.");
+        }
+    }
+
+    // Permito actualizar archivo del user (imagen/avatar)
+    @PutMapping("{id}")
+    public ResponseEntity<User> update(@RequestParam(value = "photo", required = false) MultipartFile file,
+                                          User user,
+                                          @PathVariable Long id) {
+        if (!this.userRepository.existsById(id))
             return ResponseEntity.notFound().build();
+        if (file != null && !file.isEmpty()) {
+            String fileName = fileService.store(file);
+            user.setPhotoUrl(fileName);
+        } else {
+            user.setPhotoUrl("avatar.png");
+        }
+        return ResponseEntity.ok(this.userRepository.save(user));
     }
 
     @DeleteMapping("users/{id}")
@@ -175,7 +216,7 @@ public class UserController {
         return user;
     }
 
-    // subir avatar
+    // subir avatar al perfil del usuario
     @PostMapping("users/account/avatar")
     public User uploadAvatar(
             @RequestParam(value = "photo") MultipartFile file
