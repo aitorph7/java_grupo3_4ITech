@@ -166,9 +166,7 @@ public class Main {
       
       sad
       asd
-      as
-      d
-      asd
+      a
       asd
 						""","AI_2.png",
 				"https://www.youtube.com/watch?v=MgWtYXcUg9Y",
