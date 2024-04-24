@@ -1,3 +1,5 @@
+![image](https://github.com/aitorph7/java_grupo3_4ITech/assets/18529354/913a2ef7-1e76-4b81-8643-9538d23bc869)
+
 ## Repositorio para el proyecto del curso "Desarrollo web con Java" del grupo3 aka "Escuadrón Suicida"💪🏻💥🔫 ##
  Vamos a crear una aplicación web para un evento de Programación tipo "T3chFest" o "CodeMotion":
  podemos usar este README para aportar nuestras ideas.
