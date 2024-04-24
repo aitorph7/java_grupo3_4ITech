@@ -2,10 +2,11 @@ package com.escuadronSuicida.backend.controller;
 
 import com.escuadronSuicida.backend.exception.ConflictDeleteException;
 import com.escuadronSuicida.backend.models.Keynote;
-import com.escuadronSuicida.backend.repository.CommentRepository;
-import com.escuadronSuicida.backend.repository.KeynoteRepository;
-import com.escuadronSuicida.backend.repository.RoomRepository;
-import com.escuadronSuicida.backend.repository.TrackRepository;
+import com.escuadronSuicida.backend.models.KeynoteProjection;
+import com.escuadronSuicida.backend.models.User;
+import com.escuadronSuicida.backend.models.UserRole;
+import com.escuadronSuicida.backend.repository.*;
+import com.escuadronSuicida.backend.security.SecurityUtils;
 import com.escuadronSuicida.backend.services.FileService;
 import com.escuadronSuicida.backend.services.KeynoteService;
 import lombok.AllArgsConstructor;
@@ -14,6 +15,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.management.relation.Role;
 import java.awt.print.Book;
 import java.util.List;
 
@@ -23,6 +25,7 @@ import java.util.List;
 @CrossOrigin("*")
 @Slf4j
 public class KeynoteController {
+    private final UserRepository userRepository;
     private KeynoteService keynoteService;
     private FileService fileService;
     private KeynoteRepository repo;
@@ -36,6 +39,20 @@ public class KeynoteController {
         // keynoteService.findAllPublishedTrue();
         List<Keynote> keynote = keynoteService.findKeynote();
         return ResponseEntity.ok(keynote);
+
+//        User user = SecurityUtils.getCurrentUser().orElseThrow();
+//
+//        if(user.getUserRole().equals(UserRole.ADMIN))
+//            return ResponseEntity.ok(this.repo.findAll());
+//        else
+//            return ResponseEntity.ok(this.repo.findByVisibleTrue());
+    }
+
+    @GetMapping("projections/home")
+
+    public ResponseEntity<List<KeynoteProjection>> findAllProjection() {
+
+        return ResponseEntity.ok(repo.findAllProjection());
     }
 
     @GetMapping("{id}")
@@ -113,7 +130,9 @@ public class KeynoteController {
         // for
         // setKeynote null
         // save comments
-
+    Keynote keynote = this.repo.findById(id).orElseThrow();
+        keynote.setVisible(false);
+        repo.save(keynote);
 
         // borrar
         // commentRepository.findByKeynoteId()

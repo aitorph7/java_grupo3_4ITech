@@ -138,7 +138,7 @@ public class UserController {
     public void register(@RequestBody Register register) {
         // Si el email está ocupado no registramos el usuario
         if (this.userRepository.existsByEmail(register.email())){
-            throw new RuntimeException("Esta dirección de correo ya está en uso.");
+            throw new BadCredentialsException("Esta dirección de correo ya está en uso.");
         }
         // Crear el objeto User
         // TODO Cifrar la contraseña con BCrypt. hecho linea 88 ?
