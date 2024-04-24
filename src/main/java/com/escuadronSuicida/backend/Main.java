@@ -42,7 +42,7 @@ public class Main {
 				.password(passwordEncoder.encode("pablo1234"))
 				.phone("657478901")
 				.address("callePablo, 2, 28046, Madrid, Madrid")
-				.photoUrl(null)
+				.photoUrl("speaker6.jpeg")
 				.userRole(UserRole.USER)
 				.build();
 
@@ -54,7 +54,7 @@ public class Main {
 				.password(passwordEncoder.encode("oscar1234"))
 				.phone("663501200")
 				.address("calleOscar, 46, 28011, Madrid, Madrid")
-				.photoUrl(null)
+				.photoUrl("speaker13.webp")
 				.userRole(UserRole.USER)
 				.build();
 
@@ -66,7 +66,7 @@ public class Main {
 				.password(passwordEncoder.encode("trevor1234"))
 				.phone("+1 415-555-1234")
 				.address("1234 TrevorSt, San Francisco, CA 94123, USA")
-				.photoUrl(null)
+				.photoUrl("speaker10.webp")
 				.userRole(UserRole.USER)
 				.build();
 
@@ -78,7 +78,7 @@ public class Main {
 				.password(passwordEncoder.encode("eutimio1234"))
 				.phone("619567144")
 				.address("calleEutimio, 23, 28004, Madrid, Madrid")
-				.photoUrl(null)
+				.photoUrl("speaker4.jpeg")
 				.userRole(UserRole.ADMIN)
 				.build();
 
@@ -90,7 +90,7 @@ public class Main {
 				.password(passwordEncoder.encode("leocadia1234"))
 				.phone("661541094")
 				.address("calleLeocadia, 10, 02001, Albacete, Albacete")
-				.photoUrl(null)
+				.photoUrl("speaker3.jpeg")
 				.userRole(UserRole.USER)
 				.build();
 
@@ -102,7 +102,7 @@ public class Main {
 				.password(passwordEncoder.encode("javi1234"))
 				.phone("661541099")
 				.address("calle Cercana a Ppio, 33, 28008, Madrid, Madrid")
-				.photoUrl(null)
+				.photoUrl("speaker20")
 				.userRole(UserRole.ADMIN)
 				.build();
 
@@ -114,7 +114,7 @@ public class Main {
 				.password(passwordEncoder.encode("admin1234"))
 				.phone("666777888")
 				.address("Avda. del Escuadrón Suicida")
-				.photoUrl(null)
+				.photoUrl("speaker19.jpeg")
 				.userRole(UserRole.ADMIN)
 				.build();
 		userRepository.saveAll(List.of(u1, u2, u3, u4, u5, u6, u7));

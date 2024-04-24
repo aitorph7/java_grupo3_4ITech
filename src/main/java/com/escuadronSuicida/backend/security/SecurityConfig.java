@@ -55,6 +55,8 @@ public class SecurityConfig {
                 .requestMatchers("files/**").permitAll()
                 .requestMatchers("keynotes/projections/home").permitAll()
                 .requestMatchers(HttpMethod.GET, "comments").permitAll()
+                .requestMatchers(HttpMethod.GET, "keynotes").permitAll()
+                .requestMatchers(HttpMethod.GET, "keynotes/*/detail").permitAll()
 //                .requestMatchers("/**").permitAll()
                 .requestMatchers("home").permitAll() // Permitimos ver la página 'home' a cualquier usuario no logado
                 // lo que no sea login o register es obligatorio estar autenticado
