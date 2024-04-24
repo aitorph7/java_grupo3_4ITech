@@ -237,10 +237,10 @@ public class Main {
 				"IoT: Un mundo conectado",
 				"El Internet de las Cosas (IoT) conecta objetos físicos a Internet, permitiendo su monitoreo y control remoto. Desde electrodomésticos inteligentes que se controlan con la voz hasta sensores que recopilan datos sobre el medio ambiente, el IoT está transformando nuestro entorno. La información recopilada por los dispositivos IoT puede utilizarse para mejorar la eficiencia energética, optimizar la gestión de recursos, o incluso salvar vidas en el ámbito de la salud. Sin embargo, la seguridad y la privacidad","IoT.png", null,
 				room3, 150L,DifficultyLevel.SENIOR,50,u5,tr5,null, true);
-		Keynote keynote9 = Keynote.builder()
-				.title("VISITE NUESTRA CAFETERIA").photoUrl("Cafeteria.jpeg")
-						.durationInMin(30).maxNumPersons(300L).track(tr3)
-						.build();
+//		Keynote keynote9 = Keynote.builder()
+//				.title("VISITE NUESTRA CAFETERIA").photoUrl("Cafeteria.jpeg")
+//						.durationInMin(30).maxNumPersons(300L).track(tr3)
+//						.build();
 
 //				new Keynote(9L, ,
 //				null,
@@ -260,7 +260,7 @@ public class Main {
 //                .track(tr7)
 //                .attendees(null)
 //                .build();
-		keynoteRepository.saveAll(List.of(keynote1,keynote2,keynote3,keynote4, keynote5, keynote6, keynote7, keynote8, keynote9));
+		keynoteRepository.saveAll(List.of(keynote1,keynote2,keynote3,keynote4, keynote5, keynote6, keynote7, keynote8));
 
 		Comment c1 = new Comment(1L,
 				3,
