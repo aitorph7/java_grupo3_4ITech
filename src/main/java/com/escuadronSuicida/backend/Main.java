@@ -219,7 +219,7 @@ public class Main {
 		Keynote keynote4 = new Keynote(4L, "Ciberseguridad",
 				"Ciberseguridad, protegiendo el mundo digital contra accesos no autorizados, ataques y fraudes",
 				"En la era digital, la Ciberseguridad es fundamental para proteger nuestros sistemas informáticos, datos y privacidad. Con el aumento de ataques cibernéticos sofisticados, es crucial contar con medidas de seguridad adecuadas para prevenir el acceso no autorizado, el robo de datos o el fraude. La Ciberseguridad abarca una amplia gama de prácticas, desde el uso de contraseñas seguras y la instalación de antivirus hasta la realización de copias de seguridad y la formación del personal en materia de seguridad. Las empresas y organizaciones deben invertir en Ciberseguridad para proteger su información vital y la de sus clientes.","cibersecurity_2.png", null,
-				room3, 150L,DifficultyLevel.SENIOR,50,u3,tr3,null);
+				room3, 150L,DifficultyLevel.SENIOR,50,u3,tr4,null);
 		Keynote keynote5 = new Keynote(5L, "Cloud Computing",
 				"Cloud Computing: desarrollo y avances en la computación en la nube",
 				"El Cloud Computing ha transformado la forma en que almacenamos, accedemos y procesamos la información. En lugar de depender de servidores físicos en nuestras instalaciones, podemos acceder a recursos informáticos (servidores, almacenamiento, bases de datos) a través de Internet. Esto ofrece múltiples ventajas: escalabilidad (podemos aumentar o disminuir los recursos según nuestras necesidades), flexibilidad (podemos acceder a nuestros datos desde cualquier lugar), y colaboración (podemos trabajar en proyectos en equipo de forma remota). El Cloud Computing es utilizado por empresas de todos los tamaños, desde startups hasta grandes corporaciones, y ha impulsado la innovación en diversos sectores.","cloud_computing3.png", null,
@@ -237,6 +237,15 @@ public class Main {
 				"IoT: Un mundo conectado",
 				"El Internet de las Cosas (IoT) conecta objetos físicos a Internet, permitiendo su monitoreo y control remoto. Desde electrodomésticos inteligentes que se controlan con la voz hasta sensores que recopilan datos sobre el medio ambiente, el IoT está transformando nuestro entorno. La información recopilada por los dispositivos IoT puede utilizarse para mejorar la eficiencia energética, optimizar la gestión de recursos, o incluso salvar vidas en el ámbito de la salud. Sin embargo, la seguridad y la privacidad","IoT.png", null,
 				room3, 150L,DifficultyLevel.SENIOR,50,u5,tr5,null);
+		Keynote keynote9 = keynote1.builder()
+				.title("VISITE NUESTRA CAFETERIA").photoUrl("Cafeteria.jpeg")
+						.durationInMin(30).maxNumPersons(300L).track(tr3)
+						.build();
+
+//				new Keynote(9L, ,
+//				null,
+//				null,, null,
+//				null, null,null,null,null,tr3,null);
 //        Keynote keynote5 = Keynote.builder()
 //                .title("Ciberseguridad")
 //                .summary("Ciberseguridad, protegiendo el mundo digital contra accesos no autorizados, ataques y fraudes")
@@ -251,7 +260,7 @@ public class Main {
 //                .track(tr7)
 //                .attendees(null)
 //                .build();
-		keynoteRepository.saveAll(List.of(keynote1,keynote2,keynote3,keynote4, keynote5, keynote6, keynote7, keynote8));
+		keynoteRepository.saveAll(List.of(keynote1,keynote2,keynote3,keynote4, keynote5, keynote6, keynote7, keynote8, keynote9));
 
 		Comment c1 = new Comment(1L,
 				3,
