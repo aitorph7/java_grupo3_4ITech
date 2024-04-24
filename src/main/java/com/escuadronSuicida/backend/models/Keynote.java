@@ -49,4 +49,6 @@ public class Keynote {
     @ManyToMany
     @ToString.Exclude
     private List<User> attendees = new ArrayList<>(); // Many To Many
+
+    private Boolean visible;
 }

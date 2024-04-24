@@ -6,6 +6,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
 
+import java.awt.print.Book;
 import java.util.List;
 
 public interface KeynoteRepository extends JpaRepository<Keynote, Long> {
@@ -15,6 +16,8 @@ public interface KeynoteRepository extends JpaRepository<Keynote, Long> {
     @Query("SELECT new com.escuadronSuicida.backend.models.KeynoteProjection(k.id, k.title, k.photoUrl) FROM Keynote k")
 
     List<KeynoteProjection> findAllProjection();
+
+    List<Keynote> findByVisibleTrue();
 
 
 }
