@@ -78,3 +78,11 @@ http://localhost:8080/swagger-ui/index.html
 
     En la parte inferior derecha, verás el nombre de la rama actual. Haz clic en él para cambiar de rama o selecciona "New Branch" para crear una nueva rama.
     Crear ramas es una buena práctica para trabajar en nuevas características sin afectar el código principal.
+
+## Home
+![image](https://github.com/aitorph7/java_grupo3_4ITech/assets/18529354/bd5b15ee-cd5c-477b-beef-d68549cafce7)
+
+## Participantes del Proyecto
+![image](https://github.com/aitorph7/java_grupo3_4ITech/assets/18529354/7c3d149a-2c5a-4e31-824c-013f5abb985e)
+
+
