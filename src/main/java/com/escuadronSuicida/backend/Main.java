@@ -228,11 +228,11 @@ public class Main {
 		Keynote keynote6 = new Keynote(6L, "Blockchain",
 				"Blockchain: Transparencia y seguridad en las transacciones",
 				"La tecnología Blockchain ha introducido un nuevo paradigma en la forma en que realizamos transacciones. Se trata de un registro distribuido que almacena información de forma segura, transparente e inmutable. Cada transacción se registra en bloques que se vinculan entre sí, creando una cadena de bloques. Esto permite la trazabilidad y verificación de las transacciones, sin necesidad de intermediarios. Blockchain es la base de las criptomonedas como Bitcoin, pero también tiene aplicaciones en diversos sectores, como la gestión de la cadena de suministro, los registros médicos electrónicos o el voto electrónico. Su potencial para mejorar la transparencia, la eficiencia y la seguridad en las transacciones es enorme.","blockchain.png", null,
-				room3, 150L,DifficultyLevel.SENIOR,50,u2,tr5,null, true);
+				room3, 150L,DifficultyLevel.SENIOR,50,u2,tr2,null, true);
 		Keynote keynote7 = new Keynote(7L, "Big Data",
 				"Big Data: Descifrando el poder de los datos",
 				"El Big Data se refiere al análisis de grandes conjuntos de datos para extraer información valiosa. Con el auge de sensores, dispositivos conectados y redes sociales, la cantidad de datos generados diariamente es colosal. El Big Data permite a las empresas analizar patrones, tendencias y comportamientos de sus clientes, tomar decisiones más informadas, optimizar sus operaciones y desarrollar nuevos productos y servicios. El análisis de Big Data también se utiliza en áreas como la investigación científica, la medicina personalizada y la gestión de riesgos financieros. Sin embargo, la gestión y el análisis de Big Data presentan desafíos técnicos y éticos, como la privacidad de los datos y la protección de la información personal.","big_data_2.png", null,
-				room3, 150L,DifficultyLevel.SENIOR,50,u3,tr6,null, true);
+				room3, 150L,DifficultyLevel.SENIOR,50,u3,tr2,null, true);
 		Keynote keynote8 = new Keynote(8L, "Internet de las cosas (IoT)",
 				"IoT: Un mundo conectado",
 				"El Internet de las Cosas (IoT) conecta objetos físicos a Internet, permitiendo su monitoreo y control remoto. Desde electrodomésticos inteligentes que se controlan con la voz hasta sensores que recopilan datos sobre el medio ambiente, el IoT está transformando nuestro entorno. La información recopilada por los dispositivos IoT puede utilizarse para mejorar la eficiencia energética, optimizar la gestión de recursos, o incluso salvar vidas en el ámbito de la salud. Sin embargo, la seguridad y la privacidad","IoT.png", null,
