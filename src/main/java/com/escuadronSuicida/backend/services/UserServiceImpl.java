@@ -2,17 +2,20 @@ package com.escuadronSuicida.backend.services;
 
 import com.escuadronSuicida.backend.models.User;
 import com.escuadronSuicida.backend.repository.UserRepository;
+import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
+@Slf4j
+@AllArgsConstructor
 public class UserServiceImpl implements UserService {
-    private final UserRepository userRepository;
 
-    public UserServiceImpl(UserRepository userRepository) {
-        this.userRepository = userRepository;
-    }
+    private final UserRepository userRepository;
 
     @Override
     public List<User> findAll() {
@@ -21,13 +24,18 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User findById(Long id) {
-        return this.userRepository.findById(id).orElse(null);
+        return this.userRepository.findById(id).orElseThrow();
     }
 
     @Override
     public User createUser(User user) {
-        this.userRepository.save(user);
-        return user;
+        Logger logger = LoggerFactory.getLogger(User.class);
+        try {
+            return userRepository.save(user);
+        } catch (Exception e) {
+            logger.error("Hubo un error al crear el usuario", e);
+            throw new RuntimeException("Hubo un error al crear el usuario/a: " + e.getMessage(), e);
+        }
     }
 
     @Override
