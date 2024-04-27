@@ -38,89 +38,89 @@ public class UserController {
     private final FileService fileService;
     private final PasswordEncoder passwordEncoder;
 
-    @GetMapping("users")
-    public List<User> findAll(){
-        return userRepository.findAll();
-    }
-    @GetMapping("users/{id}")
-    public ResponseEntity<User> findById(@PathVariable Long id) {
-        Optional<User> userOptional = userRepository.findById(id);
-        if (userOptional.isPresent())
-            return ResponseEntity.ok(userOptional.get());
-        else
-            return ResponseEntity.notFound().build();
-    }
-    @PostMapping("users")
-    public ResponseEntity<User> create(@RequestBody User user) {
-        return ResponseEntity.ok(userRepository.save(user));
-    }
-
-    // permito subir archivos para que el user tenga imagen/avatar
-    @PostMapping("users/account/avatar")
-    public User create(
-            @RequestParam(value = "photo", required = false) MultipartFile file, User user) {
-
-        if (file != null && !file.isEmpty()) {
-            String fileName = fileService.store(file);
-            user.setPhotoUrl(fileName);
-        } else {
-            user.setPhotoUrl("avatar.png");
-        }
-        return this.userRepository.save(user);
-    }
-
-    @PutMapping("users/{id}")
-    public User update(@PathVariable Long id, @RequestBody User user){
-        User currentUser = SecurityUtils.getCurrentUser().orElseThrow();
-        // Verificar si el usuario actual tiene permiso para modificar los datos
-        if (currentUser.getId().equals(id) || SecurityUtils.isAdminCurrentUser()){
-            Optional<User> userOptional = userRepository.findById(id);
-            if (userOptional.isPresent()){
-                User userFromDB = userOptional.get();
-                userFromDB.setFirstName(user.getFirstName());
-                userFromDB.setLastName(user.getLastName());
-                userFromDB.setEmail(user.getEmail());
-                userFromDB.setPhone(user.getPhone());
-                userFromDB.setUserName(user.getUserName());
-                userFromDB.setPassword(user.getPassword());
-                userFromDB.setAddress(user.getAddress());
-                userFromDB.setUserRole(user.getUserRole());
-                userFromDB.setPhotoUrl(user.getPhotoUrl());
-                // Si se proporciona una nueva contraseña, actualizarla
-                if (user.getPassword() != null && !user.getPassword().isEmpty()){
-                    userFromDB.setPassword(user.getPassword());
-                } //TODO que solo el propio usuario pueda modificar su password.
-                // guardar los cambios en BD
-                return userRepository.save(userFromDB);
-            } else {
-                throw new NoSuchElementException("Usuario/a no encontrado en Base de Datos.");
-            }
-        } else {
-            throw new UnauthorizedException("No tiene permiso para modificar este usuario/a.");
-        }
-    }
-
-    // Permito actualizar archivo del user (imagen/avatar)
-    @PutMapping("users/{id}")
-    public ResponseEntity<User> update(@RequestParam(value = "photo", required = false) MultipartFile file,
-                                          User user,
-                                          @PathVariable Long id) {
-        if (!this.userRepository.existsById(id))
-            return ResponseEntity.notFound().build();
-        if (file != null && !file.isEmpty()) {
-            String fileName = fileService.store(file);
-            user.setPhotoUrl(fileName);
-        } else {
-            user.setPhotoUrl("avatar.png");
-        }
-        return ResponseEntity.ok(this.userRepository.save(user));
-    }
-
+//    @GetMapping("users")
+//    public List<User> findAll(){
+//        return userRepository.findAll();
+//    }
+//    @GetMapping("users/{id}")
+//    public ResponseEntity<User> findById(@PathVariable Long id) {
+//        Optional<User> userOptional = userRepository.findById(id);
+//        if (userOptional.isPresent())
+//            return ResponseEntity.ok(userOptional.get());
+//        else
+//            return ResponseEntity.notFound().build();
+//    }
+//    @PostMapping("users")
+//    public ResponseEntity<User> create(@RequestBody User user) {
+//        return ResponseEntity.ok(userRepository.save(user));
+//    }
+//
+//    // permito subir archivos para que el user tenga imagen/avatar
+//    @PostMapping("users/account/avatar")
+//    public User create(
+//            @RequestParam(value = "photo", required = false) MultipartFile file, User user) {
+//
+//        if (file != null && !file.isEmpty()) {
+//            String fileName = fileService.store(file);
+//            user.setPhotoUrl(fileName);
+//        } else {
+//            user.setPhotoUrl("avatar.png");
+//        }
+//        return this.userRepository.save(user);
+//    }
+//
+//    @PutMapping("users/{id}")
+//    public User update(@PathVariable Long id, @RequestBody User user){
+//        User currentUser = SecurityUtils.getCurrentUser().orElseThrow();
+//        // Verificar si el usuario actual tiene permiso para modificar los datos
+//        if (currentUser.getId().equals(id) || SecurityUtils.isAdminCurrentUser()){
+//            Optional<User> userOptional = userRepository.findById(id);
+//            if (userOptional.isPresent()){
+//                User userFromDB = userOptional.get();
+//                userFromDB.setFirstName(user.getFirstName());
+//                userFromDB.setLastName(user.getLastName());
+//                userFromDB.setEmail(user.getEmail());
+//                userFromDB.setPhone(user.getPhone());
+//                userFromDB.setUserName(user.getUserName());
+//                userFromDB.setPassword(user.getPassword());
+//                userFromDB.setAddress(user.getAddress());
+//                userFromDB.setUserRole(user.getUserRole());
+//                userFromDB.setPhotoUrl(user.getPhotoUrl());
+//                // Si se proporciona una nueva contraseña, actualizarla
+//                if (user.getPassword() != null && !user.getPassword().isEmpty()){
+//                    userFromDB.setPassword(user.getPassword());
+//                } //TODO que solo el propio usuario pueda modificar su password.
+//                // guardar los cambios en BD
+//                return userRepository.save(userFromDB);
+//            } else {
+//                throw new NoSuchElementException("Usuario/a no encontrado en Base de Datos.");
+//            }
+//        } else {
+//            throw new UnauthorizedException("No tiene permiso para modificar este usuario/a.");
+//        }
+//    }
+//
+//    // Permito actualizar archivo del user (imagen/avatar)
+//    @PutMapping("users/{id}")
+//    public ResponseEntity<User> update(@RequestParam(value = "photo", required = false) MultipartFile file,
+//                                          User user,
+//                                          @PathVariable Long id) {
+//        if (!this.userRepository.existsById(id))
+//            return ResponseEntity.notFound().build();
+//        if (file != null && !file.isEmpty()) {
+//            String fileName = fileService.store(file);
+//            user.setPhotoUrl(fileName);
+//        } else {
+//            user.setPhotoUrl("avatar.png");
+//        }
+//        return ResponseEntity.ok(this.userRepository.save(user));
+//    }
+//
      @DeleteMapping("users/{id}")
-    // public ResponseEntity<Void> deleteById(@PathVariable Long id){
-    //     userRepository.deleteById(id);
-    //     return ResponseEntity.noContent().build();
-    // }
+//    // public ResponseEntity<Void> deleteById(@PathVariable Long id){
+//    //     userRepository.deleteById(id);
+//    //     return ResponseEntity.noContent().build();
+//    // }
    public void deleteById(@PathVariable Long id){
        // Solo si se es ADMIN puede eliminar.
        User user = this.userRepository.findById(id).orElseThrow();
@@ -131,7 +131,7 @@ public class UserController {
        else
            throw new UnauthorizedException("No tiene permiso para eliminar usuarios/as.");
    }
-  
+
 
     // Añadido por Angel para el registro y login de usuarios
 //////////////////////////////////////////////////////////////
