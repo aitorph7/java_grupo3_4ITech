@@ -56,7 +56,7 @@ public class UserController {
     }
 
     // permito subir archivos para que el user tenga imagen/avatar
-    @PostMapping()
+    @PostMapping("users/account/avatar")
     public User create(
             @RequestParam(value = "photo", required = false) MultipartFile file, User user) {
 
@@ -101,7 +101,7 @@ public class UserController {
     }
 
     // Permito actualizar archivo del user (imagen/avatar)
-    @PutMapping("{id}")
+    @PutMapping("users/{id}")
     public ResponseEntity<User> update(@RequestParam(value = "photo", required = false) MultipartFile file,
                                           User user,
                                           @PathVariable Long id) {
@@ -116,24 +116,25 @@ public class UserController {
         return ResponseEntity.ok(this.userRepository.save(user));
     }
 
-    @DeleteMapping("users/{id}")
-    public ResponseEntity<Void> deleteById(@PathVariable Long id){
-        userRepository.deleteById(id);
-        return ResponseEntity.noContent().build();
-    }
-//    public void deleteById(@PathVariable Long id){
-//        Solo si se es ADMIN puede eliminar.
-//        User user = this.userRepository.findById(id).orElseThrow();
-//
-//        if (user.getUserRole().equals(UserRole.ADMIN)
-//        )
-//            this.userRepository.deleteById(id);
-//        else
-//            throw new UnauthorizedException("No tiene permiso para eliminar usuarios/as.");
-//    }
+     @DeleteMapping("users/{id}")
+    // public ResponseEntity<Void> deleteById(@PathVariable Long id){
+    //     userRepository.deleteById(id);
+    //     return ResponseEntity.noContent().build();
+    // }
+   public void deleteById(@PathVariable Long id){
+       // Solo si se es ADMIN puede eliminar.
+       User user = this.userRepository.findById(id).orElseThrow();
+
+       if (user.getUserRole().equals(UserRole.ADMIN)
+       )
+           this.userRepository.deleteById(id);
+       else
+           throw new UnauthorizedException("No tiene permiso para eliminar usuarios/as.");
+   }
+  
 
     // Añadido por Angel para el registro y login de usuarios
-
+//////////////////////////////////////////////////////////////
     @PostMapping("users/register")
     public void register(@RequestBody Register register) {
         // Si el email está ocupado no registramos el usuario
