@@ -147,9 +147,9 @@ public class Main {
 
 		trackRepository.saveAll(List.of(tr1, tr2, tr3, tr4, tr5, tr6, tr7, tr8, tr9, tr10, tr11, tr12, tr13,tr14,tr15,tr16,tr17,tr18));
 
-		Ticket ticket1 = new Ticket(null, "Ticket1", 50.0, 10);
-		Ticket ticket2 = new Ticket(null, "Ticket2", 50.0, 10);
-		Ticket ticket3 = new Ticket(null, "Ticket3", 50.0, 10);
+		Ticket ticket1 = new Ticket(null, "Plata", 50.0, 10);
+		Ticket ticket2 = new Ticket(null, "Oro", 50.0, 10);
+		Ticket ticket3 = new Ticket(null, "Diamante", 50.0, 10);
 
 		ticketRepo.saveAll(List.of(ticket1, ticket2, ticket3));
 
