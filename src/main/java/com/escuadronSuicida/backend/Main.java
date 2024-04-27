@@ -154,9 +154,9 @@ public class Main {
 
 		ticketRepo.saveAll(List.of(ticket1, ticket2, ticket3));
 
-		TicketOrderBuy ticketOrderBuy1 = new TicketOrderBuy(null,LocalDate.of(2024,5,28), LocalDate.of(2024,5,29), 20.0, 50.0,10,"Tarjeta crédito","ONLINE","Código 4itech1", null, null);
-		TicketOrderBuy ticketOrderBuy2 = new TicketOrderBuy(null, LocalDate.of(2024,5,28), LocalDate.of(2024,5,29), 20.0, 50.0,10,"Tarjeta débito ","OFFLINE","Código 4itech2", null, null);
-		TicketOrderBuy ticketOrderBuy3 = new TicketOrderBuy(null, LocalDate.of(2024,5,28), LocalDate.of(2024,5,29), 20.0, 50.0,10,"Tarjeta crédito","ONLINE","Código 4itech3", null, null);
+		TicketOrderBuy ticketOrderBuy1 = new TicketOrderBuy(null,LocalDate.of(2024,5,28), LocalDate.of(2024,5,29), 10.0, 50.0,2,"Tarjeta crédito","ONLINE","Código 4itech1", null, null);
+		TicketOrderBuy ticketOrderBuy2 = new TicketOrderBuy(null, LocalDate.of(2024,5,28), LocalDate.of(2024,5,29), 10.0, 50.0,1,"Tarjeta débito ","OFFLINE","Código 4itech2", null, null);
+		TicketOrderBuy ticketOrderBuy3 = new TicketOrderBuy(null, LocalDate.of(2024,5,28), LocalDate.of(2024,5,29), 10.0, 50.0,3,"Tarjeta crédito","ONLINE","Código 4itech3", null, null);
 
 		ticketOrderBuyRepository.saveAll(List.of(ticketOrderBuy1, ticketOrderBuy2, ticketOrderBuy3));
 
