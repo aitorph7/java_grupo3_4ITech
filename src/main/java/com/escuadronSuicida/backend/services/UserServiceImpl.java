@@ -9,6 +9,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @Slf4j
@@ -40,10 +41,31 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User updateUserById(Long id, User user) {
-        return null;
+        Optional<User> userOptional = userRepository.findById(id);
+        if (userOptional.isPresent()){
+            User userFromDatabase = userOptional.get();
+            userFromDatabase.setFirstName(user.getFirstName());
+            userFromDatabase.setLastName(user.getLastName());
+            userFromDatabase.setEmail(user.getEmail());
+            userFromDatabase.setPhone(user.getPhone());
+            userFromDatabase.setUserName(user.getUserName());
+            userFromDatabase.setPassword(user.getPassword());
+            userFromDatabase.setAddress(user.getAddress());
+            userFromDatabase.setUserRole(user.getUserRole());
+            userFromDatabase.setPhotoUrl(user.getPhotoUrl());
+
+            return userRepository.save(userFromDatabase);
+        } else
+            return null;
     }
 
     @Override
-    public void deleteUserById(Long id) {
+    public boolean deleteUserById(Long id) {
+        Optional<User> userOptional = userRepository.findById(id);
+        if (userOptional.isPresent()){
+            userRepository.deleteById(id);
+            return true;
+        } else
+            return false;
     }
 }

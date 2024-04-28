@@ -9,6 +9,7 @@ import com.escuadronSuicida.backend.models.User;
 import com.escuadronSuicida.backend.models.UserRole;
 import com.escuadronSuicida.backend.repository.UserRepository;
 import com.escuadronSuicida.backend.services.FileService;
+import com.escuadronSuicida.backend.services.UserService;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.security.Keys;
 import lombok.AllArgsConstructor;
@@ -35,113 +36,30 @@ import java.util.concurrent.TimeUnit;
 public class UserController {
 
     private final UserRepository userRepository;
+    private UserService userService;
     private final FileService fileService;
     private final PasswordEncoder passwordEncoder;
 
-    @GetMapping("users")
-    public List<User> findAll(){
-        return userRepository.findAll();
+    @GetMapping
+    public ResponseEntity<List<User>> findAll(){
+        List<User> user = userService.findAll();
+        return ResponseEntity.ok(user);
     }
-    @GetMapping("users/{id}")
+
+    @GetMapping("{id}")
     public ResponseEntity<User> findById(@PathVariable Long id) {
-        Optional<User> userOptional = userRepository.findById(id);
-        if (userOptional.isPresent())
-            return ResponseEntity.ok(userOptional.get());
-        else
-            return ResponseEntity.notFound().build();
+        User user = userService.findById(id);
+        return ResponseEntity.ok(user);
     }
-    @PostMapping("users")
-    public ResponseEntity<User> create(@RequestBody User user) {
-        return ResponseEntity.ok(userRepository.save(user));
-    }
-
-    // permito subir archivos para que el user tenga imagen/avatar
-    @PostMapping()
-    public User create(
-            @RequestParam(value = "photo", required = false) MultipartFile file, User user) {
-
-        if (file != null && !file.isEmpty()) {
-            String fileName = fileService.store(file);
-            user.setPhotoUrl(fileName);
-        } else {
-            user.setPhotoUrl("avatar.png");
-        }
-        return this.userRepository.save(user);
-    }
-
-    @PutMapping("users/{id}")
-    public User update(@PathVariable Long id, @RequestBody User user){
-        User currentUser = SecurityUtils.getCurrentUser().orElseThrow();
-        // Verificar si el usuario actual tiene permiso para modificar los datos
-        if (currentUser.getId().equals(id) || SecurityUtils.isAdminCurrentUser()){
-            Optional<User> userOptional = userRepository.findById(id);
-            if (userOptional.isPresent()){
-                User userFromDB = userOptional.get();
-                userFromDB.setFirstName(user.getFirstName());
-                userFromDB.setLastName(user.getLastName());
-                userFromDB.setEmail(user.getEmail());
-                userFromDB.setPhone(user.getPhone());
-                userFromDB.setUserName(user.getUserName());
-                userFromDB.setPassword(user.getPassword());
-                userFromDB.setAddress(user.getAddress());
-                userFromDB.setUserRole(user.getUserRole());
-                userFromDB.setPhotoUrl(user.getPhotoUrl());
-                // Si se proporciona una nueva contraseña, actualizarla
-                if (user.getPassword() != null && !user.getPassword().isEmpty()){
-                    userFromDB.setPassword(user.getPassword());
-                } //TODO que solo el propio usuario pueda modificar su password.
-                // guardar los cambios en BD
-                return userRepository.save(userFromDB);
-            } else {
-                throw new NoSuchElementException("Usuario/a no encontrado en Base de Datos.");
-            }
-        } else {
-            throw new UnauthorizedException("No tiene permiso para modificar este usuario/a.");
-        }
-    }
-
-    // Permito actualizar archivo del user (imagen/avatar)
-    @PutMapping("{id}")
-    public ResponseEntity<User> update(@RequestParam(value = "photo", required = false) MultipartFile file,
-                                          User user,
-                                          @PathVariable Long id) {
-        if (!this.userRepository.existsById(id))
-            return ResponseEntity.notFound().build();
-        if (file != null && !file.isEmpty()) {
-            String fileName = fileService.store(file);
-            user.setPhotoUrl(fileName);
-        } else {
-            user.setPhotoUrl("avatar.png");
-        }
-        return ResponseEntity.ok(this.userRepository.save(user));
-    }
-
-    @DeleteMapping("users/{id}")
-    public ResponseEntity<Void> deleteById(@PathVariable Long id){
-        userRepository.deleteById(id);
-        return ResponseEntity.noContent().build();
-    }
-//    public void deleteById(@PathVariable Long id){
-//        Solo si se es ADMIN puede eliminar.
-//        User user = this.userRepository.findById(id).orElseThrow();
-//
-//        if (user.getUserRole().equals(UserRole.ADMIN)
-//        )
-//            this.userRepository.deleteById(id);
-//        else
-//            throw new UnauthorizedException("No tiene permiso para eliminar usuarios/as.");
-//    }
-
-    // Añadido por Angel para el registro y login de usuarios
 
     @PostMapping("users/register")
     public void register(@RequestBody Register register) {
         // Si el email está ocupado no registramos el usuario
         if (this.userRepository.existsByEmail(register.email())){
-            throw new BadCredentialsException("Esta dirección de correo ya está en uso.");
+            throw new BadCredentialsException("El email introducido ya está en uso.");
         }
         // Crear el objeto User
-        // TODO Cifrar la contraseña con BCrypt. hecho linea 88 ?
+        // TODO Cifrar la contraseña con BCrypt.
         User user = User.builder()
                 .email(register.email())
                 .password(passwordEncoder.encode(register.password()))
@@ -210,7 +128,7 @@ public class UserController {
             if (currentUser.getUserRole() == UserRole.ADMIN || Objects.equals(currentUser.getId(), user.getId())) {
                 this.userRepository.save(user);
             } else {
-                throw new UnauthorizedException("No tiene permiso para actualizar este usuario/a.");
+                throw new UnauthorizedException("No tiene permiso para modificar los datos de este usuario/a.");
             }
         });
         return user;
