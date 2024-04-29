@@ -163,80 +163,307 @@ public class Main {
 		Keynote keynote1 = new Keynote(1L, "Inteligencia Artificial",
 				"Desarrollo e implicaciones de la IA en nuestra sociedad",
 				"""
-						La <strong>Inteligencia</strong> Artificial (IA) es un campo de la informática que busca crear máquinas capaces de realizar tareas que típicamente requieren inteligencia humana. Esto incluye el aprendizaje, el razonamiento, la resolución de problemas y la toma de decisiones.
-						      
-						¿Cómo funciona la IA?
-						      
-						La IA funciona utilizando una variedad de técnicas, incluyendo:
-						      
-						Aprendizaje automático: La IA aprende a partir de datos, identificando patrones y relaciones sin necesidad de ser programada explícitamente.
-						Procesamiento del lenguaje natural: La IA procesa y comprende el lenguaje humano, permitiendo la comunicación entre humanos y máquinas.
-						Visión artificial: La IA interpreta y analiza imágenes y videos del mundo real.
-						Robótica: La IA controla y opera robots físicos, permitiendo la automatización de tareas.
-						¿Cuáles son las aplicaciones de la IA?
-						      
-						La IA tiene una amplia gama de aplicaciones en diversos sectores, como:
-						      
-						Salud: La IA se utiliza para desarrollar nuevos medicamentos, diagnosticar enfermedades y brindar atención médica personalizada.
-						Finanzas: La IA se utiliza para detectar fraudes, gestionar inversiones y asesorar a clientes financieros.
-						Transporte: La IA se utiliza para desarrollar vehículos autónomos, optimizar el tráfico y mejorar la seguridad vial.
-						Manufactura: La IA se utiliza para automatizar tareas de producción, optimizar la cadena de suministro y mejorar la calidad del producto.
-						Agricultura: La IA se utiliza para optimizar el riego, la fertilización y la cosecha, y para predecir el rendimiento de los cultivos.
-						¿Cuál es el impacto de la IA?
-						      
-						La IA tiene el potencial de generar un impacto significativo en la sociedad, tanto positivo como negativo. Es importante considerar cuidadosamente los beneficios y riesgos de la IA a medida que continuamos desarrollándola e implementándola.
-						      
-						Beneficios potenciales de la IA:
-						      
-						Mayor eficiencia y productividad
-						Mejor toma de decisiones
-						Nuevos productos y servicios
-						Soluciones a problemas complejos
-						Riesgos potenciales de la IA:
-						      
-						Desempleo
-						Discriminación
-						Pérdida de privacidad
-						Armas autónomas
-						¿Qué depara el futuro de la IA?
-						      
-						La IA es un campo en rápido desarrollo con un enorme potencial para transformar nuestras vidas. A medida que la tecnología continúa avanzando, es probable que veamos aún más aplicaciones innovadoras de la IA en los próximos años.
-						      
-						Es importante recordar que la IA es una herramienta y, como cualquier herramienta, puede usarse para el bien o para el mal. Depende de nosotros asegurarnos de que la IA se use de manera responsable y ética para el beneficio de toda la humanidad.
+						<p><strong>&iquest;Qu&eacute; es la Inteligencia Artificial (IA)?</strong></p>
+						<p>La Inteligencia Artificial (IA) es un campo de la inform&aacute;tica que busca crear m&aacute;quinas capaces de realizar tareas que t&iacute;picamente requieren inteligencia humana. Esto incluye el aprendizaje, el razonamiento, la resoluci&oacute;n de problemas y la toma de decisiones.</p>
+						<p><strong>&iquest;C&oacute;mo funciona la IA?</strong></p>
+						<p>La IA funciona utilizando una variedad de t&eacute;cnicas, incluyendo:</p>
+						<ul>
+						<li><strong>Aprendizaje autom&aacute;tico:</strong> La IA aprende a partir de datos, identificando patrones y relaciones sin necesidad de ser programada expl&iacute;citamente.</li>
+						<li><strong>Procesamiento del lenguaje natural:</strong> La IA procesa y comprende el lenguaje humano, permitiendo la comunicaci&oacute;n entre humanos y m&aacute;quinas.</li>
+						<li><strong>Visi&oacute;n artificial:</strong> La IA interpreta y analiza im&aacute;genes y videos del mundo real.</li>
+						<li><strong>Rob&oacute;tica:</strong> La IA controla y opera robots f&iacute;sicos, permitiendo la automatizaci&oacute;n de tareas.</li>
+						</ul>
+						<p><strong>&iquest;Cu&aacute;les son las aplicaciones de la IA?</strong></p>
+						<p>La IA tiene una amplia gama de aplicaciones en diversos sectores, como:</p>
+						<ul>
+						<li><strong>Salud:</strong> La IA se utiliza para desarrollar nuevos medicamentos, diagnosticar enfermedades y brindar atenci&oacute;n m&eacute;dica personalizada.</li>
+						<li><strong>Finanzas:</strong> La IA se utiliza para detectar fraudes, gestionar inversiones y asesorar a clientes financieros.</li>
+						<li><strong>Transporte:</strong> La IA se utiliza para desarrollar veh&iacute;culos aut&oacute;nomos, optimizar el tr&aacute;fico y mejorar la seguridad vial.</li>
+						<li><strong>Manufactura:</strong> La IA se utiliza para automatizar tareas de producci&oacute;n, optimizar la cadena de suministro y mejorar la calidad del producto.</li>
+						<li><strong>Agricultura:</strong> La IA se utiliza para optimizar el riego, la fertilizaci&oacute;n y la cosecha, y para predecir el rendimiento de los cultivos.</li>
+						</ul>
+						<p><strong>&iquest;Cu&aacute;l es el impacto de la IA?</strong></p>
+						<p>La IA tiene el potencial de generar un impacto significativo en la sociedad, tanto positivo como negativo. Es importante considerar cuidadosamente los beneficios y riesgos de la IA a medida que continuamos desarroll&aacute;ndola e implement&aacute;ndola.</p>
+						<p><strong>Beneficios potenciales de la IA:</strong></p>
+						<ul>
+						<li>Mayor eficiencia y productividad</li>
+						<li>Mejor toma de decisiones</li>
+						<li>Nuevos productos y servicios</li>
+						<li>Soluciones a problemas complejos</li>
+						</ul>
+						<p><strong>Riesgos potenciales de la IA:</strong></p>
+						<ul>
+						<li>Desempleo</li>
+						<li>Discriminaci&oacute;n</li>
+						<li>P&eacute;rdida de privacidad</li>
+						<li>Armas aut&oacute;nomas</li>
+						</ul>
+						<p><strong>&iquest;Qu&eacute; depara el futuro de la IA?</strong></p>
+						<p>La IA es un campo en r&aacute;pido desarrollo con un enorme potencial para transformar nuestras vidas. A medida que la tecnolog&iacute;a contin&uacute;a avanzando, es probable que veamos a&uacute;n m&aacute;s aplicaciones innovadoras de la IA en los pr&oacute;ximos a&ntilde;os.</p>
+						<p><strong>Es importante recordar que la IA es una herramienta y, como cualquier herramienta, puede usarse para el bien o para el mal. Depende de nosotros asegurarnos de que la IA se use de manera responsable y &eacute;tica para el beneficio de toda la humanidad.</strong></p>
 						""","AI_2.png",
-				"https://www.youtube.com/watch?v=MgWtYXcUg9Y",
+				"MgWtYXcUg9Y",
 				room1, 300L,DifficultyLevel.JUNIOR,45,u4,tr1,null, true);
 		Keynote keynote2 = new Keynote(2L, "Realidad Virtual",
 				"Realidad Virtual (VR) y Realidad Aumentada (AR), casos de uso",
-				"<bold>La Realidad Virtual (VR)<bold> nos transporta a mundos virtuales vívidos y simulados, donde podemos interactuar con objetos y entornos como si estuviéramos realmente allí. Con gafas VR y sensores, podemos explorar paisajes fantásticos, participar en juegos en 3D o incluso asistir a conciertos virtuales. La VR tiene un gran potencial en el entrenamiento, donde permite simulaciones realistas para pilotos o cirujanos, o en la terapia, donde ayuda a pacientes con fobias o trastornos de estrés postraumático. Sin embargo, la VR también puede generar mareos u otros efectos secundarios en algunos usuarios, y es importante considerar estos aspectos al utilizarla.","realidad_virtual.png", null,
+				"""
+						<p>La Realidad Virtual (RV) es una tecnología que crea entornos simulados en los que los usuarios pueden sumergirse y experimentar como si estuvieran realmente presentes en ellos. A través de dispositivos como cascos, guantes hápticos y sensores de movimiento, la RV permite a las personas interactuar con estos entornos virtuales de manera inmersiva y casi realista.</p>
+						<h4>¿Cómo funciona la RV?</h4>
+						<p>La RV funciona utilizando una combinación de hardware y software para crear la ilusión de estar en otro lugar. Los elementos principales de la RV incluyen:</p>
+						<ul>
+						<li><strong>Dispositivos de visualización:</strong> Cascos VR, gafas VR o pantallas 3D que proyectan imágenes y videos en 3D en los ojos del usuario.</li>
+						<li><strong>Sensores de seguimiento:</strong> Rastrean los movimientos de la cabeza y el cuerpo del usuario, permitiendo que sus acciones se reflejen en el entorno virtual.</li>
+						<li><strong>Software de RV:</strong> Crea los gráficos, sonidos y la física del entorno virtual, y controla la interacción del usuario con el mismo.</li>
+						</ul>
+						<h4>¿Cuáles son las aplicaciones de la RV?</h4>
+						<p>La RV tiene una amplia gama de aplicaciones en diversos campos, como:</p>
+						<ul>
+						<li><strong>Entretenimiento:</strong> Juegos de RV, experiencias cinematográficas inmersivas, tours virtuales de lugares y atracciones.</li>
+						<li><strong>Formación y educación:</strong> Simulaciones de entrenamiento para profesionales como pilotos, cirujanos y personal militar; experiencias educativas interactivas para estudiantes de todas las edades.</li>
+						<li><strong>Terapia:</strong> Tratamiento de fobias, trastornos de ansiedad y dolor crónico; rehabilitación física y psicológica.</li>
+						<li><strong>Empresas y negocios:</strong> Diseño de productos y prototipos virtuales, colaboración remota en proyectos, entrenamiento de empleados.</li>
+						</ul>
+						<h4>¿Cuál es el impacto de la RV?</h4>
+						<p>La RV tiene el potencial de transformar la forma en que vivimos, trabajamos y aprendemos. A medida que la tecnología continúa desarrollándose, es probable que veamos aún más aplicaciones innovadoras de la RV en los próximos años.</p>
+						<h4>Beneficios potenciales de la RV:</h4>
+						<ul>
+						<li>Experiencias inmersivas y realistas</li>
+						<li>Mayor interacción y participación</li>
+						<li>Nuevas oportunidades de aprendizaje y formación</li>
+						<li>Mejoras en la productividad y la eficiencia</li>
+						<li>Terapias y tratamientos más efectivos</li>
+						</ul>
+						<h4>Riesgos potenciales de la RV:</h4>
+						<ul>
+						<li>Mareos y náuseas</li>
+						<li>Aislamiento social y adicción</li>
+						<li>Problemas de privacidad y seguridad</li>
+						<li>Impactos en la salud mental</li>
+						</ul>
+						<h4>¿Qué depara el futuro de la RV?</h4>
+						<p>La RV es un campo en rápido desarrollo con un enorme potencial para cambiar el mundo que nos rodea. A medida que la tecnología se vuelve más accesible y asequible, es probable que la RV se integre cada vez más en nuestras vidas cotidianas.</p>
+						<p>Es importante recordar que la RV es una herramienta poderosa que puede usarse para el bien o para el mal. Depende de nosotros asegurarnos de que la RV se use de manera responsable y ética para el beneficio de toda la humanidad.</p>
+						""","realidad_virtual.png", "IzAuGa7YKeU",
 				room2, 200L,DifficultyLevel.SENIOR,60,u1,tr2,null, true);
 		Keynote keynote3 = new Keynote(3L, "Experiencia de Usuario (UX)",
 				"Desarrollo e implicaciones de una mejora de experiencia de usuario",
-				"La Experiencia de Usuario (UX) se centra en crear interfaces y experiencias de usuario intuitivas, atractivas y fáciles de usar. Es un campo fundamental en el desarrollo de productos digitales y servicios, ya que busca comprender las necesidades, expectativas y comportamientos de los usuarios para crear soluciones que sean útiles, agradables y satisfagan sus expectativas. La UX implica un proceso de investigación, diseño, iteración y evaluación que involucra a diversos profesionales, como diseñadores UX, investigadores de usabilidad, y desarrolladores.\n" +
-						"\n" +
-						"Un buen diseño UX tiene un impacto positivo en la satisfacción del usuario, la lealtad a la marca y el éxito del producto. Un producto con una UX deficiente puede generar frustración, confusión y abandono por parte de los usuarios, mientras que un buen diseño UX puede aumentar la productividad, el disfrute y la adopción del producto. La UX se aplica en una amplia gama de áreas, desde aplicaciones móviles y sitios web hasta software empresarial y sistemas de información. En un mundo cada vez más digital, la UX es esencial para crear productos y servicios que sean relevantes, usables y que brinden una experiencia positiva a los usuarios.","UX.png",
-				null,
+				"""
+						<p>La Experiencia de Usuario (UX) se refiere al conjunto de factores y emociones que un usuario experimenta al interactuar con un producto o servicio, especialmente en el ámbito digital. Abarca aspectos como la facilidad de uso, la utilidad, la accesibilidad, la estética y la satisfacción general del usuario.</p>
+						<h4><strong>¿Por qué es importante la UX?</strong></h4>
+						<ul>
+						<li><strong>Mejorar la usabilidad:</strong> Los usuarios pueden encontrar y usar el producto o servicio de manera fácil y eficiente, sin frustraciones.</li>
+						<li><strong>Aumentar la satisfacción:</strong> Los usuarios disfrutan de la experiencia y se sienten satisfechos con lo que ofrece el producto o servicio.</li>
+						<li><strong>Fidelizar a los usuarios:</strong> Los usuarios que tienen una buena experiencia son más propensos a volver a usar el producto o servicio y a recomendarlo a otros.</li>
+						<li><strong>Mejorar la imagen de marca:</strong> Una buena UX puede contribuir a una imagen de marca positiva y profesional.</li>
+						</ul>
+						<p><strong>¿Cuáles son los principios de la UX?</strong></p>
+						<ul>
+						<li><strong>Centrado en el usuario:</strong> El diseño debe basarse en las necesidades, expectativas y comportamientos del usuario.</li>
+						<li><strong>Usabilidad:</strong> El producto o servicio debe ser fácil de usar, aprender y navegar.</li>
+						<li><strong>Utilidad:</strong> El producto o servicio debe ofrecer valor real al usuario y resolver sus necesidades.</li>
+						<li><strong>Accesibilidad:</strong> El producto o servicio debe ser accesible para todos los usuarios, independientemente de sus capacidades físicas o cognitivas.</li>
+						<li><strong>Estética:</strong> El producto o servicio debe ser visualmente atractivo y agradable a la vista.</li>
+						<li><strong>Emoción:</strong> La experiencia debe despertar emociones positivas en el usuario.</li>
+						</ul>
+						<p><strong>¿Cómo se diseña una buena UX?</strong></p>
+						<ul>
+						<li><strong>Investigación:</strong> Se realiza un estudio para comprender las necesidades, expectativas y comportamientos del usuario objetivo.</li>
+						<li><strong>Definición de objetivos:</strong> Se definen los objetivos que se quieren lograr con la experiencia UX.</li>
+						<li><strong>Creación de prototipos:</strong> Se crean prototipos para visualizar y probar diferentes ideas de diseño.</li>
+						<li><strong>Evaluación:</strong> Se realizan pruebas de usabilidad para evaluar la efectividad del diseño y realizar mejoras.</li>
+						<li><strong>Iteración:</strong> El proceso de diseño es iterativo, con constantes mejoras y ajustes en base a las pruebas y comentarios de los usuarios.</li>
+						</ul>
+						<p><strong>¿Cuáles son las herramientas para el diseño UX?</strong></p>
+						<p>Existen diversas herramientas para el diseño UX, que incluyen:</p>
+						<ul>
+						<li><strong>Herramientas de wireframing:</strong> Permiten crear esquemas básicos de la interfaz de usuario.</li>
+						<li><strong>Herramientas de prototipado:</strong> Permiten crear prototipos interactivos para probar y evaluar el diseño.</li>
+						<li><strong>Herramientas de usabilidad:</strong> Permiten realizar pruebas de usabilidad y recopilar datos sobre el comportamiento de los usuarios.</li>
+						<li><strong>Herramientas de análisis:</strong> Permiten analizar el comportamiento de los usuarios en el producto o servicio real.</li>
+						</ul>
+						<p><strong>Ejemplos de buena UX</strong></p>
+						<p>Algunos ejemplos de productos o servicios con una buena UX incluyen:</p>
+						<ul>
+						<li><strong>Google Search:</strong> Su interfaz simple y intuitiva permite a los usuarios encontrar información de manera rápida y fácil.</li>
+						<li><strong>Netflix:</strong> Su sistema de recomendaciones personalizado y su interfaz fácil de usar hacen que sea una experiencia muy agradable para los usuarios.</li>
+						<li><strong>Transferwise:</strong> Su proceso de transferencia de dinero simple y transparente hace que sea una opción popular para enviar dinero internacionalmente.</li>
+						<li><strong>Airbnb:</strong> Su plataforma intuitiva y sus fotos atractivas facilitan la búsqueda y reserva de alojamiento.</li>
+						</ul>
+						<h2>El futuro de la UX</h2>
+						<p>La UX seguirá evolucionando a medida que las tecnologías avancen y las expectativas de los usuarios cambien. Algunas tendencias que se esperan en el futuro de la UX incluyen:</p>
+						<ul>
+						<li><strong>UX personalizada:</strong> Las experiencias UX se personalizarán cada vez más en función de las necesidades, preferencias y comportamientos individuales de cada usuario.</li>
+						<li><strong>UX basada en la voz:</strong> La interacción con los productos y servicios se realizará cada vez más a través de comandos de voz.</li>
+						<li><strong>UX basada en gestos:</strong> La interacción con los productos y servicios se realizará cada vez más a través de gestos y movimientos corporales.</li>
+						<li><strong>UX inmersiva:</strong> Las experiencias UX se volverán más inmersivas utilizando tecnologías como la realidad virtual y la realidad aumentada.</li>
+						</ul>
+						<p><strong>En conclusión, la Experiencia de Usuario es un aspecto fundamental para el éxito de cualquier producto o servicio digital. Al enfocarse en las necesidades y expectativas de los usuarios, y siguiendo los principios y procesos de diseño UX, se pueden crear experiencias que sean usables, útiles, accesibles, estéticas, emocionantes y que generen satisfacción en los usuarios.</strong></p>
+						""","UX.png",
+				"ceyKwU8egNk",
 				room4, 300L,DifficultyLevel.SEMI_SENIOR,45,u5,tr2,null, true);
 		Keynote keynote4 = new Keynote(4L, "Ciberseguridad",
 				"Ciberseguridad, protegiendo el mundo digital contra accesos no autorizados, ataques y fraudes",
-				"En la era digital, la Ciberseguridad es fundamental para proteger nuestros sistemas informáticos, datos y privacidad. Con el aumento de ataques cibernéticos sofisticados, es crucial contar con medidas de seguridad adecuadas para prevenir el acceso no autorizado, el robo de datos o el fraude. La Ciberseguridad abarca una amplia gama de prácticas, desde el uso de contraseñas seguras y la instalación de antivirus hasta la realización de copias de seguridad y la formación del personal en materia de seguridad. Las empresas y organizaciones deben invertir en Ciberseguridad para proteger su información vital y la de sus clientes.","cibersecurity_2.png", null,
+				"""
+						<h1>Ciberseguridad: Protegiendo tu mundo digital</h1>
+						<p>La Ciberseguridad es la práctica de proteger sistemas, redes y datos de ataques digitales. Estos ataques pueden tener como objetivo robar información confidencial, interrumpir el funcionamiento de un sistema o incluso causar daños físicos. La Ciberseguridad es importante para todos, desde individuos y empresas hasta gobiernos e instituciones.</p>
+						<h4>¿Por qué es importante la Ciberseguridad?</h4>
+						<ul>
+						<li><strong>Protege la información confidencial:</strong> La información confidencial, como datos personales, información financiera y propiedad intelectual, puede ser robada por ciberdelincuentes y utilizada para fines ilícitos. La Ciberseguridad ayuda a proteger esta información y a mantenerla segura.</li>
+						<li><strong>Mantiene el funcionamiento de los sistemas:</strong> Los ataques cibernéticos pueden interrumpir el funcionamiento de los sistemas, lo que puede causar pérdidas económicas y otros daños. La Ciberseguridad ayuda a proteger los sistemas contra estos ataques y a mantenerlos funcionando correctamente.</li>
+						<li><strong>Reduce el riesgo de fraude:</strong> Los ciberdelincuentes pueden utilizar ataques cibernéticos para cometer fraude, como el robo de identidad o el fraude financiero. La Ciberseguridad ayuda a reducir el riesgo de ser víctima de estos delitos.</li>
+						<li><strong>Protege la reputación:</strong> Los ataques cibernéticos pueden dañar la reputación de una empresa u organización. La Ciberseguridad ayuda a proteger la reputación y a mantener la confianza de los clientes y socios.</li>
+						</ul>
+						<h4>¿Cuáles son las amenazas a la Ciberseguridad?</h4>
+						<ul>
+						<li><strong>Malware:</strong> El malware es un software malicioso que puede dañar un sistema informático o robar información. Algunos tipos comunes de malware incluyen virus, gusanos, troyanos y ransomware.</li>
+						<li><strong>Phishing:</strong> El phishing es una técnica de ingeniería social que se utiliza para engañar a las personas para que revelen información confidencial, como contraseñas o datos bancarios. Los ciberdelincuentes suelen enviar correos electrónicos o mensajes de texto falsos que parecen provenir de una fuente legítima.</li>
+						<li><strong>Hacking:</strong> El hacking es el acto de acceder ilegalmente a un sistema informático o red. Los hackers pueden utilizar esta información para robar datos, instalar malware o interrumpir el funcionamiento del sistema.</li>
+						<li><strong>Ataques de denegación de servicio (DDoS):</strong> Los ataques DDoS se utilizan para sobrecargar un sistema informático o red con tráfico, lo que hace que sea inaccesible para los usuarios legítimos.</li>
+						</ul>
+						<h4>¿Cómo protegerse de las amenazas a la Ciberseguridad?</h4>
+						<ul>
+						<li><strong>Utilizar contraseñas seguras y únicas:</strong> Utilice contraseñas fuertes y únicas para todas sus cuentas en línea. No utilice la misma contraseña para varias cuentas.</li>
+						<li><strong>Mantener su software actualizado:</strong> Mantenga su software operativo, antivirus y otras aplicaciones de seguridad actualizadas con los últimos parches.</li>
+						<li><strong>Tenga cuidado con lo que hace clic:</strong> No haga clic en enlaces ni abra archivos adjuntos de correos electrónicos o mensajes de texto de personas desconocidas.</li>
+						<li><strong>Sea consciente de las estafas de phishing:</strong> No revele información confidencial, como contraseñas o datos bancarios, a través de correos electrónicos o mensajes de texto.</li>
+						<li><strong>Tenga cuidado con lo que comparte en línea:</strong> No comparta información personal sensible en línea, como su dirección de casa o número de teléfono.</li>
+						<li><strong>Utilice una red Wi-Fi segura:</strong> Cuando use una red Wi-Fi pública, asegúrese de que esté protegida con una contraseña.</li>
+						<li><strong>Realice copias de seguridad de sus datos:</strong> Realice copias de seguridad de sus datos regularmente en caso de que su sistema sea infectado con malware o se pierda o dañe.</li>
+						</ul>
+						<h4>Recursos para la Ciberseguridad</h4>
+						<p>Existen muchos recursos disponibles para ayudarlo a protegerse de las amenazas a la Ciberseguridad. Algunos de estos recursos incluyen:</p>
+						""","cibersecurity_2.png", "SZlnyFujkGE",
 				room3, 150L,DifficultyLevel.SENIOR,50,u3,tr4,null, true);
 		Keynote keynote5 = new Keynote(5L, "Cloud Computing",
 				"Cloud Computing: desarrollo y avances en la computación en la nube",
-				"El Cloud Computing ha transformado la forma en que almacenamos, accedemos y procesamos la información. En lugar de depender de servidores físicos en nuestras instalaciones, podemos acceder a recursos informáticos (servidores, almacenamiento, bases de datos) a través de Internet. Esto ofrece múltiples ventajas: escalabilidad (podemos aumentar o disminuir los recursos según nuestras necesidades), flexibilidad (podemos acceder a nuestros datos desde cualquier lugar), y colaboración (podemos trabajar en proyectos en equipo de forma remota). El Cloud Computing es utilizado por empresas de todos los tamaños, desde startups hasta grandes corporaciones, y ha impulsado la innovación en diversos sectores.","cloud_computing3.png", null,
+				"""
+						<p>La Computación en la Nube, también conocida como servicios en la nube, informática en la nube, nube de cómputo o simplemente "la nube", es un modelo de prestación de servicios de tecnología que ofrece acceso a recursos informáticos, como servidores, almacenamiento, bases de datos, redes y software, a través de Internet. En lugar de invertir en hardware y software físico, las empresas y usuarios pueden acceder a estos recursos de manera remota, pagando solo por lo que usan.</p>
+						<h4>¿Cómo funciona la Computación en la Nube?</h4>
+						<ul>
+						<li>Los proveedores de servicios en la nube, como Amazon Web Services (AWS), Microsoft Azure y Google Cloud Platform (GCP), operan grandes centros de datos con miles de servidores y otros recursos informáticos.</li>
+						<li>Estos recursos se dividen en pequeñas unidades que se pueden alquilar a los usuarios a través de Internet.</li>
+						<li>Los usuarios pueden acceder a estos recursos utilizando un navegador web o una aplicación de software.</li>
+						</ul>
+						<h4>¿Cuáles son los tipos de servicios de Computación en la Nube?</h4>
+						<ul>
+						<li><strong>Infraestructura como Servicio (IaaS):</strong> IaaS proporciona a los usuarios acceso a recursos informáticos básicos, como servidores, almacenamiento y redes. Los usuarios pueden configurar y administrar estos recursos como si fueran su propia infraestructura física.</li>
+						<li><strong>Plataforma como Servicio (PaaS):</strong> PaaS proporciona a los desarrolladores una plataforma para crear, implementar y ejecutar aplicaciones. La plataforma se encarga de la infraestructura subyacente, lo que permite a los desarrolladores enfocarse en el desarrollo de aplicaciones.</li>
+						<li><strong>Software como Servicio (SaaS):</strong> SaaS proporciona a los usuarios acceso a aplicaciones de software que se ejecutan en la nube. Los usuarios no necesitan instalar ni administrar el software, simplemente pueden acceder a él a través de un navegador web o una aplicación móvil.</li>
+						</ul>
+						<h4>¿Cuáles son las ventajas de la Computación en la Nube?</h4>
+						<ul>
+						<li><strong>Escalabilidad:</strong> La nube puede escalarse fácilmente para adaptarse a las necesidades cambiantes de una empresa. Los recursos adicionales se pueden provisionar rápidamente y sin necesidad de grandes inversiones en hardware y software.</li>
+						<li><strong>Flexibilidad:</strong> La nube ofrece una gran flexibilidad en cuanto a la forma en que se utilizan los recursos informáticos. Los usuarios pueden elegir los servicios que necesitan y pagar solo por lo que usan.</li>
+						<li><strong>Costo-efectividad:</strong> La nube puede ayudar a las empresas a reducir sus costos de TI al eliminar la necesidad de comprar y mantener hardware y software físico.</li>
+						<li><strong>Accesibilidad:</strong> La nube ofrece acceso a los recursos informáticos desde cualquier lugar con una conexión a Internet. Esto permite a los empleados trabajar de forma remota y a las empresas atender a clientes en todo el mundo.</li>
+						<li><strong>Confiabilidad:</strong> Los proveedores de servicios en la nube invierten en infraestructura de alta disponibilidad para garantizar que sus servicios estén siempre disponibles.</li>
+						</ul>
+						<h4>¿Cuáles son los riesgos de la Computación en la Nube?</h4>
+						<ul>
+						<li><strong>Seguridad:</strong> Es importante elegir un proveedor de servicios en la nube confiable que pueda garantizar la seguridad de los datos.</li>
+						<li><strong>Dependencia del proveedor:</strong> Las empresas dependen del proveedor de servicios en la nube para la disponibilidad de sus recursos informáticos. Si el proveedor experimenta una interrupción del servicio, las empresas pueden verse afectadas.</li>
+						<li><strong>Privacidad:</strong> Los datos almacenados en la nube pueden estar sujetos a las leyes y regulaciones del país en el que se encuentra el centro de datos del proveedor.</li>
+						</ul>
+						<h4>¿Cómo elegir un proveedor de servicios en la Nube?</h4>
+						<p>Al elegir un proveedor de servicios en la nube, es importante considerar los siguientes factores:</p>
+						<ul>
+						<li><strong>Precio:</strong> Compare los precios de diferentes proveedores y elija el que mejor se adapte a sus necesidades y presupuesto.</li>
+						<li><strong>Características:</strong> Elija un proveedor que ofrezca las características y funcionalidades que necesita.</li>
+						<li><strong>Seguridad:</strong> Asegúrese de que el proveedor tenga un historial sólido de seguridad y que pueda garantizar la seguridad de sus datos.</li>
+						<li><strong>Soporte:</strong> Elija un proveedor que ofrezca un buen soporte al cliente en caso de que tenga algún problema.</li>
+						</ul>
+						<h4>En conclusión, la Computación en la Nube ofrece una serie de ventajas que pueden ayudar a las empresas a mejorar su eficiencia, reducir sus costos y aumentar su competitividad. Sin embargo, es importante ser consciente de los riesgos y elegir un proveedor de servicios en la nube confiable.</h4>
+						""","cloud_computing3.png", "HYDIDpz8KGc",
 				room3, 150L,DifficultyLevel.SENIOR,50,u7,tr4,null, true);
 
 		Keynote keynote6 = new Keynote(6L, "Blockchain",
 				"Blockchain: Transparencia y seguridad en las transacciones",
-				"La tecnología Blockchain ha introducido un nuevo paradigma en la forma en que realizamos transacciones. Se trata de un registro distribuido que almacena información de forma segura, transparente e inmutable. Cada transacción se registra en bloques que se vinculan entre sí, creando una cadena de bloques. Esto permite la trazabilidad y verificación de las transacciones, sin necesidad de intermediarios. Blockchain es la base de las criptomonedas como Bitcoin, pero también tiene aplicaciones en diversos sectores, como la gestión de la cadena de suministro, los registros médicos electrónicos o el voto electrónico. Su potencial para mejorar la transparencia, la eficiencia y la seguridad en las transacciones es enorme.","blockchain.png", null,
+				"""
+						<h4>Blockchain: La tecnología que está revolucionando el mundo</h4>
+						<p>Blockchain, también conocida como cadena de bloques, es una tecnología innovadora que permite registrar transacciones de manera segura, transparente e inmutable. Se trata de una base de datos distribuida que se compone de bloques interconectados, donde cada bloque contiene información sobre las transacciones anteriores, un sello de tiempo y un enlace al bloque anterior. Esta estructura garantiza la integridad y trazabilidad de los datos, ya que cualquier intento de modificar un bloque implicaría modificar todos los bloques posteriores.</p>
+						<h4>¿Cómo funciona Blockchain?</h4>
+						<ul>
+						<li><strong>Descentralización:</strong> La información no se almacena en un servidor central, sino que se distribuye entre todos los participantes de la red. Esto elimina la necesidad de intermediarios y aumenta la seguridad y transparencia del sistema.</li>
+						<li><strong>Inmutabilidad:</strong> Una vez que una transacción se registra en la cadena de bloques, no se puede modificar ni eliminar. Esto garantiza la integridad de los datos y evita fraudes o manipulaciones.</li>
+						<li><strong>Transparencia:</strong> Todas las transacciones en la cadena de bloques son visibles para todos los participantes de la red. Esto permite una mayor transparencia y trazabilidad de las operaciones.</li>
+						<li><strong>Seguridad:</strong> La tecnología Blockchain utiliza criptografía avanzada para proteger los datos y garantizar la seguridad de las transacciones.</li>
+						</ul>
+						<h4>¿Cuáles son las aplicaciones de Blockchain?</h4>
+						<ul>
+						<li><strong>Finanzas:</strong> Blockchain se utiliza para desarrollar criptomonedas, como Bitcoin y Ethereum, que permiten realizar transacciones financieras de manera segura y sin intermediarios. También se utiliza para crear sistemas de pago más eficientes y transparentes.</li>
+						<li><strong>Cadena de suministro:</strong> Blockchain puede utilizarse para rastrear el origen y movimiento de productos a lo largo de la cadena de suministro, lo que permite mejorar la eficiencia, la transparencia y la lucha contra la falsificación.</li>
+						<li><strong>Identidad digital:</strong> Blockchain puede utilizarse para crear identidades digitales seguras y confiables, lo que permite a las personas controlar sus datos personales y realizar transacciones en línea de manera segura.</li>
+						<li><strong>Salud:</strong> Blockchain puede utilizarse para almacenar y compartir registros médicos de manera segura, lo que permite mejorar la atención al paciente y la investigación médica.</li>
+						<li><strong>Voto electrónico:</strong> Blockchain puede utilizarse para crear sistemas de voto electrónico seguros y transparentes, lo que puede ayudar a aumentar la participación ciudadana y la confianza en los procesos electorales.</li>
+						</ul>
+						<h4>¿Cuáles son las ventajas de Blockchain?</h4>
+						<ul>
+						<li><strong>Seguridad:</strong> Blockchain ofrece un alto nivel de seguridad gracias a su arquitectura descentralizada, inmutabilidad y uso de criptografía.</li>
+						<li><strong>Transparencia:</strong> Todas las transacciones en la cadena de bloques son visibles para todos los participantes de la red, lo que aumenta la transparencia y la trazabilidad.</li>
+						<li><strong>Eficiencia:</strong> Blockchain puede ayudar a mejorar la eficiencia de los procesos al eliminar la necesidad de intermediarios y automatizar las transacciones.</li>
+						<li><strong>Confianza:</strong> Blockchain puede generar confianza entre las partes involucradas en una transacción al garantizar la integridad y trazabilidad de los datos.</li>
+						</ul>
+						<h4>¿Cuáles son los desafíos de Blockchain?</h4>
+						<ul>
+						<li><strong>Escalabilidad:</strong> La tecnología Blockchain todavía se encuentra en desarrollo y necesita mejorar su escalabilidad para poder ser utilizada a gran escala.</li>
+						<li><strong>Regulación:</strong> La falta de una regulación clara en torno a Blockchain puede generar incertidumbre y limitar su adopción.</li>
+						<li><strong>Privacidad:</strong> Si bien Blockchain ofrece un alto nivel de seguridad, también puede plantear problemas de privacidad si no se implementa correctamente.</li>
+						</ul>
+						<h4>En conclusión, Blockchain es una tecnología innovadora con el potencial de revolucionar diversos sectores. Su capacidad para proporcionar seguridad, transparencia y eficiencia la convierte en una herramienta valiosa para una amplia gama de aplicaciones. Sin embargo, es importante abordar los desafíos de la escalabilidad, la regulación y la privacidad para garantizar su adopción generalizada.</h4>
+						""","blockchain.png", "Yn8WGaO__ak",
 				room3, 150L,DifficultyLevel.SENIOR,50,u2,tr2,null, true);
 		Keynote keynote7 = new Keynote(7L, "Big Data",
 				"Big Data: Descifrando el poder de los datos",
-				"El Big Data se refiere al análisis de grandes conjuntos de datos para extraer información valiosa. Con el auge de sensores, dispositivos conectados y redes sociales, la cantidad de datos generados diariamente es colosal. El Big Data permite a las empresas analizar patrones, tendencias y comportamientos de sus clientes, tomar decisiones más informadas, optimizar sus operaciones y desarrollar nuevos productos y servicios. El análisis de Big Data también se utiliza en áreas como la investigación científica, la medicina personalizada y la gestión de riesgos financieros. Sin embargo, la gestión y el análisis de Big Data presentan desafíos técnicos y éticos, como la privacidad de los datos y la protección de la información personal.","big_data_2.png", null,
+				"""
+						<h4>Big Data: Un océano de información para tomar decisiones inteligentes</h4>
+						<p>Big Data, o datos masivos en español, se refiere al conjunto de datos extremadamente grandes y complejos que superan la capacidad de procesamiento y almacenamiento de las herramientas tradicionales de gestión de bases de datos. Estos datos provienen de diversas fuentes, como transacciones online, redes sociales, sensores, dispositivos móviles y registros médicos. Su volumen, variedad y velocidad de crecimiento plantean nuevos desafíos y oportunidades para las empresas y organizaciones.</p>
+						<h4>¿Por qué es importante Big Data?</h4>
+						<ul>
+						<li><strong>Tomar decisiones mejor informadas:</strong> Basadas en información real y detallada, las empresas pueden optimizar procesos, mejorar la segmentación de clientes, desarrollar nuevos productos y servicios, y anticiparse a las tendencias del mercado.</li>
+						<li><strong>Aumentar la eficiencia operativa:</strong> El análisis de Big Data permite identificar áreas de ineficiencia y optimizar el uso de recursos, reduciendo costos y mejorando la productividad.</li>
+						<li><strong>Mejorar la experiencia del cliente:</strong> Analizando el comportamiento y las preferencias de los clientes, las empresas pueden personalizar sus ofertas y brindar una experiencia de cliente más satisfactoria.</li>
+						<li><strong>Gestionar riesgos de forma proactiva:</strong> Big Data permite identificar patrones de riesgo y predecir posibles problemas con mayor precisión, facilitando la toma de decisiones preventivas.</li>
+						</ul>
+						<h4>¿Cuáles son los desafíos de Big Data?</h4>
+						<ul>
+						<li><strong>Volumen:</strong> La gestión y almacenamiento de grandes volúmenes de datos requiere infraestructura y tecnologías específicas para su procesamiento y análisis.</li>
+						<li><strong>Variedad:</strong> La información proviene de fuentes heterogéneas, con formatos y estructuras diferentes, lo que dificulta su integración y análisis.</li>
+						<li><strong>Velocidad:</strong> Los datos se generan y actualizan constantemente, por lo que se necesitan herramientas capaces de procesarlos en tiempo real o casi real.</li>
+						<li><strong>Seguridad y privacidad:</strong> Garantizar la seguridad de los datos y la privacidad de las personas es crucial en el entorno Big Data.</li>
+						<li><strong>Habilidades y talento:</strong> Analizar e interpretar Big Data requiere profesionales con habilidades específicas en estadística, análisis de datos y aprendizaje automático.</li>
+						</ul>
+						<h4>En conclusión, Big Data es una realidad que transforma el panorama empresarial y organizacional. Su capacidad para extraer información valiosa de grandes volúmenes de datos abre un sinfín de oportunidades para la toma de decisiones estratégicas, la mejora de la eficiencia y la innovación. Sin embargo, es necesario abordar los desafíos técnicos y de gestión para aprovechar todo su potencial de forma segura y responsable.</h4>
+						""","big_data_2.png", "eXMaoSEYrso",
 				room3, 150L,DifficultyLevel.SENIOR,50,u3,tr2,null, true);
 		Keynote keynote8 = new Keynote(8L, "Internet de las cosas (IoT)",
 				"IoT: Un mundo conectado",
-				"El Internet de las Cosas (IoT) conecta objetos físicos a Internet, permitiendo su monitoreo y control remoto. Desde electrodomésticos inteligentes que se controlan con la voz hasta sensores que recopilan datos sobre el medio ambiente, el IoT está transformando nuestro entorno. La información recopilada por los dispositivos IoT puede utilizarse para mejorar la eficiencia energética, optimizar la gestión de recursos, o incluso salvar vidas en el ámbito de la salud. Sin embargo, la seguridad y la privacidad","IoT.png", null,
+				"""
+						<h4>Internet de las Cosas (IoT): Conectando el mundo físico al digital</h4>
+						<p>El Internet de las Cosas (IoT), también conocido como la red de objetos, es una red de objetos físicos o "cosas" incrustadas con sensores, software y conectividad a internet para recopilar y compartir datos. Estos objetos, que pueden ser desde electrodomésticos inteligentes hasta dispositivos portátiles, se conectan entre sí y con la internet para intercambiar información y tomar decisiones. El IoT permite crear entornos inteligentes y automatizados que pueden mejorar la eficiencia, la productividad y la calidad de vida.</p>
+						<h4>¿Cómo funciona el Internet de las Cosas (IoT)?</h4>
+						<ul>
+						<li><strong>Sensores:</strong> Los objetos físicos recopilan datos del entorno a través de sensores integrados. Estos datos pueden incluir temperatura, humedad, movimiento, ubicación, etc.</li>
+						<li><strong>Conectividad:</strong> Los objetos transmiten los datos recopilados a través de redes inalámbricas, como Wi-Fi, Bluetooth o redes celulares.</li>
+						<li><strong>Procesamiento y análisis de datos:</strong> Los datos recopilados se envían a la nube o a servidores locales para su procesamiento y análisis.</li>
+						<li><strong>Acciones y decisiones:</strong> En base a los datos analizados, se pueden tomar decisiones o realizar acciones automatizadas.</li>
+						</ul>
+						<h4>¿Cuáles son los beneficios del Internet de las Cosas (IoT)?</h4>
+						<ul>
+						<li><strong>Eficiencia:</strong> El IoT permite automatizar tareas repetitivas y optimizar procesos, lo que reduce costos y aumenta la productividad.</li>
+						<li><strong>Comodidad:</strong> El IoT facilita la vida cotidiana al automatizar tareas domésticas, controlar dispositivos inteligentes y brindar acceso remoto a información.</li>
+						<li><strong>Seguridad:</strong> El IoT puede mejorar la seguridad en hogares, empresas y ciudades a través de sistemas de monitoreo y alerta temprana.</li>
+						<li><strong>Sostenibilidad:</strong> El IoT puede contribuir a la sostenibilidad ambiental mediante el uso eficiente de recursos y la reducción del consumo energético.</li>
+						<li><strong>Nuevos servicios y modelos de negocio:</strong> El IoT abre posibilidades para el desarrollo de nuevos servicios y modelos de negocio basados en datos y análisis.</li>
+						</ul>
+						<h4>¿Cuáles son los desafíos del Internet de las Cosas (IoT)?</h4>
+						<ul>
+						<li><strong>Seguridad y privacidad:</strong> La seguridad de los datos y la privacidad de los usuarios son aspectos cruciales que deben garantizarse en el IoT.</li>
+						<li><strong>Interoperabilidad:</strong> La falta de estandarización en los protocolos y tecnologías puede dificultar la comunicación entre dispositivos de diferentes fabricantes.</li>
+						<li><strong>Escalabilidad:</strong> La gestión de grandes volúmenes de datos y la capacidad de procesamiento de la infraestructura son desafíos que deben superarse para el crecimiento del IoT.</li>
+						<li><strong>Impacto social:</strong> El IoT puede generar cambios en el mercado laboral y en la forma en que las personas interactúan con el mundo, por lo que es importante considerar su impacto social y ético.</li>
+						</ul>
+						<h4>En conclusión, el Internet de las Cosas (IoT) es una tecnología revolucionaria con el potencial de transformar diversos aspectos de nuestra vida. Sus beneficios en términos de eficiencia, comodidad, seguridad, sostenibilidad e innovación son significativos. Sin embargo, es importante abordar los desafíos relacionados con la seguridad, la privacidad, la interoperabilidad, la escalabilidad y el impacto social para garantizar un desarrollo responsable y sostenible del IoT.</h4>
+						""","IoT.png", "OcS2IauiIaQ",
 				room3, 150L,DifficultyLevel.SENIOR,50,u5,tr5,null, true);
 //		Keynote keynote9 = Keynote.builder()
 //				.title("VISITE NUESTRA CAFETERIA").photoUrl("Cafeteria.jpeg")
