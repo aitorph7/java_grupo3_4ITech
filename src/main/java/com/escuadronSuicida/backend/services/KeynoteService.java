@@ -12,7 +12,7 @@ import java.util.List;
 
 public interface KeynoteService {
 
-    List<Keynote> findKeynote();
+    List<Keynote> findKeynoteVisibleTrue();
 
     Keynote findById(Long id);
 

@@ -163,7 +163,7 @@ public class Main {
 		Keynote keynote1 = new Keynote(1L, "Inteligencia Artificial",
 				"Desarrollo e implicaciones de la IA en nuestra sociedad",
 				"""
-						La Inteligencia Artificial (IA) es un campo de la informática que busca crear máquinas capaces de realizar tareas que típicamente requieren inteligencia humana. Esto incluye el aprendizaje, el razonamiento, la resolución de problemas y la toma de decisiones.
+						La <strong>Inteligencia</strong> Artificial (IA) es un campo de la informática que busca crear máquinas capaces de realizar tareas que típicamente requieren inteligencia humana. Esto incluye el aprendizaje, el razonamiento, la resolución de problemas y la toma de decisiones.
 						      
 						¿Cómo funciona la IA?
 						      

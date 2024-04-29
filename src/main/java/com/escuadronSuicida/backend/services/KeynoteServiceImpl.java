@@ -19,8 +19,8 @@ public class KeynoteServiceImpl implements KeynoteService {
 
 
     @Override
-    public List<Keynote> findKeynote() {
-        return keynoteRepository.findAll();
+    public List<Keynote> findKeynoteVisibleTrue() {
+        return keynoteRepository.findAllByVisibleTrue();
     }
 
     @Override

@@ -20,4 +20,5 @@ public interface KeynoteRepository extends JpaRepository<Keynote, Long> {
     List<Keynote> findByVisibleTrue();
 
 
+    List<Keynote> findAllByVisibleTrue();
 }

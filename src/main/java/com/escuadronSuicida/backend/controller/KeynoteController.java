@@ -37,7 +37,7 @@ public class KeynoteController {
     @GetMapping
     public ResponseEntity<List<Keynote>> findAll() {
         // keynoteService.findAllPublishedTrue();
-        List<Keynote> keynote = keynoteService.findKeynote();
+        List<Keynote> keynote = keynoteService.findKeynoteVisibleTrue();
         return ResponseEntity.ok(keynote);
 
 //        User user = SecurityUtils.getCurrentUser().orElseThrow();
@@ -115,14 +115,14 @@ public class KeynoteController {
 
     @DeleteMapping("{id}")
     public void deleteById(@PathVariable Long id) {
-        // TODO
-        try {
-            this.commentRepository.deleteByKeynoteId(id);
-            this.repo.deleteById(id);
-        } catch (Exception e) {
-            log.error("Error borrando Keynote", e);
-            throw new ConflictDeleteException("No es posible borrar la charla.");
-        }
+//        // TODO
+//        try {
+//            this.commentRepository.deleteByKeynoteId(id);
+//            this.repo.deleteById(id);
+//        } catch (Exception e) {
+//            log.error("Error borrando Keynote", e);
+//            throw new ConflictDeleteException("No es posible borrar la charla.");
+//        }
 
 
         // Desasociar keynote de comentarios
