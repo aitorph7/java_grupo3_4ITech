@@ -61,6 +61,20 @@ public class KeynoteController {
         return ResponseEntity.ok(keynote);
     }
 
+    @GetMapping("/filter-by-title-arr/{title}")
+    public List<String> findTitlesByTerm(@PathVariable String title) {
+        System.out.println(title);
+        var ks = this.repo.findAllTitlesFilteringByTitle(title);
+        System.out.println(ks);
+        return ks.stream().map(k -> k.getTitle()).toList();
+    }
+
+    @GetMapping("/filter-by-title/{title}")
+    public List<Keynote> findAllByTitle(@PathVariable String title) {
+
+        return this.repo.findAllByTitle(title);
+    }
+
 
     // obtener keynotes filtrando por track
     @GetMapping("/filter-by-track/{id}")
