@@ -117,7 +117,18 @@ public class Main {
 				.photoUrl("speaker19.jpeg")
 				.userRole(UserRole.ADMIN)
 				.build();
-		userRepository.saveAll(List.of(u1, u2, u3, u4, u5, u6, u7));
+		User u8 = User.builder()
+				.firstName("Alan")
+				.lastName("Sastre")
+				.userName("Alan")
+				.email("alan@gmail.com")
+				.password(passwordEncoder.encode("admin1234"))
+				.phone("666777888")
+				.address("Avda. Corazón de María 38")
+				.photoUrl("speaker21.png")
+				.userRole(UserRole.ADMIN)
+				.build();
+		userRepository.saveAll(List.of(u1, u2, u3, u4, u5, u6, u7, u8));
 
 		Room room1 = new Room(null, "Innovation Tech Hall", 500, false, "room.01.jpg", null);
 		Room room2 = new Room(null, "ByteSphere Convergence Hall", 350, false, "room.02.jpg",null );
