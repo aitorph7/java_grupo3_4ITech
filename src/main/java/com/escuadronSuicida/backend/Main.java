@@ -219,14 +219,14 @@ public class Main {
 				"Realidad Virtual (VR) y Realidad Aumentada (AR), casos de uso",
 				"""
 						<p>La Realidad Virtual (RV) es una tecnología que crea entornos simulados en los que los usuarios pueden sumergirse y experimentar como si estuvieran realmente presentes en ellos. A través de dispositivos como cascos, guantes hápticos y sensores de movimiento, la RV permite a las personas interactuar con estos entornos virtuales de manera inmersiva y casi realista.</p>
-						<h4>¿Cómo funciona la RV?</h4>
+						<p>¿Cómo funciona la RV?</p>
 						<p>La RV funciona utilizando una combinación de hardware y software para crear la ilusión de estar en otro lugar. Los elementos principales de la RV incluyen:</p>
 						<ul>
 						<li><strong>Dispositivos de visualización:</strong> Cascos VR, gafas VR o pantallas 3D que proyectan imágenes y videos en 3D en los ojos del usuario.</li>
-						<li><strong>Sensores de seguimiento:</strong> Rastrean los movimientos de la cabeza y el cuerpo del usuario, permitiendo que sus acciones se reflejen en el entorno virtual.</li>
+						li><strong>Sensores de seguimiento:</strong> Rastrean los movimientos de la cabeza y el cuerpo del usuario, permitiendo que sus acciones se reflejen en el entorno virtual.</li>
 						<li><strong>Software de RV:</strong> Crea los gráficos, sonidos y la física del entorno virtual, y controla la interacción del usuario con el mismo.</li>
 						</ul>
-						<h4>¿Cuáles son las aplicaciones de la RV?</h4>
+						<p>¿Cuáles son las aplicaciones de la RV?</p>
 						<p>La RV tiene una amplia gama de aplicaciones en diversos campos, como:</p>
 						<ul>
 						<li><strong>Entretenimiento:</strong> Juegos de RV, experiencias cinematográficas inmersivas, tours virtuales de lugares y atracciones.</li>
@@ -234,9 +234,9 @@ public class Main {
 						<li><strong>Terapia:</strong> Tratamiento de fobias, trastornos de ansiedad y dolor crónico; rehabilitación física y psicológica.</li>
 						<li><strong>Empresas y negocios:</strong> Diseño de productos y prototipos virtuales, colaboración remota en proyectos, entrenamiento de empleados.</li>
 						</ul>
-						<h4>¿Cuál es el impacto de la RV?</h4>
+						<p>¿Cuál es el impacto de la RV?</p>
 						<p>La RV tiene el potencial de transformar la forma en que vivimos, trabajamos y aprendemos. A medida que la tecnología continúa desarrollándose, es probable que veamos aún más aplicaciones innovadoras de la RV en los próximos años.</p>
-						<h4>Beneficios potenciales de la RV:</h4>
+						<p><strong>Beneficios potenciales de la RV:</strong></p>
 						<ul>
 						<li>Experiencias inmersivas y realistas</li>
 						<li>Mayor interacción y participación</li>
@@ -244,14 +244,14 @@ public class Main {
 						<li>Mejoras en la productividad y la eficiencia</li>
 						<li>Terapias y tratamientos más efectivos</li>
 						</ul>
-						<h4>Riesgos potenciales de la RV:</h4>
+						<p><strong>Riesgos potenciales de la RV:</strong></p>
 						<ul>
 						<li>Mareos y náuseas</li>
 						<li>Aislamiento social y adicción</li>
 						<li>Problemas de privacidad y seguridad</li>
 						<li>Impactos en la salud mental</li>
 						</ul>
-						<h4>¿Qué depara el futuro de la RV?</h4>
+						<p><strong>¿Qué depara el futuro de la RV?</strong></p>
 						<p>La RV es un campo en rápido desarrollo con un enorme potencial para cambiar el mundo que nos rodea. A medida que la tecnología se vuelve más accesible y asequible, es probable que la RV se integre cada vez más en nuestras vidas cotidianas.</p>
 						<p>Es importante recordar que la RV es una herramienta poderosa que puede usarse para el bien o para el mal. Depende de nosotros asegurarnos de que la RV se use de manera responsable y ética para el beneficio de toda la humanidad.</p>
 						""","realidad_virtual.png", "IzAuGa7YKeU",
@@ -260,7 +260,7 @@ public class Main {
 				"Desarrollo e implicaciones de una mejora de experiencia de usuario",
 				"""
 						<p>La Experiencia de Usuario (UX) se refiere al conjunto de factores y emociones que un usuario experimenta al interactuar con un producto o servicio, especialmente en el ámbito digital. Abarca aspectos como la facilidad de uso, la utilidad, la accesibilidad, la estética y la satisfacción general del usuario.</p>
-						<h4><strong>¿Por qué es importante la UX?</strong></h4>
+						<p><strong>¿Por qué es importante la UX?</strong></p>
 						<ul>
 						<li><strong>Mejorar la usabilidad:</strong> Los usuarios pueden encontrar y usar el producto o servicio de manera fácil y eficiente, sin frustraciones.</li>
 						<li><strong>Aumentar la satisfacción:</strong> Los usuarios disfrutan de la experiencia y se sienten satisfechos con lo que ofrece el producto o servicio.</li>
@@ -315,23 +315,23 @@ public class Main {
 		Keynote keynote4 = new Keynote(4L, "Ciberseguridad",
 				"Ciberseguridad, protegiendo el mundo digital contra accesos no autorizados, ataques y fraudes",
 				"""
-						<h1>Ciberseguridad: Protegiendo tu mundo digital</h1>
+						<p><strong>Ciberseguridad: Protegiendo tu mundo digital</strong></p>
 						<p>La Ciberseguridad es la práctica de proteger sistemas, redes y datos de ataques digitales. Estos ataques pueden tener como objetivo robar información confidencial, interrumpir el funcionamiento de un sistema o incluso causar daños físicos. La Ciberseguridad es importante para todos, desde individuos y empresas hasta gobiernos e instituciones.</p>
-						<h4>¿Por qué es importante la Ciberseguridad?</h4>
+						<p><strong>¿Por qué es importante la Ciberseguridad?</strong></p>
 						<ul>
 						<li><strong>Protege la información confidencial:</strong> La información confidencial, como datos personales, información financiera y propiedad intelectual, puede ser robada por ciberdelincuentes y utilizada para fines ilícitos. La Ciberseguridad ayuda a proteger esta información y a mantenerla segura.</li>
 						<li><strong>Mantiene el funcionamiento de los sistemas:</strong> Los ataques cibernéticos pueden interrumpir el funcionamiento de los sistemas, lo que puede causar pérdidas económicas y otros daños. La Ciberseguridad ayuda a proteger los sistemas contra estos ataques y a mantenerlos funcionando correctamente.</li>
 						<li><strong>Reduce el riesgo de fraude:</strong> Los ciberdelincuentes pueden utilizar ataques cibernéticos para cometer fraude, como el robo de identidad o el fraude financiero. La Ciberseguridad ayuda a reducir el riesgo de ser víctima de estos delitos.</li>
 						<li><strong>Protege la reputación:</strong> Los ataques cibernéticos pueden dañar la reputación de una empresa u organización. La Ciberseguridad ayuda a proteger la reputación y a mantener la confianza de los clientes y socios.</li>
 						</ul>
-						<h4>¿Cuáles son las amenazas a la Ciberseguridad?</h4>
+						<p><strong>¿Cuáles son las amenazas a la Ciberseguridad?</strong></p>
 						<ul>
 						<li><strong>Malware:</strong> El malware es un software malicioso que puede dañar un sistema informático o robar información. Algunos tipos comunes de malware incluyen virus, gusanos, troyanos y ransomware.</li>
 						<li><strong>Phishing:</strong> El phishing es una técnica de ingeniería social que se utiliza para engañar a las personas para que revelen información confidencial, como contraseñas o datos bancarios. Los ciberdelincuentes suelen enviar correos electrónicos o mensajes de texto falsos que parecen provenir de una fuente legítima.</li>
 						<li><strong>Hacking:</strong> El hacking es el acto de acceder ilegalmente a un sistema informático o red. Los hackers pueden utilizar esta información para robar datos, instalar malware o interrumpir el funcionamiento del sistema.</li>
 						<li><strong>Ataques de denegación de servicio (DDoS):</strong> Los ataques DDoS se utilizan para sobrecargar un sistema informático o red con tráfico, lo que hace que sea inaccesible para los usuarios legítimos.</li>
 						</ul>
-						<h4>¿Cómo protegerse de las amenazas a la Ciberseguridad?</h4>
+						<p><strong>¿Cómo protegerse de las amenazas a la Ciberseguridad?</strong></p>
 						<ul>
 						<li><strong>Utilizar contraseñas seguras y únicas:</strong> Utilice contraseñas fuertes y únicas para todas sus cuentas en línea. No utilice la misma contraseña para varias cuentas.</li>
 						<li><strong>Mantener su software actualizado:</strong> Mantenga su software operativo, antivirus y otras aplicaciones de seguridad actualizadas con los últimos parches.</li>
@@ -341,7 +341,7 @@ public class Main {
 						<li><strong>Utilice una red Wi-Fi segura:</strong> Cuando use una red Wi-Fi pública, asegúrese de que esté protegida con una contraseña.</li>
 						<li><strong>Realice copias de seguridad de sus datos:</strong> Realice copias de seguridad de sus datos regularmente en caso de que su sistema sea infectado con malware o se pierda o dañe.</li>
 						</ul>
-						<h4>Recursos para la Ciberseguridad</h4>
+						<p><strong>Recursos para la Ciberseguridad</strong></p>
 						<p>Existen muchos recursos disponibles para ayudarlo a protegerse de las amenazas a la Ciberseguridad. Algunos de estos recursos incluyen:</p>
 						""","cibersecurity_2.png", "SZlnyFujkGE",
 				room3, 150L,DifficultyLevel.SENIOR,50,u3,tr4,null, true);
@@ -349,7 +349,7 @@ public class Main {
 				"Cloud Computing: desarrollo y avances en la computación en la nube",
 				"""
 						<p>La Computación en la Nube, también conocida como servicios en la nube, informática en la nube, nube de cómputo o simplemente "la nube", es un modelo de prestación de servicios de tecnología que ofrece acceso a recursos informáticos, como servidores, almacenamiento, bases de datos, redes y software, a través de Internet. En lugar de invertir en hardware y software físico, las empresas y usuarios pueden acceder a estos recursos de manera remota, pagando solo por lo que usan.</p>
-						<h4>¿Cómo funciona la Computación en la Nube?</h4>
+						<p><strong>¿Cómo funciona la Computación en la Nube?</strong></p>
 						<ul>
 						<li>Los proveedores de servicios en la nube, como Amazon Web Services (AWS), Microsoft Azure y Google Cloud Platform (GCP), operan grandes centros de datos con miles de servidores y otros recursos informáticos.</li>
 						<li>Estos recursos se dividen en pequeñas unidades que se pueden alquilar a los usuarios a través de Internet.</li>
@@ -361,7 +361,7 @@ public class Main {
 						<li><strong>Plataforma como Servicio (PaaS):</strong> PaaS proporciona a los desarrolladores una plataforma para crear, implementar y ejecutar aplicaciones. La plataforma se encarga de la infraestructura subyacente, lo que permite a los desarrolladores enfocarse en el desarrollo de aplicaciones.</li>
 						<li><strong>Software como Servicio (SaaS):</strong> SaaS proporciona a los usuarios acceso a aplicaciones de software que se ejecutan en la nube. Los usuarios no necesitan instalar ni administrar el software, simplemente pueden acceder a él a través de un navegador web o una aplicación móvil.</li>
 						</ul>
-						<h4>¿Cuáles son las ventajas de la Computación en la Nube?</h4>
+						<p><strong>¿Cuáles son las ventajas de la Computación en la Nube?</strong></p>
 						<ul>
 						<li><strong>Escalabilidad:</strong> La nube puede escalarse fácilmente para adaptarse a las necesidades cambiantes de una empresa. Los recursos adicionales se pueden provisionar rápidamente y sin necesidad de grandes inversiones en hardware y software.</li>
 						<li><strong>Flexibilidad:</strong> La nube ofrece una gran flexibilidad en cuanto a la forma en que se utilizan los recursos informáticos. Los usuarios pueden elegir los servicios que necesitan y pagar solo por lo que usan.</li>
@@ -369,13 +369,13 @@ public class Main {
 						<li><strong>Accesibilidad:</strong> La nube ofrece acceso a los recursos informáticos desde cualquier lugar con una conexión a Internet. Esto permite a los empleados trabajar de forma remota y a las empresas atender a clientes en todo el mundo.</li>
 						<li><strong>Confiabilidad:</strong> Los proveedores de servicios en la nube invierten en infraestructura de alta disponibilidad para garantizar que sus servicios estén siempre disponibles.</li>
 						</ul>
-						<h4>¿Cuáles son los riesgos de la Computación en la Nube?</h4>
+						<p><strong>¿Cuáles son los riesgos de la Computación en la Nube?</strong></p>
 						<ul>
 						<li><strong>Seguridad:</strong> Es importante elegir un proveedor de servicios en la nube confiable que pueda garantizar la seguridad de los datos.</li>
 						<li><strong>Dependencia del proveedor:</strong> Las empresas dependen del proveedor de servicios en la nube para la disponibilidad de sus recursos informáticos. Si el proveedor experimenta una interrupción del servicio, las empresas pueden verse afectadas.</li>
 						<li><strong>Privacidad:</strong> Los datos almacenados en la nube pueden estar sujetos a las leyes y regulaciones del país en el que se encuentra el centro de datos del proveedor.</li>
 						</ul>
-						<h4>¿Cómo elegir un proveedor de servicios en la Nube?</h4>
+						<p><strong>¿Cómo elegir un proveedor de servicios en la Nube?</strong></p>
 						<p>Al elegir un proveedor de servicios en la nube, es importante considerar los siguientes factores:</p>
 						<ul>
 						<li><strong>Precio:</strong> Compare los precios de diferentes proveedores y elija el que mejor se adapte a sus necesidades y presupuesto.</li>
@@ -383,50 +383,55 @@ public class Main {
 						<li><strong>Seguridad:</strong> Asegúrese de que el proveedor tenga un historial sólido de seguridad y que pueda garantizar la seguridad de sus datos.</li>
 						<li><strong>Soporte:</strong> Elija un proveedor que ofrezca un buen soporte al cliente en caso de que tenga algún problema.</li>
 						</ul>
-						<h4>En conclusión, la Computación en la Nube ofrece una serie de ventajas que pueden ayudar a las empresas a mejorar su eficiencia, reducir sus costos y aumentar su competitividad. Sin embargo, es importante ser consciente de los riesgos y elegir un proveedor de servicios en la nube confiable.</h4>
+						<p><strong>En conclusión, la Computación en la Nube ofrece una serie de ventajas que pueden ayudar a las empresas a mejorar su eficiencia, reducir sus costos y aumentar su competitividad. Sin embargo, es importante ser consciente de los riesgos y elegir un proveedor de servicios en la nube confiable.</strong></p>
 						""","cloud_computing3.png", "HYDIDpz8KGc",
 				room3, 150L,DifficultyLevel.SENIOR,50,u7,tr4,null, true);
 
 		Keynote keynote6 = new Keynote(6L, "Blockchain",
 				"Blockchain: Transparencia y seguridad en las transacciones",
 				"""
-						<h4>Blockchain: La tecnología que está revolucionando el mundo</h4>
-						<p>Blockchain, también conocida como cadena de bloques, es una tecnología innovadora que permite registrar transacciones de manera segura, transparente e inmutable. Se trata de una base de datos distribuida que se compone de bloques interconectados, donde cada bloque contiene información sobre las transacciones anteriores, un sello de tiempo y un enlace al bloque anterior. Esta estructura garantiza la integridad y trazabilidad de los datos, ya que cualquier intento de modificar un bloque implicaría modificar todos los bloques posteriores.</p>
-						<h4>¿Cómo funciona Blockchain?</h4>
+						<p>La Computación en la Nube, también conocida como servicios en la nube, informática en la nube, nube de cómputo o simplemente "la nube", es un modelo de prestación de servicios de tecnología que ofrece acceso a recursos informáticos, como servidores, almacenamiento, bases de datos, redes y software, a través de Internet. En lugar de invertir en hardware y software físico, las empresas y usuarios pueden acceder a estos recursos de manera remota, pagando solo por lo que usan.</p>
+						<p><strong>¿Cómo funciona la Computación en la Nube?</strong></p>
 						<ul>
-						<li><strong>Descentralización:</strong> La información no se almacena en un servidor central, sino que se distribuye entre todos los participantes de la red. Esto elimina la necesidad de intermediarios y aumenta la seguridad y transparencia del sistema.</li>
-						<li><strong>Inmutabilidad:</strong> Una vez que una transacción se registra en la cadena de bloques, no se puede modificar ni eliminar. Esto garantiza la integridad de los datos y evita fraudes o manipulaciones.</li>
-						<li><strong>Transparencia:</strong> Todas las transacciones en la cadena de bloques son visibles para todos los participantes de la red. Esto permite una mayor transparencia y trazabilidad de las operaciones.</li>
-						<li><strong>Seguridad:</strong> La tecnología Blockchain utiliza criptografía avanzada para proteger los datos y garantizar la seguridad de las transacciones.</li>
+						<li>Los proveedores de servicios en la nube, como Amazon Web Services (AWS), Microsoft Azure y Google Cloud Platform (GCP), operan grandes centros de datos con miles de servidores y otros recursos informáticos.</li>
+						<li>Estos recursos se dividen en pequeñas unidades que se pueden alquilar a los usuarios a través de Internet.</li>
+						<li>Los usuarios pueden acceder a estos recursos utilizando un navegador web o una aplicación de software.</li>
 						</ul>
-						<h4>¿Cuáles son las aplicaciones de Blockchain?</h4>
+						<h4>¿Cuáles son los tipos de servicios de Computación en la Nube?</h4>
 						<ul>
-						<li><strong>Finanzas:</strong> Blockchain se utiliza para desarrollar criptomonedas, como Bitcoin y Ethereum, que permiten realizar transacciones financieras de manera segura y sin intermediarios. También se utiliza para crear sistemas de pago más eficientes y transparentes.</li>
-						<li><strong>Cadena de suministro:</strong> Blockchain puede utilizarse para rastrear el origen y movimiento de productos a lo largo de la cadena de suministro, lo que permite mejorar la eficiencia, la transparencia y la lucha contra la falsificación.</li>
-						<li><strong>Identidad digital:</strong> Blockchain puede utilizarse para crear identidades digitales seguras y confiables, lo que permite a las personas controlar sus datos personales y realizar transacciones en línea de manera segura.</li>
-						<li><strong>Salud:</strong> Blockchain puede utilizarse para almacenar y compartir registros médicos de manera segura, lo que permite mejorar la atención al paciente y la investigación médica.</li>
-						<li><strong>Voto electrónico:</strong> Blockchain puede utilizarse para crear sistemas de voto electrónico seguros y transparentes, lo que puede ayudar a aumentar la participación ciudadana y la confianza en los procesos electorales.</li>
+						<li><strong>Infraestructura como Servicio (IaaS):</strong> IaaS proporciona a los usuarios acceso a recursos informáticos básicos, como servidores, almacenamiento y redes. Los usuarios pueden configurar y administrar estos recursos como si fueran su propia infraestructura física.</li>
+						<li><strong>Plataforma como Servicio (PaaS):</strong> PaaS proporciona a los desarrolladores una plataforma para crear, implementar y ejecutar aplicaciones. La plataforma se encarga de la infraestructura subyacente, lo que permite a los desarrolladores enfocarse en el desarrollo de aplicaciones.</li>
+						<li><strong>Software como Servicio (SaaS):</strong> SaaS proporciona a los usuarios acceso a aplicaciones de software que se ejecutan en la nube. Los usuarios no necesitan instalar ni administrar el software, simplemente pueden acceder a él a través de un navegador web o una aplicación móvil.</li>
 						</ul>
-						<h4>¿Cuáles son las ventajas de Blockchain?</h4>
+						<p><strong>¿Cuáles son las ventajas de la Computación en la Nube?</strong></p>
 						<ul>
-						<li><strong>Seguridad:</strong> Blockchain ofrece un alto nivel de seguridad gracias a su arquitectura descentralizada, inmutabilidad y uso de criptografía.</li>
-						<li><strong>Transparencia:</strong> Todas las transacciones en la cadena de bloques son visibles para todos los participantes de la red, lo que aumenta la transparencia y la trazabilidad.</li>
-						<li><strong>Eficiencia:</strong> Blockchain puede ayudar a mejorar la eficiencia de los procesos al eliminar la necesidad de intermediarios y automatizar las transacciones.</li>
-						<li><strong>Confianza:</strong> Blockchain puede generar confianza entre las partes involucradas en una transacción al garantizar la integridad y trazabilidad de los datos.</li>
+						<li><strong>Escalabilidad:</strong> La nube puede escalarse fácilmente para adaptarse a las necesidades cambiantes de una empresa. Los recursos adicionales se pueden provisionar rápidamente y sin necesidad de grandes inversiones en hardware y software.</li>
+						<li><strong>Flexibilidad:</strong> La nube ofrece una gran flexibilidad en cuanto a la forma en que se utilizan los recursos informáticos. Los usuarios pueden elegir los servicios que necesitan y pagar solo por lo que usan.</li>
+						<li><strong>Costo-efectividad:</strong> La nube puede ayudar a las empresas a reducir sus costos de TI al eliminar la necesidad de comprar y mantener hardware y software físico.</li>
+						<li><strong>Accesibilidad:</strong> La nube ofrece acceso a los recursos informáticos desde cualquier lugar con una conexión a Internet. Esto permite a los empleados trabajar de forma remota y a las empresas atender a clientes en todo el mundo.</li>
+						<li><strong>Confiabilidad:</strong> Los proveedores de servicios en la nube invierten en infraestructura de alta disponibilidad para garantizar que sus servicios estén siempre disponibles.</li>
 						</ul>
-						<h4>¿Cuáles son los desafíos de Blockchain?</h4>
+						<p><strong>¿Cuáles son los riesgos de la Computación en la Nube?</strong></p>
 						<ul>
-						<li><strong>Escalabilidad:</strong> La tecnología Blockchain todavía se encuentra en desarrollo y necesita mejorar su escalabilidad para poder ser utilizada a gran escala.</li>
-						<li><strong>Regulación:</strong> La falta de una regulación clara en torno a Blockchain puede generar incertidumbre y limitar su adopción.</li>
-						<li><strong>Privacidad:</strong> Si bien Blockchain ofrece un alto nivel de seguridad, también puede plantear problemas de privacidad si no se implementa correctamente.</li>
+						<li><strong>Seguridad:</strong> Es importante elegir un proveedor de servicios en la nube confiable que pueda garantizar la seguridad de los datos.</li>
+						<li><strong>Dependencia del proveedor:</strong> Las empresas dependen del proveedor de servicios en la nube para la disponibilidad de sus recursos informáticos. Si el proveedor experimenta una interrupción del servicio, las empresas pueden verse afectadas.</li>
+						<li><strong>Privacidad:</strong> Los datos almacenados en la nube pueden estar sujetos a las leyes y regulaciones del país en el que se encuentra el centro de datos del proveedor.</li>
 						</ul>
-						<h4>En conclusión, Blockchain es una tecnología innovadora con el potencial de revolucionar diversos sectores. Su capacidad para proporcionar seguridad, transparencia y eficiencia la convierte en una herramienta valiosa para una amplia gama de aplicaciones. Sin embargo, es importante abordar los desafíos de la escalabilidad, la regulación y la privacidad para garantizar su adopción generalizada.</h4>
+						<p><strong>¿Cómo elegir un proveedor de servicios en la Nube?</strong></p>
+						<p>Al elegir un proveedor de servicios en la nube, es importante considerar los siguientes factores:</p>
+						<ul>
+						<li><strong>Precio:</strong> Compare los precios de diferentes proveedores y elija el que mejor se adapte a sus necesidades y presupuesto.</li>
+						<li><strong>Características:</strong> Elija un proveedor que ofrezca las características y funcionalidades que necesita.</li>
+						<li><strong>Seguridad:</strong> Asegúrese de que el proveedor tenga un historial sólido de seguridad y que pueda garantizar la seguridad de sus datos.</li>
+						<li><strong>Soporte:</strong> Elija un proveedor que ofrezca un buen soporte al cliente en caso de que tenga algún problema.</li>
+						</ul>
+						<p><strong>En conclusión, la Computación en la Nube ofrece una serie de ventajas que pueden ayudar a las empresas a mejorar su eficiencia, reducir sus costos y aumentar su competitividad. Sin embargo, es importante ser consciente de los riesgos y elegir un proveedor de servicios en la nube confiable.</strong></p>
 						""","blockchain.png", "Yn8WGaO__ak",
 				room3, 150L,DifficultyLevel.SENIOR,50,u2,tr2,null, true);
 		Keynote keynote7 = new Keynote(7L, "Big Data",
 				"Big Data: Descifrando el poder de los datos",
 				"""
-						<h4>Big Data: Un océano de información para tomar decisiones inteligentes</h4>
+						<p><strong>Big Data: Un océano de información para tomar decisiones inteligentes</strong></p>
 						<p>Big Data, o datos masivos en español, se refiere al conjunto de datos extremadamente grandes y complejos que superan la capacidad de procesamiento y almacenamiento de las herramientas tradicionales de gestión de bases de datos. Estos datos provienen de diversas fuentes, como transacciones online, redes sociales, sensores, dispositivos móviles y registros médicos. Su volumen, variedad y velocidad de crecimiento plantean nuevos desafíos y oportunidades para las empresas y organizaciones.</p>
 						<h4>¿Por qué es importante Big Data?</h4>
 						<ul>
@@ -435,7 +440,7 @@ public class Main {
 						<li><strong>Mejorar la experiencia del cliente:</strong> Analizando el comportamiento y las preferencias de los clientes, las empresas pueden personalizar sus ofertas y brindar una experiencia de cliente más satisfactoria.</li>
 						<li><strong>Gestionar riesgos de forma proactiva:</strong> Big Data permite identificar patrones de riesgo y predecir posibles problemas con mayor precisión, facilitando la toma de decisiones preventivas.</li>
 						</ul>
-						<h4>¿Cuáles son los desafíos de Big Data?</h4>
+						<p><strong>¿Cuáles son los desafíos de Big Data?</strong></p>
 						<ul>
 						<li><strong>Volumen:</strong> La gestión y almacenamiento de grandes volúmenes de datos requiere infraestructura y tecnologías específicas para su procesamiento y análisis.</li>
 						<li><strong>Variedad:</strong> La información proviene de fuentes heterogéneas, con formatos y estructuras diferentes, lo que dificulta su integración y análisis.</li>
@@ -443,22 +448,22 @@ public class Main {
 						<li><strong>Seguridad y privacidad:</strong> Garantizar la seguridad de los datos y la privacidad de las personas es crucial en el entorno Big Data.</li>
 						<li><strong>Habilidades y talento:</strong> Analizar e interpretar Big Data requiere profesionales con habilidades específicas en estadística, análisis de datos y aprendizaje automático.</li>
 						</ul>
-						<h4>En conclusión, Big Data es una realidad que transforma el panorama empresarial y organizacional. Su capacidad para extraer información valiosa de grandes volúmenes de datos abre un sinfín de oportunidades para la toma de decisiones estratégicas, la mejora de la eficiencia y la innovación. Sin embargo, es necesario abordar los desafíos técnicos y de gestión para aprovechar todo su potencial de forma segura y responsable.</h4>
+						<p><strong>En conclusión, Big Data es una realidad que transforma el panorama empresarial y organizacional. Su capacidad para extraer información valiosa de grandes volúmenes de datos abre un sinfín de oportunidades para la toma de decisiones estratégicas, la mejora de la eficiencia y la innovación. Sin embargo, es necesario abordar los desafíos técnicos y de gestión para aprovechar todo su potencial de forma segura y responsable.</strong></p>
 						""","big_data_2.png", "eXMaoSEYrso",
 				room3, 150L,DifficultyLevel.SENIOR,50,u3,tr2,null, true);
 		Keynote keynote8 = new Keynote(8L, "Internet de las cosas (IoT)",
 				"IoT: Un mundo conectado",
 				"""
-						<h4>Internet de las Cosas (IoT): Conectando el mundo físico al digital</h4>
+						<p><strong>Internet de las Cosas (IoT): Conectando el mundo físico al digital</strong></p>
 						<p>El Internet de las Cosas (IoT), también conocido como la red de objetos, es una red de objetos físicos o "cosas" incrustadas con sensores, software y conectividad a internet para recopilar y compartir datos. Estos objetos, que pueden ser desde electrodomésticos inteligentes hasta dispositivos portátiles, se conectan entre sí y con la internet para intercambiar información y tomar decisiones. El IoT permite crear entornos inteligentes y automatizados que pueden mejorar la eficiencia, la productividad y la calidad de vida.</p>
-						<h4>¿Cómo funciona el Internet de las Cosas (IoT)?</h4>
+						<p><strong>¿Cómo funciona el Internet de las Cosas (IoT)?</strong></p>
 						<ul>
 						<li><strong>Sensores:</strong> Los objetos físicos recopilan datos del entorno a través de sensores integrados. Estos datos pueden incluir temperatura, humedad, movimiento, ubicación, etc.</li>
 						<li><strong>Conectividad:</strong> Los objetos transmiten los datos recopilados a través de redes inalámbricas, como Wi-Fi, Bluetooth o redes celulares.</li>
 						<li><strong>Procesamiento y análisis de datos:</strong> Los datos recopilados se envían a la nube o a servidores locales para su procesamiento y análisis.</li>
 						<li><strong>Acciones y decisiones:</strong> En base a los datos analizados, se pueden tomar decisiones o realizar acciones automatizadas.</li>
 						</ul>
-						<h4>¿Cuáles son los beneficios del Internet de las Cosas (IoT)?</h4>
+						<p><strong>¿Cuáles son los beneficios del Internet de las Cosas (IoT)?</strong></p>
 						<ul>
 						<li><strong>Eficiencia:</strong> El IoT permite automatizar tareas repetitivas y optimizar procesos, lo que reduce costos y aumenta la productividad.</li>
 						<li><strong>Comodidad:</strong> El IoT facilita la vida cotidiana al automatizar tareas domésticas, controlar dispositivos inteligentes y brindar acceso remoto a información.</li>
@@ -466,14 +471,14 @@ public class Main {
 						<li><strong>Sostenibilidad:</strong> El IoT puede contribuir a la sostenibilidad ambiental mediante el uso eficiente de recursos y la reducción del consumo energético.</li>
 						<li><strong>Nuevos servicios y modelos de negocio:</strong> El IoT abre posibilidades para el desarrollo de nuevos servicios y modelos de negocio basados en datos y análisis.</li>
 						</ul>
-						<h4>¿Cuáles son los desafíos del Internet de las Cosas (IoT)?</h4>
+						<p><strong>¿Cuáles son los desafíos del Internet de las Cosas (IoT)?</strong></p>
 						<ul>
 						<li><strong>Seguridad y privacidad:</strong> La seguridad de los datos y la privacidad de los usuarios son aspectos cruciales que deben garantizarse en el IoT.</li>
 						<li><strong>Interoperabilidad:</strong> La falta de estandarización en los protocolos y tecnologías puede dificultar la comunicación entre dispositivos de diferentes fabricantes.</li>
 						<li><strong>Escalabilidad:</strong> La gestión de grandes volúmenes de datos y la capacidad de procesamiento de la infraestructura son desafíos que deben superarse para el crecimiento del IoT.</li>
 						<li><strong>Impacto social:</strong> El IoT puede generar cambios en el mercado laboral y en la forma en que las personas interactúan con el mundo, por lo que es importante considerar su impacto social y ético.</li>
 						</ul>
-						<h4>En conclusión, el Internet de las Cosas (IoT) es una tecnología revolucionaria con el potencial de transformar diversos aspectos de nuestra vida. Sus beneficios en términos de eficiencia, comodidad, seguridad, sostenibilidad e innovación son significativos. Sin embargo, es importante abordar los desafíos relacionados con la seguridad, la privacidad, la interoperabilidad, la escalabilidad y el impacto social para garantizar un desarrollo responsable y sostenible del IoT.</h4>
+						<p><strong>En conclusión, el Internet de las Cosas (IoT) es una tecnología revolucionaria con el potencial de transformar diversos aspectos de nuestra vida. Sus beneficios en términos de eficiencia, comodidad, seguridad, sostenibilidad e innovación son significativos. Sin embargo, es importante abordar los desafíos relacionados con la seguridad, la privacidad, la interoperabilidad, la escalabilidad y el impacto social para garantizar un desarrollo responsable y sostenible del IoT.</strong></p>
 						""","IoT.png", "OcS2IauiIaQ",
 				room3, 150L,DifficultyLevel.SENIOR,50,u5,tr5,null, true);
 //		Keynote keynote9 = Keynote.builder()
