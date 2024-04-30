@@ -7,8 +7,10 @@ import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.Optional;
 
 @Service
@@ -29,14 +31,8 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User createUser(User user) {
-        Logger logger = LoggerFactory.getLogger(User.class);
-        try {
-            return userRepository.save(user);
-        } catch (Exception e) {
-            logger.error("Hubo un error al crear el usuario", e);
-            throw new RuntimeException("Hubo un error al crear el usuario/a: " + e.getMessage(), e);
-        }
+    public User create(@RequestBody() User user) {
+        return this.userRepository.save(user);
     }
 
     @Override
@@ -56,7 +52,7 @@ public class UserServiceImpl implements UserService {
 
             return userRepository.save(userFromDatabase);
         } else
-            return null;
+            throw new NoSuchElementException("Usuario no encontrado en BD.");
     }
 
     @Override

@@ -40,13 +40,18 @@ public class UserController {
     private final FileService fileService;
     private final PasswordEncoder passwordEncoder;
 
-    @GetMapping
-    public ResponseEntity<List<User>> findAll(){
-        List<User> user = userService.findAll();
-        return ResponseEntity.ok(user);
+    @GetMapping("users")
+    public List<User> findAll(){
+        log.info("REST request to find all users");
+        User user = SecurityUtils.getCurrentUser().orElseThrow();
+
+        if(user.getUserRole().equals(UserRole.ADMIN))
+            return this.userRepository.findAll();
+        else
+            throw new UnauthorizedException("No tiene permisos de administrador.");
     }
 
-    @GetMapping("{id}")
+    @GetMapping("users/{id}")
     public ResponseEntity<User> findById(@PathVariable Long id) {
         User user = userService.findById(id);
         return ResponseEntity.ok(user);
@@ -58,8 +63,7 @@ public class UserController {
         if (this.userRepository.existsByEmail(register.email())){
             throw new BadCredentialsException("El email introducido ya está en uso.");
         }
-        // Crear el objeto User
-        // TODO Cifrar la contraseña con BCrypt.
+        // Crear el objeto User cifrando la contraseña con BCrypt
         User user = User.builder()
                 .email(register.email())
                 .password(passwordEncoder.encode(register.password()))
@@ -80,7 +84,6 @@ public class UserController {
         User user = this.userRepository.findByEmail(login.email()).orElseThrow();
 
         // Comparar contraseñas
-        // TODO cuando la contraseña esté cifrada cambiar el proceso de comparación.
         boolean correctPassword = passwordEncoder.matches(login.password(), user.getPassword());
         boolean incorrectPassword = !correctPassword;
         if (incorrectPassword){
@@ -128,7 +131,7 @@ public class UserController {
             if (currentUser.getUserRole() == UserRole.ADMIN || Objects.equals(currentUser.getId(), user.getId())) {
                 this.userRepository.save(user);
             } else {
-                throw new UnauthorizedException("No tiene permiso para modificar los datos de este usuario/a.");
+                throw new UnauthorizedException("No tiene permiso para modificar los datos de este usuario.");
             }
         });
         return user;
