@@ -102,7 +102,7 @@ public class Main {
 				.password(passwordEncoder.encode("javi1234"))
 				.phone("661541099")
 				.address("calle Cercana a Ppio, 33, 28008, Madrid, Madrid")
-				.photoUrl("speaker20")
+				.photoUrl("speaker20.png")
 				.userRole(UserRole.ADMIN)
 				.build();
 
