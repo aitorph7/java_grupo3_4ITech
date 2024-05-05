@@ -42,6 +42,7 @@ public class UserController {
     public List<User> findAll(){
         return userRepository.findAll();
     }
+
     @GetMapping("users/{id}")
     public ResponseEntity<User> findById(@PathVariable Long id) {
         Optional<User> userOptional = userRepository.findById(id);
@@ -50,14 +51,10 @@ public class UserController {
         else
             return ResponseEntity.notFound().build();
     }
-    @PostMapping("users")
-    public ResponseEntity<User> create(@RequestBody User user) {
-        return ResponseEntity.ok(userRepository.save(user));
-    }
 
     // permito subir archivos para que el user tenga imagen/avatar
-    @PostMapping()
-    public User create(
+    @PostMapping("users")
+    public ResponseEntity<User> createUser(
             @RequestParam(value = "photo", required = false) MultipartFile file, User user) {
 
         if (file != null && !file.isEmpty()) {
@@ -66,7 +63,7 @@ public class UserController {
         } else {
             user.setPhotoUrl("avatar.png");
         }
-        return this.userRepository.save(user);
+        return ResponseEntity.ok(userRepository.save(user));
     }
 
     @PutMapping("users/{id}")
