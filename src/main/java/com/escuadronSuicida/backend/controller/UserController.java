@@ -137,8 +137,7 @@ public class UserController {
         if (this.userRepository.existsByEmail(register.email())){
             throw new BadCredentialsException("Esta dirección de correo ya está en uso.");
         }
-        // Crear el objeto User
-        // TODO Cifrar la contraseña con BCrypt. hecho linea 88 ?
+        // Crear el objeto User cifrando la contraseña con BCrypt
         User user = User.builder()
                 .email(register.email())
                 .password(passwordEncoder.encode(register.password()))
@@ -159,7 +158,6 @@ public class UserController {
         User user = this.userRepository.findByEmail(login.email()).orElseThrow();
 
         // Comparar contraseñas
-        // TODO cuando la contraseña esté cifrada cambiar el proceso de comparación.
         boolean correctPassword = passwordEncoder.matches(login.password(), user.getPassword());
         boolean incorrectPassword = !correctPassword;
         if (incorrectPassword){
@@ -207,7 +205,7 @@ public class UserController {
             if (currentUser.getUserRole() == UserRole.ADMIN || Objects.equals(currentUser.getId(), user.getId())) {
                 this.userRepository.save(user);
             } else {
-                throw new UnauthorizedException("No tiene permiso para actualizar este usuario/a.");
+                throw new UnauthorizedException("No tiene permiso para actualizar este usuario.");
             }
         });
         return user;
