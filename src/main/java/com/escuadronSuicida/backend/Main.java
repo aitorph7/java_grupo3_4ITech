@@ -130,7 +130,7 @@ public class Main {
 				.build();
 		userRepository.saveAll(List.of(u1, u2, u3, u4, u5, u6, u7, u8));
 
-		Room room1 = new Room(null, "Innovation Tech Hall", 500, false, "room.01.jpg", null);
+		Room room1 = new Room(null, "Innovation Tech Hall", 500, true, "room.01.jpg", null);
 		Room room2 = new Room(null, "ByteSphere Convergence Hall", 350, false, "room.02.jpg",null );
 		Room room3 = new Room(null, "Quantum Nexus Summit Arena", 200, true, "room.03.jpg", null);
 		Room room4 = new Room(null, "NanoVerse Discovery Pavilion", 400, false, "room.04.jpg", null);
@@ -223,7 +223,7 @@ public class Main {
 						<p>La RV funciona utilizando una combinación de hardware y software para crear la ilusión de estar en otro lugar. Los elementos principales de la RV incluyen:</p>
 						<ul>
 						<li><strong>Dispositivos de visualización:</strong> Cascos VR, gafas VR o pantallas 3D que proyectan imágenes y videos en 3D en los ojos del usuario.</li>
-						li><strong>Sensores de seguimiento:</strong> Rastrean los movimientos de la cabeza y el cuerpo del usuario, permitiendo que sus acciones se reflejen en el entorno virtual.</li>
+						<li><strong>Sensores de seguimiento:</strong> Rastrean los movimientos de la cabeza y el cuerpo del usuario, permitiendo que sus acciones se reflejen en el entorno virtual.</li>
 						<li><strong>Software de RV:</strong> Crea los gráficos, sonidos y la física del entorno virtual, y controla la interacción del usuario con el mismo.</li>
 						</ul>
 						<p>¿Cuáles son las aplicaciones de la RV?</p>
