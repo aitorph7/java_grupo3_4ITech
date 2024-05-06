@@ -1,7 +1,6 @@
 package com.escuadronSuicida.backend.services;
 
 import com.escuadronSuicida.backend.models.User;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 
@@ -12,9 +11,9 @@ public interface UserService {
 
     User findById(Long id);
 
-    User createUser(User user);
+    User create(User user);
 
     User updateUserById(Long id, User user);
 
-    void deleteUserById(Long id);
+    boolean deleteUserById(Long id);
 }

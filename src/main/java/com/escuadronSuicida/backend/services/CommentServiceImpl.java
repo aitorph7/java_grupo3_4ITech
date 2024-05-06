@@ -28,7 +28,7 @@ public class CommentServiceImpl implements CommentService{
 
     @Override
     public List<Comment> findByKeynote_Id(Long keynoteId) {
-        return this.commentRepository.findByKeynote_Id(keynoteId);
+        return this.commentRepository.findByKeynote_IdOrderByDateTimeDesc(keynoteId);
     }
 
     @Override

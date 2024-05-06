@@ -42,6 +42,7 @@ public class UserController {
     public List<User> findAll(){
         return userRepository.findAll();
     }
+
     @GetMapping("users/{id}")
     public ResponseEntity<User> findById(@PathVariable Long id) {
         Optional<User> userOptional = userRepository.findById(id);
@@ -50,14 +51,10 @@ public class UserController {
         else
             return ResponseEntity.notFound().build();
     }
-//    @PostMapping("users")
-//    public ResponseEntity<User> create(@RequestBody User user) {
-//        return ResponseEntity.ok(userRepository.save(user));
-//    }
 
     // permito subir archivos para que el user tenga imagen/avatar
     @PostMapping("users")
-    public User create(
+    public ResponseEntity<User> createUser(
             @RequestParam(value = "photo", required = false) MultipartFile file, User user) {
 
         if (file != null && !file.isEmpty()) {
@@ -66,7 +63,7 @@ public class UserController {
         } else {
             user.setPhotoUrl("avatar.png");
         }
-        return this.userRepository.save(user);
+        return ResponseEntity.ok(userRepository.save(user));
     }
 
     @PutMapping("{id}")
@@ -163,10 +160,9 @@ public class UserController {
     public void register(@RequestBody Register register) {
         // Si el email está ocupado no registramos el usuario
         if (this.userRepository.existsByEmail(register.email())){
-            throw new RuntimeException("Esta dirección de correo ya está en uso.");
+            throw new BadCredentialsException("Esta dirección de correo ya está en uso.");
         }
-        // Crear el objeto User
-        // TODO Cifrar la contraseña con BCrypt. hecho linea 88 ?
+        // Crear el objeto User cifrando la contraseña con BCrypt
         User user = User.builder()
                 .email(register.email())
                 .password(passwordEncoder.encode(register.password()))
@@ -187,7 +183,6 @@ public class UserController {
         User user = this.userRepository.findByEmail(login.email()).orElseThrow();
 
         // Comparar contraseñas
-        // TODO cuando la contraseña esté cifrada cambiar el proceso de comparación.
         boolean correctPassword = passwordEncoder.matches(login.password(), user.getPassword());
         boolean incorrectPassword = !correctPassword;
         if (incorrectPassword){
@@ -235,7 +230,7 @@ public class UserController {
             if (currentUser.getUserRole() == UserRole.ADMIN || Objects.equals(currentUser.getId(), user.getId())) {
                 this.userRepository.save(user);
             } else {
-                throw new UnauthorizedException("No tiene permiso para actualizar este usuario/a.");
+                throw new UnauthorizedException("No tiene permiso para actualizar este usuario.");
             }
         });
         return user;

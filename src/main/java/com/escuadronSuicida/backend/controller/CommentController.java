@@ -16,7 +16,7 @@ import java.util.List;
 @RestController
 public class CommentController {
     private final CommentService commentService;
-    private CommentRepository commentRepository;
+    private final CommentRepository commentRepository;
 
     public CommentController(CommentService commentService, CommentRepository commentRepository) {
         this.commentService = commentService;
@@ -48,6 +48,7 @@ public class CommentController {
 
     @PostMapping("comments")
     public ResponseEntity<Comment> createComment(@RequestBody Comment comment) {
+        SecurityUtils.getCurrentUser().ifPresent(user -> comment.setUser(user));
         Comment createdComment = commentService.createComment(comment);
         return ResponseEntity.status(HttpStatus.CREATED).body(createdComment);
         // return ResponseEntity.ok(commentRepository.save(comment); seria lo mismo pero sin llamar a CommentService
@@ -86,7 +87,7 @@ public class CommentController {
         )
             this.commentRepository.deleteById(id);
         else
-            throw new UnauthorizedException("No puede borrar el comentario");
+            throw new UnauthorizedException("No puede borrar el comentario"); 
     }
 }
 
