@@ -4,8 +4,6 @@ import com.escuadronSuicida.backend.models.User;
 import com.escuadronSuicida.backend.repository.UserRepository;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestBody;
 
@@ -26,8 +24,8 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User findById(Long id) {
-        return this.userRepository.findById(id).orElseThrow();
+    public Optional<User> findById(Long id) {
+        return this.userRepository.findById(id);
     }
 
     @Override

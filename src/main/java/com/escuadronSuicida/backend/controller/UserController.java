@@ -13,6 +13,7 @@ import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.security.Keys;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.BeanUtils;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -54,7 +55,7 @@ public class UserController {
 
     // permito subir archivos para que el user tenga imagen/avatar
     @PostMapping("users")
-    public ResponseEntity<User> createUser(
+    public ResponseEntity<User> create(
             @RequestParam(value = "photo", required = false) MultipartFile file, User user) {
 
         if (file != null && !file.isEmpty()) {
@@ -63,6 +64,9 @@ public class UserController {
         } else {
             user.setPhotoUrl("avatar.png");
         }
+
+        user.setPassword(passwordEncoder.encode(user.getPassword()));
+
         return ResponseEntity.ok(userRepository.save(user));
     }
 
@@ -77,14 +81,25 @@ public class UserController {
             if(!this.userRepository.existsById(id))
                 return ResponseEntity.notFound().build();
 
-            if(file != null && !file.isEmpty()) {
-                String fileName = fileService.store(file);
-                user.setPhotoUrl(fileName);
-            } else {
-                user.setPhotoUrl("avatar.png");
+            User userFromDB = this.userRepository.findById(id).orElseThrow();
+            userFromDB.setFirstName(user.getUserName());
+            userFromDB.setLastName(user.getLastName());
+            userFromDB.setPhone(user.getPhone());
+            userFromDB.setUserName((user.getUserName()));
+            userFromDB.setAddress(user.getAddress());
+
+            if(SecurityUtils.getCurrentUser().orElseThrow().getUserRole().equals(UserRole.ADMIN)) {
+                userFromDB.setEmail(user.getEmail());
+                userFromDB.setUserRole((user.getUserRole()));
+
             }
 
-            return ResponseEntity.ok(this.userRepository.save(user));
+            if(file != null && !file.isEmpty()) {
+                String fileName = fileService.store(file);
+                userFromDB.setPhotoUrl(fileName);
+            }
+
+            return ResponseEntity.ok(this.userRepository.save(userFromDB));
 //        } else {
 //            throw new UnauthorizedException("No tiene permiso para modificar este usuario/a.");
 //        }
