@@ -13,6 +13,7 @@ import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.security.Keys;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.BeanUtils;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -42,6 +43,7 @@ public class UserController {
     public List<User> findAll(){
         return userRepository.findAll();
     }
+
     @GetMapping("users/{id}")
     public ResponseEntity<User> findById(@PathVariable Long id) {
         Optional<User> userOptional = userRepository.findById(id);
@@ -50,14 +52,10 @@ public class UserController {
         else
             return ResponseEntity.notFound().build();
     }
-    @PostMapping("users")
-    public ResponseEntity<User> create(@RequestBody User user) {
-        return ResponseEntity.ok(userRepository.save(user));
-    }
 
     // permito subir archivos para que el user tenga imagen/avatar
-    @PostMapping()
-    public User create(
+    @PostMapping("users")
+    public ResponseEntity<User> create(
             @RequestParam(value = "photo", required = false) MultipartFile file, User user) {
 
         if (file != null && !file.isEmpty()) {
@@ -66,55 +64,94 @@ public class UserController {
         } else {
             user.setPhotoUrl("avatar.png");
         }
-        return this.userRepository.save(user);
+
+        user.setPassword(passwordEncoder.encode(user.getPassword()));
+
+        return ResponseEntity.ok(userRepository.save(user));
     }
 
-    @PutMapping("users/{id}")
-    public User update(@PathVariable Long id, @RequestBody User user){
-        User currentUser = SecurityUtils.getCurrentUser().orElseThrow();
-        // Verificar si el usuario actual tiene permiso para modificar los datos
-        if (currentUser.getId().equals(id) || SecurityUtils.isAdminCurrentUser()){
-            Optional<User> userOptional = userRepository.findById(id);
-            if (userOptional.isPresent()){
-                User userFromDB = userOptional.get();
-                userFromDB.setFirstName(user.getFirstName());
-                userFromDB.setLastName(user.getLastName());
-                userFromDB.setEmail(user.getEmail());
-                userFromDB.setPhone(user.getPhone());
-                userFromDB.setUserName(user.getUserName());
-                userFromDB.setPassword(user.getPassword());
-                userFromDB.setAddress(user.getAddress());
-                userFromDB.setUserRole(user.getUserRole());
-                userFromDB.setPhotoUrl(user.getPhotoUrl());
-                // Si se proporciona una nueva contraseña, actualizarla
-                if (user.getPassword() != null && !user.getPassword().isEmpty()){
-                    userFromDB.setPassword(user.getPassword());
-                } //TODO que solo el propio usuario pueda modificar su password.
-                // guardar los cambios en BD
-                return userRepository.save(userFromDB);
-            } else {
-                throw new NoSuchElementException("Usuario/a no encontrado en Base de Datos.");
-            }
-        } else {
-            throw new UnauthorizedException("No tiene permiso para modificar este usuario/a.");
-        }
-    }
-
-    // Permito actualizar archivo del user (imagen/avatar)
     @PutMapping("{id}")
     public ResponseEntity<User> update(@RequestParam(value = "photo", required = false) MultipartFile file,
-                                          User user,
-                                          @PathVariable Long id) {
-        if (!this.userRepository.existsById(id))
-            return ResponseEntity.notFound().build();
-        if (file != null && !file.isEmpty()) {
-            String fileName = fileService.store(file);
-            user.setPhotoUrl(fileName);
-        } else {
-            user.setPhotoUrl("avatar.png");
-        }
-        return ResponseEntity.ok(this.userRepository.save(user));
+                                       User user,
+                                       @PathVariable Long id) {
+
+//        User currentUser = SecurityUtils.getCurrentUser().orElseThrow();
+//        // Verificar si el usuario actual tiene permiso para modificar los datos
+//        if (currentUser.getId().equals(id) || SecurityUtils.isAdminCurrentUser()){
+            if(!this.userRepository.existsById(id))
+                return ResponseEntity.notFound().build();
+
+            User userFromDB = this.userRepository.findById(id).orElseThrow();
+            userFromDB.setFirstName(user.getUserName());
+            userFromDB.setLastName(user.getLastName());
+            userFromDB.setPhone(user.getPhone());
+            userFromDB.setUserName((user.getUserName()));
+            userFromDB.setAddress(user.getAddress());
+
+            if(SecurityUtils.getCurrentUser().orElseThrow().getUserRole().equals(UserRole.ADMIN)) {
+                userFromDB.setEmail(user.getEmail());
+                userFromDB.setUserRole((user.getUserRole()));
+
+            }
+
+            if(file != null && !file.isEmpty()) {
+                String fileName = fileService.store(file);
+                userFromDB.setPhotoUrl(fileName);
+            }
+
+            return ResponseEntity.ok(this.userRepository.save(userFromDB));
+//        } else {
+//            throw new UnauthorizedException("No tiene permiso para modificar este usuario/a.");
+//        }
     }
+
+//    @PutMapping("users/{id}")
+//    public User update(@PathVariable Long id, @RequestBody User user){
+//        User currentUser = SecurityUtils.getCurrentUser().orElseThrow();
+//        // Verificar si el usuario actual tiene permiso para modificar los datos
+//        if (currentUser.getId().equals(id) || SecurityUtils.isAdminCurrentUser()){
+//            Optional<User> userOptional = userRepository.findById(id);
+//            if (userOptional.isPresent()){
+//                User userFromDB = userOptional.get();
+//                userFromDB.setFirstName(user.getFirstName());
+//                userFromDB.setLastName(user.getLastName());
+//                userFromDB.setEmail(user.getEmail());
+//                userFromDB.setPhone(user.getPhone());
+//                userFromDB.setUserName(user.getUserName());
+//                userFromDB.setPassword(user.getPassword());
+//                userFromDB.setAddress(user.getAddress());
+//                userFromDB.setUserRole(user.getUserRole());
+//                userFromDB.setPhotoUrl(user.getPhotoUrl());
+//                // Si se proporciona una nueva contraseña, actualizarla
+//                if (user.getPassword() != null && !user.getPassword().isEmpty()){
+//                    userFromDB.setPassword(user.getPassword());
+//                }
+//                //TODO que solo el propio usuario pueda modificar su password.
+//                //Guardar los cambios en BD
+//                return userRepository.save(userFromDB);
+//            } else {
+//                throw new NoSuchElementException("Usuario/a no encontrado en Base de Datos.");
+//            }
+//        } else {
+//            throw new UnauthorizedException("No tiene permiso para modificar este usuario/a.");
+//        }
+//    }
+//
+//    // Permito actualizar archivo del user (imagen/avatar)
+//    @PutMapping("{id}")
+//    public ResponseEntity<User> update(@RequestParam(value = "photo", required = false) MultipartFile file,
+//                                          User user,
+//                                          @PathVariable Long id) {
+//        if (!this.userRepository.existsById(id))
+//            return ResponseEntity.notFound().build();
+//        if (file != null && !file.isEmpty()) {
+//            String fileName = fileService.store(file);
+//            user.setPhotoUrl(fileName);
+//        } else {
+//            user.setPhotoUrl("avatar.png");
+//        }
+//        return ResponseEntity.ok(this.userRepository.save(user));
+//    }
 
     @DeleteMapping("users/{id}")
     public ResponseEntity<Void> deleteById(@PathVariable Long id){
@@ -140,8 +177,7 @@ public class UserController {
         if (this.userRepository.existsByEmail(register.email())){
             throw new BadCredentialsException("Esta dirección de correo ya está en uso.");
         }
-        // Crear el objeto User
-        // TODO Cifrar la contraseña con BCrypt. hecho linea 88 ?
+        // Crear el objeto User cifrando la contraseña con BCrypt
         User user = User.builder()
                 .email(register.email())
                 .password(passwordEncoder.encode(register.password()))
@@ -162,7 +198,6 @@ public class UserController {
         User user = this.userRepository.findByEmail(login.email()).orElseThrow();
 
         // Comparar contraseñas
-        // TODO cuando la contraseña esté cifrada cambiar el proceso de comparación.
         boolean correctPassword = passwordEncoder.matches(login.password(), user.getPassword());
         boolean incorrectPassword = !correctPassword;
         if (incorrectPassword){
@@ -210,7 +245,7 @@ public class UserController {
             if (currentUser.getUserRole() == UserRole.ADMIN || Objects.equals(currentUser.getId(), user.getId())) {
                 this.userRepository.save(user);
             } else {
-                throw new UnauthorizedException("No tiene permiso para actualizar este usuario/a.");
+                throw new UnauthorizedException("No tiene permiso para actualizar este usuario.");
             }
         });
         return user;
@@ -220,7 +255,7 @@ public class UserController {
     @PostMapping("users/account/avatar")
     public User uploadAvatar(
             @RequestParam(value = "photo") MultipartFile file
-    ) {
+        ) {
         User user = SecurityUtils.getCurrentUser().orElseThrow();
         // si hay archivo, le guardo ese archivo y devuelvo el user con el 'return' de +abajo
         if (file != null && !file.isEmpty()) {
