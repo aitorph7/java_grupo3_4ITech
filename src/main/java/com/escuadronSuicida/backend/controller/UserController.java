@@ -70,7 +70,7 @@ public class UserController {
         return ResponseEntity.ok(userRepository.save(user));
     }
 
-    @PutMapping("{id}")
+    @PutMapping("users/{id}")
     public ResponseEntity<User> update(@RequestParam(value = "photo", required = false) MultipartFile file,
                                        User user,
                                        @PathVariable Long id) {
@@ -82,7 +82,7 @@ public class UserController {
                 return ResponseEntity.notFound().build();
 
             User userFromDB = this.userRepository.findById(id).orElseThrow();
-            userFromDB.setFirstName(user.getUserName());
+            userFromDB.setFirstName(user.getFirstName());
             userFromDB.setLastName(user.getLastName());
             userFromDB.setPhone(user.getPhone());
             userFromDB.setUserName((user.getUserName()));
