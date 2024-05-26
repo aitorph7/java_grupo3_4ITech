@@ -130,15 +130,15 @@ public class Main {
 				.build();
 		userRepository.saveAll(List.of(u1, u2, u3, u4, u5, u6, u7, u8));
 
-		Room room1 = new Room(null, "Innovation Tech Hall", 500, true, "room.01.jpg", null);
-		Room room2 = new Room(null, "ByteSphere Convergence Hall", 350, false, "room.02.jpg",null );
-		Room room3 = new Room(null, "Quantum Nexus Summit Arena", 200, true, "room.03.jpg", null);
-		Room room4 = new Room(null, "NanoVerse Discovery Pavilion", 400, false, "room.04.jpg", null);
-		Room room5 = new Room(null, "TechHorizon Visionarium", 350,false, "room.05.jpg", null);
+		Room room1 = new Room(null, "Innovation Tech Hall", 500, true, "room.01.jpg");
+		Room room2 = new Room(null, "ByteSphere Convergence Hall", 350, false, "room.02.jpg");
+		Room room3 = new Room(null, "Quantum Nexus Summit Arena", 200, true, "room.03.jpg");
+		Room room4 = new Room(null, "NanoVerse Discovery Pavilion", 400, false, "room.04.jpg");
+		Room room5 = new Room(null, "TechHorizon Visionarium", 350,false, "room.05.jpg");
 		roomRepository.saveAll(List.of(room1, room2, room3, room4, room5));
 
 		Track tr1 = new Track(1L,"Día 1: Bienvenida al evento ",LocalDateTime.of(2024,5,28,9,0), LocalDateTime.of(2024,5,28,10,0));
-        Track tr2 = new Track(2L,"Día 1: 10h", LocalDateTime.of(2024,5,28,10,0), LocalDateTime.of(2024,5,28,11,0));
+		Track tr2 = new Track(2L,"Día 1: 10h", LocalDateTime.of(2024,5,28,10,0), LocalDateTime.of(2024,5,28,11,0));
 		Track tr3 = new Track(3L,"Día 1: Desayuno",LocalDateTime.of(2024,5,28,11,0), LocalDateTime.of(2024,5,28,11,30));
 		Track tr4 = new Track(4L,"Día 1: 11,30h", LocalDateTime.of(2024,5,28,11,30), LocalDateTime.of(2024,5,28,12,30));
 		Track tr5 = new Track(5L,"Día 1: 12,30h", LocalDateTime.of(2024,5,28,12,30), LocalDateTime.of(2024,5,28,13,30));
@@ -450,7 +450,7 @@ public class Main {
 						</ul>
 						<p><strong>En conclusión, Big Data es una realidad que transforma el panorama empresarial y organizacional. Su capacidad para extraer información valiosa de grandes volúmenes de datos abre un sinfín de oportunidades para la toma de decisiones estratégicas, la mejora de la eficiencia y la innovación. Sin embargo, es necesario abordar los desafíos técnicos y de gestión para aprovechar todo su potencial de forma segura y responsable.</strong></p>
 						""","big_data_2.png", "eXMaoSEYrso",
-				room3, 150L,DifficultyLevel.SENIOR,50,u3,tr2,null, true);
+				room5, 150L,DifficultyLevel.SENIOR,50,u3,tr2,null, true);
 		Keynote keynote8 = new Keynote(8L, "Internet de las cosas (IoT)",
 				"IoT: Un mundo conectado",
 				"""
@@ -527,7 +527,7 @@ public class Main {
 				1,
 				"Fue un poco desastre la ponencia no esclarecedora de estas avanzadas tecnologías que " +
 						"están transformando la manera en que concebimos y creamos contenido " +
-						"de manera revolucionaria.",
+						"de manera revolucionaria." + " Pero al menos defendió su postura el ponente",
 				LocalDateTime.of(2024, 4,2, 21,15),u4, keynote3);
 
 		commentRepository.saveAll(List.of(c1, c2, c3, c4));

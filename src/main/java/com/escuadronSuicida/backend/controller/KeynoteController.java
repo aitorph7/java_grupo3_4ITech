@@ -1,12 +1,8 @@
 package com.escuadronSuicida.backend.controller;
 
-import com.escuadronSuicida.backend.exception.ConflictDeleteException;
 import com.escuadronSuicida.backend.models.Keynote;
 import com.escuadronSuicida.backend.models.KeynoteProjection;
-import com.escuadronSuicida.backend.models.User;
-import com.escuadronSuicida.backend.models.UserRole;
 import com.escuadronSuicida.backend.repository.*;
-import com.escuadronSuicida.backend.security.SecurityUtils;
 import com.escuadronSuicida.backend.services.FileService;
 import com.escuadronSuicida.backend.services.KeynoteService;
 import lombok.AllArgsConstructor;
@@ -15,8 +11,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
-import javax.management.relation.Role;
-import java.awt.print.Book;
 import java.util.List;
 
 @RestController
@@ -25,13 +19,9 @@ import java.util.List;
 @CrossOrigin("*")
 @Slf4j
 public class KeynoteController {
-    private final UserRepository userRepository;
     private KeynoteService keynoteService;
     private FileService fileService;
     private KeynoteRepository repo;
-    private CommentRepository commentRepository;
-    private RoomRepository roomRepository;
-    private TrackRepository trackRepository;
 
 
     @GetMapping
@@ -81,6 +71,12 @@ public class KeynoteController {
     public List<Keynote> findAllByTrackId(@PathVariable Long id) {
         return this.repo.findAllByTrack_Id(id);
     }
+    // obtener keynotes filtrando por room
+    @GetMapping("/filter-by-room/{id}")
+    public List<Keynote> findAllByRoomId(@PathVariable Long id) {
+        return this.repo.findAllByRoom_Id(id);
+    }
+
 
 
 //    @PostMapping

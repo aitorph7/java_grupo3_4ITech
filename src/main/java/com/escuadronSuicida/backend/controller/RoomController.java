@@ -2,21 +2,24 @@ package com.escuadronSuicida.backend.controller;
 
 import com.escuadronSuicida.backend.models.Room;
 import com.escuadronSuicida.backend.repository.RoomRepository;
-import com.escuadronSuicida.backend.services.RoomService;
+import com.escuadronSuicida.backend.services.FileService;
+import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 import java.util.Optional;
 @CrossOrigin("*")
 @RestController
+@AllArgsConstructor
+
 public class RoomController {
     List<Room> rooms;
     private final RoomRepository roomRepository;
+    private FileService fileService;
 
-    public RoomController(RoomService service, RoomRepository roomRepository){
-        this.roomRepository = roomRepository;
-    }
+
 
     @GetMapping("rooms")
     public ResponseEntity<List<Room>> findAll(){
@@ -30,6 +33,8 @@ public class RoomController {
         else
             return ResponseEntity.notFound().build();
     }
+   /*
+    // OPCION 1
     @PostMapping("rooms")
     public ResponseEntity<Room> create(@RequestBody Room room){
         return ResponseEntity.ok(roomRepository.save(room));
@@ -46,6 +51,43 @@ public class RoomController {
         } else
             return ResponseEntity.notFound().build();
     }
+    */
+
+
+    // OPCION 2, TENIENDO EN CUENTA MULTIPARTFILE DE ROOM
+
+    @PostMapping("rooms")
+    public Room create(
+            @RequestParam(value = "photo", required = false) MultipartFile file, Room room) {
+
+        if (file != null && !file.isEmpty()) {
+            String fileName = fileService.store(file);
+            room.setPhotoUrl(fileName);
+        } else {
+            room.setPhotoUrl("cafeteria.jpeg");
+        }
+
+        return this.roomRepository.save(room);
+    }
+
+
+    @PutMapping("rooms/{id}")
+    public ResponseEntity<Room> update(@RequestParam(value = "photo", required = false) MultipartFile file,
+                                       Room room,
+                                       @PathVariable Long id) {
+
+        if (!this.roomRepository.existsById(id))
+            return ResponseEntity.notFound().build();
+
+        if (file != null && !file.isEmpty()) {
+            String fileName = fileService.store(file);
+            room.setPhotoUrl(fileName);
+        }
+
+        return ResponseEntity.ok(this.roomRepository.save(room));
+    }
+
+
     @DeleteMapping("rooms/{id}")
     public ResponseEntity<Void> deleteById(@PathVariable Long id){
         roomRepository.deleteById(id);
