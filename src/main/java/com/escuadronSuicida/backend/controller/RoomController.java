@@ -1,7 +1,11 @@
 package com.escuadronSuicida.backend.controller;
 
+import com.escuadronSuicida.backend.exception.UnauthorizedException;
 import com.escuadronSuicida.backend.models.Room;
+import com.escuadronSuicida.backend.models.User;
+import com.escuadronSuicida.backend.models.UserRole;
 import com.escuadronSuicida.backend.repository.RoomRepository;
+import com.escuadronSuicida.backend.security.SecurityUtils;
 import com.escuadronSuicida.backend.services.FileService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -88,10 +92,23 @@ public class RoomController {
     }
 
 
-    @DeleteMapping("rooms/{id}")
-    public ResponseEntity<Void> deleteById(@PathVariable Long id){
-        roomRepository.deleteById(id);
-        return ResponseEntity.noContent().build();
-    }
+//    @DeleteMapping("rooms/{id}")
+//    public ResponseEntity<Void> deleteById(@PathVariable Long id){
+//        roomRepository.deleteById(id);
+//        return ResponseEntity.noContent().build();
+//    }
+@DeleteMapping("rooms/{id}")
+public void deleteById(@PathVariable Long id) {
+
+    Room room = this.roomRepository.findById(id).orElseThrow();
+    User user = SecurityUtils.getCurrentUser().orElseThrow();
+
+    if (user.getUserRole().equals(UserRole.ADMIN)
+    )
+        this.roomRepository.deleteById(id);
+    else
+        throw new UnauthorizedException("No puede borrar la sala");
+}
+// pendiente todo desasociar keynote para poder borrar sala
 
 }
