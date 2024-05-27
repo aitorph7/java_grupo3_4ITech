@@ -1,13 +1,16 @@
 package com.escuadronSuicida.backend.controller;
 
-import com.escuadronSuicida.backend.exception.UnauthorizedException;
+import com.escuadronSuicida.backend.exception.ConflictDeleteException;
 import com.escuadronSuicida.backend.models.Room;
 import com.escuadronSuicida.backend.models.User;
 import com.escuadronSuicida.backend.models.UserRole;
+import com.escuadronSuicida.backend.repository.CommentRepository;
+import com.escuadronSuicida.backend.repository.KeynoteRepository;
 import com.escuadronSuicida.backend.repository.RoomRepository;
 import com.escuadronSuicida.backend.security.SecurityUtils;
 import com.escuadronSuicida.backend.services.FileService;
 import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -17,12 +20,15 @@ import java.util.Optional;
 @CrossOrigin("*")
 @RestController
 @AllArgsConstructor
+@Slf4j
 
 public class RoomController {
     List<Room> rooms;
+
+    private  CommentRepository commentRepository;
+    private final KeynoteRepository keynoteRepository;
     private final RoomRepository roomRepository;
     private FileService fileService;
-
 
 
     @GetMapping("rooms")
@@ -92,23 +98,23 @@ public class RoomController {
     }
 
 
-//    @DeleteMapping("rooms/{id}")
-//    public ResponseEntity<Void> deleteById(@PathVariable Long id){
-//        roomRepository.deleteById(id);
-//        return ResponseEntity.noContent().build();
-//    }
 @DeleteMapping("rooms/{id}")
 public void deleteById(@PathVariable Long id) {
 
-    Room room = this.roomRepository.findById(id).orElseThrow();
-    User user = SecurityUtils.getCurrentUser().orElseThrow();
+
+           // Opción : borrar el room, pero antes desasociar o borrar aquellos objetos que apunten room
+        Room room = this.roomRepository.findById(id).orElseThrow();
+        User user = SecurityUtils.getCurrentUser().orElseThrow();
 
     if (user.getUserRole().equals(UserRole.ADMIN)
     )
-        this.roomRepository.deleteById(id);
-    else
-        throw new UnauthorizedException("No puede borrar la sala");
-}
-// pendiente todo desasociar keynote para poder borrar sala
-
+        try {
+            this.commentRepository.deleteByKeynoteId(id);
+            this.keynoteRepository.deleteByRoomId(id);
+            this.roomRepository.deleteById(id);
+        } catch (Exception e) {
+            log.error("Error borrando room", e);
+            throw new ConflictDeleteException("No es posible borrar la sala.");
+        }
+    }
 }

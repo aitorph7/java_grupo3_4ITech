@@ -5,10 +5,12 @@ import com.escuadronSuicida.backend.models.KeynoteProjection;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 
 import java.util.List;
-
+@Repository
 public interface KeynoteRepository extends JpaRepository<Keynote, Long> {
 
     List<Keynote> findAllByTrack_Id(Long id);
@@ -29,4 +31,7 @@ public interface KeynoteRepository extends JpaRepository<Keynote, Long> {
 
 
     List<Keynote> findAllByVisibleTrue();
+
+    @Transactional
+    void deleteByRoomId(Long roomId);
 }

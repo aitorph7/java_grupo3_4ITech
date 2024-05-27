@@ -19,4 +19,5 @@ public interface CommentRepository extends JpaRepository<Comment, Long> {
     @Transactional
     void deleteByKeynoteId(Long keynoteId);
 
+
 }
