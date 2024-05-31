@@ -34,4 +34,7 @@ public interface KeynoteRepository extends JpaRepository<Keynote, Long> {
 
     @Transactional
     void deleteByRoomId(Long roomId);
+
+    @Transactional
+    void deleteByTrackId(Long trackId);
 }

@@ -3,6 +3,8 @@ package com.escuadronSuicida.backend.models;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.List;
+
 
 @AllArgsConstructor
 @NoArgsConstructor
