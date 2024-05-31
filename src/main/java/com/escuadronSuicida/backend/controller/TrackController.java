@@ -25,14 +25,15 @@ import java.util.List;
 @Slf4j
 public class TrackController {
 
+    List<Track> tracks;
+
+
     private final TrackService trackService;
     private TrackRepository trackRepository;
     private  CommentRepository commentRepository;
     private  KeynoteRepository keynoteRepository;
 
-    public TrackController(TrackService trackService) {
-        this.trackService = trackService;
-    }
+ 
 
     @GetMapping("tracks")
    public ResponseEntity<List<Track>> findAll() {
@@ -66,7 +67,7 @@ public class TrackController {
         }
     }
       
-      @DeleteMapping("rooms/{id}")
+      @DeleteMapping("tracks/{id}")
         public void deleteById(@PathVariable Long id) {
 
 
@@ -85,6 +86,9 @@ public class TrackController {
             throw new ConflictDeleteException("No es posible borrar el track.");
         }
     }
+                // OPCION mejor TODO: Archivar tracks y rooms da menos problemas,
+               //.. (al no tener que borrar asociaciones), con las Foreing keys
+
 
     // @DeleteMapping("tracks/{id}")
     // public ResponseEntity<Void> deleteTrack(@PathVariable Long id) {
