@@ -1,7 +1,6 @@
 package com.escuadronSuicida.backend.services;
 
 import com.escuadronSuicida.backend.models.Track;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 
@@ -17,4 +16,6 @@ public interface TrackService {
     Track updateTrack(Long id, Track track);
 
     boolean deleteTrack(Long id);
+
+    List<Track> findTrackVisibleTrue();
 }

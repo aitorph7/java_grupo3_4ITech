@@ -1,6 +1,7 @@
 package com.escuadronSuicida.backend.controller;
 
 import com.escuadronSuicida.backend.exception.ConflictDeleteException;
+import com.escuadronSuicida.backend.models.Keynote;
 import com.escuadronSuicida.backend.models.Track;
 import com.escuadronSuicida.backend.models.User;
 import com.escuadronSuicida.backend.models.UserRole;
@@ -25,8 +26,6 @@ import java.util.List;
 @Slf4j
 public class TrackController {
 
-    List<Track> tracks;
-
 
     private final TrackService trackService;
     private TrackRepository trackRepository;
@@ -37,9 +36,9 @@ public class TrackController {
 
     @GetMapping("tracks")
    public ResponseEntity<List<Track>> findAll() {
-        System.out.println("invocando findAll de tracks");
-        List<Track> tracks = trackService.findTracks();
-        return ResponseEntity.ok(tracks);
+        //System.out.println("invocando findAll de tracks");
+        List<Track> track = trackService.findTrackVisibleTrue();
+        return ResponseEntity.ok(track);
     }
     @GetMapping("tracks/{id}")
     public ResponseEntity<Track> findById(@PathVariable Long id){
@@ -71,34 +70,34 @@ public class TrackController {
         public void deleteById(@PathVariable Long id) {
 
 
-           // Opción : borrar el track, pero antes desasociar o borrar aquellos objetos que apunten track
+           // Opción 1 : borrar el track, pero antes desasociar o borrar aquellos objetos que apunten track
+    //     Track track = this.trackRepository.findById(id).orElseThrow();
+    //     User user = SecurityUtils.getCurrentUser().orElseThrow();
+
+    //     if (user.getUserRole().equals(UserRole.ADMIN)
+    //     )
+    //     try {
+    //         this.commentRepository.deleteByKeynoteId(id);
+    //         this.keynoteRepository.deleteByTrackId(id);
+    //         this.trackRepository.deleteById(id);
+    //     } catch (Exception e) {
+    //         log.error("Error borrando track", e);
+    //         throw new ConflictDeleteException("No es posible borrar el track.");
+    //     }
+    // }
+              // OPCION 2 mejor TODO: Archivar tracks y rooms da menos problemas,
+               //.. (al no tener que borrar asociaciones), con las Foreing keys
+        Keynote keynote = this.keynoteRepository.findById(id).orElseThrow();
         Track track = this.trackRepository.findById(id).orElseThrow();
         User user = SecurityUtils.getCurrentUser().orElseThrow();
-
-        if (user.getUserRole().equals(UserRole.ADMIN)
-        )
-        try {
-            this.commentRepository.deleteByKeynoteId(id);
-            this.keynoteRepository.deleteByTrackId(id);
-            this.trackRepository.deleteById(id);
-        } catch (Exception e) {
-            log.error("Error borrando track", e);
-            throw new ConflictDeleteException("No es posible borrar el track.");
-        }
+        if (user.getUserRole().equals(UserRole.ADMIN)) {
+            keynote.setVisible(false);
+            keynoteRepository.save(keynote);
+            track.setVisible(false);
+            trackRepository.save(track);
+        }   
     }
-                // OPCION mejor TODO: Archivar tracks y rooms da menos problemas,
-               //.. (al no tener que borrar asociaciones), con las Foreing keys
 
-
-    // @DeleteMapping("tracks/{id}")
-    // public ResponseEntity<Void> deleteTrack(@PathVariable Long id) {
-    //        boolean deleted = trackService.deleteTrack(id);
-    //        if (deleted) {
-    //            return ResponseEntity.noContent().build();
-    //        } else {
-    //            return ResponseEntity.notFound().build();
-    //        }
-    // }
 }
 // Otra forma llamando el controlador directamente al repositorio sería:
 // @AllArgsConstructor
