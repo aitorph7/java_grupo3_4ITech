@@ -130,31 +130,31 @@ public class Main {
 				.build();
 		userRepository.saveAll(List.of(u1, u2, u3, u4, u5, u6, u7, u8));
 
-		Room room1 = new Room(null, "Innovation Tech Hall", 500, true, "room.01.jpg");
-		Room room2 = new Room(null, "ByteSphere Convergence Hall", 350, false, "room.02.jpg");
-		Room room3 = new Room(null, "Quantum Nexus Summit Arena", 200, true, "room.03.jpg");
-		Room room4 = new Room(null, "NanoVerse Discovery Pavilion", 400, false, "room.04.jpg");
-		Room room5 = new Room(null, "TechHorizon Visionarium", 350,false, "room.05.jpg");
+		Room room1 = new Room(null, "Innovation Tech Hall", 500, true, "room.01.jpg",true);
+		Room room2 = new Room(null, "ByteSphere Convergence Hall", 350, false, "room.02.jpg",true);
+		Room room3 = new Room(null, "Quantum Nexus Summit Arena", 200, true, "room.03.jpg",true);
+		Room room4 = new Room(null, "NanoVerse Discovery Pavilion", 400, false, "room.04.jpg",true);
+		Room room5 = new Room(null, "TechHorizon Visionarium", 350,false, "room.05.jpg",true);
 		roomRepository.saveAll(List.of(room1, room2, room3, room4, room5));
 
-		Track tr1 = new Track(1L,"Día 1: Bienvenida al evento ",LocalDateTime.of(2024,5,28,9,0), LocalDateTime.of(2024,5,28,10,0));
-		Track tr2 = new Track(2L,"Día 1: 10h", LocalDateTime.of(2024,5,28,10,0), LocalDateTime.of(2024,5,28,11,0));
-		Track tr3 = new Track(3L,"Día 1: Desayuno",LocalDateTime.of(2024,5,28,11,0), LocalDateTime.of(2024,5,28,11,30));
-		Track tr4 = new Track(4L,"Día 1: 11,30h", LocalDateTime.of(2024,5,28,11,30), LocalDateTime.of(2024,5,28,12,30));
-		Track tr5 = new Track(5L,"Día 1: 12,30h", LocalDateTime.of(2024,5,28,12,30), LocalDateTime.of(2024,5,28,13,30));
-		Track tr6 = new Track(6L,"Día 1: Almuerzo", LocalDateTime.of(2024,5,28,13,30), LocalDateTime.of(2024,5,28,15,30));
-		Track tr7 = new Track(7L,"Día 1: 15,30h", LocalDateTime.of(2024,5,28,15,30), LocalDateTime.of(2024,5,28,16,30));
-		Track tr8 = new Track(8L,"Día 1: 16,30h", LocalDateTime.of(2024,5,28,16,30), LocalDateTime.of(2024,5,28,17,30));
-		Track tr9 = new Track(9L,"Día 1: Cierre hasta mañana", LocalDateTime.of(2024,5,28,17,30), LocalDateTime.of(2024,5,28,18,0));
-		Track tr10 = new Track(10L, "Día 2: 9h", LocalDateTime.of(2024,5,29,9,0), LocalDateTime.of(2024,5,29,10,0));
-		Track tr11 = new Track(11L, "Día 2: 10h", LocalDateTime.of(2024,5,29,10,0), LocalDateTime.of(2024,5,29,11,0));
-		Track tr12 = new Track(12L, "Día 2: Desayuno", LocalDateTime.of(2024,5,29,11,0), LocalDateTime.of(2024,5,29,11,30));
-		Track tr13 = new Track(13L, "Día 2: 11,30h", LocalDateTime.of(2024,5,29,11,30), LocalDateTime.of(2024,5,29,12,30));
-		Track tr14 = new Track(14L, "Día 2: 12,30h", LocalDateTime.of(2024,5,29,12,30), LocalDateTime.of(2024,5,29,13,30));
-		Track tr15 = new Track(15L, "Día 2: Almuerzo", LocalDateTime.of(2024,5,29,13,30), LocalDateTime.of(2024,5,29,15,30));
-		Track tr16 = new Track(16L, "Día 2: 15,30h", LocalDateTime.of(2024,5,29,15,30), LocalDateTime.of(2024,5,29,16,30));
-		Track tr17 = new Track(17L, "Día 2: 16,30h", LocalDateTime.of(2024,5,29,16,30), LocalDateTime.of(2024,5,29,17,30));
-		Track tr18 = new Track(18L, "Día 2: Cierre evento", LocalDateTime.of(2024,5,29,17,30), LocalDateTime.of(2024,5,29,18,0));
+		Track tr1 = new Track(1L,"Día 1: Bienvenida al evento ",LocalDateTime.of(2024,5,28,9,0), LocalDateTime.of(2024,5,28,10,0),true);
+		Track tr2 = new Track(2L,"Día 1: 10h", LocalDateTime.of(2024,5,28,10,0), LocalDateTime.of(2024,5,28,11,0),true);
+		Track tr3 = new Track(3L,"Día 1: Desayuno",LocalDateTime.of(2024,5,28,11,0), LocalDateTime.of(2024,5,28,11,30),true);
+		Track tr4 = new Track(4L,"Día 1: 11,30h", LocalDateTime.of(2024,5,28,11,30), LocalDateTime.of(2024,5,28,12,30),true);
+		Track tr5 = new Track(5L,"Día 1: 12,30h", LocalDateTime.of(2024,5,28,12,30), LocalDateTime.of(2024,5,28,13,30),true);
+		Track tr6 = new Track(6L,"Día 1: Almuerzo", LocalDateTime.of(2024,5,28,13,30), LocalDateTime.of(2024,5,28,15,30),true);
+		Track tr7 = new Track(7L,"Día 1: 15,30h", LocalDateTime.of(2024,5,28,15,30), LocalDateTime.of(2024,5,28,16,30),true);
+		Track tr8 = new Track(8L,"Día 1: 16,30h", LocalDateTime.of(2024,5,28,16,30), LocalDateTime.of(2024,5,28,17,30),true);
+		Track tr9 = new Track(9L,"Día 1: Cierre hasta mañana", LocalDateTime.of(2024,5,28,17,30), LocalDateTime.of(2024,5,28,18,0),true);
+		Track tr10 = new Track(10L, "Día 2: 9h", LocalDateTime.of(2024,5,29,9,0), LocalDateTime.of(2024,5,29,10,0),true);
+		Track tr11 = new Track(11L, "Día 2: 10h", LocalDateTime.of(2024,5,29,10,0), LocalDateTime.of(2024,5,29,11,0),true);
+		Track tr12 = new Track(12L, "Día 2: Desayuno", LocalDateTime.of(2024,5,29,11,0), LocalDateTime.of(2024,5,29,11,30),true);
+		Track tr13 = new Track(13L, "Día 2: 11,30h", LocalDateTime.of(2024,5,29,11,30), LocalDateTime.of(2024,5,29,12,30),true);
+		Track tr14 = new Track(14L, "Día 2: 12,30h", LocalDateTime.of(2024,5,29,12,30), LocalDateTime.of(2024,5,29,13,30),true);
+		Track tr15 = new Track(15L, "Día 2: Almuerzo", LocalDateTime.of(2024,5,29,13,30), LocalDateTime.of(2024,5,29,15,30),true);
+		Track tr16 = new Track(16L, "Día 2: 15,30h", LocalDateTime.of(2024,5,29,15,30), LocalDateTime.of(2024,5,29,16,30),true);
+		Track tr17 = new Track(17L, "Día 2: 16,30h", LocalDateTime.of(2024,5,29,16,30), LocalDateTime.of(2024,5,29,17,30),true);
+		Track tr18 = new Track(18L, "Día 2: Cierre evento", LocalDateTime.of(2024,5,29,17,30), LocalDateTime.of(2024,5,29,18,0),true);
 
 		trackRepository.saveAll(List.of(tr1, tr2, tr3, tr4, tr5, tr6, tr7, tr8, tr9, tr10, tr11, tr12, tr13,tr14,tr15,tr16,tr17,tr18));
 

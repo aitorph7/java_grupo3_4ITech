@@ -1,6 +1,7 @@
 package com.escuadronSuicida.backend.controller;
 
 import com.escuadronSuicida.backend.exception.ConflictDeleteException;
+import com.escuadronSuicida.backend.models.Keynote;
 import com.escuadronSuicida.backend.models.Room;
 import com.escuadronSuicida.backend.models.User;
 import com.escuadronSuicida.backend.models.UserRole;
@@ -9,6 +10,8 @@ import com.escuadronSuicida.backend.repository.KeynoteRepository;
 import com.escuadronSuicida.backend.repository.RoomRepository;
 import com.escuadronSuicida.backend.security.SecurityUtils;
 import com.escuadronSuicida.backend.services.FileService;
+import com.escuadronSuicida.backend.services.RoomService;
+
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
@@ -27,13 +30,15 @@ public class RoomController {
 
     private  CommentRepository commentRepository;
     private final KeynoteRepository keynoteRepository;
+    private RoomService roomService;
     private final RoomRepository roomRepository;
     private FileService fileService;
 
 
     @GetMapping("rooms")
     public ResponseEntity<List<Room>> findAll(){
-        return ResponseEntity.ok(roomRepository.findAll());
+        List<Room> room = roomService.findRoomVisibleTrue();
+        return ResponseEntity.ok(room);
     }
     @GetMapping("rooms/{id}")
     public ResponseEntity<Room> findById(@PathVariable Long id) {
@@ -103,18 +108,31 @@ public void deleteById(@PathVariable Long id) {
 
 
            // Opción : borrar el room, pero antes desasociar o borrar aquellos objetos que apunten room
-        Room room = this.roomRepository.findById(id).orElseThrow();
-        User user = SecurityUtils.getCurrentUser().orElseThrow();
+    //     Room room = this.roomRepository.findById(id).orElseThrow();
+    //     User user = SecurityUtils.getCurrentUser().orElseThrow();
 
-    if (user.getUserRole().equals(UserRole.ADMIN)
-    )
-        try {
-            this.commentRepository.deleteByKeynoteId(id);
-            this.keynoteRepository.deleteByRoomId(id);
-            this.roomRepository.deleteById(id);
-        } catch (Exception e) {
-            log.error("Error borrando room", e);
-            throw new ConflictDeleteException("No es posible borrar la sala.");
+    // if (user.getUserRole().equals(UserRole.ADMIN)
+    // )
+    //     try {
+    //         this.commentRepository.deleteByKeynoteId(id);
+    //         this.keynoteRepository.deleteByRoomId(id);
+    //         this.roomRepository.deleteById(id);
+    //     } catch (Exception e) {
+    //         log.error("Error borrando room", e);
+    //         throw new ConflictDeleteException("No es posible borrar la sala.");
+    //     }
+    // }
+             // Opción 2 : mediante un booleano visible, pasarlo a false y guardar
+
+    Keynote keynote = this.keynoteRepository.findById(id).orElseThrow();
+    Room room = this.roomRepository.findById(id).orElseThrow();
+    User user = SecurityUtils.getCurrentUser().orElseThrow();
+        if (user.getUserRole().equals(UserRole.ADMIN)) {
+            keynote.setVisible(false);
+            keynoteRepository.save(keynote);
+            room.setVisible(false);
+            roomRepository.save(room);
         }
     }
+
 }
